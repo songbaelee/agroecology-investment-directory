@@ -3,7 +3,9 @@
     "name": "The Reciprocity Fund",
     "manager": "Beneficial Returns",
     "founded": null,
-    "website": "https://www.beneficialreturns.com",
+    "capital_mechanism": "loan",
+    "fund_url": "https://beneficialreturns.com/reciprocity-fund/",
+    "manager_url": "https://www.beneficialreturns.com",
     "headquarters": null,
     "legal_structure": "Impact lending fund",
     "geography": {
@@ -12,12 +14,19 @@
       "target_regions": ["Latin America"]
     },
     "financial": {
+      "not_applicable": false,
+      "aum_usd": null,
       "fund_size_usd": null,
       "total_disbursed_usd": 129000,
       "ticket_size_min_usd": null,
       "ticket_size_max_usd": 54000,
       "interest_rate": "8% annual",
       "investor_access": "Impact investors / philanthropic"
+    },
+    "borrower_criteria": {
+      "min_annual_revenue_usd": null,
+      "min_years_operation": null,
+      "other": "Indigenous-led agriculture and agroforestry cooperatives in regions where borrowing options are limited. Governance must include Indigenous community leadership."
     },
     "agroecology_alignment": {
       "explicitness": "aligned",
@@ -31,9 +40,15 @@
       "certifications_referenced": []
     },
     "impact": {
+      "portfolio_count": 3,
       "enterprises_cooperatives_funded": 3,
       "people_families_reached": 4220,
       "hectares_preserved_restored": null,
+      "portfolio_at_risk_pct": null,
+      "gender_metrics": {
+        "pct_women_reached": null,
+        "pct_women_led_businesses": null
+      },
       "notes": "CICAP cooperative supports 3,500+ Indigenous spice farmers; Emprocaucho supports 360+ smallholder rubber farmers"
     },
     "portfolio": {
@@ -76,10 +91,6 @@
         {
           "quote": "We've been exploiting Indigenous people and their lands for too long. It's time to flip the dynamic and let the rest of the world lose a few bucks as a first and tiny step to correcting 500-plus years of abuse.",
           "attribution": "Ted Levinson, Beneficial Returns"
-        },
-        {
-          "quote": "The Reciprocity Fund intentionally seeks to make loans in places like this where borrowing options are limited and where modest loans can have outsized impact.",
-          "attribution": "Ted Levinson, Beneficial Returns"
         }
       ],
       "sources": [
@@ -97,7 +108,9 @@
     "name": "FINAPOP",
     "manager": "FINAPOP Cooperative",
     "founded": "2021",
-    "website": null,
+    "capital_mechanism": "loan",
+    "fund_url": "https://finapop.com.br/",
+    "manager_url": "https://finapop.com.br/",
     "headquarters": "Brazil",
     "legal_structure": "Cooperative credit fund / solidarity economy fund",
     "geography": {
@@ -106,12 +119,19 @@
       "target_regions": ["Brazil — nationwide, including agrarian reform settlements"]
     },
     "financial": {
+      "not_applicable": false,
+      "aum_usd": null,
       "fund_size_usd": null,
       "total_disbursed_usd": 12000000,
       "ticket_size_min_usd": null,
       "ticket_size_max_usd": null,
       "interest_rate": null,
-      "investor_access": "Open to any Brazilian citizen to invest savings"
+      "investor_access": "Open to any Brazilian citizen to invest savings directly into farmer cooperatives"
+    },
+    "borrower_criteria": {
+      "min_annual_revenue_usd": null,
+      "min_years_operation": null,
+      "other": "Must be a cooperative, association, or agrarian reform settlement undergoing or committed to agroecology transition. Embedded in Brazil's MST and solidarity economy ecosystem."
     },
     "agroecology_alignment": {
       "explicitness": "explicit mandate",
@@ -127,17 +147,23 @@
       "certifications_referenced": []
     },
     "impact": {
+      "portfolio_count": 53,
       "enterprises_cooperatives_funded": 53,
       "people_families_reached": 25000,
       "hectares_preserved_restored": null,
-      "notes": "85 financings totaling ~59.2 million BRL (~$12M USD) distributed to 53 cooperatives, associations, and agrarian reform settlements"
+      "portfolio_at_risk_pct": null,
+      "gender_metrics": {
+        "pct_women_reached": null,
+        "pct_women_led_businesses": null
+      },
+      "notes": "85 financings totaling ~$12M USD distributed to 53 cooperatives, associations, and agrarian reform settlements. Severe flooding in Rio Grande do Sul has caused significant crop and infrastructure losses among portfolio cooperatives."
     },
     "portfolio": {
       "notable_organizations": [
         {
-          "name": "ACAP-PR (Agrarian Reform Association of Paraná State)",
+          "name": "ACAP-PR",
           "country": "Brazil",
-          "description": "MST affiliate working with other civil society organizations to advance agroecology policy at state level. Has contributed to a 30 million BRL (~$6M) state budget allocation for agroecology transition.",
+          "description": "Agrarian Reform Association of Paraná State; MST affiliate that helped secure a 30 million BRL (~$6M) state budget allocation for agroecology transition",
           "loan_usd": null
         }
       ],
@@ -147,33 +173,28 @@
       "key_funders": [],
       "partner_organizations": ["MST (Landless Workers' Movement)", "ACAP-PR"],
       "governance_model": "Cooperative structure; citizens invest directly into farmer cooperatives",
-      "key_people": [
-        {
-          "name": "Costa",
-          "role": "FINAPOP representative (first name only referenced in sources)"
-        }
-      ]
+      "key_people": []
     },
     "context": {
       "summary": "FINAPOP is a Brazilian cooperative credit fund created in 2021 in response to pandemic-driven food insecurity. It is unique in allowing any Brazilian citizen to invest their savings directly into smallholder farmer cooperatives undergoing an agroecology transition. Deeply embedded in Brazil's agrarian reform movement, it has reached 25,000 families across 53 cooperatives. It faces growing climate vulnerability — severe flooding in Rio Grande do Sul has caused significant crop and infrastructure losses among portfolio cooperatives — prompting calls for a crisis-resilience mechanism.",
       "notable_quotes": [
         {
           "quote": "In Rio Grande do Sul, Brazil, there is a serious crisis with flooding in the entire state, and many cooperatives have lost their areas and their structures. We need a fund that can cover these moments of crisis and losses.",
-          "attribution": "Costa, FINAPOP representative"
+          "attribution": "FINAPOP representative"
         }
       ],
       "sources": [
-        {
-          "title": "Philanthropic Investment in Agroecology for a More Equitable Food Systems",
-          "url": "https://ssir.org/articles/entry/agroecology-philanthropy-equitable-food-systems",
-          "publication": "Stanford Social Innovation Review",
-          "date": null
-        },
         {
           "title": "How to Finance an Agroecology Transition: Innovations in Accessible and Affordable Credit Systems",
           "url": "https://agroecologyfund.org/how-to-finance-an-agroecology-transition-innovations-in-accessible-and-affordable-credit-systems-for-grassroots-led-enterprises/",
           "publication": "Agroecology Fund",
           "date": "November 2025"
+        },
+        {
+          "title": "Philanthropic Investment in Agroecology for a More Equitable Food Systems",
+          "url": "https://ssir.org/articles/entry/agroecology-philanthropy-equitable-food-systems",
+          "publication": "Stanford Social Innovation Review",
+          "date": null
         }
       ]
     },
@@ -183,7 +204,9 @@
     "name": "NESsT Lirio Fund",
     "manager": "NESsT",
     "founded": "2018",
-    "website": "https://www.nesst.org",
+    "capital_mechanism": "loan",
+    "fund_url": "https://www.nesst.org/lirio-fund",
+    "manager_url": "https://www.nesst.org",
     "headquarters": "St. Petersburg, Florida, USA",
     "legal_structure": "Impact debt fund / SME loan fund",
     "geography": {
@@ -192,12 +215,19 @@
       "target_regions": ["Andes-Amazon region", "Latin America"]
     },
     "financial": {
+      "not_applicable": false,
+      "aum_usd": 13200000,
       "fund_size_usd": null,
       "total_disbursed_usd": 20000000,
-      "ticket_size_min_usd": null,
-      "ticket_size_max_usd": null,
-      "interest_rate": null,
+      "ticket_size_min_usd": 100000,
+      "ticket_size_max_usd": 500000,
+      "interest_rate": "Competitive; more flexible terms than traditional capital sources",
       "investor_access": "Institutional and mission-aligned investors; Mercy Partnership Fund noted as an investor"
+    },
+    "borrower_criteria": {
+      "min_annual_revenue_usd": "Varies by country and program cycle: $200,000 minimum for Brazil expansion (2024); $400,000–$500,000 for Colombia (2025 call). NESsT notes flexibility for enterprises near the threshold.",
+      "min_years_operation": "2–3 years depending on country and cycle",
+      "other": "Preference for enterprises aligned with organic, Fair Trade, or Rainforest Alliance standards. Must create dignified employment for vulnerable communities. Microfinance institutions and companies that lend to third parties are excluded. Application process takes 3–5 months."
     },
     "agroecology_alignment": {
       "explicitness": "aligned",
@@ -213,35 +243,44 @@
       "certifications_referenced": ["Organic", "Fair Trade", "Rainforest Alliance"]
     },
     "impact": {
+      "portfolio_count": 21,
       "enterprises_cooperatives_funded": 37,
-      "people_families_reached": 16000,
-      "hectares_preserved_restored": 1500000,
-      "notes": "$20M+ disbursed through 37 loans; 1.5 million hectares of land preserved; expanding from Colombia and Peru into Brazil as of October 2024"
+      "people_families_reached": 17291,
+      "people_families_reached_current_portfolio": 15687,
+      "hectares_preserved_restored": 1504434,
+      "portfolio_at_risk_pct": 7.7,
+      "loans_committed_outstanding_usd": 9100000,
+      "loans_in_portfolio": 26,
+      "gender_metrics": {
+        "pct_women_reached": 32,
+        "pct_women_led_businesses": 38
+      },
+      "notes": "Data as of December 2025 annual report. 30% of people reached are women. Net write-offs: 0.0%. Six companies including COAS, Greenbox, and Pebani have received repeat loans."
     },
     "portfolio": {
       "notable_organizations": [
         {
-          "name": "Federación Campesina del Cauca",
+          "name": "Federación Campesina del Cauca (FCC)",
           "country": "Colombia",
-          "description": "Long-standing coffee cooperative",
+          "description": "Long-standing coffee cooperative; joined NESsT accelerator program in 2024",
           "loan_usd": null
         },
         {
-          "name": "Cuencas del Huallaga",
+          "name": "Cooperativa Agraria Sonomoro del VRAEM (COAS)",
           "country": "Peru",
-          "description": "Cocoa cooperative using technology to prevent deforestation in the Peruvian Amazon",
+          "description": "Cacao cooperative scaling production and conserving local biodiversity; received revolving credit line and term loan, renewed in 2025",
           "loan_usd": null
         },
         {
           "name": "Kulkao",
           "country": "Peru",
-          "description": "Cocoa farming enterprise in the Amazon basin; received a second loan",
+          "description": "Cocoa farming enterprise in the Amazon basin; received repeat loan in first half of 2025",
           "loan_usd": null
         },
         {
           "name": "Pebani",
           "country": "Peru",
-          "description": "Works with farmers in native communities in the Peruvian rainforest to produce medicinal plants and raw natural products",
+          "description": "Works with farmers in native communities in the Peruvian rainforest to produce medicinal plants and raw natural products; received repeat loan in 2025",
           "loan_usd": null
         },
         {
@@ -251,36 +290,77 @@
           "loan_usd": null
         },
         {
+          "name": "Alto Kivinaki",
+          "country": "Peru",
+          "description": "Producer of organic oranges",
+          "loan_usd": null
+        },
+        {
+          "name": "Cotton Nation",
+          "country": "Peru",
+          "description": "Organic cotton company working closely with 3,000+ Indigenous and rural producers, paying premium prices and driving regenerative farming",
+          "loan_usd": null
+        },
+        {
+          "name": "Laguna Coffee Cooperative (Lagunas de los Condores)",
+          "country": "Peru",
+          "description": "Coffee cooperative promoting gender equity; received repeat loan in 2025",
+          "loan_usd": null
+        },
+        {
+          "name": "Cooperativa Agraria Cafetalera Santa Ana",
+          "country": "Peru",
+          "description": "Coffee cooperative in Junín with ~170 farmers, nearly half women and over half aged 45+. NESsT extended a revolving working credit line in 2024 to pay producers during coffee campaigns.",
+          "loan_usd": null
+        },
+        {
+          "name": "Cooperativa dos Agricultores do Vale do Amanhecer (COOPAVAM)",
+          "country": "Brazil",
+          "description": "Brazil nut producer cooperative in Mato Grosso; women-led, sources from 300 Indigenous producers, supports conservation of 1 million+ hectares of protected land",
+          "loan_usd": null
+        },
+        {
           "name": "Cattleya",
           "country": "Colombia",
           "description": "Flower producer improving livelihoods of rural women in Cundinamarca",
           "loan_usd": null
-        },
-        {
-          "name": "Laguna Coffee Cooperative",
-          "country": "Peru",
-          "description": "Coffee cooperative promoting gender equity in Peru's agriculture sector",
-          "loan_usd": null
         }
       ],
+      "portfolio_gallery_url": "https://www.nesst.org/portfolio-gallery?tag=Lirio+Fund",
       "value_chain_positions": ["Farming", "Processing", "Cooperative governance", "Eco-tourism"]
     },
     "governance_and_partners": {
       "key_funders": ["Mercy Partnership Fund"],
       "partner_organizations": [],
-      "governance_model": "Locally-based loan managers with deep market knowledge collaborate with acceleration teams in Brazil, Colombia, and Peru",
-      "key_people": []
+      "governance_model": "Locally-based loan managers with deep market knowledge collaborate with acceleration teams in Brazil, Colombia, and Peru. In-country portfolio teams provide one-on-one financial management support.",
+      "key_people": [
+        {
+          "name": "Jorge Chavez",
+          "role": "Lirio Fund Andes Director"
+        },
+        {
+          "name": "Ana Belen Jalixto Romero",
+          "role": "Lirio Fund Andes Portfolio Manager"
+        },
+        {
+          "name": "Mariana Lima",
+          "role": "Lirio Fund Brazil Associate Director"
+        }
+      ]
     },
     "context": {
-      "summary": "The NESsT Lirio Fund is an impact debt fund launched in 2018 by NESsT, an impact-first investor, targeting small and medium-sized enterprises in the Andes-Amazon region of Latin America. It has surpassed $20 million in disbursements across 37 loans, preserving over 1.5 million hectares of land. The fund combines financial capital with NESsT's enterprise acceleration expertise, supporting businesses in sustainable agriculture, fishing, and eco-tourism. Eligible enterprises must have at least $200,000 in annual sales and two years of operating history. As of October 2024 the fund expanded into Brazil.",
-      "notable_quotes": [],
-      "sources": [
+      "summary": "The NESsT Lirio Fund is an impact debt fund launched in 2018, targeting small and medium-sized enterprises in the Andes-Amazon region of Latin America. As of December 2025 it manages $13.2M in assets with $9.1M in loans committed and outstanding across 21 businesses. It has disbursed over $20M through 37 loans since inception, preserving over 1.5 million hectares of land. Loan sizes range from $100,000 to $500,000. Borrower eligibility thresholds vary by country and program cycle, ranging from $200,000 to $500,000 in minimum annual revenue. The fund combines patient debt capital with NESsT's enterprise acceleration expertise and targets enterprises creating dignified employment for vulnerable communities in sustainable agriculture, fishing, and eco-tourism.",
+      "notable_quotes": [
         {
-          "title": "NESsT Lirio Fund Expands into Brazil",
-          "url": "https://www.businesswire.com/news/home/20241001450371/en/NESsT-Lirio-Fund-Expands-into-Brazil-to-Further-its-Efforts-to-Enhance-Livelihoods-and-Sustainable-Development-in-Latin-America",
-          "publication": "Business Wire",
-          "date": "October 2024"
+          "quote": "Reaching $20 million in disbursements shows both the growing demand for the type of patient capital we offer and the potential of enterprises working in critical ecosystems.",
+          "attribution": "Jorge Chavez, Lirio Fund Andes Director"
         },
+        {
+          "quote": "Unlike traditional investors, we offer long-term, more patient capital to support our portfolio enterprises to grow their operations sustainably and maintain strong social and environmental impact over time.",
+          "attribution": "Ana Belen Jalixto Romero, Lirio Fund Andes Portfolio Manager"
+        }
+      ],
+      "sources": [
         {
           "title": "The NESsT Lirio Fund Disburses Over $20 Million USD",
           "url": "https://www.nesst.org/nesst/2026/2/5/the-nesst-lirio-fund-disburses-over-20-million-usd-improving-livelihoods-and-protecting-the-environment-across-brazil-colombia-and-peru",
@@ -288,10 +368,22 @@
           "date": "February 2026"
         },
         {
-          "title": "NESsT's Lirio Fund elevates sustainable agriculture in Peru",
-          "url": "https://mercyinvestmentservices.org/nessts-lirio-fund-elevates-sustainable-agriculture-in-peru/",
-          "publication": "Mercy Investment Services",
-          "date": "May 2024"
+          "title": "NESsT Lirio Fund Expands into Brazil",
+          "url": "https://www.businesswire.com/news/home/20241001450371/en/NESsT-Lirio-Fund-Expands-into-Brazil-to-Further-its-Efforts-to-Enhance-Livelihoods-and-Sustainable-Development-in-Latin-America",
+          "publication": "Business Wire",
+          "date": "October 2024"
+        },
+        {
+          "title": "NESsT Lirio Fund criteria",
+          "url": "https://www.nesst.org/nesst-lirio-fund-criteria",
+          "publication": "NESsT",
+          "date": null
+        },
+        {
+          "title": "NESsT 2025 Annual Report",
+          "url": "https://issuu.com/nesster/docs/2025_nesst_annual_report_09544111ea000d",
+          "publication": "NESsT",
+          "date": "2025"
         }
       ]
     },
@@ -301,7 +393,9 @@
     "name": "Barka Fund",
     "manager": "Barka Fund (led by Rekia Foudel)",
     "founded": "2020",
-    "website": null,
+    "capital_mechanism": "equity",
+    "fund_url": "https://barkafund.com/",
+    "manager_url": "https://barkafund.com/",
     "headquarters": "New York, USA",
     "legal_structure": "Early-stage impact venture fund + accelerator",
     "geography": {
@@ -310,12 +404,19 @@
       "target_regions": ["Sub-Saharan Africa", "Sahel region"]
     },
     "financial": {
+      "not_applicable": false,
+      "aum_usd": null,
       "fund_size_usd": 12000000,
       "total_disbursed_usd": null,
       "ticket_size_min_usd": null,
       "ticket_size_max_usd": 500000,
       "interest_rate": null,
-      "investor_access": "Institutional; WRI Africa, DFC, Bezos Earth Fund are anchor investors"
+      "investor_access": "Institutional; WRI Africa, US DFC, and Bezos Earth Fund are anchor investors"
+    },
+    "borrower_criteria": {
+      "min_annual_revenue_usd": null,
+      "min_years_operation": null,
+      "other": "Targets the 'missing middle' — early-stage companies receiving less than $500,000. Must be building climate solutions including land restoration, regenerative agriculture, or renewable energy in Sub-Saharan Africa. Works with incubators and accelerators to identify investment-ready startups."
     },
     "agroecology_alignment": {
       "explicitness": "aligned",
@@ -331,10 +432,16 @@
       "certifications_referenced": []
     },
     "impact": {
+      "portfolio_count": null,
       "enterprises_cooperatives_funded": null,
       "people_families_reached": null,
       "hectares_preserved_restored": null,
-      "notes": "Projects contribute to AFR100 goal to restore 100 million hectares of degraded African land by 2030. TerraFund partnership with WRI has invested $17.8M in 92 organizations. Fund's 12-year lifespan restoration targets not yet publicly detailed."
+      "portfolio_at_risk_pct": null,
+      "gender_metrics": {
+        "pct_women_reached": null,
+        "pct_women_led_businesses": null
+      },
+      "notes": "Portfolio targets AFR100 goal to restore 100 million hectares of degraded African land by 2030. Uses WRI TerraMatch platform for standardized impact monitoring. Fund has a 12-year lifespan; detailed restoration targets not yet publicly disclosed."
     },
     "portfolio": {
       "notable_organizations": [
@@ -355,7 +462,7 @@
     },
     "governance_and_partners": {
       "key_funders": [
-        "WRI Africa ($4M)",
+        "WRI Africa ($4M, January 2025)",
         "US International Development Finance Corporation ($8M)",
         "Bezos Earth Fund (seed funding)"
       ],
@@ -365,11 +472,15 @@
         {
           "name": "Rekia Foudel",
           "role": "Founder and Fund Manager"
+        },
+        {
+          "name": "Rebekah Shirley",
+          "role": "WRI Africa (investor representative)"
         }
       ]
     },
     "context": {
-      "summary": "Barka Fund is an early-stage impact venture fund and accelerator founded in 2020 and headquartered in New York, focused on African entrepreneurs building climate solutions in Sub-Saharan Africa — with particular focus on the highly underserved Sahelian countries. The fund is led by and for African women, and targets the 'missing middle' of early-stage companies receiving less than $500,000. One-third of the portfolio is dedicated to land restoration, alongside sustainable agriculture and renewable energy. It uses WRI's TerraMatch platform for standardized impact monitoring. In January 2025 WRI Africa announced a $4M investment, complementing $8M from the US DFC and seed funding from the Bezos Earth Fund.",
+      "summary": "Barka Fund is an early-stage impact venture fund and accelerator founded in 2020, focused on African entrepreneurs building climate solutions in Sub-Saharan Africa — with particular focus on the highly underserved Sahelian countries. The fund is led by and for African women, and targets the 'missing middle' of early-stage companies receiving less than $500,000. One-third of the portfolio is dedicated to land restoration, alongside sustainable agriculture and renewable energy. It uses WRI's TerraMatch platform for standardized impact monitoring. In January 2025 WRI Africa announced a $4M investment, complementing $8M from the US DFC and seed funding from the Bezos Earth Fund, bringing total capital raised to $12M.",
       "notable_quotes": [
         {
           "quote": "Barka Fund, as a fund led by and for African women, exemplifies the leadership and innovation needed to restore degraded landscapes on the continent.",
@@ -388,12 +499,6 @@
           "url": "https://impactalpha.com/wri-backs-barka-fund-to-invest-in-locally-led-land-restoration-in-africa/",
           "publication": "ImpactAlpha",
           "date": "April 2025"
-        },
-        {
-          "title": "Barka Fund — Collective Action for Just Finance",
-          "url": "https://www.transformative25.org/project/barka-fund/",
-          "publication": "Transformative25",
-          "date": "November 2024"
         }
       ]
     },
@@ -403,7 +508,9 @@
     "name": "Pachamama Coffee Cooperative",
     "manager": "Farmer-owned; board composed entirely of farmer-member representatives",
     "founded": "2006",
-    "website": "https://pachamamacoffee.com",
+    "capital_mechanism": "cooperative ownership",
+    "fund_url": "https://pachamamacoffee.com",
+    "manager_url": "https://pachamamacoffee.com",
     "headquarters": "Sacramento, California, USA",
     "legal_structure": "100% farmer-owned cooperative (not an investment fund)",
     "geography": {
@@ -412,12 +519,19 @@
       "target_regions": ["Latin America", "East Africa"]
     },
     "financial": {
+      "not_applicable": true,
+      "aum_usd": null,
       "fund_size_usd": null,
       "total_disbursed_usd": null,
       "ticket_size_min_usd": null,
       "ticket_size_max_usd": null,
       "interest_rate": null,
-      "investor_access": "Not an investment fund. Consumer-facing cooperative — revenue flows directly to farmer-owners."
+      "investor_access": "Not applicable. Consumer-facing cooperative — revenue flows directly to farmer-owners. Not open to outside investors."
+    },
+    "borrower_criteria": {
+      "min_annual_revenue_usd": null,
+      "min_years_operation": null,
+      "other": "Not applicable. Membership is open to qualifying farmer cooperatives; member cooperatives must be farmer-owned and committed to organic and regenerative practices."
     },
     "agroecology_alignment": {
       "explicitness": "aligned",
@@ -434,10 +548,16 @@
       "certifications_referenced": ["Certified Organic", "Specialty Coffee Association Sustainability Award 2021"]
     },
     "impact": {
+      "portfolio_count": 5,
       "enterprises_cooperatives_funded": 5,
       "people_families_reached": 400000,
       "hectares_preserved_restored": null,
-      "notes": "400,000+ smallholder farmer-owners across 5 countries. 100% of profits returned to farmer-owners. Farmers own the roastery, brand, and cafes in the US."
+      "portfolio_at_risk_pct": null,
+      "gender_metrics": {
+        "pct_women_reached": null,
+        "pct_women_led_businesses": null
+      },
+      "notes": "400,000+ smallholder farmer-owners across 5 countries. 100% of profits returned to farmer-owners. Farmers own the roastery, brand, cafés, and employ 50+ US staff."
     },
     "portfolio": {
       "notable_organizations": [
@@ -480,17 +600,13 @@
       "governance_model": "Board of directors entirely composed of farmer-members. One seat per country (Peru, Nicaragua, Guatemala, Mexico, Ethiopia). 100% of equity owned by farmer members.",
       "key_people": [
         {
-          "name": "Raúl del Aguila",
-          "role": "Founding farmer advocate, COCLA Peru"
-        },
-        {
           "name": "Merling Preza",
-          "role": "Board Chair, representing Nicaragua"
+          "role": "Board Chair, representing Nicaragua (Prodecoop)"
         }
       ]
     },
     "context": {
-      "summary": "Pachamama Coffee Cooperative is a 100% farmer-owned global cooperative established in 2006, headquartered in Sacramento, California. It is not an investment fund but rather a vertically integrated supply chain cooperative in which farmers own everything from the land to the US roastery, brand, and cafés. All profits flow to 400,000+ farmer-owners across Peru, Nicaragua, Guatemala, Mexico, and Ethiopia. Its regenerative organic farming practices are rooted in Indigenous Andean traditions. It won the Specialty Coffee Association's Sustainability Award for Best Business Model in 2021. It is included here as a significant model for farmer-led agroecological enterprise rather than as a capital vehicle.",
+      "summary": "Pachamama Coffee Cooperative is a 100% farmer-owned global cooperative established in 2006. What distinguishes it from typical farmer cooperatives — most of which are member-owned at the farm level — is that Pachamama's farmer-members own the entire downstream US value chain: the roastery in Sacramento, the Pachamama brand, five cafés, and the employment of 50+ US staff. Most farmer cooperatives sell their product to a separate roaster or distributor who captures the majority of the margin. Pachamama was explicitly designed to close that gap. All profits flow to 400,000+ farmer-owners across Peru, Nicaragua, Guatemala, Mexico, and Ethiopia. Its regenerative organic farming practices are rooted in Indigenous Andean traditions. Included here as a significant model for farmer-led agroecological enterprise with vertical ownership, rather than as a capital vehicle open to outside investment.",
       "notable_quotes": [
         {
           "quote": "Pachamama Coffee's model is unique. First of all because the farmers are the owners of Pachamama Coffee. This not only generates wealth for our families and communities, but also provides dignity. We are the owners in the entire coffee chain, it is our product from our hands to the consumer.",
@@ -505,7 +621,7 @@
           "date": null
         },
         {
-          "title": "Pachamama Coffee Cooperative",
+          "title": "Pachamama Coffee Cooperative update",
           "url": "https://untoursfoundation.org/pachamama-coffee-update/",
           "publication": "UnTours Foundation",
           "date": "October 2024"
@@ -516,10 +632,12 @@
   },
   {
     "name": "Neycha Accelerator & Fund",
-    "manager": "SHONA Capital (fund management); Biovision Foundation (co-initiator and primary funder of capacity building)",
+    "manager": "SHONA Capital (loan fund); Biovision Foundation (accelerator capacity building)",
     "founded": null,
-    "website": "https://neycha.shona.co",
-    "headquarters": "Uganda / Kenya (East Africa)",
+    "capital_mechanism": "loan",
+    "fund_url": "https://neycha.shona.co",
+    "manager_url": "https://shona.co",
+    "headquarters": "Uganda / Kenya",
     "legal_structure": "Agroecology accelerator + revolving loan fund",
     "geography": {
       "hq": "Uganda and Kenya",
@@ -527,16 +645,23 @@
       "target_regions": ["East Africa"]
     },
     "financial": {
+      "not_applicable": false,
+      "aum_usd": null,
       "fund_size_usd": null,
       "total_disbursed_usd": null,
       "ticket_size_min_usd": 10000,
       "ticket_size_max_usd": 50000,
       "interest_rate": null,
-      "investor_access": "Not open to public investors; seed-funded by Biovision Foundation. Designed to prepare agroecological enterprises for follow-on investment from larger impact investors."
+      "investor_access": "Not open to public investors. Loan fund capital managed by SHONA Capital from separate financiers. Biovision Foundation funds accelerator operations and capacity building only — not the loan fund."
+    },
+    "borrower_criteria": {
+      "min_annual_revenue_usd": 40000,
+      "min_years_operation": 3,
+      "other": "Must be a Ugandan or Kenyan enterprise explicitly aligned with the 13 FAO principles of agroecology. At least one founder must be Ugandan or Kenyan. Business must have at least 2 employees with at least one founder working full-time. Requires 3 years of audited financials. Maximum loan size is $50,000 in local currency or USD. Assessed using proprietary Business Agroecology Criteria Tool (B-ACT)."
     },
     "agroecology_alignment": {
       "explicitness": "explicit mandate",
-      "mandate_description": "Exclusively supports agroecological enterprises (AEEs) operating in line with the 13 principles of agroecology. The only qualifying criterion for investment is explicit alignment with agroecological principles across the entire value chain.",
+      "mandate_description": "The only revolving loan fund in East Africa exclusively supporting agroecological enterprises (AEEs) as defined by the 13 FAO principles of agroecology. Investment criteria require explicit alignment across the entire agricultural value chain.",
       "principles_represented": [
         "All 13 FAO principles of agroecology",
         "Soil health",
@@ -546,13 +671,19 @@
         "Local and regional food systems",
         "Gender equity"
       ],
-      "certifications_referenced": ["Kilimohai (Swahili organic farming standard referenced)"]
+      "certifications_referenced": []
     },
     "impact": {
+      "portfolio_count": null,
       "enterprises_cooperatives_funded": null,
       "people_families_reached": null,
       "hectares_preserved_restored": null,
-      "notes": "Cohort 2 underway as of 2025. Uses a proprietary Business Agroecology Criteria Tool (B-ACT) to assess alignment. Average loan size USD $30,000 per enterprise."
+      "portfolio_at_risk_pct": null,
+      "gender_metrics": {
+        "pct_women_reached": null,
+        "pct_women_led_businesses": null
+      },
+      "notes": "Cohort 2 underway as of 2025. Average loan size USD $30,000 per enterprise. Designed as a stepping stone — overarching goal is to prepare agroecological enterprises (AEEs) for follow-on investment from larger impact investors, not to be a terminal capital provider."
     },
     "portfolio": {
       "notable_organizations": [
@@ -572,22 +703,13 @@
       ]
     },
     "governance_and_partners": {
-      "key_funders": ["Biovision Foundation"],
-      "partner_organizations": ["SHONA", "SHONA Capital", "Biovision Foundation"],
-      "governance_model": "Independently managed by SHONA Capital. Biovision funds capacity building. A steering committee drawn from both organizations oversees overall direction, with an advisory committee providing additional input.",
-      "key_people": [
-        {
-          "name": "Lucy",
-          "role": "Biovision representative (surname not publicly identified in sources)"
-        },
-        {
-          "name": "Dan",
-          "role": "SHONA representative (surname not publicly identified in sources)"
-        }
-      ]
+      "key_funders": ["Biovision Foundation (accelerator operations and capacity building only; loan fund capital is from separate financiers managed by SHONA Capital)"],
+      "partner_organizations": ["SHONA Capital", "Biovision Foundation"],
+      "governance_model": "Independently managed by SHONA Capital for the loan fund. Biovision funds the set-up, operation, and capacity building of the accelerator. A steering committee drawn from both organizations oversees overall direction.",
+      "key_people": []
     },
     "context": {
-      "summary": "The Neycha Accelerator & Fund is a joint initiative of Biovision Foundation (Swiss) and SHONA Capital (East Africa), combining Biovision's agroecology expertise with SHONA's business development and lending capabilities. It is one of the very few vehicles in the world exclusively targeting agroecological enterprises as defined by the 13 FAO principles of agroecology. It operates as a revolving loan fund providing patient capital of $10,000–$50,000 per enterprise to growth-stage businesses in Uganda and Kenya, combined with structured business acceleration. Its overarching goal is to prepare AEEs for larger follow-on investment rather than to be a terminal capital provider itself.",
+      "summary": "The Neycha Accelerator & Fund is a joint initiative of Biovision Foundation (Swiss) and SHONA Capital (East Africa). It is the only revolving loan fund in East Africa exclusively targeting agroecological enterprises (AEEs) — businesses explicitly operating under the 13 FAO principles of agroecology. It provides patient capital of $10,000–$50,000 per enterprise to growth-stage businesses in Uganda and Kenya, combined with structured business acceleration. The governance structure is intentionally divided: Biovision's funds support only the accelerator setup and capacity building, while the loan fund capital is managed separately by SHONA Capital. Its goal is to prepare AEEs for larger follow-on investment rather than serve as a terminal capital provider.",
       "notable_quotes": [],
       "sources": [
         {
@@ -597,16 +719,16 @@
           "date": "July 2025"
         },
         {
+          "title": "How Neycha works",
+          "url": "https://neycha.shona.co/how-neycha-works/",
+          "publication": "Neycha",
+          "date": null
+        },
+        {
           "title": "Neycha — helping entrepreneurs build flourishing businesses",
           "url": "https://www.rural21.com/english/a-closer-look-at/detail/article/neycha-helping-entrepreneurs-build-flourishing-businesses.html",
           "publication": "Rural 21",
           "date": null
-        },
-        {
-          "title": "Neycha Accelerator & Fund on VC4A",
-          "url": "https://vc4a.com/neycha-accelerator-fund/",
-          "publication": "VC4A",
-          "date": "June 2023"
         }
       ]
     },
