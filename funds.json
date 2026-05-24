@@ -225,7 +225,30 @@
       "investor_access": "Institutional and mission-aligned investors; Mercy Partnership Fund noted as an investor"
     },
     "borrower_criteria": {
-      "min_annual_revenue_usd": "Varies by country and program cycle: $200,000 minimum for Brazil expansion (2024); $400,000–$500,000 for Colombia (2025 call). NESsT notes flexibility for enterprises near the threshold.",
+      "min_annual_revenue_usd_by_source": [
+        {
+          "amount_usd": 200000,
+          "context": "Brazil expansion announcement",
+          "source": "BusinessWire",
+          "url": "https://www.businesswire.com/news/home/20241001450371/en/NESsT-Lirio-Fund-Expands-into-Brazil-to-Further-its-Efforts-to-Enhance-Livelihoods-and-Sustainable-Development-in-Latin-America",
+          "date": "October 2024"
+        },
+        {
+          "amount_usd": 400000,
+          "context": "NESsT Lirio Fund criteria page (general eligibility)",
+          "source": "NESsT website",
+          "url": "https://www.nesst.org/nesst-lirio-fund-criteria",
+          "date": null
+        },
+        {
+          "amount_usd": 500000,
+          "context": "Colombia 2025 call for proposals; NESsT notes flexibility for enterprises near this threshold",
+          "source": "NESsT 2025 Colombia convocatoria",
+          "url": "https://www.nesst.org/convocatoria-2025",
+          "date": "2025"
+        }
+      ],
+      "min_annual_revenue_note": "Threshold appears to vary by country and has increased over time. Brazil used a lower bar ($200K) to attract a new market at launch. Current standard for Colombia is $400K–$500K. Verify directly with NESsT for the applicable threshold.",
       "min_years_operation": "2–3 years depending on country and cycle",
       "other": "Preference for enterprises aligned with organic, Fair Trade, or Rainforest Alliance standards. Must create dignified employment for vulnerable communities. Microfinance institutions and companies that lend to third parties are excluded. Application process takes 3–5 months."
     },
