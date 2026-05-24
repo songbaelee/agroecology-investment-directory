@@ -140,6 +140,7 @@
       <span class="meta-pill" id="fund-count-pill">— funds documented</span>
       <span class="meta-pill">Last updated: May 2026</span>
       <a class="data-btn" href="resources.html">Resources &amp; Tools →</a>
+      <a class="data-btn" href="resources.html#summary">All resources at a glance →</a>
       <div class="data-btns">
         <a class="data-btn" href="funds.json" target="_blank">View raw data (JSON)</a>
         <a class="data-btn" href="funds.json" download="agroecology-funds.json">Download JSON</a>
@@ -173,7 +174,6 @@
         <th>Capital</th>
         <th>People reached</th>
         <th>Alignment</th>
-        <th></th>
       </tr>
     </thead>
     <tbody id="list-body"></tbody>
@@ -232,9 +232,9 @@
     const primaryFinLabel = fin.not_applicable ? 'N/A' : (fin.aum_usd ? 'AUM' : (fin.total_disbursed_usd ? 'Disbursed' : 'Fund size'));
     const regions = (fund.geography.target_regions || []).join(', ');
 
-    return `<tr onclick="setView('card');document.getElementById('card-${idx}').scrollIntoView({behavior:'smooth',block:'center'})">
+    return `<tr>
       <td>
-        <div class="list-fund-name">${primaryUrl ? `<a href="${esc(primaryUrl)}" target="_blank" onclick="event.stopPropagation()">${esc(fund.name)}</a>` : esc(fund.name)}</div>
+        <div class="list-fund-name">${primaryUrl ? `<a href="${esc(primaryUrl)}" target="_blank">${esc(fund.name)}</a>` : esc(fund.name)}</div>
         <div class="list-manager">${esc(fund.manager)}</div>
       </td>
       <td class="list-region">${esc(regions)}</td>
@@ -242,7 +242,6 @@
       <td><span class="list-stat">${fin.not_applicable ? 'N/A' : fmt(primaryFinVal)}</span><span class="list-stat-label">${primaryFinLabel}</span></td>
       <td><span class="list-stat">${fmtPeople(imp.people_families_reached)}</span></td>
       <td><span class="alignment-badge ${badgeClass(ag.explicitness)}">${cap(ag.explicitness)}</span></td>
-      <td><a class="detail-link" onclick="event.stopPropagation();setView('card');document.getElementById('card-${idx}').scrollIntoView({behavior:'smooth',block:'center'})">Details →</a></td>
     </tr>`;
   }
 
