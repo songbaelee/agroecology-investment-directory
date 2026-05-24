@@ -117,6 +117,13 @@
     footer { background: var(--soil); color: var(--straw); text-align: center; padding: 1.5rem; font-size: 0.82rem; }
     footer a { color: var(--sage); text-decoration: none; }
 
+
+    /* PRIORITY REVIEW */
+    tbody tr.priority-row td { background: #FFFBF2; }
+    tbody tr.priority-row:hover td { background: #FFF4E0; }
+    .priority-badge { display: inline-block; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; background: #FFF0CC; color: #8A5A00; border: 1px solid #E8C87A; border-radius: 4px; padding: 0.1rem 0.45rem; margin-left: 0.4rem; vertical-align: middle; }
+    .rationale-cell { font-size: 0.8rem; color: var(--bark); line-height: 1.5; font-style: italic; border-left: 3px solid var(--accent) !important; background: #FFFBF2 !important; padding-left: 1rem !important; }
+
     @media (max-width: 700px) {
       .funnel-label { width: 160px; font-size: 0.78rem; }
       table th:nth-child(n+4), table td:nth-child(n+4) { display: none; }
@@ -178,6 +185,7 @@
   <div class="filter-sep"></div>
   <div class="filter-group">
     <button class="filter-btn" data-filter="crosslisted" data-val="crosslisted">Cross-listed only</button>
+    <button class="filter-btn" data-filter="priority" data-val="priority">Priority review</button>
   </div>
   <div class="search-wrap">
     <input class="search-input" id="search" type="text" placeholder="Search name or tag…" />
@@ -260,7 +268,7 @@
 
   // ── state ─────────────────────────────────────────────────────────────────
   let ALL_DATA = [];
-  let activeFilters = { source: null, agroecology: null, ag: null, regen: null, crosslisted: null };
+  let activeFilters = { source: null, agroecology: null, ag: null, regen: null, crosslisted: null, priority: null };
   let searchQ = '';
   let sortCol = 'name', sortDir = 1;
 
@@ -314,16 +322,23 @@
       const activeBadge = entry.agroecology
         ? `<span class="active-flag">Active</span>`
         : '';
+      const priorityBadge = (entry.review_priority && entry.review_priority.flagged && !entry.agroecology)
+        ? `<span class="priority-badge">Priority review</span>`
+        : '';
       const tags = entry.sector_tags.map(t =>
         `<span class="sector-tag">${esc(t)}</span>`
       ).join('');
 
-      return `<tr>
-        <td class="td-name">${nameCell}${activeBadge}</td>
+      const isPriority = entry.review_priority && entry.review_priority.flagged;
+      const rationale = isPriority && entry.review_priority.rationale
+        ? `<tr><td colspan="4" class="rationale-cell">${esc(entry.review_priority.rationale)}</td></tr>`
+        : '';
+      return `<tr class="${isPriority ? 'priority-row' : ''}">
+        <td class="td-name">${nameCell}${activeBadge}${priorityBadge}</td>
         <td>${sourcePills(entry)}${yearStr(entry)}</td>
         <td><div class="tag-list">${tags}</div></td>
         <td class="td-notes">${esc(entry.notes)}</td>
-      </tr>`;
+      </tr>${rationale}`;
     }).join('');
   }
 
@@ -351,6 +366,10 @@
     if (activeFilters.crosslisted) {
       data = data.filter(e => e.source.length > 1);
     }
+    // priority review
+    if (activeFilters.priority) {
+      data = data.filter(e => e.review_priority && e.review_priority.flagged);
+    }
     // search
     if (searchQ) {
       const q = searchQ.toLowerCase();
@@ -373,8 +392,12 @@
       return 0;
     });
 
-    // agroecology=true always floats to top
-    data.sort((a, b) => (b.agroecology ? 1 : 0) - (a.agroecology ? 1 : 0));
+    // agroecology=true floats to top, then priority review, then rest
+    data.sort((a, b) => {
+      const aScore = a.agroecology ? 2 : (a.review_priority && a.review_priority.flagged ? 1 : 0);
+      const bScore = b.agroecology ? 2 : (b.review_priority && b.review_priority.flagged ? 1 : 0);
+      return bScore - aScore;
+    });
 
     document.getElementById('count-badge').textContent =
       data.length === ALL_DATA.length
@@ -427,7 +450,7 @@
 
   // ── reset ─────────────────────────────────────────────────────────────────
   function resetFilters() {
-    activeFilters = { source: null, agroecology: null, ag: null, regen: null, crosslisted: null };
+    activeFilters = { source: null, agroecology: null, ag: null, regen: null, crosslisted: null, priority: null };
     searchQ = '';
     document.getElementById('search').value = '';
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));

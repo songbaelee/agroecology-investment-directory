@@ -16,7 +16,11 @@
     ],
     "agroecology": true,
     "status": "active",
-    "notes": "Active fund in directory. Listed on T25 2023."
+    "notes": "Active fund in directory. Listed on T25 2023.",
+    "review_priority": {
+      "flagged": true,
+      "rationale": "Met directory criteria. Indigenous-led agriculture and agroforestry cooperatives in Latin America with explicit non-extractive philosophy and Indigenous community governance."
+    }
   },
   {
     "name": "FINAPOP",
@@ -35,7 +39,11 @@
     ],
     "agroecology": true,
     "status": "active",
-    "notes": "Active fund in directory. Listed on T25 2024."
+    "notes": "Active fund in directory. Listed on T25 2024.",
+    "review_priority": {
+      "flagged": true,
+      "rationale": "Met directory criteria. Created explicitly to finance cooperatives transitioning to agroecology in Brazil's agrarian reform settlements. Any Brazilian citizen can invest directly."
+    }
   },
   {
     "name": "NESsT Lirio Fund",
@@ -56,7 +64,11 @@
     ],
     "agroecology": true,
     "status": "active",
-    "notes": "Active fund in directory. NESsT listed on IA50 2026, T25 2021, and CSAF as regional affiliate."
+    "notes": "Active fund in directory. NESsT listed on IA50 2026, T25 2021, and CSAF as regional affiliate.",
+    "review_priority": {
+      "flagged": true,
+      "rationale": "Met directory criteria. Impact lending to smallholder farmer enterprises in Latin America with explicit food systems and dignified livelihoods mandate."
+    }
   },
   {
     "name": "Barka Fund",
@@ -75,7 +87,11 @@
     ],
     "agroecology": true,
     "status": "active",
-    "notes": "Active fund in directory. Listed on T25 2023."
+    "notes": "Active fund in directory. Listed on T25 2023.",
+    "review_priority": {
+      "flagged": true,
+      "rationale": "Met directory criteria. West Africa cooperative lending fund with explicit agroecology and food sovereignty alignment."
+    }
   },
   {
     "name": "Pachamama Coffee Cooperative",
@@ -92,7 +108,11 @@
     ],
     "agroecology": true,
     "status": "active",
-    "notes": "Active fund in directory. Not found in any of the five scanned source lists — absence is itself notable data."
+    "notes": "Active fund in directory. Not found in any of the five scanned source lists — absence is itself notable data.",
+    "review_priority": {
+      "flagged": true,
+      "rationale": "Met directory criteria. Farmer-owned cooperative financing model with direct agroecology alignment. Notably absent from all five scanned source lists."
+    }
   },
   {
     "name": "Neycha Accelerator & Fund",
@@ -113,7 +133,11 @@
     ],
     "agroecology": true,
     "status": "active",
-    "notes": "Active fund in directory. Listed on T25 2024, Biovision network, and assessed in TIFS 2023 report with 100% SIA alignment score."
+    "notes": "Active fund in directory. Listed on T25 2024, Biovision network, and assessed in TIFS 2023 report with 100% SIA alignment score.",
+    "review_priority": {
+      "flagged": true,
+      "rationale": "Met directory criteria. East Africa's first private sector fund exclusively focused on agroecology. Scored 100% on Environment and Life & Biodiversity in TIFS SIA assessment."
+    }
   },
   {
     "name": "The 22 Fund I, LP",
@@ -130,7 +154,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "ABC Impact",
@@ -147,7 +175,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Accial Capital Management LLC",
@@ -164,7 +196,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Accion",
@@ -181,7 +217,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Achieve Partners",
@@ -197,7 +237,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Acre Impact Capital",
@@ -214,7 +258,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Acumen Capital Partners LLC",
@@ -232,7 +280,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Adenia Partners",
@@ -249,7 +301,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Adjuvant Capital",
@@ -266,7 +322,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Advantage Capital",
@@ -283,7 +343,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "AfricInvest",
@@ -300,7 +364,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "AiiM Partners",
@@ -317,7 +385,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Alante Capital Management",
@@ -334,7 +406,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Alder Point Capital Management LLC",
@@ -352,7 +428,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Aligned Climate Capital",
@@ -368,7 +448,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "ALIVE Ventures LLC",
@@ -385,7 +469,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Allivate Impact Capital",
@@ -401,7 +489,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Amazonia Impact Ventures",
@@ -422,7 +514,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Amboy Street Ventures LLC",
@@ -438,7 +534,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Amplifica Capital",
@@ -456,7 +556,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Arborview Capital LLC",
@@ -473,7 +577,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "ArcTern Ventures",
@@ -490,7 +598,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Arise Ventures",
@@ -507,7 +619,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Aruwa Capital Management",
@@ -524,7 +640,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Astia",
@@ -540,7 +660,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Avesta Fund",
@@ -557,7 +681,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "AWE Capital Advisors LLP",
@@ -574,7 +702,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Azolla Ventures",
@@ -591,7 +723,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Bamboo Capital Partners",
@@ -610,7 +746,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "BDP Impact Real Estate",
@@ -626,7 +766,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "BEA Entrepreneurs Fund LP",
@@ -643,7 +787,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Beneficial Returns LLC",
@@ -662,7 +810,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Better Ventures",
@@ -679,7 +831,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Beyond Impact Advisors",
@@ -698,7 +854,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "BKR Capital",
@@ -715,7 +875,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Black Opal Ventures",
@@ -731,7 +895,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Blackstar Stability",
@@ -748,7 +916,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Blue Earth Capital AG",
@@ -766,7 +938,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Blue Forest",
@@ -783,7 +959,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "BlueHub Capital",
@@ -801,7 +981,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "BlueOrchard Finance Ltd",
@@ -818,7 +1002,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Boston Impact Initiative",
@@ -839,7 +1027,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Branch Venture Group Inc",
@@ -857,7 +1049,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "BTG Pactual Timberland Investment Group LLC",
@@ -874,7 +1070,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Burnt Island Ventures",
@@ -890,7 +1090,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Calvert Impact",
@@ -908,7 +1112,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Capital Impact Partners",
@@ -925,7 +1133,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Capria Ventures LLC",
@@ -944,7 +1156,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Catalyst Fund",
@@ -964,7 +1180,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Cauris Finance",
@@ -981,7 +1201,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Chasing Rainbows",
@@ -997,7 +1221,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Chloe Capital LLC",
@@ -1015,7 +1243,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Circulate Capital",
@@ -1032,7 +1264,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Clear Frontier Ag. Management",
@@ -1051,7 +1287,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Climate Asset Management",
@@ -1070,7 +1310,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Clime Capital",
@@ -1087,7 +1331,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Closed Loop Partners LLC",
@@ -1104,7 +1352,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Coastal Enterprises Inc",
@@ -1123,7 +1375,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Community Credit Lab",
@@ -1143,7 +1399,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Community Investment Management LLC",
@@ -1160,7 +1420,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Connect Humanity",
@@ -1176,7 +1440,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "The Conservation Fund",
@@ -1194,7 +1462,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Conservation Resources Partners LLC",
@@ -1212,7 +1484,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Cooperative Fund of the Northeast Inc",
@@ -1230,7 +1506,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "CoPeace Capital",
@@ -1246,7 +1526,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Core Innovation Capital",
@@ -1264,7 +1548,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Craft3",
@@ -1282,7 +1570,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Creation Investments Capital Management LLC",
@@ -1301,7 +1593,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Cross-Border Impact Ventures",
@@ -1318,7 +1614,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "CrossBoundary Group",
@@ -1336,7 +1636,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "DBL Partners",
@@ -1353,7 +1657,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "De-Carceration Fund LP",
@@ -1369,7 +1677,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Deetken Asset Management Inc",
@@ -1386,7 +1698,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Developing World Markets",
@@ -1403,7 +1719,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Dirt Capital Partners",
@@ -1424,7 +1744,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": true,
+      "rationale": "Farmland access fund for regenerative farmers in the US using impact-first, non-extractive terms. Closest analog in the list to the directory's lending model on land tenure."
+    }
   },
   {
     "name": "Earthshot Ventures LLC",
@@ -1441,7 +1765,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "East Bay Permanent Real Estate Cooperative",
@@ -1461,7 +1789,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "EcoEnterprises Fund",
@@ -1480,7 +1812,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": true,
+      "rationale": "20+ years investing in nature-based and food businesses in Latin America with a conservation co-mandate. Closer to explicitly aligned than adjacent; long track record."
+    }
   },
   {
     "name": "EFM",
@@ -1498,7 +1834,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "EG Capital",
@@ -1516,7 +1856,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Elevar Equity",
@@ -1535,7 +1879,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Ember Infrastructure",
@@ -1553,7 +1901,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Enduring Planet",
@@ -1574,7 +1926,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Energy Impact Partners",
@@ -1591,7 +1947,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Enhanced Capital",
@@ -1608,7 +1968,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Enterprise Community Partners Inc",
@@ -1624,7 +1988,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Envest Microfinance Cooperative",
@@ -1640,7 +2008,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Equator VC",
@@ -1659,7 +2031,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Fabric VC",
@@ -1676,7 +2052,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "FINCA Ventures",
@@ -1695,7 +2075,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Foreground Capital",
@@ -1712,7 +2096,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "GAWA Capital Partners",
@@ -1732,7 +2120,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Global Health Investment Corporation",
@@ -1749,7 +2141,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Global Partnerships",
@@ -1770,7 +2166,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Goodwell Investments BV",
@@ -1787,7 +2187,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Gratitude Railroad",
@@ -1805,7 +2209,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "HCAP Partners",
@@ -1823,7 +2231,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "The Housing Partnership Network",
@@ -1839,7 +2251,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Hudson Valley Property Group",
@@ -1856,7 +2272,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Illumen Capital",
@@ -1873,7 +2293,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Impact Engine Management PBC",
@@ -1890,7 +2314,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Impact Science Ventures",
@@ -1908,7 +2336,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Incofin Investment Management",
@@ -1928,7 +2360,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Inspired Evolution Managers Ltd",
@@ -1945,7 +2381,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Investisseurs & Partenaires",
@@ -1962,7 +2402,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Iroquois Valley Farmland REIT PBC",
@@ -1981,7 +2425,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": true,
+      "rationale": "Organic and regenerative farmland financing via long-term leases and mortgages. Explicit organic/regenerative mandate with farmer-first governance. Fills a US farmland gap absent from the current six."
+    }
   },
   {
     "name": "iThink VC Ignite Fund LP",
@@ -1999,7 +2447,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "JFF Ventures Fund LLC",
@@ -2015,7 +2467,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Jonathan Rose Companies",
@@ -2032,7 +2488,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Kachuwa Investment Cooperative PBC",
@@ -2050,7 +2510,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Kairos Investment Management Company",
@@ -2068,7 +2532,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Kiva Capital Management LLC",
@@ -2085,7 +2553,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "LeapFrog Investments",
@@ -2103,7 +2575,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "LearnLaunch",
@@ -2120,7 +2596,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Lendable Inc",
@@ -2139,7 +2619,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Living Cities Inc",
@@ -2157,7 +2641,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Local Enterprise Assistance Fund Inc",
@@ -2176,7 +2664,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Local Initiatives Support Corporation",
@@ -2192,7 +2684,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Lok Capital",
@@ -2211,7 +2707,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Lumos Capital Group LLC",
@@ -2228,7 +2728,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "The Lyme Timber Company LLC",
@@ -2245,7 +2749,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Mad Capital",
@@ -2263,7 +2771,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": true,
+      "rationale": "Private credit specifically for mid-sized US farms transitioning to regenerative organic production. Very focused mandate with no diversification into other sectors."
+    }
   },
   {
     "name": "Masawa Management",
@@ -2280,7 +2792,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Maycomb Capital",
@@ -2298,7 +2814,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "MCE Social Capital",
@@ -2319,7 +2839,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Media Development Investment Fund Inc",
@@ -2335,7 +2859,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Medical Credit Fund",
@@ -2351,7 +2879,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Mercy Corps Ventures",
@@ -2369,7 +2901,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Mirova",
@@ -2387,7 +2923,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Mission Driven Finance LLC",
@@ -2405,7 +2945,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "MSquared",
@@ -2423,7 +2967,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "New Majority Capital Management LLC",
@@ -2440,7 +2988,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "NESsT",
@@ -2458,7 +3010,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Nordic Impact Funds",
@@ -2477,7 +3033,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "North Sky Capital",
@@ -2495,7 +3055,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Omnivore Capital Management Advisors Private Limited",
@@ -2514,7 +3078,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "One Acre Fund",
@@ -2532,7 +3100,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Open Road Impact",
@@ -2553,7 +3125,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Partners in Equity",
@@ -2574,7 +3150,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Patamar Capital LLC",
@@ -2593,7 +3173,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Plum Alley",
@@ -2612,7 +3196,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Proactive Sustainable Bonds",
@@ -2629,7 +3217,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Quadria Capital Investment Management Pte Ltd",
@@ -2645,7 +3237,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Quona Capital",
@@ -2663,7 +3259,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Radicle Impact Management LLC",
@@ -2681,7 +3281,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Rally Assets",
@@ -2700,7 +3304,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Rebalance Management LLC",
@@ -2718,7 +3326,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "REDF Impact Investing Fund",
@@ -2739,7 +3351,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Regeneration.VC",
@@ -2758,7 +3374,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Renew LLC",
@@ -2776,7 +3396,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Renewal Funds Management Company Ltd",
@@ -2794,7 +3418,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "ResilienceVC",
@@ -2812,7 +3440,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Resource Management Service LLC",
@@ -2830,7 +3462,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "responsAbility Investments AG",
@@ -2850,7 +3486,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Rethink Capital Partners",
@@ -2868,7 +3508,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Root Capital",
@@ -2889,7 +3533,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "RRG Capital Management",
@@ -2909,7 +3557,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "RSF Social Finance",
@@ -2928,7 +3580,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "S2G Investments",
@@ -2948,7 +3604,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "SDS Capital Group",
@@ -2965,7 +3625,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Seabird Ventures",
@@ -2982,7 +3646,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "SEAF",
@@ -3000,7 +3668,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Second Horizon Capital",
@@ -3017,7 +3689,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Seed Commons",
@@ -3038,7 +3714,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Shared Capital Cooperative",
@@ -3060,7 +3740,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "The Signal Fund",
@@ -3078,7 +3762,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "SJF Ventures",
@@ -3096,7 +3784,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Slauson & Co Management LLC",
@@ -3114,7 +3806,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "SLM Partners",
@@ -3133,7 +3829,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "SoGal Ventures LLC",
@@ -3150,7 +3850,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "SouthBridge Investments",
@@ -3168,7 +3872,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Spring Impact Capital",
@@ -3187,7 +3895,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Steward Holdings Inc",
@@ -3205,7 +3917,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Sunwealth Power Inc",
@@ -3223,7 +3939,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Superorganism Ventures LLC",
@@ -3242,7 +3962,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Supply Change Capital",
@@ -3261,7 +3985,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Sweef Capital",
@@ -3280,7 +4008,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "TLG Capital",
@@ -3298,7 +4030,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Triple Jump BV",
@@ -3316,7 +4052,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "UC Impower",
@@ -3334,7 +4074,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "UNICEF USA Impact Fund for Children",
@@ -3351,7 +4095,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Verge Capital Management Pte Ltd",
@@ -3368,7 +4116,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Vidia GmbH",
@@ -3386,7 +4138,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "The Vistria Group LP",
@@ -3404,7 +4160,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Viwala SAPI de CV",
@@ -3423,7 +4183,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Vox Capital Gestão de Recursos LTda",
@@ -3441,7 +4205,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "WakeUp Capital Management",
@@ -3459,7 +4227,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "WaterEquity Inc",
@@ -3476,7 +4248,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Women's World Banking",
@@ -3494,7 +4270,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Working Capital for Community Needs Inc",
@@ -3512,7 +4292,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Working Capital Management",
@@ -3531,7 +4315,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "WovenEarth Ventures LLC",
@@ -3548,7 +4336,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Zeal Capital Partners",
@@ -3566,7 +4358,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Affiliated Tribes of NW Indians Financial Services",
@@ -3584,7 +4380,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Africa Eats Fund",
@@ -3605,7 +4405,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Afterglow Climate Justice Fund",
@@ -3623,7 +4427,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Akiptan Inc",
@@ -3642,7 +4450,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Angels of Impact",
@@ -3660,7 +4472,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Appalachian Impact Fund",
@@ -3679,7 +4495,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Azure",
@@ -3699,7 +4519,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Beneficial Returns",
@@ -3720,7 +4544,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Black Farmer Fund",
@@ -3741,7 +4569,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Boston Impact Initiative Fund II",
@@ -3761,7 +4593,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Buen Vivir Fund — Thousand Currents",
@@ -3782,7 +4618,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": true,
+      "rationale": "Food sovereignty framing and Global South women-led mandate. Primarily grant-based which may fall outside the directory's loan/equity criteria — needs verification."
+    }
   },
   {
     "name": "California FarmLink",
@@ -3803,7 +4643,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Catalytic Capital Fund",
@@ -3821,7 +4665,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Center for Economic Opportunity",
@@ -3839,7 +4687,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Cielo Mex",
@@ -3857,7 +4709,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "CIMENTAFIN ECHALE",
@@ -3875,7 +4731,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Clarke Street Fund",
@@ -3893,7 +4753,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Co Capital",
@@ -3912,7 +4776,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "The Collective Courage Fund",
@@ -3930,7 +4798,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Concerned Capital",
@@ -3948,7 +4820,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Connect Up Institute",
@@ -3967,7 +4843,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Cooperative Fund of the Northeast",
@@ -3987,7 +4867,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Dearfield Fund for Black Wealth",
@@ -4006,7 +4890,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "De-Carceration Fund",
@@ -4024,7 +4912,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Delta Fondo de Impacto Latinoamericano",
@@ -4043,7 +4935,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Denkyem Co-op",
@@ -4062,7 +4958,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Employee Ownership Catalyst Fund",
@@ -4081,7 +4981,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Equitable Economy Fund",
@@ -4099,7 +5003,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Equitable Food Oriented Development",
@@ -4120,7 +5028,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Fair Food Network",
@@ -4140,7 +5052,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Fibers Fund",
@@ -4159,7 +5075,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "First Australians Capital",
@@ -4178,7 +5098,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Flexible Capital Fund L3C",
@@ -4198,7 +5122,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Foodshed Capital Loan Fund",
@@ -4219,7 +5147,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Friends of the Public Bank East Bay",
@@ -4238,7 +5170,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Fund One",
@@ -4256,7 +5192,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "The Fund for Jobs Worth Owning",
@@ -4275,7 +5215,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Goodworks Evergreen",
@@ -4293,7 +5237,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Gouts Lakawoulh Hiwechk Fund",
@@ -4313,7 +5261,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Grassroots Finance Action",
@@ -4332,7 +5284,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Groundcovered",
@@ -4352,7 +5308,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Haske Ventures",
@@ -4370,7 +5330,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Hawaii Investment Ready",
@@ -4390,7 +5354,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "ICA Fund",
@@ -4409,7 +5377,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Ignite Capital",
@@ -4428,7 +5400,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Impact Shakers Ventures",
@@ -4446,7 +5422,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "IMPAQTO Capital",
@@ -4466,7 +5446,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Indigenous Power and Light Fund",
@@ -4485,7 +5469,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "IndigiDAO Fund",
@@ -4504,7 +5492,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Infinity Point CDFI & Local Ownership Catalyst Fund",
@@ -4523,7 +5515,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Invest Appalachia",
@@ -4543,7 +5539,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Justice Capital",
@@ -4562,7 +5562,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Justice Funders",
@@ -4581,7 +5585,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Kachuwa Impact",
@@ -4601,7 +5609,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Kensington Corridor Trust",
@@ -4620,7 +5632,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Latino Support Network",
@@ -4639,7 +5655,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "LUNAR Fund",
@@ -4658,7 +5678,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Michigan Good Food Fund",
@@ -4679,7 +5703,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Midwest Farmers of Color Collective",
@@ -4700,7 +5728,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Mission Driven Finance",
@@ -4720,7 +5752,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Mitra BUMMA",
@@ -4741,7 +5777,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Moonsoon Fund",
@@ -4760,7 +5800,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Native Community Capital",
@@ -4779,7 +5823,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Native Women Lead",
@@ -4798,7 +5846,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Navajo Power",
@@ -4817,7 +5869,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "NDN Fund",
@@ -4837,7 +5893,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "NESsT Enterprise Fund",
@@ -4857,7 +5917,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "New Majority Capital",
@@ -4876,7 +5940,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "New Majority Capital Fund I LP",
@@ -4895,7 +5963,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "The Neycha Accelerator Fund",
@@ -4914,7 +5986,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Northern Forest Center",
@@ -4933,7 +6009,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "ONAC Fund",
@@ -4951,7 +6031,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Orchid Capital Collective",
@@ -4970,7 +6054,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Our Neighborhoods Capital Fund",
@@ -4989,7 +6077,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Oweesta Corporation",
@@ -5009,7 +6101,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Peoples Solar Energy Fund",
@@ -5028,7 +6124,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Perennial Fund",
@@ -5048,7 +6148,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Potlikker Capital Fund",
@@ -5068,7 +6172,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Proofing Station",
@@ -5087,7 +6195,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "R.I.S.E. Artisan Fund",
@@ -5107,7 +6219,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Radix Innovation Capital",
@@ -5126,7 +6242,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Raven Indigenous Capital Partners",
@@ -5145,7 +6265,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Raven Indigenous Outcomes Fund",
@@ -5164,7 +6288,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Real People's Fund",
@@ -5184,7 +6312,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Reinventure Capital Fund I",
@@ -5203,7 +6335,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Revolve Fund",
@@ -5223,7 +6359,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Right to the City",
@@ -5241,7 +6381,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Right to the City Integrated Loan Fund",
@@ -5260,7 +6404,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Rooted Relative Fund",
@@ -5279,7 +6427,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Runway Rooted Fund",
@@ -5298,7 +6450,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Seacoast Trust",
@@ -5318,7 +6474,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Shared Interest Fund",
@@ -5339,7 +6499,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Shona",
@@ -5360,7 +6524,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Sunwealth Solar Impact Fund",
@@ -5379,7 +6547,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Thrive Impact Fund",
@@ -5397,7 +6569,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Total Impact Notes",
@@ -5416,7 +6592,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Vest Her",
@@ -5435,7 +6615,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Viwala",
@@ -5455,7 +6639,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Walden Mutual Bank",
@@ -5475,7 +6663,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "WCCN Investing for Social Change",
@@ -5495,7 +6687,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "The Women's Capital Collaborative Fund",
@@ -5513,7 +6709,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Alterfin",
@@ -5531,7 +6731,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": "CSAF Global Member"
+    "notes": "CSAF Global Member",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Oikocredit",
@@ -5550,7 +6754,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": "CSAF Global Member"
+    "notes": "CSAF Global Member",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Rabo Rural Fund",
@@ -5569,7 +6777,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": "CSAF Global Member"
+    "notes": "CSAF Global Member",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Shared Interest",
@@ -5588,7 +6800,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": "CSAF Global Member"
+    "notes": "CSAF Global Member",
+    "review_priority": {
+      "flagged": true,
+      "rationale": "Guarantee fund for fair trade producer organizations in Africa and Latin America. Cooperative-first, smallholder-direct capital mechanism with strong overlap with directory criteria."
+    }
   },
   {
     "name": "Triodos Investment Management",
@@ -5607,7 +6823,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": "CSAF Global Member"
+    "notes": "CSAF Global Member",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "ABC Fund / Common Fund for Commodities",
@@ -5624,7 +6844,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": "CSAF Global Affiliate"
+    "notes": "CSAF Global Affiliate",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "CFC / Common Fund for Commodities",
@@ -5640,7 +6864,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": "CSAF Global Affiliate"
+    "notes": "CSAF Global Affiliate",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "IDH Sustainable Trade Initiative",
@@ -5657,7 +6885,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": "CSAF Global Affiliate"
+    "notes": "CSAF Global Affiliate",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Kampani / Agri-Business Capital Fund",
@@ -5675,7 +6907,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": "CSAF Global Affiliate"
+    "notes": "CSAF Global Affiliate",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "SIDI",
@@ -5693,7 +6929,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": "CSAF Global Affiliate"
+    "notes": "CSAF Global Affiliate",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "AgDevCo",
@@ -5712,7 +6952,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": "CSAF Regional Affiliate"
+    "notes": "CSAF Regional Affiliate",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Ecotierra",
@@ -5730,7 +6974,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": "CSAF Regional Affiliate"
+    "notes": "CSAF Regional Affiliate",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "FAPY — Fondo Agroecológico para la Península de Yucatán",
@@ -5750,7 +6998,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": "First regional fund seeded by Agroecology Fund, est. 2020. Grant-based vehicle operated by Túumben K'óoben Cooperative. Capital deployment mechanism differs from active directory funds."
+    "notes": "First regional fund seeded by Agroecology Fund, est. 2020. Grant-based vehicle operated by Túumben K'óoben Cooperative. Capital deployment mechanism differs from active directory funds.",
+    "review_priority": {
+      "flagged": true,
+      "rationale": "Genuinely agroecological mandate supporting Mayan food systems in Yucatán. Currently grant-based — needs verification on whether any recoverable capital is deployed."
+    }
   },
   {
     "name": "Bharat Agroecology Fund (BAF)",
@@ -5769,7 +7021,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": "India regional fund est. 2022, hosted by Bharathiya Vikas Trust. Targets 20M smallholders transitioning to agroecology by 2030. Primarily philanthropic/grant capital."
+    "notes": "India regional fund est. 2022, hosted by Bharathiya Vikas Trust. Targets 20M smallholders transitioning to agroecology by 2030. Primarily philanthropic/grant capital.",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Regional Agroecology Fund — West Africa",
@@ -5788,7 +7044,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": "Incubation stage. Seeded by Agroecology Fund, hosted by TrustAfrica. Supports grassroots agroecology networks and Indigenous/women-led orgs. Not yet a formal investment vehicle."
+    "notes": "Incubation stage. Seeded by Agroecology Fund, hosted by TrustAfrica. Supports grassroots agroecology networks and Indigenous/women-led orgs. Not yet a formal investment vehicle.",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Regional Agroecology Fund — East Africa",
@@ -5807,7 +7067,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": "Incubation stage. Seeded by Agroecology Fund, hosted by TrustAfrica. Supports networks and Indigenous/women-led orgs. Not yet a formal investment vehicle."
+    "notes": "Incubation stage. Seeded by Agroecology Fund, hosted by TrustAfrica. Supports networks and Indigenous/women-led orgs. Not yet a formal investment vehicle.",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Northern Cooperative Development Bank (NCDB)",
@@ -5826,7 +7090,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": "Federation of 1,200 rural cooperatives operating as a development bank in post-civil war northern Sri Lanka. Revolving loan fund lent $1.3M of $1.68M fund to cooperative members in 2023. Not a traditional investment fund; grassroots cooperative credit model."
+    "notes": "Federation of 1,200 rural cooperatives operating as a development bank in post-civil war northern Sri Lanka. Revolving loan fund lent $1.3M of $1.68M fund to cooperative members in 2023. Not a traditional investment fund; grassroots cooperative credit model.",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "CNOP-CAM Revolving Fund",
@@ -5845,7 +7113,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": "Revolving fund operated by Concertation Nationale des Organisations Paysannes au Cameroun (CNOP-CAM). Low-interest loans to women farmers practicing agroecology. Supported by Agroecology Fund grantmaking. Grassroots credit model, not a formal investment vehicle."
+    "notes": "Revolving fund operated by Concertation Nationale des Organisations Paysannes au Cameroun (CNOP-CAM). Low-interest loans to women farmers practicing agroecology. Supported by Agroecology Fund grantmaking. Grassroots credit model, not a formal investment vehicle.",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "GRABE Benin Community Savings Fund (Caisses Communautaires)",
@@ -5864,7 +7136,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": "Self-managed community savings system for rural women farmers in Benin, operated by GRABE Benin. Weekly pooling of resources with low-interest loans for farm enterprises. Not a formal investment fund."
+    "notes": "Self-managed community savings system for rural women farmers in Benin, operated by GRABE Benin. Weekly pooling of resources with low-interest loans for farm enterprises. Not a formal investment fund.",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Acumen Resilience Agriculture Fund",
@@ -5883,7 +7159,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Balloon Ventures",
@@ -5901,7 +7181,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Climate Smart Food Systems Fund",
@@ -5920,7 +7204,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Fairtrade Access Fund",
@@ -5939,7 +7227,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Grounded Investment Company BV",
@@ -5957,7 +7249,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Jenga Capital",
@@ -5976,7 +7272,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Kampani",
@@ -5994,7 +7294,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Kenya Climate Ventures",
@@ -6013,7 +7317,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Landscape Resilience Fund",
@@ -6031,7 +7339,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Moringa Fund",
@@ -6049,7 +7361,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": true,
+      "rationale": "Agroforestry equity fund operating in Latin America and sub-Saharan Africa. Agroforestry is one of the 13 HLPE agroecology principles and the fund's exclusive mandate."
+    }
   },
   {
     "name": "OVO Acceleration Fund",
@@ -6067,7 +7383,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Rural Livelihood Investment Facility",
@@ -6086,7 +7406,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": true,
+      "rationale": "Explicitly includes agroecology in its investment mandate; East Africa focus. Small and relatively new but directly relevant. Featured in TIFS report and Biovision's investment guide."
+    }
   },
   {
     "name": "SABI Fund",
@@ -6104,7 +7428,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Satgana Fund 1",
@@ -6124,7 +7452,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Segal Family Foundation",
@@ -6142,7 +7474,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "SHONA Capital",
@@ -6160,7 +7496,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Truvalu",
@@ -6178,7 +7518,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Yield Fund",
@@ -6197,7 +7541,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "ABC Fund",
@@ -6213,7 +7561,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Acumen Capital Partners",
@@ -6231,7 +7583,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Africa Agriculture and Trade Investment Fund (AATIF)",
@@ -6248,7 +7604,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "AlphaJiri Fund",
@@ -6265,7 +7625,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "FCA Investments",
@@ -6281,7 +7645,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Good Food Innovation Fund",
@@ -6298,7 +7666,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Goodwell Investments",
@@ -6315,7 +7687,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Grassroots Business Fund",
@@ -6332,7 +7708,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Heifer Impact Capital",
@@ -6349,7 +7729,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Hiinga",
@@ -6365,7 +7749,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Inua Capital",
@@ -6382,7 +7770,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Iungo Capital",
@@ -6399,7 +7791,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "KASI Agriventures Program",
@@ -6416,7 +7812,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Mango Fund",
@@ -6432,7 +7832,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Nature+ Accelerator Fund",
@@ -6449,7 +7853,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Nutritious Foods Financing (N3F)",
@@ -6467,7 +7875,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Opes Impact Fund",
@@ -6484,7 +7896,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Organic Development Finance",
@@ -6501,7 +7917,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "SME Impact Fund",
@@ -6517,7 +7937,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Social Enterprise Fund for Agriculture in Africa",
@@ -6534,7 +7958,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Uncapped",
@@ -6550,7 +7978,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Women's Livelihood Bonds",
@@ -6568,7 +8000,11 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   },
   {
     "name": "Yunus Social Business",
@@ -6585,6 +8021,10 @@
     ],
     "agroecology": false,
     "status": "candidate",
-    "notes": ""
+    "notes": "",
+    "review_priority": {
+      "flagged": false,
+      "rationale": null
+    }
   }
 ]
