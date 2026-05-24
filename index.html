@@ -295,11 +295,23 @@
           <div class="principles">${vcPositions.map(v=>`<span class="chain-pill">${esc(v)}</span>`).join('')}</div>
         </div>` : ''}
 
-        ${bc && (bc.min_annual_revenue_usd || bc.min_years_operation || bc.other) ? `
+        ${bc && (bc.min_annual_revenue_usd || bc.min_annual_revenue_usd_by_source || bc.min_years_operation || bc.other) ? `
         <div class="detail-section">
           <div class="detail-title">Borrower / Member Criteria</div>
           <div class="criteria-box">
             ${bc.min_annual_revenue_usd ? `<div class="c-row"><span class="c-label">Min. annual revenue</span><span class="c-val">${typeof bc.min_annual_revenue_usd === 'number' ? fmt(bc.min_annual_revenue_usd) : esc(bc.min_annual_revenue_usd)}</span></div>` : ''}
+            ${bc.min_annual_revenue_usd_by_source ? `
+              <div class="c-row" style="align-items:flex-start;flex-direction:column;gap:0.3rem;">
+                <span class="c-label" style="margin-bottom:0.2rem;">Min. annual revenue</span>
+                ${bc.min_annual_revenue_usd_by_source.map(s => `
+                  <div style="display:flex;align-items:baseline;gap:0.4rem;padding-left:0.1rem;">
+                    <span style="font-weight:600;color:var(--bark);font-size:0.83rem;">${fmt(s.amount_usd)}</span>
+                    <span style="color:var(--muted);font-size:0.75rem;">${esc(s.context)}</span>
+                    <a href="${esc(s.url)}" target="_blank" style="color:var(--moss);font-size:0.72rem;border-bottom:1px solid var(--sage);text-decoration:none;flex-shrink:0;">${esc(s.source)}${s.date ? ' ' + esc(s.date) : ''}</a>
+                  </div>`).join('')}
+              </div>
+              ${bc.min_annual_revenue_note ? `<div class="c-other" style="margin-top:0.5rem;padding-top:0.4rem;border-top:1px solid var(--border);">${esc(bc.min_annual_revenue_note)}</div>` : ''}
+            ` : ''}
             ${bc.min_years_operation ? `<div class="c-row"><span class="c-label">Min. years operating</span><span class="c-val">${esc(String(bc.min_years_operation))}</span></div>` : ''}
             ${bc.other ? `<div class="c-other">${esc(bc.other)}</div>` : ''}
           </div>
