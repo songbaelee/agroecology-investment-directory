@@ -7,17 +7,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --soil: #2C1A0E;
-      --bark: #5C3D1E;
-      --moss: #4A6741;
-      --sage: #7A9E6F;
-      --straw: #E8D9B0;
-      --cream: #F5F0E8;
-      --light: #FDFAF5;
-      --accent: #C17F2A;
-      --text: #1E1208;
-      --muted: #7A6A55;
-      --border: #D4C4A0;
+      --soil: #2C1A0E; --bark: #5C3D1E; --moss: #4A6741; --sage: #7A9E6F;
+      --straw: #E8D9B0; --cream: #F5F0E8; --light: #FDFAF5; --accent: #C17F2A;
+      --text: #1E1208; --muted: #7A6A55; --border: #D4C4A0;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Source Sans 3', sans-serif; background: var(--light); color: var(--text); font-size: 16px; line-height: 1.6; }
@@ -38,74 +30,85 @@
     .about-inner strong { font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--straw); flex-shrink: 0; padding-top: 0.15rem; }
     .about-inner p { font-size: 0.9rem; color: rgba(255,255,255,0.85); font-weight: 300; }
 
-    .grid-header { max-width: 1100px; margin: 2rem auto 0; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+    /* VIEW TOGGLE + COUNT BAR */
+    .view-bar { max-width: 1100px; margin: 1.75rem auto 0; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
     .count-badge { font-size: 0.82rem; color: var(--muted); }
+    .view-toggle { display: flex; gap: 0; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+    .view-btn { background: white; border: none; padding: 0.35rem 0.85rem; font-size: 0.78rem; color: var(--muted); cursor: pointer; font-family: inherit; transition: all 0.15s; }
+    .view-btn:first-child { border-right: 1px solid var(--border); }
+    .view-btn.active { background: var(--soil); color: var(--cream); }
+    .view-btn:hover:not(.active) { background: var(--cream); color: var(--bark); }
 
-    .grid { max-width: 1100px; margin: 1.25rem auto 4rem; padding: 0 2rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(480px, 1fr)); gap: 1.5rem; }
+    /* LIST VIEW */
+    .list-view { max-width: 1100px; margin: 1rem auto 4rem; padding: 0 2rem; display: none; }
+    .list-view.visible { display: block; }
+    .list-table { width: 100%; border-collapse: collapse; }
+    .list-table th { background: var(--cream); border-bottom: 2px solid var(--border); padding: 0.55rem 0.85rem; text-align: left; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); font-weight: 600; }
+    .list-table td { padding: 0.65rem 0.85rem; border-bottom: 1px solid var(--border); font-size: 0.88rem; vertical-align: middle; }
+    .list-table tr:hover td { background: #F8F4EE; cursor: pointer; }
+    .list-fund-name { font-weight: 600; color: var(--soil); }
+    .list-fund-name a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .list-fund-name a:hover { color: var(--moss); }
+    .list-manager { font-size: 0.8rem; color: var(--muted); }
+    .list-region { font-size: 0.8rem; color: var(--moss); }
+    .list-mechanism { font-size: 0.75rem; background: #EEF4FA; color: #3A5A7A; border: 1px solid #B8C8D8; border-radius: 10px; padding: 0.15rem 0.5rem; white-space: nowrap; }
+    .list-stat { font-size: 0.82rem; color: var(--bark); font-weight: 600; }
+    .list-stat-label { font-size: 0.7rem; color: var(--muted); display: block; }
+    .detail-link { font-size: 0.75rem; color: var(--moss); text-decoration: none; border-bottom: 1px solid var(--sage); white-space: nowrap; }
+
+    /* CARD VIEW */
+    .grid { max-width: 1100px; margin: 1.25rem auto 4rem; padding: 0 2rem; display: none; grid-template-columns: repeat(auto-fill, minmax(480px, 1fr)); gap: 1.5rem; }
+    .grid.visible { display: grid; }
 
     .card { background: white; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow 0.2s ease; }
     .card:hover { box-shadow: 0 6px 24px rgba(44,26,14,0.1); }
-
     .card-header { padding: 1.4rem 1.5rem 1rem; border-bottom: 1px solid var(--border); background: var(--cream); }
     .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.5rem; }
     .card h2 { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 600; color: var(--soil); line-height: 1.3; }
     .card h2 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--sage); }
     .card h2 a:hover { color: var(--moss); }
-
     .alignment-badge { flex-shrink: 0; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.25rem 0.6rem; border-radius: 4px; }
     .badge-explicit { background: #E8F5E1; color: #2D6A1F; border: 1px solid #A8D99A; }
     .badge-aligned { background: #FFF4E0; color: #8A5A00; border: 1px solid #E8C87A; }
     .badge-adjacent { background: #F0F0F0; color: #555; border: 1px solid #CCC; }
-
     .card-meta { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.6rem; }
     .tag { font-size: 0.75rem; background: white; border: 1px solid var(--border); border-radius: 12px; padding: 0.2rem 0.6rem; color: var(--muted); }
     .tag.geo { border-color: #A8C8A8; color: var(--moss); background: #F0F6EF; }
-    .tag.type { border-color: #C8B8A0; color: var(--bark); background: #F8F2EA; }
     .tag.mechanism { border-color: #B8C8D8; color: #3A5A7A; background: #EEF4FA; }
-
     .card-body { padding: 1.2rem 1.5rem; flex: 1; display: flex; flex-direction: column; gap: 1rem; }
     .summary { font-size: 0.9rem; color: #3A2A18; line-height: 1.65; }
-
     .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
     .stat { background: var(--cream); border-radius: 6px; padding: 0.6rem 0.75rem; text-align: center; }
     .stat-value { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600; color: var(--bark); display: block; }
     .stat-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); display: block; margin-top: 0.1rem; }
-
     .detail-section { border-top: 1px solid var(--border); padding-top: 0.9rem; }
     .detail-title { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 0.5rem; font-weight: 600; }
     .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.35rem 1rem; }
     .detail-item { font-size: 0.83rem; }
     .detail-item .key { color: var(--muted); font-size: 0.75rem; }
     .detail-item .val { color: var(--text); }
-
     .na-note { font-size: 0.78rem; color: var(--muted); font-style: italic; background: #F8F6F0; border-radius: 6px; padding: 0.5rem 0.75rem; }
-
     .principles { display: flex; flex-wrap: wrap; gap: 0.3rem; }
     .principle-pill { font-size: 0.72rem; background: #EEF5EC; color: var(--moss); border: 1px solid #C0D8BB; border-radius: 10px; padding: 0.2rem 0.55rem; }
     .chain-pill { font-size: 0.72rem; background: #F2F0F8; color: #5A4A7A; border: 1px solid #C0B8DC; border-radius: 10px; padding: 0.2rem 0.55rem; }
-
     .criteria-box { background: #F8F6F0; border-radius: 6px; padding: 0.65rem 0.85rem; font-size: 0.82rem; }
     .criteria-box .c-row { display: flex; gap: 0.5rem; margin-bottom: 0.2rem; }
     .criteria-box .c-label { color: var(--muted); font-size: 0.75rem; min-width: 110px; }
     .criteria-box .c-val { color: var(--text); }
     .criteria-box .c-other { margin-top: 0.4rem; color: var(--muted); font-size: 0.78rem; line-height: 1.5; }
-
     .portfolio-list { display: flex; flex-direction: column; gap: 0.4rem; }
     .portfolio-item { font-size: 0.83rem; padding: 0.5rem 0.75rem; background: var(--cream); border-radius: 6px; border-left: 3px solid var(--sage); }
     .portfolio-item .p-name { font-weight: 600; color: var(--bark); }
     .portfolio-item .p-country { font-size: 0.72rem; color: var(--muted); margin-left: 0.4rem; }
     .portfolio-item .p-desc { color: var(--muted); margin-top: 0.2rem; font-size: 0.8rem; }
     .portfolio-more { font-size: 0.78rem; color: var(--moss); text-decoration: none; border-bottom: 1px solid var(--sage); display: inline-block; margin-top: 0.4rem; }
-
     .quote-block { border-left: 3px solid var(--accent); padding: 0.6rem 0.9rem; background: #FFFBF2; border-radius: 0 6px 6px 0; }
     .quote-block p { font-style: italic; font-size: 0.85rem; color: var(--bark); line-height: 1.55; }
     .quote-block cite { display: block; font-size: 0.75rem; color: var(--muted); margin-top: 0.35rem; font-style: normal; }
-
     .toggle-btn { background: none; border: 1px solid var(--border); border-radius: 6px; padding: 0.35rem 0.8rem; font-size: 0.78rem; color: var(--muted); cursor: pointer; font-family: inherit; transition: all 0.15s; align-self: flex-start; }
     .toggle-btn:hover { background: var(--cream); color: var(--bark); }
     .expandable { display: none; }
     .expandable.open { display: contents; }
-
     .card-footer { padding: 0.8rem 1.5rem; border-top: 1px solid var(--border); background: var(--cream); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
     .sources-list { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
     .sources-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
@@ -116,12 +119,13 @@
     footer { background: var(--soil); color: var(--straw); text-align: center; padding: 1.5rem; font-size: 0.82rem; }
     footer a { color: var(--sage); text-decoration: none; }
 
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       .grid { grid-template-columns: 1fr; padding: 0 1rem; }
+      .list-view { padding: 0 1rem; }
       .stats { grid-template-columns: repeat(2, 1fr); }
       .detail-grid { grid-template-columns: 1fr; }
       header { padding: 2rem 1rem; }
-      .data-btns { margin-top: 0.5rem; }
+      .list-table th:nth-child(n+4), .list-table td:nth-child(n+4) { display: none; }
     }
   </style>
 </head>
@@ -151,8 +155,29 @@
   </div>
 </div>
 
-<div class="grid-header">
+<div class="view-bar">
   <span class="count-badge" id="visible-count"></span>
+  <div class="view-toggle">
+    <button class="view-btn active" id="btn-list" onclick="setView('list')">≡ List</button>
+    <button class="view-btn" id="btn-card" onclick="setView('card')">⊞ Cards</button>
+  </div>
+</div>
+
+<div class="list-view visible" id="list-view">
+  <table class="list-table">
+    <thead>
+      <tr>
+        <th>Fund</th>
+        <th>Region</th>
+        <th>Mechanism</th>
+        <th>Capital</th>
+        <th>People reached</th>
+        <th>Alignment</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="list-body"></tbody>
+  </table>
 </div>
 
 <div class="grid" id="grid"></div>
@@ -189,7 +214,37 @@
     return 'badge-adjacent';
   }
   function cap(s) { return s ? s.charAt(0).toUpperCase() + s.slice(1) : ''; }
-  function esc(s) { return s ? s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;') : ''; }
+  function esc(s) { return s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;') : ''; }
+
+  function setView(v) {
+    document.getElementById('list-view').classList.toggle('visible', v === 'list');
+    document.getElementById('grid').classList.toggle('visible', v === 'card');
+    document.getElementById('btn-list').classList.toggle('active', v === 'list');
+    document.getElementById('btn-card').classList.toggle('active', v === 'card');
+  }
+
+  function buildListRow(fund, idx) {
+    const fin = fund.financial;
+    const imp = fund.impact;
+    const ag = fund.agroecology_alignment;
+    const primaryUrl = fund.fund_url || fund.manager_url;
+    const primaryFinVal = fin.not_applicable ? null : (fin.aum_usd || fin.total_disbursed_usd || fin.fund_size_usd);
+    const primaryFinLabel = fin.not_applicable ? 'N/A' : (fin.aum_usd ? 'AUM' : (fin.total_disbursed_usd ? 'Disbursed' : 'Fund size'));
+    const regions = (fund.geography.target_regions || []).join(', ');
+
+    return `<tr onclick="setView('card');document.getElementById('card-${idx}').scrollIntoView({behavior:'smooth',block:'center'})">
+      <td>
+        <div class="list-fund-name">${primaryUrl ? `<a href="${esc(primaryUrl)}" target="_blank" onclick="event.stopPropagation()">${esc(fund.name)}</a>` : esc(fund.name)}</div>
+        <div class="list-manager">${esc(fund.manager)}</div>
+      </td>
+      <td class="list-region">${esc(regions)}</td>
+      <td>${fund.capital_mechanism ? `<span class="list-mechanism">${cap(esc(fund.capital_mechanism))}</span>` : '—'}</td>
+      <td><span class="list-stat">${fin.not_applicable ? 'N/A' : fmt(primaryFinVal)}</span><span class="list-stat-label">${primaryFinLabel}</span></td>
+      <td><span class="list-stat">${fmtPeople(imp.people_families_reached)}</span></td>
+      <td><span class="alignment-badge ${badgeClass(ag.explicitness)}">${cap(ag.explicitness)}</span></td>
+      <td><a class="detail-link" onclick="event.stopPropagation();setView('card');document.getElementById('card-${idx}').scrollIntoView({behavior:'smooth',block:'center'})">Details →</a></td>
+    </tr>`;
+  }
 
   function buildCard(fund, idx) {
     const geo = fund.geography;
@@ -221,13 +276,11 @@
     const partners = (gov.partner_organizations || []);
     const vcPositions = (port.value_chain_positions || []);
     const certs = (ag.certifications_referenced || []);
-
-    // Primary financial stat: prefer AUM, then disbursed, then fund size
     const primaryFinVal = fin.aum_usd || fin.total_disbursed_usd || fin.fund_size_usd;
     const primaryFinLabel = fin.aum_usd ? 'AUM' : (fin.total_disbursed_usd ? 'Disbursed' : 'Fund size');
 
     return `
-    <div class="card">
+    <div class="card" id="card-${idx}">
       <div class="card-header">
         <div class="card-top">
           <h2>${nameHtml}</h2>
@@ -239,10 +292,8 @@
           ${fund.founded ? `<span class="tag">Est. ${esc(fund.founded)}</span>` : ''}
         </div>
       </div>
-
       <div class="card-body">
         <p class="summary">${esc(ctx.summary) || '—'}</p>
-
         <div class="stats">
           <div class="stat">
             <span class="stat-value">${fin.not_applicable ? 'N/A' : fmt(primaryFinVal)}</span>
@@ -257,7 +308,6 @@
             <span class="stat-label">Ha preserved</span>
           </div>
         </div>
-
         <div class="detail-section">
           <div class="detail-title">Key Details</div>
           <div class="detail-grid">
@@ -274,7 +324,7 @@
             <div class="detail-item"><span class="key">Interest rate</span><br><span class="val">${esc(fin.interest_rate) || '—'}</span></div>
             <div class="detail-item"><span class="key">Investor access</span><br><span class="val">${esc(fin.investor_access) || '—'}</span></div>
             ${imp.portfolio_count != null ? `<div class="detail-item"><span class="key">Active investments</span><br><span class="val">${imp.portfolio_count}</span></div>` : ''}
-            ${imp.portfolio_at_risk_pct != null ? `<div class="detail-item"><span class="key">Portfolio at risk (>90d)</span><br><span class="val">${imp.portfolio_at_risk_pct}%</span></div>` : ''}
+            ${imp.portfolio_at_risk_pct != null ? `<div class="detail-item"><span class="key">Portfolio at risk (&gt;90d)</span><br><span class="val">${imp.portfolio_at_risk_pct}%</span></div>` : ''}
             ` : `<div class="detail-item" style="grid-column:1/-1"><span class="na-note">Financial investment fields are not applicable — this entity uses a cooperative ownership model rather than external investment.</span></div>`}
             ${imp.gender_metrics && (imp.gender_metrics.pct_women_reached != null || imp.gender_metrics.pct_women_led_businesses != null) ? `
             ${imp.gender_metrics.pct_women_reached != null ? `<div class="detail-item"><span class="key">Women reached</span><br><span class="val">${imp.gender_metrics.pct_women_reached}%</span></div>` : ''}
@@ -282,20 +332,17 @@
             ` : ''}
           </div>
         </div>
-
         <div class="detail-section">
           <div class="detail-title">Agroecology Alignment</div>
           <p style="font-size:0.85rem;color:var(--text);margin-bottom:0.6rem;">${esc(ag.mandate_description) || '—'}</p>
           ${principles.length ? `<div class="principles">${principles.map(p=>`<span class="principle-pill">${esc(p)}</span>`).join('')}</div>` : ''}
           ${certs.length ? `<p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">Certifications: ${certs.map(esc).join(', ')}</p>` : ''}
         </div>
-
         ${vcPositions.length ? `
         <div class="detail-section">
           <div class="detail-title">Value Chain Positions</div>
           <div class="principles">${vcPositions.map(v=>`<span class="chain-pill">${esc(v)}</span>`).join('')}</div>
         </div>` : ''}
-
         ${bc && (bc.min_annual_revenue_usd || bc.min_annual_revenue_usd_by_source || bc.min_years_operation || bc.other) ? `
         <div class="detail-section">
           <div class="detail-title">Borrower / Member Criteria</div>
@@ -305,7 +352,7 @@
               <div class="c-row" style="align-items:flex-start;flex-direction:column;gap:0.3rem;">
                 <span class="c-label" style="margin-bottom:0.2rem;">Min. annual revenue</span>
                 ${bc.min_annual_revenue_usd_by_source.map(s => `
-                  <div style="display:flex;align-items:baseline;gap:0.4rem;padding-left:0.1rem;">
+                  <div style="display:flex;align-items:baseline;gap:0.4rem;padding-left:0.1rem;flex-wrap:wrap;">
                     <span style="font-weight:600;color:var(--bark);font-size:0.83rem;">${fmt(s.amount_usd)}</span>
                     <span style="color:var(--muted);font-size:0.75rem;">${esc(s.context)}</span>
                     <a href="${esc(s.url)}" target="_blank" style="color:var(--moss);font-size:0.72rem;border-bottom:1px solid var(--sage);text-decoration:none;flex-shrink:0;">${esc(s.source)}${s.date ? ' ' + esc(s.date) : ''}</a>
@@ -317,9 +364,7 @@
             ${bc.other ? `<div class="c-other">${esc(bc.other)}</div>` : ''}
           </div>
         </div>` : ''}
-
         <button class="toggle-btn" onclick="toggleExpand('${id}', this)">Show portfolio &amp; governance ↓</button>
-
         <div class="expandable" id="${id}">
           ${portfolio.length ? `
           <div class="detail-section">
@@ -334,7 +379,6 @@
             </div>
             ${port.portfolio_gallery_url ? `<a class="portfolio-more" href="${esc(port.portfolio_gallery_url)}" target="_blank">View full portfolio gallery →</a>` : ''}
           </div>` : ''}
-
           ${(funders.length || partners.length || gov.governance_model) ? `
           <div class="detail-section">
             <div class="detail-title">Governance &amp; Partners</div>
@@ -342,13 +386,11 @@
             ${funders.length ? `<p style="font-size:0.78rem;color:var(--muted);margin-top:0.25rem;"><strong>Key funders:</strong> ${funders.map(esc).join(', ')}</p>` : ''}
             ${partners.length ? `<p style="font-size:0.78rem;color:var(--muted);margin-top:0.25rem;"><strong>Partners:</strong> ${partners.map(esc).join(', ')}</p>` : ''}
           </div>` : ''}
-
           ${imp.notes ? `
           <div class="detail-section">
             <div class="detail-title">Impact Notes</div>
             <p style="font-size:0.83rem;color:var(--muted);">${esc(imp.notes)}</p>
           </div>` : ''}
-
           ${quotes.length ? `
           <div class="detail-section">
             ${quotes.map(q=>`
@@ -358,9 +400,7 @@
             </div>`).join('')}
           </div>` : ''}
         </div>
-
       </div>
-
       <div class="card-footer">
         <div class="sources-list">
           <span class="sources-label">Sources</span>
@@ -382,10 +422,11 @@
     .then(funds => {
       document.getElementById('fund-count-pill').textContent = funds.length + ' funds documented';
       document.getElementById('visible-count').textContent = funds.length + ' funds';
+      document.getElementById('list-body').innerHTML = funds.map((f,i) => buildListRow(f,i)).join('');
       document.getElementById('grid').innerHTML = funds.map((f,i) => buildCard(f,i)).join('');
     })
     .catch(err => {
-      document.getElementById('grid').innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:4rem 2rem;color:var(--muted)">Could not load funds.json. Make sure both files are in the same directory.<br><small>${err}</small></div>`;
+      document.getElementById('list-body').innerHTML = `<tr><td colspan="7" style="padding:3rem;text-align:center;color:var(--muted)">Could not load funds.json.<br><small>${err}</small></td></tr>`;
     });
 </script>
 </body>
