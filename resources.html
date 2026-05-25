@@ -99,9 +99,17 @@
     @media (max-width: 600px) {
       .page { padding: 1.5rem 1rem 4rem; }
       header { padding: 2rem 1rem; }
-      .section-nav { padding: 0.6rem 1rem; }
+      .section-nav { padding: 0.6rem 1rem; overflow-x: auto; white-space: nowrap; }
       .summary-cols { grid-template-columns: 1fr; }
       .tools-table { font-size: 0.76rem; }
+      /* hide Built by, When to use, Level columns — keep Tool, What it assesses, Link */
+      .tools-table th:nth-child(2), .tools-table td:nth-child(2),
+      .tools-table th:nth-child(4), .tools-table td:nth-child(4),
+      .tools-table th:nth-child(5), .tools-table td:nth-child(5) { display: none; }
+      /* resource cards */
+      .resource-card { padding: 1rem; }
+      .resource-title-row h3 { font-size: 1rem; }
+      .resource-card-body { grid-template-columns: 1fr; gap: 0.75rem; }
     }
   </style>
 </head>

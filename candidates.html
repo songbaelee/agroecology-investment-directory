@@ -125,10 +125,20 @@
     .rationale-cell { font-size: 0.8rem; color: var(--bark); line-height: 1.5; font-style: italic; border-left: 3px solid var(--accent) !important; background: #FFFBF2 !important; padding-left: 1rem !important; }
 
     @media (max-width: 700px) {
-      .funnel-label { width: 160px; font-size: 0.78rem; }
+      /* funnel — stack label above bar */
+      .funnel-row { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
+      .funnel-label { width: 100%; text-align: left; padding-right: 0; font-size: 0.82rem; }
+      .funnel-label small { display: inline; margin-left: 0.3rem; }
+      .funnel-bar-wrap { width: 100%; }
+      .funnel-connector { padding-left: 0; }
+      /* table */
       table th:nth-child(n+4), table td:nth-child(n+4) { display: none; }
-      .filter-bar { gap: 0.5rem; }
-      .search-wrap { margin-left: 0; width: 100%; }
+      /* filters — horizontal scroll instead of wrap */
+      .filter-bar { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 0.5rem; -webkit-overflow-scrolling: touch; }
+      .filter-label { flex-shrink: 0; }
+      .filter-group { flex-wrap: nowrap; flex-shrink: 0; }
+      .filter-sep { flex-shrink: 0; }
+      .search-wrap { min-width: 180px; flex-shrink: 0; margin-left: 0; }
       .search-input { width: 100%; }
     }
   </style>
