@@ -10,8 +10,14 @@
     "legal_structure": "Impact lending fund",
     "geography": {
       "hq": null,
-      "countries_of_operation": ["Guatemala", "Colombia", "Mexico"],
-      "target_regions": ["Latin America"]
+      "countries_of_operation": [
+        "Guatemala",
+        "Colombia",
+        "Mexico"
+      ],
+      "target_regions": [
+        "Latin America"
+      ]
     },
     "financial": {
       "not_applicable": false,
@@ -72,7 +78,11 @@
           "loan_usd": 35000
         }
       ],
-      "value_chain_positions": ["Input supply", "Farming", "Processing"]
+      "value_chain_positions": [
+        "Input supply",
+        "Farming",
+        "Processing"
+      ]
     },
     "governance_and_partners": {
       "key_funders": [],
@@ -115,8 +125,12 @@
     "legal_structure": "Cooperative credit fund / solidarity economy fund",
     "geography": {
       "hq": "Brazil",
-      "countries_of_operation": ["Brazil"],
-      "target_regions": ["Brazil — nationwide, including agrarian reform settlements"]
+      "countries_of_operation": [
+        "Brazil"
+      ],
+      "target_regions": [
+        "Brazil — nationwide, including agrarian reform settlements"
+      ]
     },
     "financial": {
       "not_applicable": false,
@@ -134,7 +148,7 @@
       "other": "Must be a cooperative, association, or agrarian reform settlement undergoing or committed to agroecology transition. Embedded in Brazil's MST and solidarity economy ecosystem."
     },
     "agroecology_alignment": {
-      "explicitness": "explicit mandate",
+      "explicitness": "explicit",
       "mandate_description": "Created explicitly to finance cooperatives of smallholder farmers transitioning to agroecology. Any Brazilian citizen can invest savings directly into agroecological farmer cooperatives.",
       "principles_represented": [
         "Agroecology transition",
@@ -167,11 +181,18 @@
           "loan_usd": null
         }
       ],
-      "value_chain_positions": ["Farming", "Cooperative governance", "Policy advocacy"]
+      "value_chain_positions": [
+        "Farming",
+        "Cooperative governance",
+        "Policy advocacy"
+      ]
     },
     "governance_and_partners": {
       "key_funders": [],
-      "partner_organizations": ["MST (Landless Workers' Movement)", "ACAP-PR"],
+      "partner_organizations": [
+        "MST (Landless Workers' Movement)",
+        "ACAP-PR"
+      ],
       "governance_model": "Cooperative structure; citizens invest directly into farmer cooperatives",
       "key_people": []
     },
@@ -211,8 +232,15 @@
     "legal_structure": "Impact debt fund / SME loan fund",
     "geography": {
       "hq": "St. Petersburg, Florida, USA",
-      "countries_of_operation": ["Brazil", "Colombia", "Peru"],
-      "target_regions": ["Andes-Amazon region", "Latin America"]
+      "countries_of_operation": [
+        "Brazil",
+        "Colombia",
+        "Peru"
+      ],
+      "target_regions": [
+        "Andes-Amazon region",
+        "Latin America"
+      ]
     },
     "financial": {
       "not_applicable": false,
@@ -263,7 +291,11 @@
         "Gender equity",
         "Indigenous community livelihoods"
       ],
-      "certifications_referenced": ["Organic", "Fair Trade", "Rainforest Alliance"]
+      "certifications_referenced": [
+        "Organic",
+        "Fair Trade",
+        "Rainforest Alliance"
+      ]
     },
     "impact": {
       "portfolio_count": 21,
@@ -350,10 +382,17 @@
         }
       ],
       "portfolio_gallery_url": "https://www.nesst.org/portfolio-gallery?tag=Lirio+Fund",
-      "value_chain_positions": ["Farming", "Processing", "Cooperative governance", "Eco-tourism"]
+      "value_chain_positions": [
+        "Farming",
+        "Processing",
+        "Cooperative governance",
+        "Eco-tourism"
+      ]
     },
     "governance_and_partners": {
-      "key_funders": ["Mercy Partnership Fund"],
+      "key_funders": [
+        "Mercy Partnership Fund"
+      ],
       "partner_organizations": [],
       "governance_model": "Locally-based loan managers with deep market knowledge collaborate with acceleration teams in Brazil, Colombia, and Peru. In-country portfolio teams provide one-on-one financial management support.",
       "key_people": [
@@ -423,8 +462,15 @@
     "legal_structure": "Early-stage impact venture fund + accelerator",
     "geography": {
       "hq": "New York, USA",
-      "countries_of_operation": ["Niger", "Guinea", "Sub-Saharan Africa broadly"],
-      "target_regions": ["Sub-Saharan Africa", "Sahel region"]
+      "countries_of_operation": [
+        "Niger",
+        "Guinea",
+        "Sub-Saharan Africa broadly"
+      ],
+      "target_regions": [
+        "Sub-Saharan Africa",
+        "Sahel region"
+      ]
     },
     "financial": {
       "not_applicable": false,
@@ -481,7 +527,11 @@
           "loan_usd": null
         }
       ],
-      "value_chain_positions": ["Land restoration", "Sustainable agriculture", "Renewable energy"]
+      "value_chain_positions": [
+        "Land restoration",
+        "Sustainable agriculture",
+        "Renewable energy"
+      ]
     },
     "governance_and_partners": {
       "key_funders": [
@@ -489,7 +539,10 @@
         "US International Development Finance Corporation ($8M)",
         "Bezos Earth Fund (seed funding)"
       ],
-      "partner_organizations": ["WRI Africa", "TerraMatch (WRI monitoring platform)"],
+      "partner_organizations": [
+        "WRI Africa",
+        "TerraMatch (WRI monitoring platform)"
+      ],
       "governance_model": "Fund led by and for African women. Works with incubators and accelerators to identify high-impact startups and provides investment-readiness training.",
       "key_people": [
         {
@@ -538,8 +591,17 @@
     "legal_structure": "100% farmer-owned cooperative (not an investment fund)",
     "geography": {
       "hq": "Sacramento, California, USA",
-      "countries_of_operation": ["Peru", "Nicaragua", "Guatemala", "Mexico", "Ethiopia"],
-      "target_regions": ["Latin America", "East Africa"]
+      "countries_of_operation": [
+        "Peru",
+        "Nicaragua",
+        "Guatemala",
+        "Mexico",
+        "Ethiopia"
+      ],
+      "target_regions": [
+        "Latin America",
+        "East Africa"
+      ]
     },
     "financial": {
       "not_applicable": true,
@@ -568,7 +630,10 @@
         "Vertical integration",
         "Food sovereignty"
       ],
-      "certifications_referenced": ["Certified Organic", "Specialty Coffee Association Sustainability Award 2021"]
+      "certifications_referenced": [
+        "Certified Organic",
+        "Specialty Coffee Association Sustainability Award 2021"
+      ]
     },
     "impact": {
       "portfolio_count": 5,
@@ -615,11 +680,20 @@
           "loan_usd": null
         }
       ],
-      "value_chain_positions": ["Farming", "Processing", "Roasting", "Retail", "Direct-to-consumer"]
+      "value_chain_positions": [
+        "Farming",
+        "Processing",
+        "Roasting",
+        "Retail",
+        "Direct-to-consumer"
+      ]
     },
     "governance_and_partners": {
       "key_funders": [],
-      "partner_organizations": ["CCOF (California Certified Organic Farmers)", "Specialty Coffee Association"],
+      "partner_organizations": [
+        "CCOF (California Certified Organic Farmers)",
+        "Specialty Coffee Association"
+      ],
       "governance_model": "Board of directors entirely composed of farmer-members. One seat per country (Peru, Nicaragua, Guatemala, Mexico, Ethiopia). 100% of equity owned by farmer members.",
       "key_people": [
         {
@@ -664,8 +738,13 @@
     "legal_structure": "Agroecology accelerator + revolving loan fund",
     "geography": {
       "hq": "Uganda and Kenya",
-      "countries_of_operation": ["Uganda", "Kenya"],
-      "target_regions": ["East Africa"]
+      "countries_of_operation": [
+        "Uganda",
+        "Kenya"
+      ],
+      "target_regions": [
+        "East Africa"
+      ]
     },
     "financial": {
       "not_applicable": false,
@@ -683,7 +762,7 @@
       "other": "Must be a Ugandan or Kenyan enterprise explicitly aligned with the 13 FAO principles of agroecology. At least one founder must be Ugandan or Kenyan. Business must have at least 2 employees with at least one founder working full-time. Requires 3 years of audited financials. Maximum loan size is $50,000 in local currency or USD. Assessed using proprietary Business Agroecology Criteria Tool (B-ACT)."
     },
     "agroecology_alignment": {
-      "explicitness": "explicit mandate",
+      "explicitness": "explicit",
       "mandate_description": "The only revolving loan fund in East Africa exclusively supporting agroecological enterprises (AEEs) as defined by the 13 FAO principles of agroecology. Investment criteria require explicit alignment across the entire agricultural value chain.",
       "principles_represented": [
         "All 13 FAO principles of agroecology",
@@ -726,8 +805,13 @@
       ]
     },
     "governance_and_partners": {
-      "key_funders": ["Biovision Foundation (accelerator operations and capacity building only; loan fund capital is from separate financiers managed by SHONA Capital)"],
-      "partner_organizations": ["SHONA Capital", "Biovision Foundation"],
+      "key_funders": [
+        "Biovision Foundation (accelerator operations and capacity building only; loan fund capital is from separate financiers managed by SHONA Capital)"
+      ],
+      "partner_organizations": [
+        "SHONA Capital",
+        "Biovision Foundation"
+      ],
       "governance_model": "Independently managed by SHONA Capital for the loan fund. Biovision funds the set-up, operation, and capacity building of the accelerator. A steering committee drawn from both organizations oversees overall direction.",
       "key_people": []
     },

@@ -96,6 +96,7 @@
     footer { background: var(--soil); color: var(--straw); text-align: center; padding: 1.5rem; font-size: 0.82rem; }
     footer a { color: var(--sage); text-decoration: none; }
 
+    .summary-legend { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
     @media (max-width: 600px) {
       .page { padding: 1.5rem 1rem 4rem; }
       header { padding: 2rem 1rem; }
@@ -144,6 +145,7 @@
 <div class="page" id="page">
   <div class="summary-box" id="summary">
     <div class="summary-box-title">All resources at a glance</div>
+    <div class="summary-legend">● recommended starting point</div>
     <div class="summary-cols" id="summary-groups"></div>
   </div>
 </div>
@@ -176,7 +178,7 @@
         if (!items.length) return '';
         return `<div class="summary-group">
           <div class="summary-group-label">${esc(GROUP_META[g].label)}</div>
-          <ul>${items.map(r => `<li>${r.recommended_first ? '<span class="start-dot"></span>' : ''}<a href="#res-${esc(r.id)}">${esc(r.title.length > 52 ? r.title.slice(0,50)+'…' : r.title)}</a></li>`).join('')}</ul>
+          <ul>${items.map(r => `<li>${r.recommended_first ? '<span class="start-dot"></span>' : ''}<a href="#res-${esc(r.id)}">${esc(r.title)}</a></li>`).join('')}</ul>
         </div>`;
       }).join('');
     }
