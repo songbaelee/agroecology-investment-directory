@@ -140,6 +140,10 @@
       .detail-grid { grid-template-columns: 1fr; }
       header { padding: 2rem 1rem; }
       .list-table th:nth-child(n+4), .list-table td:nth-child(n+4) { display: none; }
+      .scatter-section { padding: 0 1rem; }
+      .scatter-wrap { display: block; width: 100%; }
+      #scatter-svg { width: 100%; height: auto; }
+      .scatter-quadrant-label { display: none; }
     }
   </style>
 </head>
@@ -184,10 +188,10 @@
       <rect x="320" y="230" width="260" height="200" fill="#F2F7F0" rx="2"/>
 
       <!-- quadrant labels -->
-      <text x="75" y="50" font-size="10" fill="#B0A090" font-style="italic">Producer-governed, implicit mandate</text>
-      <text x="335" y="50" font-size="10" fill="#7A9E6F" font-style="italic">Producer-governed, explicit mandate</text>
-      <text x="75" y="418" font-size="10" fill="#B0A090" font-style="italic">Intermediated, implicit mandate</text>
-      <text x="335" y="418" font-size="10" fill="#7A9E6F" font-style="italic">Intermediated, explicit mandate</text>
+      <text x="75" y="50" font-size="10" fill="#B0A090" font-style="italic" class="scatter-quadrant-label">Producer-governed, implicit mandate</text>
+      <text x="335" y="50" font-size="10" fill="#7A9E6F" font-style="italic" class="scatter-quadrant-label">Producer-governed, explicit mandate</text>
+      <text x="75" y="418" font-size="10" fill="#B0A090" font-style="italic" class="scatter-quadrant-label">Intermediated, implicit mandate</text>
+      <text x="335" y="418" font-size="10" fill="#7A9E6F" font-style="italic" class="scatter-quadrant-label">Intermediated, explicit mandate</text>
 
       <!-- axes -->
       <!-- x axis -->
