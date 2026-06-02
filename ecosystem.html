@@ -206,7 +206,6 @@
     <p>Data sourced from AEF's public website.</p>
     <div class="header-meta">
       <button class="header-toggle" id="toggle-btn">⊞ Group by category</button>
-      <button class="header-toggle" id="ongoing-btn">◉ Ongoing only</button>
       <a class="data-btn" href="ecosystem.json" target="_blank">View raw data (JSON)</a>
       <a class="data-btn" href="ecosystem.json" download="aef-ecosystem.json">Download JSON</a>
     </div>
@@ -325,7 +324,6 @@ const CLUSTER_POS = {
 
 let allData = [];
 let isGrouped = false;
-let ongoingOnly = false;
 let hiddenCats = new Set();
 let hiddenRels = new Set();
 let allShown = true;
@@ -375,7 +373,6 @@ function visibleNodes(data) {
     const rg = relGroup(d);
     if (rg === 'donor' && !allRelsShown) return false;
     if (rg !== null && rg !== 'donor' && hiddenRels.has(rg)) return false;
-    if (ongoingOnly && d.grant_status === 'concluded') return false;
     return true;
   });
 }
@@ -641,13 +638,6 @@ document.getElementById('toggle-btn').addEventListener('click', function() {
   } else {
     applyForce();
   }
-});
-
-document.getElementById('ongoing-btn').addEventListener('click', function() {
-  ongoingOnly = !ongoingOnly;
-  this.classList.toggle('active', ongoingOnly);
-  resetGroupToggle();
-  render(allData);
 });
 
 // track whether we're in "all shown" state
