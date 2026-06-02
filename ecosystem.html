@@ -363,7 +363,9 @@ function relGroup(d) {
   if (d.relationship === 'seeded') return 'seeded';
   if (d.relationship === 'anchor' || d.relationship === 'initiative') return 'anchor';
   if (d.relationship === 'partner') return 'partner';
-  return null; // donor, grantee, center — not subject to relationship filter
+  if (d.relationship === 'grantee') return 'seeded';
+  if (d.category === 'donor') return 'donor';
+  return null; // center only
 }
 
 function visibleNodes(data) {
@@ -371,7 +373,8 @@ function visibleNodes(data) {
     if (d.category === 'center') return true;
     if (hiddenCats.has(d.category)) return false;
     const rg = relGroup(d);
-    if (rg !== null && hiddenRels.has(rg)) return false;
+    if (rg === 'donor' && !allRelsShown) return false;
+    if (rg !== null && rg !== 'donor' && hiddenRels.has(rg)) return false;
     if (ongoingOnly && d.grant_status === 'concluded') return false;
     return true;
   });
