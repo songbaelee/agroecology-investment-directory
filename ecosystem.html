@@ -368,6 +368,18 @@ function buildLinks(nodes) {
     .filter(l => ids.has(l.source) && ids.has(l.target));
 }
 
+function initialZoom(nodes) {
+  const W = getW(), H = getH();
+  const center = nodes.find(d => d.category === 'center');
+  const cx = (center && center.x != null) ? center.x : W / 2;
+  const cy = (center && center.y != null) ? center.y : H / 2;
+  const scale = 1.1;
+  const tx = W / 2 - scale * cx;
+  const ty = H / 2 - scale * cy;
+  svg.transition().duration(600).call(zoom.transform,
+    d3.zoomIdentity.translate(tx, ty).scale(scale));
+}
+
 function fitView(nodes) {
   if (!nodes || nodes.length === 0) return;
   const W = getW(), H = getH();
@@ -447,9 +459,9 @@ function render(data) {
     .attr('stroke', d => nodeColor(d));
 
   nodeG.append('text')
-    .attr('dy', d => nodeRadius(d) + 13)
+    .attr('dy', d => nodeRadius(d) + 15)
     .attr('text-anchor', 'middle')
-    .attr('font-size', d => d.category === 'center' ? '13' : d.category === 'donor' ? '10' : '11')
+    .attr('font-size', d => d.category === 'center' ? '15' : d.category === 'donor' ? '11' : '13')
     .text(d => d.short_name || d.name);
 
   nodeElements = nodeG;
@@ -477,7 +489,7 @@ function render(data) {
     .force('radial-donor', d3.forceRadial(donorRadius, W / 2, H / 2)
       .strength(d => d.category === 'donor' ? 0.4 : 0))
     .on('tick', ticked)
-    .on('end', () => fitView(nodes));
+    .on('end', () => initialZoom(nodes));
 
   function ticked() {
     linkElements
