@@ -79,16 +79,17 @@
     }
     .legend-action:hover { color: var(--text-muted); border-color: var(--border); }
 
-    /* BODY LAYOUT — map + panel side by side */
+    /* BODY LAYOUT — map full width */
     .body-layout {
-      display: flex;
+      position: relative;
       height: calc(100vh - 190px);
       min-height: 480px;
     }
 
     /* MAP */
     #map-container {
-      flex: 1;
+      width: 100%;
+      height: 100%;
       position: relative;
       overflow: hidden;
     }
@@ -105,30 +106,42 @@
     .node.selected circle { stroke-width: 3; }
     .link { transition: stroke-opacity 0.3s; }
 
-    /* RIGHT PANEL */
+    /* SLIDE-OUT OVERLAY PANEL */
     #info-panel {
+      position: fixed;
+      top: 0; right: 0;
       width: var(--panel-w);
+      height: 100vh;
       border-left: 1px solid var(--border);
       background: var(--bg-panel);
       display: flex; flex-direction: column;
       overflow: hidden;
+      transform: translateX(100%);
+      transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 100;
+      box-shadow: -4px 0 24px rgba(0,0,0,0.4);
+    }
+    #info-panel.open {
+      transform: translateX(0);
     }
     #info-panel .panel-header {
       padding: 14px 16px 10px;
       border-bottom: 1px solid var(--border);
       font-family: var(--font-mono); font-size: 10px;
       color: var(--text-dim); letter-spacing: 0.06em; text-transform: uppercase;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-shrink: 0;
     }
-    #info-panel .panel-empty {
-      padding: 20px 16px;
-      font-family: var(--font-mono); font-size: 10px;
-      color: var(--text-dim); line-height: 1.6;
+    #panel-close {
+      background: none; border: none; cursor: pointer;
+      color: var(--text-dim); font-size: 16px; line-height: 1;
+      padding: 0 2px; transition: color 0.15s;
     }
+    #panel-close:hover { color: var(--text); }
     #info-panel .panel-content {
       padding: 16px; overflow-y: auto; flex: 1;
-      display: none;
+      display: block;
     }
-    #info-panel .panel-content.visible { display: block; }
     .panel-cat-tag {
       display: inline-block;
       font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.05em;
@@ -178,7 +191,7 @@
     footer a:hover { color: var(--text-muted); }
 
     @media (max-width: 700px) {
-      #info-panel { display: none; }
+      #info-panel { width: 100vw; }
       .body-layout { height: calc(100vh - 200px); }
     }
   </style>
@@ -254,8 +267,10 @@
   </div>
 
   <div id="info-panel">
-    <div class="panel-header">Organization details</div>
-    <div class="panel-empty" id="panel-empty">Hover over or click any node to see details.</div>
+    <div class="panel-header">
+      <span>Organization details</span>
+      <button id="panel-close" aria-label="Close panel">✕</button>
+    </div>
     <div class="panel-content" id="panel-content">
       <div class="panel-cat-tag" id="panel-cat-tag"></div>
       <div class="panel-name" id="panel-name"></div>
@@ -459,7 +474,6 @@ function render(data) {
       .on('start', dragStart)
       .on('drag', dragging)
       .on('end', dragEnd))
-    .on('mouseover', showPanel)
     .on('click', (e, d) => { e.stopPropagation(); showPanel(e, d); });
 
   nodeG.append('circle')
@@ -573,9 +587,9 @@ const CAT_NAMES = {
 };
 
 function showPanel(event, d) {
-  document.getElementById('panel-empty').style.display = 'none';
+  document.getElementById('info-panel').classList.add('open');
   const content = document.getElementById('panel-content');
-  content.classList.add('visible');
+  content.style.display = 'block';
 
   const tag = document.getElementById('panel-cat-tag');
   tag.textContent = CAT_NAMES[d.category] || d.category;
@@ -768,6 +782,16 @@ document.querySelectorAll('.rel-item').forEach(item => {
     resetGroupToggle();
     render(allData);
   });
+});
+
+// CLOSE PANEL
+function closePanel() {
+  document.getElementById('info-panel').classList.remove('open');
+  nodeElements && nodeElements.classed('selected', false);
+}
+document.getElementById('panel-close').addEventListener('click', closePanel);
+svg.on('click', (e) => {
+  if (e.target === svg.node() || e.target.closest('.zoom-layer') === null) closePanel();
 });
 
 // LOAD
