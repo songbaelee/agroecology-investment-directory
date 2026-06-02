@@ -98,6 +98,7 @@
       background: rgba(255,255,255,0.04);
     }
     .legend-item.dimmed { opacity: 0.3; border-color: transparent; }
+    .rel-item { color: var(--text-muted); }
     .legend-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
     .legend-item span {
       font-family: var(--font-mono); font-size: 10px;
@@ -113,7 +114,7 @@
     /* BODY LAYOUT — map + panel side by side */
     .body-layout {
       display: flex;
-      height: calc(100vh - 228px);
+      height: calc(100vh - 186px);
       min-height: 480px;
     }
 
@@ -231,7 +232,8 @@
   </div>
 </header>
 
-<div class="legend">
+<div class="legend" style="justify-content:space-between;">
+  <div style="display:flex;align-items:center;gap:6px;">
   <span class="legend-label">Filter</span>
   <span class="legend-action" id="select-all">All</span>
   <span class="legend-action" id="select-none">None</span>
@@ -256,22 +258,24 @@
     <div class="legend-dot" style="background:var(--c-donor)"></div>
     <span>Donors</span>
   </div>
+  </div>
 </div>
 
-<div class="legend" style="padding-top:7px; padding-bottom:7px;">
-  <span class="legend-label">Relationship</span>
-  <div class="legend-sep"></div>
-  <div style="display:flex;align-items:center;gap:5px;padding:4px 9px;border:1px solid var(--border);border-radius:2px;">
-    <svg width="18" height="12"><circle cx="9" cy="6" r="5" fill="none" stroke="var(--text-muted)" stroke-width="1.5"/></svg>
-    <span style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);">Seeded / Anchor</span>
-  </div>
-  <div style="display:flex;align-items:center;gap:5px;padding:4px 9px;border:1px solid var(--border);border-radius:2px;">
-    <svg width="18" height="12"><circle cx="9" cy="6" r="5" fill="none" stroke="var(--text-muted)" stroke-width="1.5" stroke-dasharray="4,3"/></svg>
-    <span style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);">Grantee</span>
-  </div>
-  <div style="display:flex;align-items:center;gap:5px;padding:4px 9px;border:1px solid var(--border);border-radius:2px;">
-    <svg width="18" height="12"><circle cx="9" cy="6" r="5" fill="none" stroke="var(--text-muted)" stroke-width="1.5" stroke-dasharray="2,4"/></svg>
-    <span style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);">Peer Partner</span>
+<div style="margin-left:auto;display:flex;align-items:center;gap:6px;padding-right:2px;">
+    <span class="legend-label" style="margin-right:2px;">Relationship</span>
+    <div class="legend-sep"></div>
+    <div class="legend-item rel-item active" data-rel="seeded,anchor,initiative,donor,center">
+      <svg width="16" height="12" style="flex-shrink:0"><circle cx="8" cy="6" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+      <span>Seeded / Anchor</span>
+    </div>
+    <div class="legend-item rel-item active" data-rel="grantee">
+      <svg width="16" height="12" style="flex-shrink:0"><circle cx="8" cy="6" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4,3"/></svg>
+      <span>Grantee</span>
+    </div>
+    <div class="legend-item rel-item active" data-rel="partner">
+      <svg width="16" height="12" style="flex-shrink:0"><circle cx="8" cy="6" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2,4"/></svg>
+      <span>Peer Partner</span>
+    </div>
   </div>
 </div>
 
@@ -338,9 +342,17 @@ let allData = [];
 let isGrouped = false;
 let ongoingOnly = false;
 let hiddenCats = new Set();
+let hiddenRels = new Set();
 let allShown = true;
+let allRelsShown = true;
 let simulation;
 let nodeElements, linkElements, labelElements;
+
+const ALL_RELS = [
+  { key: 'seeded,anchor,initiative,donor,center', label: 'Seeded / Anchor' },
+  { key: 'grantee', label: 'Grantee' },
+  { key: 'partner', label: 'Peer Partner' }
+];
 
 const svg = d3.select('#map');
 const mapContainer = document.getElementById('map-container');
@@ -362,10 +374,20 @@ function nodeRadius(d) {
 
 function nodeColor(d) { return COLORS[d.category] || '#888'; }
 
+function relGroup(d) {
+  if (d.category === 'center') return 'seeded,anchor,initiative,donor,center';
+  if (d.category === 'donor') return 'seeded,anchor,initiative,donor,center';
+  if (d.relationship === 'seeded' || d.relationship === 'anchor' || d.relationship === 'initiative') return 'seeded,anchor,initiative,donor,center';
+  if (d.relationship === 'grantee') return 'grantee';
+  if (d.relationship === 'partner') return 'partner';
+  return 'seeded,anchor,initiative,donor,center';
+}
+
 function visibleNodes(data) {
   return data.filter(d => {
     if (d.category === 'center') return true;
     if (hiddenCats.has(d.category)) return false;
+    if (hiddenRels.has(relGroup(d))) return false;
     if (ongoingOnly && d.grant_status === 'concluded') return false;
     return true;
   });
@@ -713,13 +735,61 @@ document.querySelectorAll('.legend-item').forEach(item => {
   });
 });
 
+// RELATIONSHIP FILTER
+document.querySelectorAll('.rel-item').forEach(item => {
+  item.addEventListener('click', function() {
+    const rel = this.dataset.rel;
+    const visibleRels = ALL_RELS.map(r => r.key).filter(k => !hiddenRels.has(k));
+
+    if (allRelsShown) {
+      // isolate clicked
+      ALL_RELS.forEach(r => hiddenRels.add(r.key));
+      hiddenRels.delete(rel);
+      allRelsShown = false;
+      document.querySelectorAll('.rel-item').forEach(el => {
+        el.classList.add('dimmed'); el.classList.remove('active');
+      });
+      this.classList.remove('dimmed'); this.classList.add('active');
+    } else if (visibleRels.length === 1 && !hiddenRels.has(rel)) {
+      // clicked the only visible one — restore all
+      hiddenRels.clear(); allRelsShown = true;
+      document.querySelectorAll('.rel-item').forEach(el => {
+        el.classList.remove('dimmed'); el.classList.add('active');
+      });
+    } else if (visibleRels.length === 1 && hiddenRels.has(rel)) {
+      // switch isolation
+      ALL_RELS.forEach(r => hiddenRels.add(r.key));
+      hiddenRels.delete(rel);
+      document.querySelectorAll('.rel-item').forEach(el => {
+        el.classList.add('dimmed'); el.classList.remove('active');
+      });
+      this.classList.remove('dimmed'); this.classList.add('active');
+    } else if (!hiddenRels.has(rel)) {
+      hiddenRels.add(rel);
+      this.classList.add('dimmed'); this.classList.remove('active');
+      if (ALL_RELS.every(r => hiddenRels.has(r.key))) {
+        hiddenRels.clear(); allRelsShown = true;
+        document.querySelectorAll('.rel-item').forEach(el => {
+          el.classList.remove('dimmed'); el.classList.add('active');
+        });
+      }
+    } else {
+      hiddenRels.delete(rel);
+      this.classList.remove('dimmed'); this.classList.add('active');
+      if (ALL_RELS.every(r => !hiddenRels.has(r.key))) allRelsShown = true;
+    }
+    resetGroupToggle();
+    render(allData);
+  });
+});
+
 // LOAD
 fetch('ecosystem.json')
   .then(r => r.json())
   .then(data => {
     allData = data;
-    // set all legend items to active on load to match allShown=true
     document.querySelectorAll('.legend-item').forEach(el => el.classList.add('active'));
+    document.querySelectorAll('.rel-item').forEach(el => el.classList.add('active'));
     render(allData);
   });
 
