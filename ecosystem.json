@@ -10,7 +10,6 @@
     "relationship": "center",
     "grant_status": null
   },
-
   {
     "id": "fapy",
     "name": "Fondo Agroecológico para la Península de Yucatán",
@@ -20,7 +19,8 @@
     "region": "Mexico / Mesoamerica",
     "description": "First regional fund seeded by AEF, established 2020 with support from Kellogg Foundation. Operated by Túumben K'óoben Cooperative across Yucatán, Campeche, and Quintana Roo. On-grants to community organizations working in agroecological production, solidarity markets, biodiversity, and climate resilience. Acts as a learning community facilitator among grantees.",
     "relationship": "seeded",
-    "grant_status": "ongoing"
+    "grant_status": "ongoing",
+    "relationship_note": "First regional fund seeded by AEF in 2020. AEF provided founding capital and ongoing structural support."
   },
   {
     "id": "baf",
@@ -31,7 +31,8 @@
     "region": "India",
     "description": "Regional fund established 2022, hosted by Bharathiya Vikas Trust. Targets a tipping point: 20% of India's small and marginal farmers (~20 million people) shifting to agroecology by 2030. On-grants to grassroots movements while also catalyzing Indian philanthropy and moving public money into natural farming through government collaboration.",
     "relationship": "seeded",
-    "grant_status": "ongoing"
+    "grant_status": "ongoing",
+    "relationship_note": "Seeded by AEF in 2022. AEF provided founding capital and hosts the fund's development toward independence."
   },
   {
     "id": "raf-east",
@@ -42,7 +43,8 @@
     "region": "Eastern Africa",
     "description": "Regional fund in incubation, seeded by AEF. On-grants to agroecology networks and grassroots organizations across Eastern Africa. Prioritizes Indigenous Peoples, women, and youth. Functions as a learning community — grantees share strategies and document impact to build a regional evidence base. Responds to the failure of Green Revolution inputs to address poverty, malnutrition, and soil degradation.",
     "relationship": "seeded",
-    "grant_status": "ongoing"
+    "grant_status": "ongoing",
+    "relationship_note": "Currently in incubation, seeded by AEF as part of its regional fund model."
   },
   {
     "id": "raf-west",
@@ -53,9 +55,9 @@
     "region": "West Africa",
     "description": "Regional fund in incubation, seeded by AEF. On-grants to agroecology networks and organizations across West Africa. Offers donors a direct channel to hard-to-reach grassroots organizations. Part of a growing movement rejecting Green Revolution inputs in favor of millenia-old local practices and agroecological renaissance.",
     "relationship": "seeded",
-    "grant_status": "ongoing"
+    "grant_status": "ongoing",
+    "relationship_note": "Currently in incubation, seeded by AEF as part of its regional fund model."
   },
-
   {
     "id": "lvc",
     "name": "La Via Campesina / GRAIN / ETC Group",
@@ -65,7 +67,8 @@
     "region": "Global",
     "description": "Long-term strategic partnership since 2012, continuously renewed through 2025. The core peasant food sovereignty movement globally. Joint grantee partnership defending and amplifying peasant-led agroecology.",
     "relationship": "anchor",
-    "grant_status": "ongoing"
+    "grant_status": "ongoing",
+    "relationship_note": "Continuous partnership since 2012, renewed through 2025. Core strategic relationship with the global peasant food sovereignty movement."
   },
   {
     "id": "afsa",
@@ -76,7 +79,8 @@
     "region": "Africa",
     "description": "Multi-year partner since 2014. Mobilizes African civil society for agroecology, influencing decision makers and funders. Active in Ethiopia, Senegal, Kenya, Uganda, Ghana, Rwanda, Tunisia, Nigeria, and more.",
     "relationship": "anchor",
-    "grant_status": "ongoing"
+    "grant_status": "ongoing",
+    "relationship_note": "Multi-year partner since 2014. One of AEF's primary vehicles for movement-building across Africa."
   },
   {
     "id": "groundswell",
@@ -87,7 +91,8 @@
     "region": "West Africa / Sahel",
     "description": "Partner since 2013. Scales farmer-led agroecology in Burkina Faso, Ghana, Mali, and Senegal through women's empowerment and advocacy. Currently in second phase of Agroecology for Systems Change in the Sahel.",
     "relationship": "anchor",
-    "grant_status": "ongoing"
+    "grant_status": "ongoing",
+    "relationship_note": "Partner since 2013. Long-term investment in farmer-led agroecology scaling in West Africa."
   },
   {
     "id": "pelum",
@@ -98,7 +103,8 @@
     "region": "Eastern & Southern Africa",
     "description": "Participatory Ecological Land Use Management. Multi-year partner with Kenya, Zimbabwe, and regional chapters. Supports participatory farmer-led research and inclusive agroecology policies across Eastern and Southern Africa.",
     "relationship": "anchor",
-    "grant_status": "ongoing"
+    "grant_status": "ongoing",
+    "relationship_note": "Multi-year partner. Ongoing support for participatory land use and agroecology policy across Eastern and Southern Africa."
   },
   {
     "id": "iitc",
@@ -109,7 +115,8 @@
     "region": "Americas / Pacific",
     "description": "Partner since 2016. Indigenous Peoples Alliance for Food Sovereignty, Traditional Knowledge and Climate Change. Active in US, Mexico, Central and South America, and the Pacific.",
     "relationship": "anchor",
-    "grant_status": "ongoing"
+    "grant_status": "ongoing",
+    "relationship_note": "Partner since 2016. AEF's primary Indigenous Peoples alliance for food sovereignty and traditional knowledge."
   },
   {
     "id": "grassroots-intl",
@@ -119,8 +126,9 @@
     "url": "https://grassrootsonline.org",
     "region": "Global",
     "description": "Early partner since 2012. Also listed as an AEF donor. Catalyst for expanding the global agroecology movement across Brazil, Mexico, India, South Africa, Nepal, and the US.",
-    "relationship": "anchor",
-    "grant_status": "concluded"
+    "relationship": "partner",
+    "grant_status": "concluded",
+    "relationship_note": "Unique reciprocal relationship — both an early partner since 2012 and an AEF donor. One of the few organizations with a dual role in the ecosystem."
   },
   {
     "id": "nss",
@@ -131,7 +139,8 @@
     "region": "West Africa",
     "description": "Partner since 2016. Builds rural women's movement for food sovereignty, agroecology, and gender justice across Burkina Faso, Ghana, Guinea, Mali, and Senegal. Promotes traditional rice biodiversity.",
     "relationship": "anchor",
-    "grant_status": "ongoing"
+    "grant_status": "ongoing",
+    "relationship_note": "Partner since 2016. Long-term investment in rural women's movement-building for food sovereignty in West Africa."
   },
   {
     "id": "aana",
@@ -142,7 +151,8 @@
     "region": "Brazil",
     "description": "Brazil's national agroecology network. Current grant supports agroecology networks in response to climate change through action research from the ground up.",
     "relationship": "anchor",
-    "grant_status": "ongoing"
+    "grant_status": "ongoing",
+    "relationship_note": "Ongoing support for Brazil's national agroecology network and climate-responsive action research."
   },
   {
     "id": "aspta",
@@ -163,8 +173,9 @@
     "url": "https://ecosur.mx",
     "region": "Mexico / Latin America",
     "description": "Mexican research institution. Hosts AEF's IPA Global participatory research initiative. Runs Latin American professional Master's program in agroecology and facilitates participatory action research across the region.",
-    "relationship": "grantee",
-    "grant_status": "ongoing"
+    "relationship": "anchor",
+    "grant_status": "ongoing",
+    "relationship_note": "Institutional host of IPA Global since its founding. Continuous structural partner for participatory research in Latin America."
   },
   {
     "id": "cawr",
@@ -185,8 +196,9 @@
     "url": "https://agroecologyfund.org/key-initiatives/initiative-for-participatory-research-in-agroecology-ipa-global/",
     "region": "Global",
     "description": "AEF's own special initiative for participatory research. Coordinated through ECOSUR. Builds grassroots evidence base for agroecology through action research with farmer organizations.",
-    "relationship": "initiative",
-    "grant_status": "ongoing"
+    "relationship": "anchor",
+    "grant_status": "ongoing",
+    "relationship_note": "AEF-created initiative coordinated through ECOSUR. A structural investment in building grassroots evidence for agroecology."
   },
   {
     "id": "evidence4ae",
@@ -196,8 +208,9 @@
     "url": "https://evidence4agroecology.org",
     "region": "Global",
     "description": "AEF special initiative offering a free online course and evidence platform documenting grassroots agroecology impact. Contributes to a global body of evidence for policy influence.",
-    "relationship": "initiative",
-    "grant_status": "ongoing"
+    "relationship": "anchor",
+    "grant_status": "ongoing",
+    "relationship_note": "AEF-created initiative. A structural investment in documenting and disseminating grassroots agroecology impact globally."
   },
   {
     "id": "growing-culture",
@@ -210,7 +223,6 @@
     "relationship": "grantee",
     "grant_status": "ongoing"
   },
-
   {
     "id": "ipc",
     "name": "International Planning Committee for Food Sovereignty",
@@ -275,9 +287,9 @@
     "region": "Global",
     "description": "300+ member global policy network of governments, UN agencies, and civil society. AEF co-convenes donors through the Coalition and co-launched the Agroecology Investment Tracking Tool in 2023.",
     "relationship": "partner",
-    "grant_status": null
+    "grant_status": null,
+    "relationship_note": "AEF co-convenes the donor community through the Coalition. No grant relationship — a peer collaboration among equals."
   },
-
   {
     "id": "donor-11th-hour",
     "name": "11th Hour Project",

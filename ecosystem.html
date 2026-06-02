@@ -154,6 +154,12 @@
       text-decoration: none; word-break: break-all;
     }
     .panel-link a:hover { text-decoration: underline; }
+    .panel-rel-note {
+      font-family: var(--font-mono); font-size: 11px; color: var(--text-dim);
+      line-height: 1.6; margin-bottom: 12px; padding: 8px 10px;
+      border-left: 2px solid var(--border); font-style: italic;
+      display: none;
+    }
 
     /* CATEGORY LABEL (grouped mode) */
     .category-label {
@@ -227,17 +233,17 @@
   <div style="display:flex;align-items:center;gap:6px;padding-right:2px;">
     <span class="legend-label" style="margin-right:2px;">Relationship</span>
     <div class="legend-sep"></div>
-    <div class="legend-item rel-item active" data-rel="solid">
+    <div class="legend-item rel-item active" data-rel="seeded">
       <svg width="16" height="12" style="flex-shrink:0"><circle cx="8" cy="6" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-      <span>Seeded / Anchor</span>
+      <span>Seeded</span>
     </div>
-    <div class="legend-item rel-item active" data-rel="grantee">
+    <div class="legend-item rel-item active" data-rel="anchor">
       <svg width="16" height="12" style="flex-shrink:0"><circle cx="8" cy="6" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4,3"/></svg>
-      <span>Grantee</span>
+      <span>Anchor</span>
     </div>
     <div class="legend-item rel-item active" data-rel="partner">
       <svg width="16" height="12" style="flex-shrink:0"><circle cx="8" cy="6" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2,4"/></svg>
-      <span>Peer Partner</span>
+      <span>Peer</span>
     </div>
   </div>
 </div>
@@ -255,6 +261,7 @@
       <div class="panel-name" id="panel-name"></div>
       <div class="panel-meta" id="panel-meta"></div>
       <div class="panel-desc" id="panel-desc"></div>
+      <div class="panel-rel-note" id="panel-rel-note"></div>
       <div class="panel-link" id="panel-link"></div>
     </div>
   </div>
@@ -312,9 +319,9 @@ let simulation;
 let nodeElements, linkElements, labelElements;
 
 const ALL_RELS = [
-  { key: 'solid', label: 'Seeded / Anchor' },
-  { key: 'grantee', label: 'Grantee' },
-  { key: 'partner', label: 'Peer Partner' }
+  { key: 'seeded', label: 'Seeded' },
+  { key: 'anchor', label: 'Anchor' },
+  { key: 'partner', label: 'Peer' }
 ];
 
 const svg = d3.select('#map');
@@ -338,10 +345,10 @@ function nodeRadius(d) {
 function nodeColor(d) { return COLORS[d.category] || '#888'; }
 
 function relGroup(d) {
-  if (d.relationship === 'grantee') return 'grantee';
+  if (d.relationship === 'seeded') return 'seeded';
+  if (d.relationship === 'anchor' || d.relationship === 'initiative') return 'anchor';
   if (d.relationship === 'partner') return 'partner';
-  if (d.relationship === 'seeded' || d.relationship === 'anchor' || d.relationship === 'initiative') return 'solid';
-  return null; // donor, center — not subject to relationship filter
+  return null; // donor, grantee, center — not subject to relationship filter
 }
 
 function visibleNodes(data) {
@@ -586,6 +593,13 @@ function showPanel(event, d) {
   meta.innerHTML = metaHtml;
 
   document.getElementById('panel-desc').textContent = d.description || '';
+  const noteEl = document.getElementById('panel-rel-note');
+  if (d.relationship_note) {
+    noteEl.textContent = d.relationship_note;
+    noteEl.style.display = 'block';
+  } else {
+    noteEl.style.display = 'none';
+  }
   const linkEl = document.getElementById('panel-link');
   linkEl.innerHTML = d.url
     ? `<a href="${d.url}" target="_blank">↗ ${d.url.replace(/^https?:\/\//, '')}</a>`
