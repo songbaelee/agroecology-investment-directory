@@ -14,253 +14,190 @@
       --text:       #d4e8d4;
       --text-muted: #7a9e7a;
       --text-dim:   #4a6b4a;
-
-      /* category colours */
-      --c-center:  #f0f0e8;
-      --c-regional:#7ecf7e;
-      --c-anchor:  #5ba8d4;
-      --c-research:#e8b84a;
-      --c-policy:  #c47dd4;
-      --c-donor:   #d47a5a;
-
+      --c-center:   #f0f0e8;
+      --c-regional: #7ecf7e;
+      --c-anchor:   #5ba8d4;
+      --c-research: #e8b84a;
+      --c-policy:   #c47dd4;
+      --c-donor:    #d47a5a;
       --font-mono: 'Courier New', Courier, monospace;
       --font-sans: Georgia, 'Times New Roman', serif;
+      --panel-w: 280px;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-sans); min-height: 100vh; }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-sans);
-      min-height: 100vh;
-    }
-
-    /* ── NAV ── */
+    /* NAV */
     nav {
       border-bottom: 1px solid var(--border);
       padding: 14px 28px;
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      flex-wrap: wrap;
+      display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
     }
     nav .brand {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--text-muted);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      text-decoration: none;
+      font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);
+      letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;
     }
     nav .brand:hover { color: var(--text); }
     nav .sep { color: var(--border); font-size: 11px; }
     nav a.nav-link {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--text-muted);
-      text-decoration: none;
-      letter-spacing: 0.05em;
+      font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);
+      text-decoration: none; letter-spacing: 0.05em;
     }
     nav a.nav-link:hover { color: var(--text); }
     nav a.nav-link.active { color: var(--c-regional); }
 
-    /* ── HEADER ── */
+    /* HEADER */
     header {
-      padding: 32px 28px 20px;
+      padding: 24px 28px 18px;
       border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
+      display: flex; align-items: flex-start; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
     }
     header h1 {
-      font-family: var(--font-sans);
-      font-size: 22px;
-      font-weight: normal;
-      color: var(--text);
-      letter-spacing: -0.01em;
+      font-family: var(--font-sans); font-size: 20px; font-weight: normal;
+      color: var(--text); letter-spacing: -0.01em;
     }
     header p {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--text-muted);
-      margin-top: 6px;
-      max-width: 560px;
-      line-height: 1.6;
+      font-family: var(--font-mono); font-size: 10px; color: var(--text-muted);
+      margin-top: 5px; max-width: 520px; line-height: 1.6;
     }
-    .header-controls {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+    .header-controls { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
 
-    /* ── BUTTONS ── */
+    /* BUTTONS */
     button {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.05em;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--text-muted);
-      padding: 7px 14px;
-      cursor: pointer;
-      transition: all 0.15s ease;
+      font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.05em;
+      border: 1px solid var(--border); background: transparent; color: var(--text-muted);
+      padding: 6px 12px; cursor: pointer; transition: all 0.15s ease;
     }
     button:hover { border-color: var(--text-muted); color: var(--text); }
     button.active {
-      border-color: var(--c-regional);
-      color: var(--c-regional);
+      border-color: var(--c-regional); color: var(--c-regional);
       background: rgba(126,207,126,0.06);
     }
 
-    /* ── LEGEND ── */
+    /* LEGEND */
     .legend {
-      padding: 14px 28px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      align-items: center;
+      padding: 10px 28px; border-bottom: 1px solid var(--border);
+      display: flex; gap: 6px; flex-wrap: wrap; align-items: center;
     }
     .legend-label {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      color: var(--text-dim);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin-right: 4px;
+      font-family: var(--font-mono); font-size: 10px; color: var(--text-dim);
+      letter-spacing: 0.06em; text-transform: uppercase; margin-right: 6px;
     }
+    .legend-sep { width: 1px; height: 14px; background: var(--border); margin: 0 4px; }
     .legend-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-      opacity: 1;
-      transition: opacity 0.2s;
+      display: flex; align-items: center; gap: 5px;
+      cursor: pointer; opacity: 1; transition: opacity 0.2s;
     }
-    .legend-item.dimmed { opacity: 0.35; }
-    .legend-dot {
-      width: 10px; height: 10px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
+    .legend-item.dimmed { opacity: 0.3; }
+    .legend-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
     .legend-item span {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      color: var(--text-muted);
-      letter-spacing: 0.04em;
+      font-family: var(--font-mono); font-size: 10px;
+      color: var(--text-muted); letter-spacing: 0.03em;
+    }
+    .legend-action {
+      font-family: var(--font-mono); font-size: 10px; color: var(--text-dim);
+      cursor: pointer; padding: 2px 6px; border: 1px solid transparent;
+      transition: all 0.15s;
+    }
+    .legend-action:hover { color: var(--text-muted); border-color: var(--border); }
+
+    /* BODY LAYOUT — map + panel side by side */
+    .body-layout {
+      display: flex;
+      height: calc(100vh - 186px);
+      min-height: 480px;
     }
 
-    /* ── MAP CONTAINER ── */
+    /* MAP */
     #map-container {
+      flex: 1;
       position: relative;
-      width: 100%;
-      height: calc(100vh - 220px);
-      min-height: 500px;
       overflow: hidden;
     }
+    svg#map { width: 100%; height: 100%; display: block; }
 
-    svg#map {
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
-
-    /* node styles via JS classes */
     .node circle {
-      stroke-width: 1.5;
-      cursor: pointer;
-      transition: opacity 0.2s;
+      stroke-width: 1.5; cursor: pointer; transition: opacity 0.2s;
     }
     .node circle:hover { stroke-width: 2.5; }
     .node text {
-      font-family: var(--font-mono);
-      font-size: 9px;
-      fill: var(--text-muted);
-      pointer-events: none;
-      user-select: none;
+      font-family: var(--font-mono); font-size: 9px;
+      fill: var(--text-muted); pointer-events: none; user-select: none;
     }
-    .link {
-      stroke-opacity: 0.35;
-      transition: stroke-opacity 0.3s;
-    }
+    .node.selected circle { stroke-width: 3; }
+    .link { transition: stroke-opacity 0.3s; }
 
-    /* ── TOOLTIP ── */
-    #tooltip {
-      position: absolute;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      padding: 14px 16px;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.15s ease;
-      max-width: 280px;
-      z-index: 100;
+    /* RIGHT PANEL */
+    #info-panel {
+      width: var(--panel-w);
+      border-left: 1px solid var(--border);
+      background: var(--bg-panel);
+      display: flex; flex-direction: column;
+      overflow: hidden;
     }
-    #tooltip.visible { opacity: 1; }
-    #tooltip .tt-name {
-      font-family: var(--font-sans);
-      font-size: 13px;
-      color: var(--text);
-      margin-bottom: 4px;
+    #info-panel .panel-header {
+      padding: 14px 16px 10px;
+      border-bottom: 1px solid var(--border);
+      font-family: var(--font-mono); font-size: 10px;
+      color: var(--text-dim); letter-spacing: 0.06em; text-transform: uppercase;
     }
-    #tooltip .tt-meta {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-      display: flex;
-      gap: 10px;
+    #info-panel .panel-empty {
+      padding: 20px 16px;
+      font-family: var(--font-mono); font-size: 10px;
+      color: var(--text-dim); line-height: 1.6;
     }
-    #tooltip .tt-desc {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      color: var(--text-muted);
-      line-height: 1.55;
-      margin-bottom: 8px;
+    #info-panel .panel-content {
+      padding: 16px; overflow-y: auto; flex: 1;
+      display: none;
     }
-    #tooltip .tt-link a {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      color: var(--c-regional);
-      text-decoration: none;
+    #info-panel .panel-content.visible { display: block; }
+    .panel-cat-tag {
+      display: inline-block;
+      font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.05em;
+      text-transform: uppercase; padding: 2px 7px;
+      border-radius: 2px; margin-bottom: 10px;
     }
-    #tooltip .tt-link a:hover { text-decoration: underline; }
+    .panel-name {
+      font-family: var(--font-sans); font-size: 15px; color: var(--text);
+      margin-bottom: 6px; line-height: 1.3;
+    }
+    .panel-meta {
+      font-family: var(--font-mono); font-size: 10px; color: var(--text-muted);
+      margin-bottom: 12px; display: flex; flex-direction: column; gap: 3px;
+    }
+    .panel-meta span { display: flex; gap: 6px; align-items: baseline; }
+    .panel-meta .meta-label { color: var(--text-dim); min-width: 52px; }
+    .panel-desc {
+      font-family: var(--font-mono); font-size: 10px; color: var(--text-muted);
+      line-height: 1.65; margin-bottom: 14px;
+    }
+    .panel-link a {
+      font-family: var(--font-mono); font-size: 10px; color: var(--c-regional);
+      text-decoration: none; word-break: break-all;
+    }
+    .panel-link a:hover { text-decoration: underline; }
 
-    /* ── FOOTER ── */
+    /* CATEGORY LABEL (grouped mode) */
+    .category-label {
+      font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
+      text-transform: uppercase; pointer-events: none; opacity: 0; transition: opacity 0.4s;
+    }
+    .category-label.visible { opacity: 1; }
+
+    /* FOOTER */
     footer {
-      border-top: 1px solid var(--border);
-      padding: 14px 28px;
-      font-family: var(--font-mono);
-      font-size: 10px;
-      color: var(--text-dim);
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
+      border-top: 1px solid var(--border); padding: 12px 28px;
+      font-family: var(--font-mono); font-size: 10px; color: var(--text-dim);
+      display: flex; gap: 14px; flex-wrap: wrap;
     }
     footer a { color: var(--text-dim); text-decoration: none; }
     footer a:hover { color: var(--text-muted); }
 
-    /* ── CATEGORY LABEL (grouped mode) ── */
-    .category-label {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.4s;
-    }
-    .category-label.visible { opacity: 1; }
-
-    @media (max-width: 600px) {
-      header { padding: 20px 16px 16px; }
-      nav { padding: 12px 16px; }
-      .legend { padding: 10px 16px; gap: 12px; }
-      #map-container { height: calc(100vh - 260px); }
+    @media (max-width: 700px) {
+      #info-panel { display: none; }
+      .body-layout { height: calc(100vh - 200px); }
     }
   </style>
 </head>
@@ -292,7 +229,10 @@
 </header>
 
 <div class="legend">
-  <span class="legend-label">Category</span>
+  <span class="legend-label">Filter</span>
+  <span class="legend-action" id="select-all">All</span>
+  <span class="legend-action" id="select-none">None</span>
+  <div class="legend-sep"></div>
   <div class="legend-item" data-cat="regional_fund">
     <div class="legend-dot" style="background:var(--c-regional)"></div>
     <span>Regional Funds</span>
@@ -315,13 +255,21 @@
   </div>
 </div>
 
-<div id="map-container">
-  <svg id="map"></svg>
-  <div id="tooltip">
-    <div class="tt-name" id="tt-name"></div>
-    <div class="tt-meta" id="tt-meta"></div>
-    <div class="tt-desc" id="tt-desc"></div>
-    <div class="tt-link" id="tt-link"></div>
+<div class="body-layout">
+  <div id="map-container">
+    <svg id="map"></svg>
+  </div>
+
+  <div id="info-panel">
+    <div class="panel-header">Organization details</div>
+    <div class="panel-empty" id="panel-empty">Hover over or click any node to see details.</div>
+    <div class="panel-content" id="panel-content">
+      <div class="panel-cat-tag" id="panel-cat-tag"></div>
+      <div class="panel-name" id="panel-name"></div>
+      <div class="panel-meta" id="panel-meta"></div>
+      <div class="panel-desc" id="panel-desc"></div>
+      <div class="panel-link" id="panel-link"></div>
+    </div>
   </div>
 </div>
 
@@ -339,12 +287,12 @@
 
 <script>
 const COLORS = {
-  center:        '#f0f0e8',
-  regional_fund: '#7ecf7e',
-  anchor_partner:'#5ba8d4',
-  research:      '#e8b84a',
-  policy:        '#c47dd4',
-  donor:         '#d47a5a'
+  center:         '#f0f0e8',
+  regional_fund:  '#7ecf7e',
+  anchor_partner: '#5ba8d4',
+  research:       '#e8b84a',
+  policy:         '#c47dd4',
+  donor:          '#d47a5a'
 };
 
 const CAT_LABELS = {
@@ -355,14 +303,15 @@ const CAT_LABELS = {
   donor:          'Donors'
 };
 
-// cluster positions for grouped mode (as fractions of width/height)
+const ALL_CATS = Object.keys(CAT_LABELS);
+
 const CLUSTER_POS = {
-  center:        { fx: 0.50, fy: 0.50 },
-  regional_fund: { fx: 0.50, fy: 0.18 },
-  anchor_partner:{ fx: 0.18, fy: 0.42 },
-  research:      { fx: 0.82, fy: 0.32 },
-  policy:        { fx: 0.82, fy: 0.68 },
-  donor:         { fx: 0.28, fy: 0.78 }
+  center:         { fx: 0.50, fy: 0.50 },
+  regional_fund:  { fx: 0.50, fy: 0.14 },
+  anchor_partner: { fx: 0.16, fy: 0.40 },
+  research:       { fx: 0.84, fy: 0.28 },
+  policy:         { fx: 0.84, fy: 0.70 },
+  donor:          { fx: 0.30, fy: 0.82 }
 };
 
 let allData = [];
@@ -373,18 +322,14 @@ let simulation;
 let nodeElements, linkElements, labelElements;
 
 const svg = d3.select('#map');
-const container = document.getElementById('map-container');
-const tooltip = document.getElementById('tooltip');
-
+const mapContainer = document.getElementById('map-container');
 const g = svg.append('g').attr('class', 'zoom-layer');
 
-svg.call(d3.zoom()
-  .scaleExtent([0.3, 4])
-  .on('zoom', (e) => g.attr('transform', e.transform))
-);
+const zoom = d3.zoom().scaleExtent([0.2, 4]).on('zoom', e => g.attr('transform', e.transform));
+svg.call(zoom);
 
-function getW() { return container.clientWidth; }
-function getH() { return container.clientHeight; }
+function getW() { return mapContainer.clientWidth; }
+function getH() { return mapContainer.clientHeight; }
 
 function nodeRadius(d) {
   if (d.category === 'center') return 28;
@@ -415,6 +360,21 @@ function buildLinks(nodes) {
     .filter(l => ids.has(l.source) && ids.has(l.target));
 }
 
+function fitView(nodes) {
+  if (!nodes || nodes.length === 0) return;
+  const W = getW(), H = getH();
+  const xs = nodes.map(d => d.x).filter(Boolean);
+  const ys = nodes.map(d => d.y).filter(Boolean);
+  if (!xs.length) return;
+  const x0 = Math.min(...xs) - 60, x1 = Math.max(...xs) + 60;
+  const y0 = Math.min(...ys) - 60, y1 = Math.max(...ys) + 60;
+  const scale = Math.min(0.9, 0.9 / Math.max((x1 - x0) / W, (y1 - y0) / H));
+  const tx = (W - scale * (x0 + x1)) / 2;
+  const ty = (H - scale * (y0 + y1)) / 2;
+  svg.transition().duration(600).call(zoom.transform,
+    d3.zoomIdentity.translate(tx, ty).scale(scale));
+}
+
 function render(data) {
   const W = getW(), H = getH();
   const nodes = visibleNodes(data).map(d => ({ ...d }));
@@ -422,69 +382,60 @@ function render(data) {
 
   g.selectAll('*').remove();
 
-  // category label positions
+  // category labels for grouped mode
   const catLabelData = Object.entries(CAT_LABELS).map(([cat, label]) => {
     const pos = CLUSTER_POS[cat];
-    return { cat, label, x: pos.fx * W, y: pos.fy * H - 28 };
+    return { cat, label, x: pos.fx * W, y: pos.fy * H - 32 };
   });
 
   labelElements = g.selectAll('.category-label')
-    .data(catLabelData)
-    .enter().append('text')
+    .data(catLabelData).enter().append('text')
     .attr('class', 'category-label')
-    .attr('x', d => d.x)
-    .attr('y', d => d.y)
+    .attr('x', d => d.x).attr('y', d => d.y)
     .attr('text-anchor', 'middle')
     .attr('fill', d => COLORS[d.cat])
     .text(d => d.label);
 
+  // draw links behind nodes
   linkElements = g.selectAll('.link')
-    .data(links)
-    .enter().append('line')
+    .data(links).enter().append('line')
     .attr('class', 'link')
     .attr('stroke', d => {
-      const target = nodes.find(n => n.id === d.target);
-      if (!target) return '#555';
-      if (target.category === 'donor') return '#555';
-      return nodeColor(target);
+      const t = nodes.find(n => n.id === d.target);
+      return (!t || t.category === 'donor') ? '#3a5a3a' : nodeColor(t);
     })
     .attr('stroke-opacity', d => {
-      const target = nodes.find(n => n.id === d.target);
-      if (!target) return 0.2;
-      if (target.category === 'donor') return 0.15;
-      if (target.relationship === 'seeded') return 0.7;
+      const t = nodes.find(n => n.id === d.target);
+      if (!t) return 0.2;
+      if (t.category === 'donor') return 0.18;
+      if (t.relationship === 'seeded') return 0.7;
       return 0.4;
     })
     .attr('stroke-width', d => {
-      const target = nodes.find(n => n.id === d.target);
-      if (!target) return 0.5;
-      if (target.category === 'donor') return 0.5;
-      if (target.relationship === 'seeded') return 2.5;
-      if (target.relationship === 'anchor') return 1.5;
+      const t = nodes.find(n => n.id === d.target);
+      if (!t || t.category === 'donor') return 0.5;
+      if (t.relationship === 'seeded') return 2.5;
+      if (t.relationship === 'anchor') return 1.5;
       return 1;
     })
     .attr('stroke-dasharray', d => {
-      const target = nodes.find(n => n.id === d.target);
-      return target && target.category === 'donor' ? '3,4' : null;
+      const t = nodes.find(n => n.id === d.target);
+      return t && t.category === 'donor' ? '3,5' : null;
     });
 
   const nodeG = g.selectAll('.node')
-    .data(nodes, d => d.id)
-    .enter().append('g')
+    .data(nodes, d => d.id).enter().append('g')
     .attr('class', 'node')
     .call(d3.drag()
       .on('start', dragStart)
       .on('drag', dragging)
-      .on('end', dragEnd)
-    )
-    .on('mouseover', showTooltip)
-    .on('mousemove', moveTooltip)
-    .on('mouseout', hideTooltip)
-    .on('click', (e, d) => { if (d.url) window.open(d.url, '_blank'); });
+      .on('end', dragEnd))
+    .on('mouseover', showPanel)
+    .on('click', (e, d) => { e.stopPropagation(); showPanel(e, d); });
 
   nodeG.append('circle')
     .attr('r', d => nodeRadius(d))
-    .attr('fill', d => nodeColor(d) + (d.category === 'center' ? 'ff' : '22'))
+    .attr('fill', d => nodeColor(d) + (d.category === 'center' ? 'ff' : '28'))
     .attr('stroke', d => nodeColor(d));
 
   nodeG.append('text')
@@ -495,28 +446,35 @@ function render(data) {
 
   nodeElements = nodeG;
 
+  // radial force pushes donors outward
+  const donorRadius = Math.min(W, H) * 0.42;
+
   simulation = d3.forceSimulation(nodes)
     .force('link', d3.forceLink(links).id(d => d.id).distance(d => {
-      const target = nodes.find(n => n.id === d.target);
-      if (!target) return 160;
-      if (target.relationship === 'seeded') return 110;
-      if (target.relationship === 'anchor') return 170;
-      if (target.category === 'donor') return 260;
-      return 100;
-    }).strength(0.3))
+      const t = nodes.find(n => n.id === d.target);
+      if (!t) return 160;
+      if (t.relationship === 'seeded') return 120;
+      if (t.relationship === 'anchor') return 180;
+      if (t.category === 'donor') return donorRadius;
+      return 140;
+    }).strength(d => {
+      const t = nodes.find(n => n.id === d.target);
+      return t && t.category === 'donor' ? 0.08 : 0.3;
+    }))
     .force('charge', d3.forceManyBody().strength(d =>
-      d.category === 'center' ? -800 : d.category === 'donor' ? -120 : -280
+      d.category === 'center' ? -1000 : d.category === 'donor' ? -60 : -300
     ))
     .force('center', d3.forceCenter(W / 2, H / 2))
-    .force('collision', d3.forceCollide(d => nodeRadius(d) + 18))
-    .on('tick', ticked);
+    .force('collision', d3.forceCollide(d => nodeRadius(d) + (d.category === 'donor' ? 22 : 18)))
+    .force('radial-donor', d3.forceRadial(donorRadius, W / 2, H / 2)
+      .strength(d => d.category === 'donor' ? 0.4 : 0))
+    .on('tick', ticked)
+    .on('end', () => fitView(nodes));
 
   function ticked() {
     linkElements
-      .attr('x1', d => d.source.x)
-      .attr('y1', d => d.source.y)
-      .attr('x2', d => d.target.x)
-      .attr('y2', d => d.target.y);
+      .attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+      .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
     nodeElements.attr('transform', d => `translate(${d.x},${d.y})`);
   }
 
@@ -526,11 +484,7 @@ function render(data) {
 function applyGrouping(nodes) {
   const W = getW(), H = getH();
   simulation.stop();
-
-  // hide links in grouped mode
   linkElements.style('opacity', 0);
-
-  // show category labels
   labelElements.classed('visible', true);
 
   const catGroups = {};
@@ -539,37 +493,25 @@ function applyGrouping(nodes) {
     catGroups[d.category].push(d);
   });
 
-  // position nodes within their cluster
-  nodes.forEach(d => {
+  nodeElements.each(function(d) {
     const pos = CLUSTER_POS[d.category] || CLUSTER_POS.center;
     const siblings = catGroups[d.category] || [];
     const idx = siblings.indexOf(d);
     const total = siblings.length;
-    const radius = Math.min(60, total * 14);
-    const angle = (idx / total) * 2 * Math.PI;
-    const tx = pos.fx * W + (total === 1 ? 0 : radius * Math.cos(angle));
-    const ty = pos.fy * H + (total === 1 ? 0 : radius * Math.sin(angle));
-
-    d3.select(nodeElements.filter(n => n.id === d.id).node())
-      .transition().duration(600).ease(d3.easeCubicInOut)
-      .attr('transform', `translate(${tx},${ty})`);
+    const radius = total <= 1 ? 0 : Math.min(80, total * 13);
+    const angle = (idx / total) * 2 * Math.PI - Math.PI / 2;
+    d._gx = pos.fx * W + radius * Math.cos(angle);
+    d._gy = pos.fy * H + radius * Math.sin(angle);
   });
 
-  nodeElements.attr('transform', d => {
-    const pos = CLUSTER_POS[d.category] || CLUSTER_POS.center;
-    const siblings = catGroups[d.category] || [];
-    const idx = siblings.indexOf(d);
-    const total = siblings.length;
-    const radius = Math.min(60, total * 14);
-    const angle = (idx / total) * 2 * Math.PI;
-    const tx = pos.fx * W + (total === 1 ? 0 : radius * Math.cos(angle));
-    const ty = pos.fy * H + (total === 1 ? 0 : radius * Math.sin(angle));
-    d._gx = tx; d._gy = ty;
-    return `translate(${d.x || tx},${d.y || ty})`;
-  });
-
-  nodeElements.transition().duration(600).ease(d3.easeCubicInOut)
+  nodeElements.transition().duration(650).ease(d3.easeCubicInOut)
     .attr('transform', d => `translate(${d._gx},${d._gy})`);
+
+  setTimeout(() => {
+    const allNodes = [];
+    nodeElements.each(d => { d.x = d._gx; d.y = d._gy; allNodes.push(d); });
+    fitView(allNodes);
+  }, 700);
 }
 
 function applyForce() {
@@ -579,43 +521,50 @@ function applyForce() {
 }
 
 function dragStart(event, d) {
-  if (!isGrouped) {
-    if (!event.active) simulation.alphaTarget(0.3).restart();
-  }
+  if (!isGrouped && !event.active) simulation.alphaTarget(0.3).restart();
   d.fx = d.x; d.fy = d.y;
 }
 function dragging(event, d) { d.fx = event.x; d.fy = event.y; }
 function dragEnd(event, d) {
-  if (!isGrouped) {
-    if (!event.active) simulation.alphaTarget(0);
-  }
+  if (!isGrouped && !event.active) simulation.alphaTarget(0);
   d.fx = null; d.fy = null;
 }
 
-function showTooltip(event, d) {
-  document.getElementById('tt-name').textContent = d.name;
-  const metaParts = [];
-  if (d.region) metaParts.push(d.region);
-  if (d.grant_status) metaParts.push(d.grant_status === 'ongoing' ? '● ongoing' : '○ concluded');
-  document.getElementById('tt-meta').textContent = metaParts.join(' · ');
-  document.getElementById('tt-desc').textContent = d.description || '';
-  const linkEl = document.getElementById('tt-link');
-  linkEl.innerHTML = d.url ? `<a href="${d.url}" target="_blank">↗ ${d.url.replace(/^https?:\/\//, '')}</a>` : '';
-  tooltip.classList.add('visible');
-  moveTooltip(event);
-}
-function moveTooltip(event) {
-  const rect = container.getBoundingClientRect();
-  let x = event.clientX - rect.left + 16;
-  let y = event.clientY - rect.top + 16;
-  if (x + 300 > rect.width) x = event.clientX - rect.left - 300;
-  if (y + 180 > rect.height) y = event.clientY - rect.top - 180;
-  tooltip.style.left = x + 'px';
-  tooltip.style.top  = y + 'px';
-}
-function hideTooltip() { tooltip.classList.remove('visible'); }
+// PANEL
+const CAT_NAMES = {
+  center: 'Center', regional_fund: 'Regional Fund',
+  anchor_partner: 'Anchor Partner', research: 'Research & Knowledge',
+  policy: 'Policy & Advocacy', donor: 'Donor'
+};
 
-// ── CONTROLS ──
+function showPanel(event, d) {
+  document.getElementById('panel-empty').style.display = 'none';
+  const content = document.getElementById('panel-content');
+  content.classList.add('visible');
+
+  const tag = document.getElementById('panel-cat-tag');
+  tag.textContent = CAT_NAMES[d.category] || d.category;
+  tag.style.background = (nodeColor(d)) + '22';
+  tag.style.color = nodeColor(d);
+  tag.style.border = '1px solid ' + nodeColor(d) + '55';
+
+  document.getElementById('panel-name').textContent = d.name;
+
+  const meta = document.getElementById('panel-meta');
+  let metaHtml = '';
+  if (d.region) metaHtml += `<span><span class="meta-label">Region</span>${d.region}</span>`;
+  if (d.grant_status) metaHtml += `<span><span class="meta-label">Status</span>${d.grant_status === 'ongoing' ? '● ongoing' : '○ concluded'}</span>`;
+  if (d.relationship && d.relationship !== 'center') metaHtml += `<span><span class="meta-label">Relationship</span>${d.relationship}</span>`;
+  meta.innerHTML = metaHtml;
+
+  document.getElementById('panel-desc').textContent = d.description || '';
+  const linkEl = document.getElementById('panel-link');
+  linkEl.innerHTML = d.url
+    ? `<a href="${d.url}" target="_blank">↗ ${d.url.replace(/^https?:\/\//, '')}</a>`
+    : '';
+}
+
+// CONTROLS
 document.getElementById('toggle-btn').addEventListener('click', function() {
   isGrouped = !isGrouped;
   this.textContent = isGrouped ? '⊙ Force directed' : '⊞ Group by category';
@@ -638,7 +587,24 @@ document.getElementById('ongoing-btn').addEventListener('click', function() {
   render(allData);
 });
 
-// legend filter
+document.getElementById('select-all').addEventListener('click', () => {
+  hiddenCats.clear();
+  document.querySelectorAll('.legend-item').forEach(el => el.classList.remove('dimmed'));
+  isGrouped = false;
+  document.getElementById('toggle-btn').textContent = '⊞ Group by category';
+  document.getElementById('toggle-btn').classList.remove('active');
+  render(allData);
+});
+
+document.getElementById('select-none').addEventListener('click', () => {
+  ALL_CATS.forEach(c => hiddenCats.add(c));
+  document.querySelectorAll('.legend-item').forEach(el => el.classList.add('dimmed'));
+  isGrouped = false;
+  document.getElementById('toggle-btn').textContent = '⊞ Group by category';
+  document.getElementById('toggle-btn').classList.remove('active');
+  render(allData);
+});
+
 document.querySelectorAll('.legend-item').forEach(item => {
   item.addEventListener('click', function() {
     const cat = this.dataset.cat;
@@ -656,17 +622,12 @@ document.querySelectorAll('.legend-item').forEach(item => {
   });
 });
 
-// ── LOAD ──
+// LOAD
 fetch('ecosystem.json')
   .then(r => r.json())
-  .then(data => {
-    allData = data;
-    render(allData);
-  });
+  .then(data => { allData = data; render(allData); });
 
-window.addEventListener('resize', () => {
-  if (allData.length) render(allData);
-});
+window.addEventListener('resize', () => { if (allData.length) render(allData); });
 </script>
 </body>
 </html>
