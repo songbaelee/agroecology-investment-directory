@@ -340,14 +340,16 @@ function nodeColor(d) { return COLORS[d.category] || '#888'; }
 function relGroup(d) {
   if (d.relationship === 'grantee') return 'grantee';
   if (d.relationship === 'partner') return 'partner';
-  return 'solid'; // seeded, anchor, initiative, donor, center
+  if (d.relationship === 'seeded' || d.relationship === 'anchor' || d.relationship === 'initiative') return 'solid';
+  return null; // donor, center — not subject to relationship filter
 }
 
 function visibleNodes(data) {
   return data.filter(d => {
     if (d.category === 'center') return true;
     if (hiddenCats.has(d.category)) return false;
-    if (hiddenRels.has(relGroup(d))) return false;
+    const rg = relGroup(d);
+    if (rg !== null && hiddenRels.has(rg)) return false;
     if (ongoingOnly && d.grant_status === 'concluded') return false;
     return true;
   });
