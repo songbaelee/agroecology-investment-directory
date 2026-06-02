@@ -88,9 +88,16 @@
     .legend-sep { width: 1px; height: 14px; background: var(--border); margin: 0 4px; }
     .legend-item {
       display: flex; align-items: center; gap: 5px;
-      cursor: pointer; opacity: 1; transition: opacity 0.2s;
+      cursor: pointer; opacity: 1; transition: all 0.15s;
+      padding: 4px 9px; border: 1px solid var(--border);
+      border-radius: 2px;
     }
-    .legend-item.dimmed { opacity: 0.3; }
+    .legend-item:hover { border-color: var(--text-dim); }
+    .legend-item.active {
+      border-color: currentColor;
+      background: rgba(255,255,255,0.04);
+    }
+    .legend-item.dimmed { opacity: 0.3; border-color: transparent; }
     .legend-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
     .legend-item span {
       font-family: var(--font-mono); font-size: 10px;
@@ -123,7 +130,7 @@
     }
     .node circle:hover { stroke-width: 2.5; }
     .node text {
-      font-family: var(--font-mono); font-size: 9px;
+      font-family: var(--font-mono); font-size: 10px;
       fill: var(--text-muted); pointer-events: none; user-select: none;
     }
     .node.selected circle { stroke-width: 3; }
@@ -441,7 +448,7 @@ function render(data) {
   nodeG.append('text')
     .attr('dy', d => nodeRadius(d) + 13)
     .attr('text-anchor', 'middle')
-    .style('font-size', d => d.category === 'center' ? '11px' : d.category === 'donor' ? '9px' : '10px')
+    .style('font-size', d => d.category === 'center' ? '13px' : d.category === 'donor' ? '10px' : '11px')
     .text(d => d.short_name || d.name);
 
   nodeElements = nodeG;
@@ -564,6 +571,12 @@ function showPanel(event, d) {
     : '';
 }
 
+function resetGroupToggle() {
+  isGrouped = false;
+  document.getElementById('toggle-btn').textContent = '⊞ Group by category';
+  document.getElementById('toggle-btn').classList.remove('active');
+}
+
 // CONTROLS
 document.getElementById('toggle-btn').addEventListener('click', function() {
   isGrouped = !isGrouped;
@@ -581,43 +594,73 @@ document.getElementById('toggle-btn').addEventListener('click', function() {
 document.getElementById('ongoing-btn').addEventListener('click', function() {
   ongoingOnly = !ongoingOnly;
   this.classList.toggle('active', ongoingOnly);
-  isGrouped = false;
-  document.getElementById('toggle-btn').textContent = '⊞ Group by category';
-  document.getElementById('toggle-btn').classList.remove('active');
+  resetGroupToggle();
   render(allData);
 });
 
+// track whether we're in "all shown" state
+let allShown = true;
+
 document.getElementById('select-all').addEventListener('click', () => {
   hiddenCats.clear();
-  document.querySelectorAll('.legend-item').forEach(el => el.classList.remove('dimmed'));
-  isGrouped = false;
-  document.getElementById('toggle-btn').textContent = '⊞ Group by category';
-  document.getElementById('toggle-btn').classList.remove('active');
+  allShown = true;
+  document.querySelectorAll('.legend-item').forEach(el => {
+    el.classList.remove('dimmed');
+    el.classList.remove('active');
+  });
+  resetGroupToggle();
   render(allData);
 });
 
 document.getElementById('select-none').addEventListener('click', () => {
   ALL_CATS.forEach(c => hiddenCats.add(c));
-  document.querySelectorAll('.legend-item').forEach(el => el.classList.add('dimmed'));
-  isGrouped = false;
-  document.getElementById('toggle-btn').textContent = '⊞ Group by category';
-  document.getElementById('toggle-btn').classList.remove('active');
+  allShown = false;
+  document.querySelectorAll('.legend-item').forEach(el => {
+    el.classList.add('dimmed');
+    el.classList.remove('active');
+  });
+  resetGroupToggle();
   render(allData);
 });
 
 document.querySelectorAll('.legend-item').forEach(item => {
   item.addEventListener('click', function() {
     const cat = this.dataset.cat;
-    if (hiddenCats.has(cat)) {
+    const visibleCats = ALL_CATS.filter(c => !hiddenCats.has(c));
+
+    if (allShown) {
+      // first click: isolate this category, hide all others
+      ALL_CATS.forEach(c => hiddenCats.add(c));
       hiddenCats.delete(cat);
+      allShown = false;
+      document.querySelectorAll('.legend-item').forEach(el => {
+        el.classList.add('dimmed');
+        el.classList.remove('active');
+      });
       this.classList.remove('dimmed');
-    } else {
+      this.classList.add('active');
+    } else if (!hiddenCats.has(cat)) {
+      // cat is visible — deselect it
       hiddenCats.add(cat);
       this.classList.add('dimmed');
+      this.classList.remove('active');
+      // if nothing left visible, reset to all
+      if (ALL_CATS.every(c => hiddenCats.has(c))) {
+        hiddenCats.clear();
+        allShown = true;
+        document.querySelectorAll('.legend-item').forEach(el => {
+          el.classList.remove('dimmed');
+          el.classList.remove('active');
+        });
+      }
+    } else {
+      // cat is hidden — add it
+      hiddenCats.delete(cat);
+      this.classList.remove('dimmed');
+      this.classList.add('active');
     }
-    isGrouped = false;
-    document.getElementById('toggle-btn').textContent = '⊞ Group by category';
-    document.getElementById('toggle-btn').classList.remove('active');
+
+    resetGroupToggle();
     render(allData);
   });
 });
