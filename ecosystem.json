@@ -152,7 +152,7 @@
     "url": "https://aspta.org.br",
     "region": "Brazil",
     "description": "Brazilian advocacy organization connecting agroecology practice to policy. Works to defend healthy food and food sovereignty through farmer networks and policy influence.",
-    "relationship": "anchor",
+    "relationship": "grantee",
     "grant_status": "concluded"
   },
   {
@@ -163,7 +163,7 @@
     "url": "https://ecosur.mx",
     "region": "Mexico / Latin America",
     "description": "Mexican research institution. Hosts AEF's IPA Global participatory research initiative. Runs Latin American professional Master's program in agroecology and facilitates participatory action research across the region.",
-    "relationship": "anchor",
+    "relationship": "grantee",
     "grant_status": "ongoing"
   },
   {
@@ -174,7 +174,7 @@
     "url": "https://www.coventry.ac.uk/research/areas-of-research/agroecology",
     "region": "UK / Global",
     "description": "Coventry University research centre. Partner since 2014. Contributed to agroecology for sustainable food systems in Europe and Tripura agroecology partnership in India.",
-    "relationship": "anchor",
+    "relationship": "grantee",
     "grant_status": "concluded"
   },
   {
@@ -230,7 +230,7 @@
     "url": "https://www.eurovia.org",
     "region": "Europe / Central Asia",
     "description": "Multi-year partner. Maps agroecology across Central Asia and Eastern Europe. Leverages finance and trade policies in European institutions for the global agroecology movement.",
-    "relationship": "anchor",
+    "relationship": "grantee",
     "grant_status": "ongoing"
   },
   {
