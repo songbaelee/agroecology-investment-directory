@@ -235,6 +235,7 @@
 <div class="legend" style="justify-content:space-between;">
   <div style="display:flex;align-items:center;gap:6px;">
   <span class="legend-label">Filter</span>
+  <div class="legend-sep"></div>
   <span class="legend-action" id="select-all">All</span>
   <span class="legend-action" id="select-none">None</span>
   <div class="legend-sep"></div>
@@ -651,10 +652,16 @@ document.getElementById('ongoing-btn').addEventListener('click', function() {
 
 document.getElementById('select-all').addEventListener('click', () => {
   hiddenCats.clear();
+  hiddenRels.clear();
   allShown = true;
+  allRelsShown = true;
   document.querySelectorAll('.legend-item').forEach(el => {
     el.classList.remove('dimmed');
-    el.classList.remove('active');
+    el.classList.add('active');
+  });
+  document.querySelectorAll('.rel-item').forEach(el => {
+    el.classList.remove('dimmed');
+    el.classList.add('active');
   });
   resetGroupToggle();
   render(allData);
