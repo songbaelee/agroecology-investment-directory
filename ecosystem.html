@@ -28,53 +28,21 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: var(--bg); color: var(--text); font-family: var(--font-sans); min-height: 100vh; }
 
-    /* NAV */
-    nav {
-      border-bottom: 1px solid var(--border);
-      padding: 14px 28px;
-      display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
-    }
-    nav .brand {
-      font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);
-      letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;
-    }
-    nav .brand:hover { color: var(--text); }
-    nav .sep { color: var(--border); font-size: 11px; }
-    nav a.nav-link {
-      font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);
-      text-decoration: none; letter-spacing: 0.05em;
-    }
-    nav a.nav-link:hover { color: var(--text); }
-    nav a.nav-link.active { color: var(--c-regional); }
-
     /* HEADER */
-    header {
-      padding: 24px 28px 18px;
-      border-bottom: 1px solid var(--border);
-      display: flex; align-items: flex-start; justify-content: space-between;
-      flex-wrap: wrap; gap: 16px;
-    }
-    header h1 {
-      font-family: var(--font-sans); font-size: 20px; font-weight: normal;
-      color: var(--text); letter-spacing: -0.01em;
-    }
-    header p {
-      font-family: var(--font-mono); font-size: 10px; color: var(--text-muted);
-      margin-top: 5px; max-width: 520px; line-height: 1.6;
-    }
-    .header-controls { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
-
-    /* BUTTONS */
-    button {
-      font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.05em;
-      border: 1px solid var(--border); background: transparent; color: var(--text-muted);
-      padding: 6px 12px; cursor: pointer; transition: all 0.15s ease;
-    }
-    button:hover { border-color: var(--text-muted); color: var(--text); }
-    button.active {
-      border-color: var(--c-regional); color: var(--c-regional);
-      background: rgba(126,207,126,0.06);
-    }
+    header { background: #2C1A0E; color: #F5F0E8; padding: 3rem 2rem 2.5rem; border-bottom: 4px solid #C17F2A; }
+    .header-inner { max-width: 1300px; margin: 0 auto; }
+    .site-label { font-weight: 600; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: #7A9E6F; margin-bottom: 0.75rem; }
+    .site-label a { color: #7A9E6F; text-decoration: none; border-bottom: 1px solid rgba(122,158,111,0.4); font-family: 'Source Sans 3', sans-serif; }
+    .site-label a:hover { color: #E8D9B0; }
+    header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 600; line-height: 1.15; color: #F5F0E8; margin-bottom: 1rem; }
+    header p { font-size: 1rem; color: #E8D9B0; max-width: 680px; font-weight: 300; font-family: 'Source Sans 3', sans-serif; }
+    .header-meta { margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+    .meta-pill { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 0.3rem 0.9rem; font-size: 0.82rem; color: #E8D9B0; font-family: 'Source Sans 3', sans-serif; }
+    .data-btn { background: transparent; border: 1px solid rgba(255,255,255,0.3); border-radius: 6px; padding: 0.3rem 0.85rem; font-size: 0.78rem; color: #E8D9B0; cursor: pointer; font-family: 'Source Sans 3', sans-serif; text-decoration: none; display: inline-block; transition: all 0.15s; }
+    .data-btn:hover { background: rgba(255,255,255,0.1); color: white; }
+    .header-toggle { background: transparent; border: 1px solid rgba(255,255,255,0.3); border-radius: 6px; padding: 0.3rem 0.85rem; font-size: 0.78rem; color: #E8D9B0; cursor: pointer; font-family: 'Source Sans 3', sans-serif; transition: all 0.15s; }
+    .header-toggle:hover { background: rgba(255,255,255,0.1); color: white; }
+    .header-toggle.active { border-color: #7A9E6F; color: #7A9E6F; background: rgba(122,158,111,0.1); }
 
     /* LEGEND */
     .legend {
@@ -114,7 +82,7 @@
     /* BODY LAYOUT — map + panel side by side */
     .body-layout {
       display: flex;
-      height: calc(100vh - 186px);
+      height: calc(100vh - 260px);
       min-height: 480px;
     }
 
@@ -208,27 +176,21 @@
       .body-layout { height: calc(100vh - 200px); }
     }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-<nav>
-  <a href="index.html" class="brand">Agroecology Investment Directory</a>
-  <span class="sep">·</span>
-  <a href="resources.html" class="nav-link">Resources & Tools</a>
-  <span class="sep">·</span>
-  <a href="candidates.html" class="nav-link">Research Pipeline</a>
-  <span class="sep">·</span>
-  <a href="ecosystem.html" class="nav-link active">AEF Ecosystem</a>
-</nav>
-
 <header>
-  <div>
+  <div class="header-inner">
+    <div class="site-label"><a href="index.html">← Agroecology Investment Directory</a></div>
     <h1>Agroecology Fund — Ecosystem Map</h1>
-    <p>Donor network and grantee relationships. Data from AEF's public website. Partial donor list per AEF disclosure.</p>
-  </div>
-  <div class="header-controls">
-    <button id="toggle-btn">⊞ Group by category</button>
-    <button id="ongoing-btn">◉ Ongoing only</button>
+    <p>Donor network and grantee relationships. Data sourced entirely from AEF's public website. Partial donor list per AEF disclosure.</p>
+    <div class="header-meta">
+      <button class="header-toggle" id="toggle-btn">⊞ Group by category</button>
+      <button class="header-toggle" id="ongoing-btn">◉ Ongoing only</button>
+      <a class="data-btn" href="ecosystem.json" target="_blank">View raw data (JSON)</a>
+      <a class="data-btn" href="ecosystem.json" download="aef-ecosystem.json">Download JSON</a>
+    </div>
   </div>
 </header>
 
@@ -655,7 +617,7 @@ document.getElementById('select-all').addEventListener('click', () => {
   hiddenRels.clear();
   allShown = true;
   allRelsShown = true;
-  document.querySelectorAll('.legend-item').forEach(el => {
+  document.querySelectorAll('.legend-item:not(.rel-item)').forEach(el => {
     el.classList.remove('dimmed');
     el.classList.add('active');
   });
@@ -670,7 +632,7 @@ document.getElementById('select-all').addEventListener('click', () => {
 document.getElementById('select-none').addEventListener('click', () => {
   ALL_CATS.forEach(c => hiddenCats.add(c));
   allShown = false;
-  document.querySelectorAll('.legend-item').forEach(el => {
+  document.querySelectorAll('.legend-item:not(.rel-item)').forEach(el => {
     el.classList.add('dimmed');
     el.classList.remove('active');
   });
@@ -678,7 +640,7 @@ document.getElementById('select-none').addEventListener('click', () => {
   render(allData);
 });
 
-document.querySelectorAll('.legend-item').forEach(item => {
+document.querySelectorAll('.legend-item:not(.rel-item)').forEach(item => {
   item.addEventListener('click', function() {
     const cat = this.dataset.cat;
     const visibleCats = ALL_CATS.filter(c => !hiddenCats.has(c));
@@ -688,7 +650,7 @@ document.querySelectorAll('.legend-item').forEach(item => {
       ALL_CATS.forEach(c => hiddenCats.add(c));
       hiddenCats.delete(cat);
       allShown = false;
-      document.querySelectorAll('.legend-item').forEach(el => {
+      document.querySelectorAll('.legend-item:not(.rel-item)').forEach(el => {
         el.classList.add('dimmed');
         el.classList.remove('active');
       });
@@ -698,7 +660,7 @@ document.querySelectorAll('.legend-item').forEach(item => {
       // exactly one isolated and you clicked it — go back to all
       hiddenCats.clear();
       allShown = true;
-      document.querySelectorAll('.legend-item').forEach(el => {
+      document.querySelectorAll('.legend-item:not(.rel-item)').forEach(el => {
         el.classList.remove('dimmed');
         el.classList.add('active');
       });
@@ -706,7 +668,7 @@ document.querySelectorAll('.legend-item').forEach(item => {
       // exactly one isolated and you clicked a different one — switch to it
       ALL_CATS.forEach(c => hiddenCats.add(c));
       hiddenCats.delete(cat);
-      document.querySelectorAll('.legend-item').forEach(el => {
+      document.querySelectorAll('.legend-item:not(.rel-item)').forEach(el => {
         el.classList.add('dimmed');
         el.classList.remove('active');
       });
@@ -720,7 +682,7 @@ document.querySelectorAll('.legend-item').forEach(item => {
       if (ALL_CATS.every(c => hiddenCats.has(c))) {
         hiddenCats.clear();
         allShown = true;
-        document.querySelectorAll('.legend-item').forEach(el => {
+        document.querySelectorAll('.legend-item:not(.rel-item)').forEach(el => {
           el.classList.remove('dimmed');
           el.classList.add('active');
         });
@@ -790,7 +752,7 @@ fetch('ecosystem.json')
   .then(r => r.json())
   .then(data => {
     allData = data;
-    document.querySelectorAll('.legend-item').forEach(el => el.classList.add('active'));
+    document.querySelectorAll('.legend-item:not(.rel-item)').forEach(el => el.classList.add('active'));
     document.querySelectorAll('.rel-item').forEach(el => el.classList.add('active'));
     render(allData);
   });
