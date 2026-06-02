@@ -29,14 +29,14 @@
     body { background: var(--bg); color: var(--text); font-family: var(--font-sans); min-height: 100vh; }
 
     /* HEADER */
-    header { background: #2C1A0E; color: #F5F0E8; padding: 3rem 2rem 2.5rem; border-bottom: 4px solid #C17F2A; }
+    header { background: #2C1A0E; color: #F5F0E8; padding: 1.5rem 2rem 1.25rem; border-bottom: 4px solid #C17F2A; }
     .header-inner { max-width: 1300px; margin: 0 auto; }
     .site-label { font-weight: 600; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: #7A9E6F; margin-bottom: 0.75rem; }
     .site-label a { color: #7A9E6F; text-decoration: none; border-bottom: 1px solid rgba(122,158,111,0.4); font-family: 'Source Sans 3', sans-serif; }
     .site-label a:hover { color: #E8D9B0; }
-    header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 600; line-height: 1.15; color: #F5F0E8; margin-bottom: 1rem; }
-    header p { font-size: 1rem; color: #E8D9B0; max-width: 680px; font-weight: 300; font-family: 'Source Sans 3', sans-serif; }
-    .header-meta { margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+    header h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 600; line-height: 1.15; color: #F5F0E8; margin-bottom: 0.5rem; }
+    header p { font-size: 0.9rem; color: #E8D9B0; max-width: 680px; font-weight: 300; font-family: 'Source Sans 3', sans-serif; }
+    .header-meta { margin-top: 0.85rem; display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; }
     .meta-pill { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 0.3rem 0.9rem; font-size: 0.82rem; color: #E8D9B0; font-family: 'Source Sans 3', sans-serif; }
     .data-btn { background: transparent; border: 1px solid rgba(255,255,255,0.3); border-radius: 6px; padding: 0.3rem 0.85rem; font-size: 0.78rem; color: #E8D9B0; cursor: pointer; font-family: 'Source Sans 3', sans-serif; text-decoration: none; display: inline-block; transition: all 0.15s; }
     .data-btn:hover { background: rgba(255,255,255,0.1); color: white; }
@@ -82,7 +82,7 @@
     /* BODY LAYOUT — map + panel side by side */
     .body-layout {
       display: flex;
-      height: calc(100vh - 260px);
+      height: calc(100vh - 190px);
       min-height: 480px;
     }
 
@@ -184,7 +184,7 @@
   <div class="header-inner">
     <div class="site-label"><a href="index.html">← Agroecology Investment Directory</a></div>
     <h1>Agroecology Fund — Ecosystem Map</h1>
-    <p>Donor network and grantee relationships. Data sourced entirely from AEF's public website. Partial donor list per AEF disclosure.</p>
+    <p>Data sourced from AEF's public website.</p>
     <div class="header-meta">
       <button class="header-toggle" id="toggle-btn">⊞ Group by category</button>
       <button class="header-toggle" id="ongoing-btn">◉ Ongoing only</button>
