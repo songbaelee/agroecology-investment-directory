@@ -222,7 +222,7 @@
 
 <header>
   <div>
-    <h1>Agroecology Fund — Ecosystem Map v2</h1>
+    <h1>Agroecology Fund — Ecosystem Map</h1>
     <p>
       AEF is a philanthropic fund, not an investment vehicle — but its donor network and grantee relationships
       represent the grassroots infrastructure that investment capital in this directory is trying to reach.
@@ -449,7 +449,7 @@ function render(data) {
   nodeG.append('text')
     .attr('dy', d => nodeRadius(d) + 13)
     .attr('text-anchor', 'middle')
-    .style('font-size', d => d.category === 'center' ? '13px' : d.category === 'donor' ? '10px' : '11px')
+    .attr('font-size', d => d.category === 'center' ? '13' : d.category === 'donor' ? '10' : '11')
     .text(d => d.short_name || d.name);
 
   nodeElements = nodeG;
@@ -629,7 +629,7 @@ document.querySelectorAll('.legend-item').forEach(item => {
     const visibleCats = ALL_CATS.filter(c => !hiddenCats.has(c));
 
     if (allShown) {
-      // first click: isolate this category, hide all others
+      // all shown: isolate clicked category
       ALL_CATS.forEach(c => hiddenCats.add(c));
       hiddenCats.delete(cat);
       allShown = false;
@@ -639,22 +639,39 @@ document.querySelectorAll('.legend-item').forEach(item => {
       });
       this.classList.remove('dimmed');
       this.classList.add('active');
+    } else if (visibleCats.length === 1 && !hiddenCats.has(cat)) {
+      // exactly one isolated and you clicked it — go back to all
+      hiddenCats.clear();
+      allShown = true;
+      document.querySelectorAll('.legend-item').forEach(el => {
+        el.classList.remove('dimmed');
+        el.classList.add('active');
+      });
+    } else if (visibleCats.length === 1 && hiddenCats.has(cat)) {
+      // exactly one isolated and you clicked a different one — switch to it
+      ALL_CATS.forEach(c => hiddenCats.add(c));
+      hiddenCats.delete(cat);
+      document.querySelectorAll('.legend-item').forEach(el => {
+        el.classList.add('dimmed');
+        el.classList.remove('active');
+      });
+      this.classList.remove('dimmed');
+      this.classList.add('active');
     } else if (!hiddenCats.has(cat)) {
-      // cat is visible — deselect it
+      // multiple visible, clicked an active one — deselect it
       hiddenCats.add(cat);
       this.classList.add('dimmed');
       this.classList.remove('active');
-      // if nothing left visible, reset to all
       if (ALL_CATS.every(c => hiddenCats.has(c))) {
         hiddenCats.clear();
         allShown = true;
         document.querySelectorAll('.legend-item').forEach(el => {
           el.classList.remove('dimmed');
-          el.classList.remove('active');
+          el.classList.add('active');
         });
       }
     } else {
-      // cat is hidden — add it
+      // multiple visible, clicked a dimmed one — add it
       hiddenCats.delete(cat);
       this.classList.remove('dimmed');
       this.classList.add('active');
@@ -668,7 +685,12 @@ document.querySelectorAll('.legend-item').forEach(item => {
 // LOAD
 fetch('ecosystem.json')
   .then(r => r.json())
-  .then(data => { allData = data; render(allData); });
+  .then(data => {
+    allData = data;
+    // set all legend items to active on load to match allShown=true
+    document.querySelectorAll('.legend-item').forEach(el => el.classList.add('active'));
+    render(allData);
+  });
 
 window.addEventListener('resize', () => { if (allData.length) render(allData); });
 </script>
