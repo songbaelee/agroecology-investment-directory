@@ -113,7 +113,7 @@
     /* BODY LAYOUT — map + panel side by side */
     .body-layout {
       display: flex;
-      height: calc(100vh - 186px);
+      height: calc(100vh - 228px);
       min-height: 480px;
     }
 
@@ -240,9 +240,9 @@
     <div class="legend-dot" style="background:var(--c-regional)"></div>
     <span>Regional Funds</span>
   </div>
-  <div class="legend-item" data-cat="anchor_partner">
+  <div class="legend-item" data-cat="movement_partner">
     <div class="legend-dot" style="background:var(--c-anchor)"></div>
-    <span>Anchor Partners</span>
+    <span>Movement Partners</span>
   </div>
   <div class="legend-item" data-cat="research">
     <div class="legend-dot" style="background:var(--c-research)"></div>
@@ -258,7 +258,22 @@
   </div>
 </div>
 
-<div class="body-layout">
+<div class="legend" style="padding-top:7px; padding-bottom:7px;">
+  <span class="legend-label">Relationship</span>
+  <div class="legend-sep"></div>
+  <div style="display:flex;align-items:center;gap:5px;padding:4px 9px;border:1px solid var(--border);border-radius:2px;">
+    <svg width="18" height="12"><circle cx="9" cy="6" r="5" fill="none" stroke="var(--text-muted)" stroke-width="1.5"/></svg>
+    <span style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);">Seeded / Anchor</span>
+  </div>
+  <div style="display:flex;align-items:center;gap:5px;padding:4px 9px;border:1px solid var(--border);border-radius:2px;">
+    <svg width="18" height="12"><circle cx="9" cy="6" r="5" fill="none" stroke="var(--text-muted)" stroke-width="1.5" stroke-dasharray="4,3"/></svg>
+    <span style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);">Grantee</span>
+  </div>
+  <div style="display:flex;align-items:center;gap:5px;padding:4px 9px;border:1px solid var(--border);border-radius:2px;">
+    <svg width="18" height="12"><circle cx="9" cy="6" r="5" fill="none" stroke="var(--text-muted)" stroke-width="1.5" stroke-dasharray="2,4"/></svg>
+    <span style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);">Peer Partner</span>
+  </div>
+</div>
   <div id="map-container">
     <svg id="map"></svg>
   </div>
@@ -290,31 +305,31 @@
 
 <script>
 const COLORS = {
-  center:         '#f0f0e8',
-  regional_fund:  '#7ecf7e',
-  anchor_partner: '#5ba8d4',
-  research:       '#e8b84a',
-  policy:         '#c47dd4',
-  donor:          '#d47a5a'
+  center:           '#f0f0e8',
+  regional_fund:    '#7ecf7e',
+  movement_partner: '#5ba8d4',
+  research:         '#e8b84a',
+  policy:           '#c47dd4',
+  donor:            '#d47a5a'
 };
 
 const CAT_LABELS = {
-  regional_fund:  'Regional Funds',
-  anchor_partner: 'Anchor Partners',
-  research:       'Research & Knowledge',
-  policy:         'Policy & Advocacy',
-  donor:          'Donors'
+  regional_fund:    'Regional Funds',
+  movement_partner: 'Movement Partners',
+  research:         'Research & Knowledge',
+  policy:           'Policy & Advocacy',
+  donor:            'Donors'
 };
 
 const ALL_CATS = Object.keys(CAT_LABELS);
 
 const CLUSTER_POS = {
-  center:         { fx: 0.50, fy: 0.50 },
-  regional_fund:  { fx: 0.50, fy: 0.14 },
-  anchor_partner: { fx: 0.16, fy: 0.40 },
-  research:       { fx: 0.84, fy: 0.28 },
-  policy:         { fx: 0.84, fy: 0.70 },
-  donor:          { fx: 0.30, fy: 0.82 }
+  center:           { fx: 0.50, fy: 0.50 },
+  regional_fund:    { fx: 0.50, fy: 0.14 },
+  movement_partner: { fx: 0.16, fy: 0.40 },
+  research:         { fx: 0.84, fy: 0.28 },
+  policy:           { fx: 0.84, fy: 0.70 },
+  donor:            { fx: 0.30, fy: 0.82 }
 };
 
 let allData = [];
@@ -452,7 +467,13 @@ function render(data) {
   nodeG.append('circle')
     .attr('r', d => nodeRadius(d))
     .attr('fill', d => nodeColor(d) + (d.category === 'center' ? 'ff' : '28'))
-    .attr('stroke', d => nodeColor(d));
+    .attr('stroke', d => nodeColor(d))
+    .attr('stroke-dasharray', d => {
+      if (d.relationship === 'grantee') return '4,3';
+      if (d.relationship === 'partner') return '2,4';
+      if (d.relationship === 'initiative') return null;
+      return null; // seeded, anchor, center, donor — solid
+    });
 
   nodeG.append('text')
     .attr('dy', d => nodeRadius(d) + 15)
@@ -549,7 +570,7 @@ function dragEnd(event, d) {
 // PANEL
 const CAT_NAMES = {
   center: 'Center', regional_fund: 'Regional Fund',
-  anchor_partner: 'Anchor Partner', research: 'Research & Knowledge',
+  movement_partner: 'Movement Partner', research: 'Research & Knowledge',
   policy: 'Policy & Advocacy', donor: 'Donor'
 };
 
