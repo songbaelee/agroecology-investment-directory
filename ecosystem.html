@@ -387,11 +387,11 @@ function getW() { return container.clientWidth; }
 function getH() { return container.clientHeight; }
 
 function nodeRadius(d) {
-  if (d.category === 'center') return 22;
-  if (d.relationship === 'seeded') return 14;
-  if (d.relationship === 'anchor' || d.relationship === 'initiative') return 10;
-  if (d.category === 'donor') return 7;
-  return 8;
+  if (d.category === 'center') return 28;
+  if (d.relationship === 'seeded') return 18;
+  if (d.relationship === 'anchor' || d.relationship === 'initiative') return 13;
+  if (d.category === 'donor') return 9;
+  return 11;
 }
 
 function nodeColor(d) { return COLORS[d.category] || '#888'; }
@@ -410,12 +410,7 @@ function buildLinks(nodes) {
   const center = nodes.find(n => n.category === 'center');
   if (!center) return [];
   return nodes
-    .filter(n => n.id !== center.id && (
-      n.relationship === 'seeded' ||
-      n.relationship === 'anchor' ||
-      n.relationship === 'initiative' ||
-      n.relationship === 'partner'
-    ))
+    .filter(n => n.id !== center.id)
     .map(n => ({ source: center.id, target: n.id }))
     .filter(l => ids.has(l.source) && ids.has(l.target));
 }
@@ -449,14 +444,28 @@ function render(data) {
     .attr('class', 'link')
     .attr('stroke', d => {
       const target = nodes.find(n => n.id === d.target);
-      return target ? nodeColor(target) : '#555';
+      if (!target) return '#555';
+      if (target.category === 'donor') return '#555';
+      return nodeColor(target);
+    })
+    .attr('stroke-opacity', d => {
+      const target = nodes.find(n => n.id === d.target);
+      if (!target) return 0.2;
+      if (target.category === 'donor') return 0.15;
+      if (target.relationship === 'seeded') return 0.7;
+      return 0.4;
     })
     .attr('stroke-width', d => {
       const target = nodes.find(n => n.id === d.target);
-      if (!target) return 1;
-      if (target.relationship === 'seeded') return 2;
+      if (!target) return 0.5;
+      if (target.category === 'donor') return 0.5;
+      if (target.relationship === 'seeded') return 2.5;
       if (target.relationship === 'anchor') return 1.5;
       return 1;
+    })
+    .attr('stroke-dasharray', d => {
+      const target = nodes.find(n => n.id === d.target);
+      return target && target.category === 'donor' ? '3,4' : null;
     });
 
   const nodeG = g.selectAll('.node')
@@ -479,8 +488,9 @@ function render(data) {
     .attr('stroke', d => nodeColor(d));
 
   nodeG.append('text')
-    .attr('dy', d => nodeRadius(d) + 11)
+    .attr('dy', d => nodeRadius(d) + 13)
     .attr('text-anchor', 'middle')
+    .style('font-size', d => d.category === 'center' ? '11px' : d.category === 'donor' ? '9px' : '10px')
     .text(d => d.short_name || d.name);
 
   nodeElements = nodeG;
@@ -488,16 +498,17 @@ function render(data) {
   simulation = d3.forceSimulation(nodes)
     .force('link', d3.forceLink(links).id(d => d.id).distance(d => {
       const target = nodes.find(n => n.id === d.target);
-      if (!target) return 120;
-      if (target.relationship === 'seeded') return 90;
-      if (target.relationship === 'anchor') return 140;
+      if (!target) return 160;
+      if (target.relationship === 'seeded') return 110;
+      if (target.relationship === 'anchor') return 170;
+      if (target.category === 'donor') return 260;
       return 100;
-    }).strength(0.4))
+    }).strength(0.3))
     .force('charge', d3.forceManyBody().strength(d =>
-      d.category === 'center' ? -600 : d.category === 'donor' ? -80 : -220
+      d.category === 'center' ? -800 : d.category === 'donor' ? -120 : -280
     ))
     .force('center', d3.forceCenter(W / 2, H / 2))
-    .force('collision', d3.forceCollide(d => nodeRadius(d) + 14))
+    .force('collision', d3.forceCollide(d => nodeRadius(d) + 18))
     .on('tick', ticked);
 
   function ticked() {
