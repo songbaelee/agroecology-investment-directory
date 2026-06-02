@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AEF Ecosystem — Agroecology Investment Directory</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+  <style>
+    :root {
+      --bg:         #0f1a0f;
+      --bg-panel:   #162016;
+      --bg-card:    #1c2b1c;
+      --border:     #2a3d2a;
+      --text:       #d4e8d4;
+      --text-muted: #7a9e7a;
+      --text-dim:   #4a6b4a;
+
+      /* category colours */
+      --c-center:  #f0f0e8;
+      --c-regional:#7ecf7e;
+      --c-anchor:  #5ba8d4;
+      --c-research:#e8b84a;
+      --c-policy:  #c47dd4;
+      --c-donor:   #d47a5a;
+
+      --font-mono: 'Courier New', Courier, monospace;
+      --font-sans: Georgia, 'Times New Roman', serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      border-bottom: 1px solid var(--border);
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    nav .brand {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    nav .brand:hover { color: var(--text); }
+    nav .sep { color: var(--border); font-size: 11px; }
+    nav a.nav-link {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+    nav a.nav-link:hover { color: var(--text); }
+    nav a.nav-link.active { color: var(--c-regional); }
+
+    /* ── HEADER ── */
+    header {
+      padding: 32px 28px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    header h1 {
+      font-family: var(--font-sans);
+      font-size: 22px;
+      font-weight: normal;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+    header p {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 6px;
+      max-width: 560px;
+      line-height: 1.6;
+    }
+    .header-controls {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── BUTTONS ── */
+    button {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-muted);
+      padding: 7px 14px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    button:hover { border-color: var(--text-muted); color: var(--text); }
+    button.active {
+      border-color: var(--c-regional);
+      color: var(--c-regional);
+      background: rgba(126,207,126,0.06);
+    }
+
+    /* ── LEGEND ── */
+    .legend {
+      padding: 14px 28px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .legend-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-dim);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-right: 4px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      opacity: 1;
+      transition: opacity 0.2s;
+    }
+    .legend-item.dimmed { opacity: 0.35; }
+    .legend-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .legend-item span {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── MAP CONTAINER ── */
+    #map-container {
+      position: relative;
+      width: 100%;
+      height: calc(100vh - 220px);
+      min-height: 500px;
+      overflow: hidden;
+    }
+
+    svg#map {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* node styles via JS classes */
+    .node circle {
+      stroke-width: 1.5;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .node circle:hover { stroke-width: 2.5; }
+    .node text {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      fill: var(--text-muted);
+      pointer-events: none;
+      user-select: none;
+    }
+    .link {
+      stroke-opacity: 0.35;
+      transition: stroke-opacity 0.3s;
+    }
+
+    /* ── TOOLTIP ── */
+    #tooltip {
+      position: absolute;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 14px 16px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.15s ease;
+      max-width: 280px;
+      z-index: 100;
+    }
+    #tooltip.visible { opacity: 1; }
+    #tooltip .tt-name {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    #tooltip .tt-meta {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      display: flex;
+      gap: 10px;
+    }
+    #tooltip .tt-desc {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 8px;
+    }
+    #tooltip .tt-link a {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--c-regional);
+      text-decoration: none;
+    }
+    #tooltip .tt-link a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 14px 28px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-dim);
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    footer a { color: var(--text-dim); text-decoration: none; }
+    footer a:hover { color: var(--text-muted); }
+
+    /* ── CATEGORY LABEL (grouped mode) ── */
+    .category-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .category-label.visible { opacity: 1; }
+
+    @media (max-width: 600px) {
+      header { padding: 20px 16px 16px; }
+      nav { padding: 12px 16px; }
+      .legend { padding: 10px 16px; gap: 12px; }
+      #map-container { height: calc(100vh - 260px); }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="brand">Agroecology Investment Directory</a>
+  <span class="sep">·</span>
+  <a href="resources.html" class="nav-link">Resources & Tools</a>
+  <span class="sep">·</span>
+  <a href="candidates.html" class="nav-link">Research Pipeline</a>
+  <span class="sep">·</span>
+  <a href="ecosystem.html" class="nav-link active">AEF Ecosystem</a>
+</nav>
+
+<header>
+  <div>
+    <h1>Agroecology Fund — Ecosystem Map</h1>
+    <p>
+      AEF is a philanthropic fund, not an investment vehicle — but its donor network and grantee relationships
+      represent the grassroots infrastructure that investment capital in this directory is trying to reach.
+      Data sourced entirely from AEF's public website. Partial donor list per AEF disclosure.
+    </p>
+  </div>
+  <div class="header-controls">
+    <button id="toggle-btn">⊞ Group by category</button>
+    <button id="ongoing-btn">◉ Ongoing only</button>
+  </div>
+</header>
+
+<div class="legend">
+  <span class="legend-label">Category</span>
+  <div class="legend-item" data-cat="regional_fund">
+    <div class="legend-dot" style="background:var(--c-regional)"></div>
+    <span>Regional Funds</span>
+  </div>
+  <div class="legend-item" data-cat="anchor_partner">
+    <div class="legend-dot" style="background:var(--c-anchor)"></div>
+    <span>Anchor Partners</span>
+  </div>
+  <div class="legend-item" data-cat="research">
+    <div class="legend-dot" style="background:var(--c-research)"></div>
+    <span>Research & Knowledge</span>
+  </div>
+  <div class="legend-item" data-cat="policy">
+    <div class="legend-dot" style="background:var(--c-policy)"></div>
+    <span>Policy & Advocacy</span>
+  </div>
+  <div class="legend-item" data-cat="donor">
+    <div class="legend-dot" style="background:var(--c-donor)"></div>
+    <span>Donors</span>
+  </div>
+</div>
+
+<div id="map-container">
+  <svg id="map"></svg>
+  <div id="tooltip">
+    <div class="tt-name" id="tt-name"></div>
+    <div class="tt-meta" id="tt-meta"></div>
+    <div class="tt-desc" id="tt-desc"></div>
+    <div class="tt-link" id="tt-link"></div>
+  </div>
+</div>
+
+<footer>
+  <span>Agroecology Investment Directory</span>
+  <span>·</span>
+  <span>Data: <a href="ecosystem.json">ecosystem.json</a></span>
+  <span>·</span>
+  <a href="index.html">Funds</a>
+  <span>·</span>
+  <a href="resources.html">Resources & Tools</a>
+  <span>·</span>
+  <a href="candidates.html">Research Pipeline</a>
+</footer>
+
+<script>
+const COLORS = {
+  center:        '#f0f0e8',
+  regional_fund: '#7ecf7e',
+  anchor_partner:'#5ba8d4',
+  research:      '#e8b84a',
+  policy:        '#c47dd4',
+  donor:         '#d47a5a'
+};
+
+const CAT_LABELS = {
+  regional_fund:  'Regional Funds',
+  anchor_partner: 'Anchor Partners',
+  research:       'Research & Knowledge',
+  policy:         'Policy & Advocacy',
+  donor:          'Donors'
+};
+
+// cluster positions for grouped mode (as fractions of width/height)
+const CLUSTER_POS = {
+  center:        { fx: 0.50, fy: 0.50 },
+  regional_fund: { fx: 0.50, fy: 0.18 },
+  anchor_partner:{ fx: 0.18, fy: 0.42 },
+  research:      { fx: 0.82, fy: 0.32 },
+  policy:        { fx: 0.82, fy: 0.68 },
+  donor:         { fx: 0.28, fy: 0.78 }
+};
+
+let allData = [];
+let isGrouped = false;
+let ongoingOnly = false;
+let hiddenCats = new Set();
+let simulation;
+let nodeElements, linkElements, labelElements;
+
+const svg = d3.select('#map');
+const container = document.getElementById('map-container');
+const tooltip = document.getElementById('tooltip');
+
+const g = svg.append('g').attr('class', 'zoom-layer');
+
+svg.call(d3.zoom()
+  .scaleExtent([0.3, 4])
+  .on('zoom', (e) => g.attr('transform', e.transform))
+);
+
+function getW() { return container.clientWidth; }
+function getH() { return container.clientHeight; }
+
+function nodeRadius(d) {
+  if (d.category === 'center') return 22;
+  if (d.relationship === 'seeded') return 14;
+  if (d.relationship === 'anchor' || d.relationship === 'initiative') return 10;
+  if (d.category === 'donor') return 7;
+  return 8;
+}
+
+function nodeColor(d) { return COLORS[d.category] || '#888'; }
+
+function visibleNodes(data) {
+  return data.filter(d => {
+    if (d.category === 'center') return true;
+    if (hiddenCats.has(d.category)) return false;
+    if (ongoingOnly && d.grant_status === 'concluded') return false;
+    return true;
+  });
+}
+
+function buildLinks(nodes) {
+  const ids = new Set(nodes.map(n => n.id));
+  const center = nodes.find(n => n.category === 'center');
+  if (!center) return [];
+  return nodes
+    .filter(n => n.id !== center.id && (
+      n.relationship === 'seeded' ||
+      n.relationship === 'anchor' ||
+      n.relationship === 'initiative' ||
+      n.relationship === 'partner'
+    ))
+    .map(n => ({ source: center.id, target: n.id }))
+    .filter(l => ids.has(l.source) && ids.has(l.target));
+}
+
+function render(data) {
+  const W = getW(), H = getH();
+  const nodes = visibleNodes(data).map(d => ({ ...d }));
+  const links = buildLinks(nodes);
+
+  g.selectAll('*').remove();
+
+  // category label positions
+  const catLabelData = Object.entries(CAT_LABELS).map(([cat, label]) => {
+    const pos = CLUSTER_POS[cat];
+    return { cat, label, x: pos.fx * W, y: pos.fy * H - 28 };
+  });
+
+  labelElements = g.selectAll('.category-label')
+    .data(catLabelData)
+    .enter().append('text')
+    .attr('class', 'category-label')
+    .attr('x', d => d.x)
+    .attr('y', d => d.y)
+    .attr('text-anchor', 'middle')
+    .attr('fill', d => COLORS[d.cat])
+    .text(d => d.label);
+
+  linkElements = g.selectAll('.link')
+    .data(links)
+    .enter().append('line')
+    .attr('class', 'link')
+    .attr('stroke', d => {
+      const target = nodes.find(n => n.id === d.target);
+      return target ? nodeColor(target) : '#555';
+    })
+    .attr('stroke-width', d => {
+      const target = nodes.find(n => n.id === d.target);
+      if (!target) return 1;
+      if (target.relationship === 'seeded') return 2;
+      if (target.relationship === 'anchor') return 1.5;
+      return 1;
+    });
+
+  const nodeG = g.selectAll('.node')
+    .data(nodes, d => d.id)
+    .enter().append('g')
+    .attr('class', 'node')
+    .call(d3.drag()
+      .on('start', dragStart)
+      .on('drag', dragging)
+      .on('end', dragEnd)
+    )
+    .on('mouseover', showTooltip)
+    .on('mousemove', moveTooltip)
+    .on('mouseout', hideTooltip)
+    .on('click', (e, d) => { if (d.url) window.open(d.url, '_blank'); });
+
+  nodeG.append('circle')
+    .attr('r', d => nodeRadius(d))
+    .attr('fill', d => nodeColor(d) + (d.category === 'center' ? 'ff' : '22'))
+    .attr('stroke', d => nodeColor(d));
+
+  nodeG.append('text')
+    .attr('dy', d => nodeRadius(d) + 11)
+    .attr('text-anchor', 'middle')
+    .text(d => d.short_name || d.name);
+
+  nodeElements = nodeG;
+
+  simulation = d3.forceSimulation(nodes)
+    .force('link', d3.forceLink(links).id(d => d.id).distance(d => {
+      const target = nodes.find(n => n.id === d.target);
+      if (!target) return 120;
+      if (target.relationship === 'seeded') return 90;
+      if (target.relationship === 'anchor') return 140;
+      return 100;
+    }).strength(0.4))
+    .force('charge', d3.forceManyBody().strength(d =>
+      d.category === 'center' ? -600 : d.category === 'donor' ? -80 : -220
+    ))
+    .force('center', d3.forceCenter(W / 2, H / 2))
+    .force('collision', d3.forceCollide(d => nodeRadius(d) + 14))
+    .on('tick', ticked);
+
+  function ticked() {
+    linkElements
+      .attr('x1', d => d.source.x)
+      .attr('y1', d => d.source.y)
+      .attr('x2', d => d.target.x)
+      .attr('y2', d => d.target.y);
+    nodeElements.attr('transform', d => `translate(${d.x},${d.y})`);
+  }
+
+  if (isGrouped) applyGrouping(nodes);
+}
+
+function applyGrouping(nodes) {
+  const W = getW(), H = getH();
+  simulation.stop();
+
+  // hide links in grouped mode
+  linkElements.style('opacity', 0);
+
+  // show category labels
+  labelElements.classed('visible', true);
+
+  const catGroups = {};
+  nodes.forEach(d => {
+    if (!catGroups[d.category]) catGroups[d.category] = [];
+    catGroups[d.category].push(d);
+  });
+
+  // position nodes within their cluster
+  nodes.forEach(d => {
+    const pos = CLUSTER_POS[d.category] || CLUSTER_POS.center;
+    const siblings = catGroups[d.category] || [];
+    const idx = siblings.indexOf(d);
+    const total = siblings.length;
+    const radius = Math.min(60, total * 14);
+    const angle = (idx / total) * 2 * Math.PI;
+    const tx = pos.fx * W + (total === 1 ? 0 : radius * Math.cos(angle));
+    const ty = pos.fy * H + (total === 1 ? 0 : radius * Math.sin(angle));
+
+    d3.select(nodeElements.filter(n => n.id === d.id).node())
+      .transition().duration(600).ease(d3.easeCubicInOut)
+      .attr('transform', `translate(${tx},${ty})`);
+  });
+
+  nodeElements.attr('transform', d => {
+    const pos = CLUSTER_POS[d.category] || CLUSTER_POS.center;
+    const siblings = catGroups[d.category] || [];
+    const idx = siblings.indexOf(d);
+    const total = siblings.length;
+    const radius = Math.min(60, total * 14);
+    const angle = (idx / total) * 2 * Math.PI;
+    const tx = pos.fx * W + (total === 1 ? 0 : radius * Math.cos(angle));
+    const ty = pos.fy * H + (total === 1 ? 0 : radius * Math.sin(angle));
+    d._gx = tx; d._gy = ty;
+    return `translate(${d.x || tx},${d.y || ty})`;
+  });
+
+  nodeElements.transition().duration(600).ease(d3.easeCubicInOut)
+    .attr('transform', d => `translate(${d._gx},${d._gy})`);
+}
+
+function applyForce() {
+  linkElements.style('opacity', null);
+  labelElements.classed('visible', false);
+  simulation.alpha(0.5).restart();
+}
+
+function dragStart(event, d) {
+  if (!isGrouped) {
+    if (!event.active) simulation.alphaTarget(0.3).restart();
+  }
+  d.fx = d.x; d.fy = d.y;
+}
+function dragging(event, d) { d.fx = event.x; d.fy = event.y; }
+function dragEnd(event, d) {
+  if (!isGrouped) {
+    if (!event.active) simulation.alphaTarget(0);
+  }
+  d.fx = null; d.fy = null;
+}
+
+function showTooltip(event, d) {
+  document.getElementById('tt-name').textContent = d.name;
+  const metaParts = [];
+  if (d.region) metaParts.push(d.region);
+  if (d.grant_status) metaParts.push(d.grant_status === 'ongoing' ? '● ongoing' : '○ concluded');
+  document.getElementById('tt-meta').textContent = metaParts.join(' · ');
+  document.getElementById('tt-desc').textContent = d.description || '';
+  const linkEl = document.getElementById('tt-link');
+  linkEl.innerHTML = d.url ? `<a href="${d.url}" target="_blank">↗ ${d.url.replace(/^https?:\/\//, '')}</a>` : '';
+  tooltip.classList.add('visible');
+  moveTooltip(event);
+}
+function moveTooltip(event) {
+  const rect = container.getBoundingClientRect();
+  let x = event.clientX - rect.left + 16;
+  let y = event.clientY - rect.top + 16;
+  if (x + 300 > rect.width) x = event.clientX - rect.left - 300;
+  if (y + 180 > rect.height) y = event.clientY - rect.top - 180;
+  tooltip.style.left = x + 'px';
+  tooltip.style.top  = y + 'px';
+}
+function hideTooltip() { tooltip.classList.remove('visible'); }
+
+// ── CONTROLS ──
+document.getElementById('toggle-btn').addEventListener('click', function() {
+  isGrouped = !isGrouped;
+  this.textContent = isGrouped ? '⊙ Force directed' : '⊞ Group by category';
+  this.classList.toggle('active', isGrouped);
+  if (isGrouped) {
+    const nodes = [];
+    nodeElements.each(d => nodes.push(d));
+    applyGrouping(nodes);
+  } else {
+    applyForce();
+  }
+});
+
+document.getElementById('ongoing-btn').addEventListener('click', function() {
+  ongoingOnly = !ongoingOnly;
+  this.classList.toggle('active', ongoingOnly);
+  isGrouped = false;
+  document.getElementById('toggle-btn').textContent = '⊞ Group by category';
+  document.getElementById('toggle-btn').classList.remove('active');
+  render(allData);
+});
+
+// legend filter
+document.querySelectorAll('.legend-item').forEach(item => {
+  item.addEventListener('click', function() {
+    const cat = this.dataset.cat;
+    if (hiddenCats.has(cat)) {
+      hiddenCats.delete(cat);
+      this.classList.remove('dimmed');
+    } else {
+      hiddenCats.add(cat);
+      this.classList.add('dimmed');
+    }
+    isGrouped = false;
+    document.getElementById('toggle-btn').textContent = '⊞ Group by category';
+    document.getElementById('toggle-btn').classList.remove('active');
+    render(allData);
+  });
+});
+
+// ── LOAD ──
+fetch('ecosystem.json')
+  .then(r => r.json())
+  .then(data => {
+    allData = data;
+    render(allData);
+  });
+
+window.addEventListener('resize', () => {
+  if (allData.length) render(allData);
+});
+</script>
+</body>
+</html>
