@@ -259,12 +259,10 @@
     <span>Donors</span>
   </div>
   </div>
-</div>
-
-<div style="margin-left:auto;display:flex;align-items:center;gap:6px;padding-right:2px;">
+  <div style="display:flex;align-items:center;gap:6px;padding-right:2px;">
     <span class="legend-label" style="margin-right:2px;">Relationship</span>
     <div class="legend-sep"></div>
-    <div class="legend-item rel-item active" data-rel="seeded,anchor,initiative,donor,center">
+    <div class="legend-item rel-item active" data-rel="solid">
       <svg width="16" height="12" style="flex-shrink:0"><circle cx="8" cy="6" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
       <span>Seeded / Anchor</span>
     </div>
@@ -349,7 +347,7 @@ let simulation;
 let nodeElements, linkElements, labelElements;
 
 const ALL_RELS = [
-  { key: 'seeded,anchor,initiative,donor,center', label: 'Seeded / Anchor' },
+  { key: 'solid', label: 'Seeded / Anchor' },
   { key: 'grantee', label: 'Grantee' },
   { key: 'partner', label: 'Peer Partner' }
 ];
@@ -375,12 +373,9 @@ function nodeRadius(d) {
 function nodeColor(d) { return COLORS[d.category] || '#888'; }
 
 function relGroup(d) {
-  if (d.category === 'center') return 'seeded,anchor,initiative,donor,center';
-  if (d.category === 'donor') return 'seeded,anchor,initiative,donor,center';
-  if (d.relationship === 'seeded' || d.relationship === 'anchor' || d.relationship === 'initiative') return 'seeded,anchor,initiative,donor,center';
   if (d.relationship === 'grantee') return 'grantee';
   if (d.relationship === 'partner') return 'partner';
-  return 'seeded,anchor,initiative,donor,center';
+  return 'solid'; // seeded, anchor, initiative, donor, center
 }
 
 function visibleNodes(data) {
