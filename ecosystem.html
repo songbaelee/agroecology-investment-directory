@@ -22,7 +22,7 @@
       --c-donor:    #d47a5a;
       --font-mono: 'Courier New', Courier, monospace;
       --font-sans: Georgia, 'Times New Roman', serif;
-      --panel-w: 280px;
+      --panel-w: 360px;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -200,6 +200,8 @@
   <div class="legend-sep"></div>
   <span class="legend-action" id="select-all">All</span>
   <span class="legend-action" id="select-none">None</span>
+  <div class="legend-sep"></div>
+  <span class="legend-label" id="node-count" style="margin-right:0;color:var(--text-muted);">— of 63</span>
   <div class="legend-sep"></div>
   <div class="legend-item" data-cat="regional_fund">
     <div class="legend-dot" style="background:var(--c-regional)"></div>
@@ -393,6 +395,11 @@ function render(data) {
   const nodes = visibleNodes(data).map(d => ({ ...d }));
   const links = buildLinks(nodes);
 
+  // update count indicator (exclude center node from displayed count)
+  const nonCenter = nodes.filter(d => d.category !== 'center').length;
+  const total = data.filter(d => d.category !== 'center').length;
+  document.getElementById('node-count').textContent = `${nonCenter} of ${total}`;
+
   g.selectAll('*').remove();
 
   // category labels for grouped mode
@@ -460,7 +467,7 @@ function render(data) {
   nodeG.append('text')
     .attr('dy', d => nodeRadius(d) + 15)
     .attr('text-anchor', 'middle')
-    .attr('font-size', d => d.category === 'center' ? '15' : d.category === 'donor' ? '11' : '13')
+    .attr('font-size', d => d.category === 'center' ? '17' : d.category === 'donor' ? '13' : '15')
     .text(d => d.short_name || d.name);
 
   nodeElements = nodeG;
