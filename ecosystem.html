@@ -20,8 +20,6 @@
       --c-research: #e8b84a;
       --c-policy:   #c47dd4;
       --c-donor:    #d47a5a;
-      --c-explicit:    #7ecf7e;
-      --c-adjacent:    #d47a5a;
       --font-mono: 'Courier New', Courier, monospace;
       --font-sans: Georgia, 'Times New Roman', serif;
       --panel-w: 360px;
@@ -30,7 +28,6 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: var(--bg); color: var(--text); font-family: var(--font-sans); min-height: 100vh; }
 
-    /* HEADER */
     header { background: #2C1A0E; color: #F5F0E8; padding: 0.75rem 2rem 0.7rem; border-bottom: 4px solid #C17F2A; }
     .header-inner { max-width: 1300px; margin: 0 auto; }
     .header-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem; }
@@ -45,166 +42,69 @@
     .header-toggle:hover { background: rgba(255,255,255,0.1); color: white; }
     .header-toggle.active { border-color: #7A9E6F; color: #7A9E6F; background: rgba(122,158,111,0.1); }
 
-    /* LEGEND */
     .legend {
-      padding: 8px 28px; border-bottom: 1px solid var(--border);
+      padding: 10px 28px; border-bottom: 1px solid var(--border);
       display: flex; gap: 6px; flex-wrap: wrap; align-items: center;
+      justify-content: space-between;
     }
-    .legend-label {
-      font-family: var(--font-mono); font-size: 10px; color: var(--text-dim);
-      letter-spacing: 0.06em; text-transform: uppercase; margin-right: 6px; white-space: nowrap;
-    }
+    .legend-label { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); letter-spacing: 0.06em; text-transform: uppercase; margin-right: 6px; white-space: nowrap; }
     .legend-sep { width: 1px; height: 14px; background: var(--border); margin: 0 4px; flex-shrink: 0; }
-    .legend-item {
-      display: flex; align-items: center; gap: 5px;
-      cursor: pointer; opacity: 1; transition: all 0.15s;
-      padding: 4px 9px; border: 1px solid var(--border);
-      border-radius: 2px; white-space: nowrap;
-    }
+    .legend-item { display: flex; align-items: center; gap: 5px; cursor: pointer; opacity: 1; transition: all 0.15s; padding: 4px 9px; border: 1px solid var(--border); border-radius: 2px; white-space: nowrap; }
     .legend-item:hover { border-color: var(--text-dim); }
-    .legend-item.active {
-      border-color: currentColor;
-      background: rgba(255,255,255,0.04);
-    }
+    .legend-item.active { border-color: currentColor; background: rgba(255,255,255,0.04); }
     .legend-item.dimmed { opacity: 0.3; border-color: transparent; }
     .rel-item { color: var(--text-muted); }
     .legend-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
-    .legend-item span {
-      font-family: var(--font-mono); font-size: 10px;
-      color: var(--text-muted); letter-spacing: 0.03em;
-    }
-    .legend-action {
-      font-family: var(--font-mono); font-size: 10px; color: var(--text-dim);
-      cursor: pointer; padding: 2px 6px; border: 1px solid transparent;
-      transition: all 0.15s; white-space: nowrap;
-    }
+    .legend-item span { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); letter-spacing: 0.03em; }
+    .legend-action { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); cursor: pointer; padding: 2px 6px; border: 1px solid transparent; transition: all 0.15s; }
     .legend-action:hover { color: var(--text-muted); border-color: var(--border); }
 
-
-
-    /* BODY LAYOUT */
-    .body-layout {
-      position: relative;
-      height: calc(100vh - 178px);
-      min-height: 480px;
-    }
-
-    /* MAP */
-    #map-container {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      overflow: hidden;
-    }
+    .body-layout { position: relative; height: calc(100vh - 160px); min-height: 480px; }
+    #map-container { width: 100%; height: 100%; position: relative; overflow: hidden; }
     svg#map { width: 100%; height: 100%; display: block; }
 
-    .node circle {
-      stroke-width: 1.5; cursor: pointer; transition: opacity 0.2s;
-    }
+    .node circle { stroke-width: 1.5; cursor: pointer; transition: opacity 0.2s; }
     .node circle:hover { stroke-width: 2.5; }
-    .node text {
-      font-family: var(--font-mono);
-      fill: var(--text-muted); pointer-events: none; user-select: none;
-      text-shadow: 0 1px 3px #0f1a0f, 0 0 8px #0f1a0f, -1px 0 4px #0f1a0f, 1px 0 4px #0f1a0f;
-    }
+    .node text { font-family: var(--font-mono); fill: var(--text-muted); pointer-events: none; user-select: none; text-shadow: 0 1px 3px #0f1a0f, 0 0 8px #0f1a0f, -1px 0 4px #0f1a0f, 1px 0 4px #0f1a0f; }
     .node.selected circle { stroke-width: 3; }
     .link { transition: stroke-opacity 0.3s; }
 
-    /* SLIDE-OUT OVERLAY PANEL */
     #info-panel {
-      position: fixed;
-      top: 0; right: 0;
-      width: var(--panel-w);
-      height: 100vh;
-      border-left: 1px solid var(--border);
-      background: var(--bg-panel);
-      display: flex; flex-direction: column;
-      overflow: hidden;
+      position: fixed; top: 0; right: 0;
+      width: var(--panel-w); height: 100vh;
+      border-left: 1px solid var(--border); background: var(--bg-panel);
+      display: flex; flex-direction: column; overflow: hidden;
       transform: translateX(100%);
       transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-      z-index: 100;
-      box-shadow: -4px 0 24px rgba(0,0,0,0.4);
+      z-index: 100; box-shadow: -4px 0 24px rgba(0,0,0,0.4);
     }
     #info-panel.open { transform: translateX(0); }
-    #info-panel .panel-header {
-      padding: 14px 16px 10px;
-      border-bottom: 1px solid var(--border);
-      font-family: var(--font-mono); font-size: 10px;
-      color: var(--text-dim); letter-spacing: 0.06em; text-transform: uppercase;
-      display: flex; justify-content: space-between; align-items: center;
-      flex-shrink: 0;
-    }
-    #panel-close {
-      background: none; border: none; cursor: pointer;
-      color: var(--text-dim); font-size: 16px; line-height: 1;
-      padding: 0 2px; transition: color 0.15s;
-    }
+    #info-panel .panel-header { padding: 14px 16px 10px; border-bottom: 1px solid var(--border); font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); letter-spacing: 0.06em; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; }
+    #panel-close { background: none; border: none; cursor: pointer; color: var(--text-dim); font-size: 16px; line-height: 1; padding: 0 2px; transition: color 0.15s; }
     #panel-close:hover { color: var(--text); }
-    #info-panel .panel-content {
-      padding: 16px; overflow-y: auto; flex: 1;
-      display: block;
-    }
-    .panel-cat-tag {
-      display: inline-block;
-      font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.05em;
-      text-transform: uppercase; padding: 2px 7px;
-      border-radius: 2px; margin-bottom: 10px;
-    }
-    .panel-name {
-      font-family: var(--font-sans); font-size: 15px; color: var(--text);
-      margin-bottom: 6px; line-height: 1.3;
-    }
-    .panel-meta {
-      font-family: var(--font-mono); font-size: 13px; color: var(--text-muted);
-      margin-bottom: 12px; display: flex; flex-direction: column; gap: 3px;
-    }
+    #info-panel .panel-content { padding: 16px; overflow-y: auto; flex: 1; }
+    .panel-cat-tag { display: inline-block; font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.05em; text-transform: uppercase; padding: 2px 7px; border-radius: 2px; margin-bottom: 10px; }
+    .panel-name { font-family: var(--font-sans); font-size: 15px; color: var(--text); margin-bottom: 6px; line-height: 1.3; }
+    .panel-meta { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); margin-bottom: 12px; display: flex; flex-direction: column; gap: 3px; }
     .panel-meta span { display: flex; gap: 6px; align-items: baseline; }
     .panel-meta .meta-label { color: var(--text-dim); min-width: 70px; }
-    .panel-meta .ae-pill {
-      display: inline-block; font-size: 10px; padding: 1px 6px;
-      border-radius: 2px; font-family: var(--font-mono);
-    }
-    .panel-desc {
-      font-family: var(--font-mono); font-size: 13px; color: var(--text-muted);
-      line-height: 1.65; margin-bottom: 14px;
-    }
-    .panel-link a {
-      font-family: var(--font-mono); font-size: 13px; color: var(--c-regional);
-      text-decoration: none; word-break: break-all;
-    }
+    .panel-meta .ae-pill { display: inline-block; font-size: 10px; padding: 1px 6px; border-radius: 2px; font-family: var(--font-mono); }
+    .panel-desc { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); line-height: 1.65; margin-bottom: 14px; }
+    .panel-link a { font-family: var(--font-mono); font-size: 13px; color: var(--c-regional); text-decoration: none; word-break: break-all; }
     .panel-link a:hover { text-decoration: underline; }
-    .panel-rel-note {
-      font-family: var(--font-mono); font-size: 11px; color: var(--text-dim);
-      line-height: 1.6; margin-bottom: 12px; padding: 8px 10px;
-      border-left: 2px solid var(--border); font-style: italic;
-      display: none;
-    }
-    .panel-donor-note {
-      font-family: var(--font-mono); font-size: 11px; color: var(--text-dim);
-      line-height: 1.6; margin-bottom: 12px; padding: 8px 10px;
-      border-left: 2px solid #c47dd455; font-style: italic;
-      display: none;
-    }
+    .panel-rel-note { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); line-height: 1.6; margin-bottom: 12px; padding: 8px 10px; border-left: 2px solid var(--border); font-style: italic; display: none; }
+    .panel-donor-note { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); line-height: 1.6; margin-bottom: 12px; padding: 8px 10px; border-left: 2px solid #c47dd455; font-style: italic; display: none; }
 
-    /* CATEGORY LABEL (grouped mode) */
-    .category-label {
-      font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
-      text-transform: uppercase; pointer-events: none; opacity: 0; transition: opacity 0.4s;
-    }
+    .category-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; pointer-events: none; opacity: 0; transition: opacity 0.4s; }
     .category-label.visible { opacity: 1; }
 
-    /* FOOTER */
-    footer {
-      border-top: 1px solid var(--border); padding: 12px 28px;
-      font-family: var(--font-mono); font-size: 10px; color: var(--text-dim);
-      display: flex; gap: 14px; flex-wrap: wrap;
-    }
+    footer { border-top: 1px solid var(--border); padding: 12px 28px; font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); display: flex; gap: 14px; flex-wrap: wrap; }
     footer a { color: var(--text-dim); text-decoration: none; }
     footer a:hover { color: var(--text-muted); }
 
     @media (max-width: 700px) {
       #info-panel { width: 100vw; }
-      .body-layout { height: calc(100vh - 220px); }
+      .body-layout { height: calc(100vh - 200px); }
     }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
@@ -225,9 +125,8 @@
   </div>
 </header>
 
-<div class="legend" id="legend-bar" style="justify-content:space-between;">
-
-  <!-- Row 1: node category filter -->
+<div class="legend" id="legend-bar">
+  <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
     <span class="legend-label">Filter</span>
     <div class="legend-sep"></div>
     <span class="legend-action" id="select-all">All</span>
@@ -235,49 +134,43 @@
     <span class="legend-label" id="node-count" style="margin-right:0;color:var(--text-muted);">— of 63</span>
     <div class="legend-sep"></div>
     <div class="legend-item" data-cat="regional_fund">
-      <div class="legend-dot" style="background:var(--c-regional)"></div>
-      <span>Regional Funds</span>
+      <div class="legend-dot" style="background:var(--c-regional)"></div><span>Regional Funds</span>
     </div>
     <div class="legend-item" data-cat="movement_partner">
-      <div class="legend-dot" style="background:var(--c-anchor)"></div>
-      <span>Movement Partners</span>
+      <div class="legend-dot" style="background:var(--c-anchor)"></div><span>Movement Partners</span>
     </div>
     <div class="legend-item" data-cat="research">
-      <div class="legend-dot" style="background:var(--c-research)"></div>
-      <span>Research & Knowledge</span>
+      <div class="legend-dot" style="background:var(--c-research)"></div><span>Research & Knowledge</span>
     </div>
     <div class="legend-item" data-cat="policy">
-      <div class="legend-dot" style="background:var(--c-policy)"></div>
-      <span>Policy & Advocacy</span>
+      <div class="legend-dot" style="background:var(--c-policy)"></div><span>Policy & Advocacy</span>
     </div>
     <div class="legend-item" data-cat="donor">
-      <div class="legend-dot" style="background:var(--c-donor)"></div>
-      <span>Donors</span>
+      <div class="legend-dot" style="background:var(--c-donor)"></div><span>Donors</span>
     </div>
-    <div class="legend-sep" style="margin-left:auto;"></div>
-    <div style="display:flex;align-items:center;gap:6px;">
-      <span class="legend-label" style="margin-right:2px;">Relationship</span>
-      <div class="legend-sep"></div>
-      <div class="legend-item rel-item active" data-rel="seeded">
-        <svg width="16" height="12" style="flex-shrink:0"><circle cx="8" cy="6" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-        <span>Seeded</span>
-      </div>
-      <div class="legend-item rel-item active" data-rel="anchor">
-        <svg width="16" height="12" style="flex-shrink:0"><circle cx="8" cy="6" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4,3"/></svg>
-        <span>Anchor</span>
-      </div>
-      <div class="legend-item rel-item active" data-rel="partner">
-        <svg width="16" height="12" style="flex-shrink:0"><circle cx="8" cy="6" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2,4"/></svg>
-        <span>Partner</span>
-      </div>
+  </div>
+  <div style="display:flex;align-items:center;gap:6px;">
+    <span class="legend-label">Relationship</span>
+    <div class="legend-sep"></div>
+    <div class="legend-item rel-item active" data-rel="seeded">
+      <svg width="16" height="12" style="flex-shrink:0"><circle cx="8" cy="6" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+      <span>Seeded</span>
     </div>
+    <div class="legend-item rel-item active" data-rel="anchor">
+      <svg width="16" height="12" style="flex-shrink:0"><circle cx="8" cy="6" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4,3"/></svg>
+      <span>Anchor</span>
+    </div>
+    <div class="legend-item rel-item active" data-rel="partner">
+      <svg width="16" height="12" style="flex-shrink:0"><circle cx="8" cy="6" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2,4"/></svg>
+      <span>Partner</span>
+    </div>
+  </div>
 </div>
 
 <div class="body-layout">
   <div id="map-container">
     <svg id="map"></svg>
   </div>
-
   <div id="info-panel">
     <div class="panel-header">
       <span>Organization details</span>
@@ -319,8 +212,6 @@ const COLORS = {
   donor:            '#d47a5a'
 };
 
-
-
 const CAT_LABELS = {
   regional_fund:    'Regional Funds',
   movement_partner: 'Movement Partners',
@@ -340,6 +231,21 @@ const CLUSTER_POS = {
   donor:            { fx: 0.30, fy: 0.82 }
 };
 
+const TYPE_LABELS = {
+  private_foundation: 'Private foundation',
+  family_foundation:  'Family foundation',
+  government:         'Government / bilateral',
+  corporate:          'Corporate foundation',
+  individual:         'Individual',
+  network:            'Network / membership'
+};
+
+const ALL_RELS = [
+  { key: 'seeded' },
+  { key: 'anchor' },
+  { key: 'partner' }
+];
+
 let allData = [];
 let isGrouped = false;
 let hiddenCats = new Set();
@@ -349,23 +255,14 @@ let allRelsShown = true;
 let simulation;
 let nodeElements, linkElements, labelElements;
 
-
-const ALL_RELS = [
-  { key: 'seeded', label: 'Seeded' },
-  { key: 'anchor', label: 'Anchor' },
-  { key: 'partner', label: 'Peer' }
-];
-
 const svg = d3.select('#map');
 const mapContainer = document.getElementById('map-container');
 const g = svg.append('g').attr('class', 'zoom-layer');
-
 const zoom = d3.zoom().scaleExtent([0.2, 4]).on('zoom', e => g.attr('transform', e.transform));
 svg.call(zoom);
 
 function getW() { return mapContainer.clientWidth; }
 function getH() { return mapContainer.clientHeight; }
-
 
 function nodeRadius(d) {
   if (d.category === 'center') return 28;
@@ -412,28 +309,21 @@ function initialZoom(nodes) {
   const center = nodes.find(d => d.category === 'center');
   const cx = (center && center.x != null) ? center.x : W / 2;
   const cy = (center && center.y != null) ? center.y : H / 2;
-  const scale = 1.1;
-  const tx = W / 2 - scale * cx;
-  const ty = H / 2 - scale * cy;
   svg.transition().duration(600).call(zoom.transform,
-    d3.zoomIdentity.translate(tx, ty).scale(scale));
+    d3.zoomIdentity.translate(W/2 - 1.1*cx, H/2 - 1.1*cy).scale(1.1));
 }
 
 function fitView(nodes) {
-  if (!nodes || nodes.length === 0) return;
+  if (!nodes || !nodes.length) return;
   const W = getW(), H = getH();
   const xs = nodes.map(d => d.x).filter(Boolean);
   const ys = nodes.map(d => d.y).filter(Boolean);
   if (!xs.length) return;
   const x0 = Math.min(...xs) - 60, x1 = Math.max(...xs) + 60;
   const y0 = Math.min(...ys) - 60, y1 = Math.max(...ys) + 60;
-  const scale = Math.min(0.9, 0.9 / Math.max((x1 - x0) / W, (y1 - y0) / H));
-  const tx = (W - scale * (x0 + x1)) / 2;
-  const ty = (H - scale * (y0 + y1)) / 2;
+  const scale = Math.min(0.9, 0.9 / Math.max((x1-x0)/W, (y1-y0)/H));
   svg.transition().duration(600).call(zoom.transform,
-    d3.zoomIdentity.translate(tx, ty).scale(scale));
-}
-
+    d3.zoomIdentity.translate((W - scale*(x0+x1))/2, (H - scale*(y0+y1))/2).scale(scale));
 }
 
 function render(data) {
@@ -447,13 +337,12 @@ function render(data) {
 
   g.selectAll('*').remove();
 
-  const catLabelData = Object.entries(CAT_LABELS).map(([cat, label]) => {
-    const pos = CLUSTER_POS[cat];
-    return { cat, label, x: pos.fx * W, y: pos.fy * H - 32 };
-  });
-
   labelElements = g.selectAll('.category-label')
-    .data(catLabelData).enter().append('text')
+    .data(Object.entries(CAT_LABELS).map(([cat, label]) => ({
+      cat, label,
+      x: CLUSTER_POS[cat].fx * W,
+      y: CLUSTER_POS[cat].fy * H - 32
+    }))).enter().append('text')
     .attr('class', 'category-label')
     .attr('x', d => d.x).attr('y', d => d.y)
     .attr('text-anchor', 'middle')
@@ -490,10 +379,10 @@ function render(data) {
     .data(nodes, d => d.id).enter().append('g')
     .attr('class', 'node')
     .call(d3.drag()
-      .on('start', dragStart)
-      .on('drag', dragging)
-      .on('end', dragEnd))
-    .on('click', (e, d) => { e.stopPropagation(); showPanel(e, d); });
+      .on('start', (event, d) => { if (!isGrouped && !event.active) simulation.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
+      .on('drag',  (event, d) => { d.fx = event.x; d.fy = event.y; })
+      .on('end',   (event, d) => { if (!isGrouped && !event.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; }))
+    .on('click', (e, d) => { e.stopPropagation(); showPanel(d); });
 
   nodeG.append('circle')
     .attr('r', d => nodeRadius(d))
@@ -516,33 +405,32 @@ function render(data) {
   const donorRadius = Math.min(W, H) * 0.42;
 
   simulation = d3.forceSimulation(nodes)
-    .force('link', d3.forceLink(links).id(d => d.id).distance(d => {
-      const t = nodes.find(n => n.id === d.target);
-      if (!t) return 160;
-      if (t.relationship === 'seeded') return 120;
-      if (t.relationship === 'anchor') return 180;
-      if (t.category === 'donor') return donorRadius;
-      return 140;
-    }).strength(d => {
-      const t = nodes.find(n => n.id === d.target);
-      return t && t.category === 'donor' ? 0.08 : 0.3;
-    }))
+    .force('link', d3.forceLink(links).id(d => d.id)
+      .distance(d => {
+        const t = nodes.find(n => n.id === d.target);
+        if (!t) return 160;
+        if (t.relationship === 'seeded') return 120;
+        if (t.relationship === 'anchor') return 180;
+        if (t.category === 'donor') return donorRadius;
+        return 140;
+      })
+      .strength(d => {
+        const t = nodes.find(n => n.id === d.target);
+        return t && t.category === 'donor' ? 0.08 : 0.3;
+      }))
     .force('charge', d3.forceManyBody().strength(d =>
-      d.category === 'center' ? -1000 : d.category === 'donor' ? -60 : -300
-    ))
-    .force('center', d3.forceCenter(W / 2, H / 2))
+      d.category === 'center' ? -1000 : d.category === 'donor' ? -60 : -300))
+    .force('center', d3.forceCenter(W/2, H/2))
     .force('collision', d3.forceCollide(d => nodeRadius(d) + (d.category === 'donor' ? 22 : 18)))
-    .force('radial-donor', d3.forceRadial(donorRadius, W / 2, H / 2)
+    .force('radial-donor', d3.forceRadial(donorRadius, W/2, H/2)
       .strength(d => d.category === 'donor' ? 0.4 : 0))
-    .on('tick', ticked)
+    .on('tick', () => {
+      linkElements
+        .attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+        .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+      nodeElements.attr('transform', d => `translate(${d.x},${d.y})`);
+    })
     .on('end', () => initialZoom(nodes));
-
-  function ticked() {
-    linkElements
-      .attr('x1', d => d.source.x).attr('y1', d => d.source.y)
-      .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
-    nodeElements.attr('transform', d => `translate(${d.x},${d.y})`);
-  }
 
   if (isGrouped) applyGrouping(nodes);
 }
@@ -574,9 +462,9 @@ function applyGrouping(nodes) {
     .attr('transform', d => `translate(${d._gx},${d._gy})`);
 
   setTimeout(() => {
-    const allNodes = [];
-    nodeElements.each(d => { d.x = d._gx; d.y = d._gy; allNodes.push(d); });
-    fitView(allNodes);
+    const all = [];
+    nodeElements.each(d => { d.x = d._gx; d.y = d._gy; all.push(d); });
+    fitView(all);
   }, 700);
 }
 
@@ -586,14 +474,10 @@ function applyForce() {
   simulation.alpha(0.5).restart();
 }
 
-function dragStart(event, d) {
-  if (!isGrouped && !event.active) simulation.alphaTarget(0.3).restart();
-  d.fx = d.x; d.fy = d.y;
-}
-function dragging(event, d) { d.fx = event.x; d.fy = event.y; }
-function dragEnd(event, d) {
-  if (!isGrouped && !event.active) simulation.alphaTarget(0);
-  d.fx = null; d.fy = null;
+function resetGroupToggle() {
+  isGrouped = false;
+  document.getElementById('toggle-btn').textContent = '⊞ Group by category';
+  document.getElementById('toggle-btn').classList.remove('active');
 }
 
 // PANEL
@@ -603,93 +487,57 @@ const CAT_NAMES = {
   policy: 'Policy & Advocacy', donor: 'Donor'
 };
 
-const TYPE_LABELS = {
-  private_foundation: 'Private foundation',
-  family_foundation:  'Family foundation',
-  government:         'Government / bilateral',
-  corporate:          'Corporate foundation',
-  individual:         'Individual',
-  network:            'Network / membership'
-};
-
-function showPanel(event, d) {
+function showPanel(d) {
   document.getElementById('info-panel').classList.add('open');
+  const color = nodeColor(d);
 
   const tag = document.getElementById('panel-cat-tag');
   tag.textContent = CAT_NAMES[d.category] || d.category;
-  tag.style.background = (nodeColor(d)) + '22';
-  tag.style.color = nodeColor(d);
-  tag.style.border = '1px solid ' + nodeColor(d) + '55';
+  tag.style.background = color + '22';
+  tag.style.color = color;
+  tag.style.border = '1px solid ' + color + '55';
 
   document.getElementById('panel-name').textContent = d.name;
 
-  const meta = document.getElementById('panel-meta');
   let metaHtml = '';
   if (d.region) metaHtml += `<span><span class="meta-label">Region</span>${d.region}</span>`;
   if (d.grant_status) metaHtml += `<span><span class="meta-label">Status</span>${d.grant_status === 'ongoing' ? '● ongoing' : '○ concluded'}</span>`;
   if (d.relationship && d.relationship !== 'center') metaHtml += `<span><span class="meta-label">Relationship</span>${d.relationship}</span>`;
-
-  // donor-specific enriched fields
   if (d.category === 'donor') {
-    if (d.donor_type) {
-      metaHtml += `<span><span class="meta-label">Type</span>${TYPE_LABELS[d.donor_type] || d.donor_type}</span>`;
-    }
-    if (d.scale) {
-      metaHtml += `<span><span class="meta-label">Scale</span>${d.scale}</span>`;
-    }
-    if (d.geography) {
-      metaHtml += `<span><span class="meta-label">Geography</span>${d.geography}</span>`;
-    }
+    if (d.donor_type) metaHtml += `<span><span class="meta-label">Type</span>${TYPE_LABELS[d.donor_type] || d.donor_type}</span>`;
+    if (d.scale)      metaHtml += `<span><span class="meta-label">Scale</span>${d.scale}</span>`;
+    if (d.geography)  metaHtml += `<span><span class="meta-label">Geography</span>${d.geography}</span>`;
     if (d.ae_explicitness) {
-      const aeColor = '#d47a5a';
-      const aeLabel = {explicit:'Explicit',adjacent:'Adjacent',incidental:'Incidental',unknown:'Unknown'}[d.ae_explicitness] || d.ae_explicitness;
-      metaHtml += `<span><span class="meta-label">AE focus</span><span class="ae-pill" style="background:${aeColor}22;color:${aeColor};border:1px solid ${aeColor}55;">${aeLabel}</span></span>`;
+      const aeLabel = {explicit:'Explicit',adjacent:'Adjacent',incidental:'Other',unknown:'Other'}[d.ae_explicitness] || d.ae_explicitness;
+      metaHtml += `<span><span class="meta-label">AE focus</span><span class="ae-pill" style="background:#d47a5a22;color:#d47a5a;border:1px solid #d47a5a55;">${aeLabel}</span></span>`;
     }
   }
-  meta.innerHTML = metaHtml;
-
+  document.getElementById('panel-meta').innerHTML = metaHtml;
   document.getElementById('panel-desc').textContent = d.description || '';
 
   const noteEl = document.getElementById('panel-rel-note');
-  if (d.relationship_note) {
-    noteEl.textContent = d.relationship_note;
-    noteEl.style.display = 'block';
-  } else {
-    noteEl.style.display = 'none';
-  }
+  noteEl.textContent = d.relationship_note || '';
+  noteEl.style.display = d.relationship_note ? 'block' : 'none';
 
   const donorNoteEl = document.getElementById('panel-donor-note');
-  if (d.donor_note) {
-    donorNoteEl.textContent = d.donor_note;
-    donorNoteEl.style.display = 'block';
-  } else {
-    donorNoteEl.style.display = 'none';
-  }
+  donorNoteEl.textContent = d.donor_note || '';
+  donorNoteEl.style.display = d.donor_note ? 'block' : 'none';
 
-  const linkEl = document.getElementById('panel-link');
-  linkEl.innerHTML = d.url
-    ? `<a href="${d.url}" target="_blank">↗ ${d.url.replace(/^https?:\/\//, '')}</a>`
-    : '';
+  document.getElementById('panel-link').innerHTML = d.url
+    ? `<a href="${d.url}" target="_blank">↗ ${d.url.replace(/^https?:\/\//, '')}</a>` : '';
 }
 
-function resetGroupToggle() {
-  isGrouped = false;
-  document.getElementById('toggle-btn').textContent = '⊞ Group by category';
-  document.getElementById('toggle-btn').classList.remove('active');
+function closePanel() {
+  document.getElementById('info-panel').classList.remove('open');
+  nodeElements && nodeElements.classed('selected', false);
 }
 
-// CONTROLS — category filter
+// CATEGORY FILTER
 document.getElementById('select-all').addEventListener('click', () => {
-  hiddenCats.clear();
-  hiddenRels.clear();
-  allShown = true;
-  allRelsShown = true;
-  document.querySelectorAll('.legend-item:not(.rel-item)').forEach(el => {
-    el.classList.remove('dimmed'); el.classList.add('active');
-  });
-  document.querySelectorAll('.rel-item').forEach(el => {
-    el.classList.remove('dimmed'); el.classList.add('active');
-  });
+  hiddenCats.clear(); hiddenRels.clear();
+  allShown = true; allRelsShown = true;
+  document.querySelectorAll('.legend-item:not(.rel-item)').forEach(el => { el.classList.remove('dimmed'); el.classList.add('active'); });
+  document.querySelectorAll('.rel-item').forEach(el => { el.classList.remove('dimmed'); el.classList.add('active'); });
   resetGroupToggle();
   render(allData);
 });
@@ -698,41 +546,31 @@ document.querySelectorAll('.legend-item:not(.rel-item)').forEach(item => {
   item.addEventListener('click', function() {
     const cat = this.dataset.cat;
     const visibleCats = ALL_CATS.filter(c => !hiddenCats.has(c));
-
     if (allShown) {
       ALL_CATS.forEach(c => hiddenCats.add(c));
       hiddenCats.delete(cat);
       allShown = false;
-      document.querySelectorAll('.legend-item:not(.rel-item)').forEach(el => {
-        el.classList.add('dimmed'); el.classList.remove('active');
-      });
+      document.querySelectorAll('.legend-item:not(.rel-item)').forEach(el => { el.classList.add('dimmed'); el.classList.remove('active'); });
       this.classList.remove('dimmed'); this.classList.add('active');
     } else if (visibleCats.length === 1 && !hiddenCats.has(cat)) {
       hiddenCats.clear(); allShown = true;
-      document.querySelectorAll('.legend-item:not(.rel-item)').forEach(el => {
-        el.classList.remove('dimmed'); el.classList.add('active');
-      });
+      document.querySelectorAll('.legend-item:not(.rel-item)').forEach(el => { el.classList.remove('dimmed'); el.classList.add('active'); });
     } else if (visibleCats.length === 1 && hiddenCats.has(cat)) {
       ALL_CATS.forEach(c => hiddenCats.add(c));
       hiddenCats.delete(cat);
-      document.querySelectorAll('.legend-item:not(.rel-item)').forEach(el => {
-        el.classList.add('dimmed'); el.classList.remove('active');
-      });
+      document.querySelectorAll('.legend-item:not(.rel-item)').forEach(el => { el.classList.add('dimmed'); el.classList.remove('active'); });
       this.classList.remove('dimmed'); this.classList.add('active');
     } else if (!hiddenCats.has(cat)) {
       hiddenCats.add(cat);
       this.classList.add('dimmed'); this.classList.remove('active');
       if (ALL_CATS.every(c => hiddenCats.has(c))) {
         hiddenCats.clear(); allShown = true;
-        document.querySelectorAll('.legend-item:not(.rel-item)').forEach(el => {
-          el.classList.remove('dimmed'); el.classList.add('active');
-        });
+        document.querySelectorAll('.legend-item:not(.rel-item)').forEach(el => { el.classList.remove('dimmed'); el.classList.add('active'); });
       }
     } else {
       hiddenCats.delete(cat);
       this.classList.remove('dimmed'); this.classList.add('active');
     }
-
     resetGroupToggle();
     render(allData);
   });
@@ -743,34 +581,25 @@ document.querySelectorAll('.rel-item').forEach(item => {
   item.addEventListener('click', function() {
     const rel = this.dataset.rel;
     const visibleRels = ALL_RELS.map(r => r.key).filter(k => !hiddenRels.has(k));
-
     if (allRelsShown) {
       ALL_RELS.forEach(r => hiddenRels.add(r.key));
       hiddenRels.delete(rel); allRelsShown = false;
-      document.querySelectorAll('.rel-item').forEach(el => {
-        el.classList.add('dimmed'); el.classList.remove('active');
-      });
+      document.querySelectorAll('.rel-item').forEach(el => { el.classList.add('dimmed'); el.classList.remove('active'); });
       this.classList.remove('dimmed'); this.classList.add('active');
     } else if (visibleRels.length === 1 && !hiddenRels.has(rel)) {
       hiddenRels.clear(); allRelsShown = true;
-      document.querySelectorAll('.rel-item').forEach(el => {
-        el.classList.remove('dimmed'); el.classList.add('active');
-      });
+      document.querySelectorAll('.rel-item').forEach(el => { el.classList.remove('dimmed'); el.classList.add('active'); });
     } else if (visibleRels.length === 1 && hiddenRels.has(rel)) {
       ALL_RELS.forEach(r => hiddenRels.add(r.key));
       hiddenRels.delete(rel);
-      document.querySelectorAll('.rel-item').forEach(el => {
-        el.classList.add('dimmed'); el.classList.remove('active');
-      });
+      document.querySelectorAll('.rel-item').forEach(el => { el.classList.add('dimmed'); el.classList.remove('active'); });
       this.classList.remove('dimmed'); this.classList.add('active');
     } else if (!hiddenRels.has(rel)) {
       hiddenRels.add(rel);
       this.classList.add('dimmed'); this.classList.remove('active');
       if (ALL_RELS.every(r => hiddenRels.has(r.key))) {
         hiddenRels.clear(); allRelsShown = true;
-        document.querySelectorAll('.rel-item').forEach(el => {
-          el.classList.remove('dimmed'); el.classList.add('active');
-        });
+        document.querySelectorAll('.rel-item').forEach(el => { el.classList.remove('dimmed'); el.classList.add('active'); });
       }
     } else {
       hiddenRels.delete(rel);
@@ -796,14 +625,9 @@ document.getElementById('toggle-btn').addEventListener('click', function() {
   }
 });
 
-// CLOSE PANEL
-function closePanel() {
-  document.getElementById('info-panel').classList.remove('open');
-  nodeElements && nodeElements.classed('selected', false);
-}
 document.getElementById('panel-close').addEventListener('click', closePanel);
 svg.on('click', (e) => {
-  if (e.target === svg.node() || e.target.closest('.zoom-layer') === null) closePanel();
+  if (e.target === svg.node() || !e.target.closest('.zoom-layer')) closePanel();
 });
 
 // LOAD
