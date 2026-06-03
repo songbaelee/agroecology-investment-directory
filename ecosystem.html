@@ -28,7 +28,7 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: var(--bg); color: var(--text); font-family: var(--font-sans); height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-sans); min-height: 100vh; }
 
     /* HEADER */
     header { background: #2C1A0E; color: #F5F0E8; padding: 0.75rem 2rem 0.7rem; border-bottom: 4px solid #C17F2A; }
@@ -84,17 +84,15 @@
 
     /* BODY LAYOUT */
     .body-layout {
-      flex: 1;
-      min-height: 0;
-      display: flex;
-      flex-direction: column;
       position: relative;
+      height: calc(100vh - 178px);
+      min-height: 480px;
     }
 
     /* MAP */
     #map-container {
-      flex: 1;
-      min-height: 0;
+      width: 100%;
+      height: 100%;
       position: relative;
       overflow: hidden;
     }
@@ -206,7 +204,7 @@
 
     @media (max-width: 700px) {
       #info-panel { width: 100vw; }
-      .body-layout { flex: 1; min-height: 0; }
+      .body-layout { height: calc(100vh - 220px); }
     }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
