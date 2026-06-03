@@ -9,217 +9,130 @@
     :root {
       --bg:         #0f1a0f;
       --bg-panel:   #162016;
-      --bg-card:    #1c2b1c;
       --border:     #2a3d2a;
       --text:       #d4e8d4;
       --text-muted: #7a9e7a;
       --text-dim:   #4a6b4a;
-      --c-explicit:    #7ecf7e;
-      --c-adjacent:    #d47a5a;
-      --c-incidental:  #7a9e7a;
-      --c-unknown:     #4a6b4a;
+      --c-explicit: #7ecf7e;
+      --c-adjacent: #d47a5a;
+      --c-other:    #5a7a6a;
       --font-mono: 'Courier New', Courier, monospace;
       --font-sans: Georgia, 'Times New Roman', serif;
-      --panel-w: 340px;
+      --panel-w: 320px;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: var(--bg); color: var(--text); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; }
+    body {
+      background: var(--bg); color: var(--text); font-family: var(--font-sans);
+      height: 100vh; display: flex; flex-direction: column; overflow: hidden;
+    }
 
     /* HEADER */
     header { background: #2C1A0E; color: #F5F0E8; padding: 0.75rem 2rem 0.7rem; border-bottom: 4px solid #C17F2A; flex-shrink: 0; }
-    .header-inner { max-width: 1300px; margin: 0 auto; }
+    .header-inner { max-width: 1400px; margin: 0 auto; }
     .header-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem; }
-    .site-label { font-weight: 600; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: #7A9E6F; }
-    .site-label a { color: #7A9E6F; text-decoration: none; border-bottom: 1px solid rgba(122,158,111,0.4); font-family: 'Source Sans 3', sans-serif; }
+    .site-label a { color: #7A9E6F; text-decoration: none; border-bottom: 1px solid rgba(122,158,111,0.4); font-family: 'Source Sans 3', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; }
     .site-label a:hover { color: #E8D9B0; }
     .header-controls { display: flex; gap: 0.6rem; align-items: center; }
     .meta-pill { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 0.2rem 0.75rem; font-size: 0.72rem; color: #E8D9B0; font-family: 'Source Sans 3', sans-serif; }
-    header h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.1rem, 2.2vw, 1.45rem); font-weight: 600; line-height: 1.15; color: #F5F0E8; margin-bottom: 0.2rem; }
+    header h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.1rem, 2.2vw, 1.45rem); font-weight: 600; color: #F5F0E8; margin-bottom: 0.2rem; }
     header p { font-size: 0.78rem; color: rgba(232,217,176,0.7); max-width: 680px; font-weight: 300; font-family: 'Source Sans 3', sans-serif; }
     .header-toggle { background: transparent; border: 1px solid rgba(255,255,255,0.3); border-radius: 6px; padding: 0.2rem 0.75rem; font-size: 0.72rem; color: #E8D9B0; cursor: pointer; font-family: 'Source Sans 3', sans-serif; transition: all 0.15s; }
     .header-toggle:hover { background: rgba(255,255,255,0.1); }
     .header-toggle.active { border-color: #7A9E6F; color: #7A9E6F; background: rgba(122,158,111,0.1); }
 
-    /* EDITORIAL FINDING BAR */
+    /* FINDING BAR */
     .finding-bar {
-      background: #1a2a1a;
-      border-bottom: 1px solid var(--border);
-      padding: 10px 28px;
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      flex-wrap: wrap;
-      flex-shrink: 0;
+      background: #1a2a1a; border-bottom: 1px solid var(--border);
+      padding: 9px 28px; display: flex; align-items: center; gap: 20px;
+      flex-wrap: wrap; flex-shrink: 0;
     }
-    .finding-stat {
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-    }
-    .finding-number {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      font-weight: 600;
-      line-height: 1;
-    }
-    .finding-label {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      color: var(--text-dim);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      max-width: 120px;
-      line-height: 1.4;
-    }
-    .finding-divider {
-      width: 1px;
-      height: 36px;
-      background: var(--border);
-    }
-    .finding-note {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--text-dim);
-      max-width: 480px;
-      line-height: 1.65;
-      font-style: italic;
-    }
+    .finding-stat { display: flex; align-items: baseline; gap: 7px; }
+    .finding-number { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; line-height: 1; }
+    .finding-label { font-family: var(--font-mono); font-size: 9.5px; color: var(--text-dim); letter-spacing: 0.05em; text-transform: uppercase; max-width: 110px; line-height: 1.4; }
+    .finding-divider { width: 1px; height: 32px; background: var(--border); flex-shrink: 0; }
+    .finding-note { font-family: var(--font-mono); font-size: 10.5px; color: var(--text-dim); max-width: 500px; line-height: 1.6; font-style: italic; }
 
     /* CONTROLS BAR */
     .controls-bar {
-      padding: 8px 28px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-      align-items: center;
-      flex-shrink: 0;
+      padding: 7px 28px; border-bottom: 1px solid var(--border);
+      display: flex; gap: 5px; flex-wrap: wrap; align-items: center; flex-shrink: 0;
     }
-    .ctrl-label {
-      font-family: var(--font-mono); font-size: 10px; color: var(--text-dim);
-      letter-spacing: 0.06em; text-transform: uppercase; margin-right: 4px; white-space: nowrap;
-    }
-    .ctrl-sep { width: 1px; height: 14px; background: var(--border); margin: 0 6px; flex-shrink: 0; }
+    .ctrl-label { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); letter-spacing: 0.06em; text-transform: uppercase; margin-right: 3px; white-space: nowrap; }
+    .ctrl-sep { width: 1px; height: 14px; background: var(--border); margin: 0 5px; flex-shrink: 0; }
     .ctrl-chip {
       display: flex; align-items: center; gap: 5px;
-      cursor: pointer; padding: 4px 9px;
+      cursor: pointer; padding: 3px 8px;
       border: 1px solid var(--border); border-radius: 2px;
       font-family: var(--font-mono); font-size: 10px;
-      color: var(--text-muted); white-space: nowrap;
+      color: var(--text-dim); white-space: nowrap;
       transition: all 0.15s;
     }
-    .ctrl-chip:hover { border-color: var(--text-dim); }
-    .ctrl-chip.active { border-color: currentColor; background: rgba(255,255,255,0.04); }
-    .ctrl-chip.dimmed { opacity: 0.3; border-color: transparent; }
+    .ctrl-chip:hover { border-color: var(--text-muted); color: var(--text-muted); }
+    /* selected = highlighted */
+    .ctrl-chip.selected { border-color: currentColor; background: rgba(255,255,255,0.05); color: var(--text-muted); }
     .ctrl-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-    .ctrl-action {
-      font-family: var(--font-mono); font-size: 10px; color: var(--text-dim);
-      cursor: pointer; padding: 2px 6px; border: 1px solid transparent;
-      transition: all 0.15s; white-space: nowrap;
-    }
+    .ctrl-action { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); cursor: pointer; padding: 2px 6px; border: 1px solid transparent; transition: all 0.15s; white-space: nowrap; }
     .ctrl-action:hover { color: var(--text-muted); border-color: var(--border); }
-    #donor-count-badge {
-      font-family: var(--font-mono); font-size: 10px; color: var(--text-muted);
-      padding: 2px 8px; border: 1px solid var(--border); border-radius: 2px;
-    }
+    #donor-count-badge { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); padding: 2px 8px; border: 1px solid var(--border); border-radius: 2px; }
 
     /* MAIN LAYOUT */
-    .main-layout {
-      flex: 1;
-      display: flex;
-      overflow: hidden;
-      min-height: 0;
-    }
+    .main-layout { flex: 1; display: flex; min-height: 0; overflow: hidden; }
 
-    /* VIZ AREA */
-    #viz-container {
-      flex: 1;
-      position: relative;
-      overflow: hidden;
-    }
+    /* VIZ */
+    #viz-container { flex: 1; position: relative; overflow: hidden; }
     svg#viz { width: 100%; height: 100%; display: block; }
 
-    /* bubble chart nodes */
-    .bubble { cursor: pointer; transition: opacity 0.2s; }
-    .bubble circle { stroke-width: 1.5; }
+    .bubble { cursor: pointer; }
+    .bubble circle { stroke-width: 1.5; transition: stroke-width 0.15s; }
     .bubble circle:hover { stroke-width: 2.5; }
-    .bubble text {
-      font-family: var(--font-mono);
-      fill: var(--text-muted);
-      pointer-events: none; user-select: none;
-      text-shadow: 0 1px 3px #0f1a0f, 0 0 8px #0f1a0f;
-    }
-    .bubble.faded { opacity: 0.15; }
+    .bubble text { font-family: var(--font-mono); fill: var(--text-muted); pointer-events: none; user-select: none; text-shadow: 0 1px 3px #0f1a0f, 0 0 8px #0f1a0f; }
+    .bubble.faded { opacity: 0.12; }
+    .bubble.highlighted circle { stroke-width: 2.5; }
 
-    /* network nodes */
     .net-node { cursor: pointer; }
-    .net-node circle { stroke-width: 1.5; }
-    .net-link { stroke: #3a5a3a; stroke-opacity: 0.25; stroke-dasharray: 3,5; }
+    .net-link { stroke: #3a5a3a; stroke-opacity: 0.2; stroke-dasharray: 3,5; }
 
-    /* axis labels (bubble chart groups) */
-    .group-label {
-      font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em;
-      text-transform: uppercase; pointer-events: none;
-      fill: var(--text-dim);
-    }
+    .group-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; pointer-events: none; }
+    .group-underline { pointer-events: none; }
 
-    /* SIDE PANEL */
+    /* PANEL */
     #info-panel {
-      width: var(--panel-w);
-      border-left: 1px solid var(--border);
-      background: var(--bg-panel);
-      display: flex; flex-direction: column;
-      overflow: hidden;
+      width: var(--panel-w); border-left: 1px solid var(--border);
+      background: var(--bg-panel); display: flex; flex-direction: column;
+      overflow: hidden; flex-shrink: 0;
       transform: translateX(100%);
-      position: absolute; top: 0; right: 0; height: 100%;
-      transition: transform 0.28s cubic-bezier(0.4,0,0.2,1);
-      z-index: 50;
-      box-shadow: -4px 0 24px rgba(0,0,0,0.4);
+      transition: transform 0.25s cubic-bezier(0.4,0,0.2,1);
+      position: relative;
     }
-    #info-panel.open { transform: translateX(0); position: relative; height: auto; transform: none; }
+    #info-panel.open { transform: translateX(0); }
     .panel-header {
-      padding: 14px 16px 10px;
-      border-bottom: 1px solid var(--border);
-      font-family: var(--font-mono); font-size: 10px;
-      color: var(--text-dim); letter-spacing: 0.06em; text-transform: uppercase;
-      display: flex; justify-content: space-between; align-items: center;
-      flex-shrink: 0;
+      padding: 12px 14px 9px; border-bottom: 1px solid var(--border);
+      font-family: var(--font-mono); font-size: 10px; color: var(--text-dim);
+      letter-spacing: 0.06em; text-transform: uppercase;
+      display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;
     }
-    #panel-close {
-      background: none; border: none; cursor: pointer;
-      color: var(--text-dim); font-size: 16px; line-height: 1;
-      padding: 0 2px; transition: color 0.15s;
-    }
+    #panel-close { background: none; border: none; cursor: pointer; color: var(--text-dim); font-size: 16px; line-height: 1; padding: 0 2px; transition: color 0.15s; }
     #panel-close:hover { color: var(--text); }
-    .panel-body { padding: 16px; overflow-y: auto; flex: 1; }
-    .panel-ae-tag {
-      display: inline-block; font-family: var(--font-mono); font-size: 9px;
-      letter-spacing: 0.05em; text-transform: uppercase; padding: 2px 7px;
-      border-radius: 2px; margin-bottom: 10px;
-    }
-    .panel-name { font-family: var(--font-sans); font-size: 15px; color: var(--text); margin-bottom: 8px; line-height: 1.3; }
-    .panel-meta { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; }
-    .panel-meta .row { display: flex; gap: 6px; align-items: baseline; }
-    .panel-meta .lbl { color: var(--text-dim); min-width: 72px; font-size: 11px; }
-    .panel-desc { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); line-height: 1.65; margin-bottom: 14px; }
-    .panel-note { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); line-height: 1.6; margin-bottom: 12px; padding: 8px 10px; border-left: 2px solid #c47dd455; font-style: italic; }
-    .panel-link a { font-family: var(--font-mono); font-size: 12px; color: #7ecf7e; text-decoration: none; word-break: break-all; }
+    .panel-body { padding: 14px; overflow-y: auto; flex: 1; }
+    .panel-ae-tag { display: inline-block; font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.05em; text-transform: uppercase; padding: 2px 7px; border-radius: 2px; margin-bottom: 10px; }
+    .panel-name { font-family: var(--font-sans); font-size: 14px; color: var(--text); margin-bottom: 8px; line-height: 1.3; }
+    .panel-meta { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; }
+    .panel-meta .row { display: flex; gap: 6px; }
+    .panel-meta .lbl { color: var(--text-dim); min-width: 72px; }
+    .panel-desc { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); line-height: 1.65; margin-bottom: 12px; }
+    .panel-note { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); line-height: 1.6; margin-bottom: 10px; padding: 7px 9px; border-left: 2px solid #c47dd444; font-style: italic; }
+    .panel-link a { font-family: var(--font-mono); font-size: 11px; color: #7ecf7e; text-decoration: none; word-break: break-all; }
     .panel-link a:hover { text-decoration: underline; }
 
     /* FOOTER */
-    footer {
-      border-top: 1px solid var(--border); padding: 12px 28px;
-      font-family: var(--font-mono); font-size: 10px; color: var(--text-dim);
-      display: flex; gap: 14px; flex-wrap: wrap; flex-shrink: 0;
-    }
+    footer { border-top: 1px solid var(--border); padding: 10px 28px; font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); display: flex; gap: 14px; flex-wrap: wrap; flex-shrink: 0; }
     footer a { color: var(--text-dim); text-decoration: none; }
     footer a:hover { color: var(--text-muted); }
 
     @media (max-width: 800px) {
       .main-layout { flex-direction: column; }
-      #info-panel { width: 100%; height: 260px; }
-      .finding-bar { padding: 8px 16px; }
+      #info-panel { width: 100%; height: 220px; transform: translateY(100%); }
+      #info-panel.open { transform: translateY(0); }
     }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
@@ -231,20 +144,19 @@
     <div class="header-top">
       <div class="site-label"><a href="index.html">← Agroecology Investment Directory</a></div>
       <div class="header-controls">
-        <span class="meta-pill">v0.1 · Jun 2026</span>
+        <span class="meta-pill">v0.2 · Jun 2026</span>
         <button class="header-toggle" id="view-toggle">⬡ Network view</button>
       </div>
     </div>
     <h1>AEF Donor Landscape</h1>
-    <p>40 donors mapped by agroecology explicitness, scale, type, and geography. Bubble size = scale; color = AE focus alignment.</p>
+    <p>40 donors mapped by agroecology explicitness, scale, type, and geography. Bubble size = scale; color = AE focus.</p>
   </div>
 </header>
 
-<!-- EDITORIAL FINDING BAR -->
 <div class="finding-bar">
   <div class="finding-stat">
     <span class="finding-number" style="color:var(--c-explicit);">7</span>
-    <span class="finding-label">of 40 donors explicitly name agroecology</span>
+    <span class="finding-label">of 40 explicitly name agroecology</span>
   </div>
   <div class="finding-divider"></div>
   <div class="finding-stat">
@@ -253,19 +165,18 @@
   </div>
   <div class="finding-divider"></div>
   <div class="finding-stat">
-    <span class="finding-number" style="color:var(--text-dim);">29</span>
+    <span class="finding-number" style="color:var(--text-muted);">29</span>
     <span class="finding-label">US-based out of 40</span>
   </div>
   <div class="finding-divider"></div>
   <div class="finding-stat">
-    <span class="finding-number" style="color:var(--text-muted);">15</span>
-    <span class="finding-label">with unknown scale or no public data</span>
+    <span class="finding-number" style="color:var(--text-dim);">15</span>
+    <span class="finding-label">with unknown scale</span>
   </div>
   <div class="finding-divider"></div>
-  <span class="finding-note">The majority of AEF's donors are small US family foundations with adjacent food/environment mandates — not dedicated agroecology funders. Only 7 explicitly name agroecology in their stated focus.</span>
+  <span class="finding-note">Most AEF donors are small US family foundations with adjacent food/environment mandates — not dedicated agroecology funders. Only 7 explicitly name agroecology in their stated focus.</span>
 </div>
 
-<!-- CONTROLS -->
 <div class="controls-bar">
   <span class="ctrl-action" id="reset-all">All</span>
   <div class="ctrl-sep"></div>
@@ -273,40 +184,37 @@
   <div class="ctrl-sep"></div>
 
   <span class="ctrl-label">AE focus</span>
-  <div class="ctrl-chip active" data-filter="ae" data-val="explicit" style="color:var(--c-explicit)">
+  <div class="ctrl-chip" data-filter="ae" data-val="explicit" style="--chip-color:var(--c-explicit)">
     <div class="ctrl-dot" style="background:var(--c-explicit)"></div>Explicit
   </div>
-  <div class="ctrl-chip active" data-filter="ae" data-val="adjacent" style="color:var(--c-adjacent)">
+  <div class="ctrl-chip" data-filter="ae" data-val="adjacent" style="--chip-color:var(--c-adjacent)">
     <div class="ctrl-dot" style="background:var(--c-adjacent)"></div>Adjacent
   </div>
-  <div class="ctrl-chip active" data-filter="ae" data-val="incidental" style="color:var(--c-incidental)">
-    <div class="ctrl-dot" style="background:var(--c-incidental)"></div>Incidental
-  </div>
-  <div class="ctrl-chip active" data-filter="ae" data-val="unknown" style="color:var(--c-unknown)">
-    <div class="ctrl-dot" style="background:var(--c-unknown)"></div>Unknown
+  <div class="ctrl-chip" data-filter="ae" data-val="other" style="--chip-color:var(--c-other)">
+    <div class="ctrl-dot" style="background:var(--c-other)"></div>Other
   </div>
 
   <div class="ctrl-sep"></div>
   <span class="ctrl-label">Scale</span>
-  <div class="ctrl-chip active" data-filter="scale" data-val="large"><span>Large</span></div>
-  <div class="ctrl-chip active" data-filter="scale" data-val="mid"><span>Mid</span></div>
-  <div class="ctrl-chip active" data-filter="scale" data-val="small"><span>Small</span></div>
-  <div class="ctrl-chip active" data-filter="scale" data-val="unknown"><span>Unknown</span></div>
+  <div class="ctrl-chip" data-filter="scale" data-val="large">Large</div>
+  <div class="ctrl-chip" data-filter="scale" data-val="mid">Mid</div>
+  <div class="ctrl-chip" data-filter="scale" data-val="small">Small</div>
+  <div class="ctrl-chip" data-filter="scale" data-val="unknown">Unknown</div>
 
   <div class="ctrl-sep"></div>
   <span class="ctrl-label">Type</span>
-  <div class="ctrl-chip active" data-filter="type" data-val="private_foundation"><span>Private fdn</span></div>
-  <div class="ctrl-chip active" data-filter="type" data-val="family_foundation"><span>Family fdn</span></div>
-  <div class="ctrl-chip active" data-filter="type" data-val="government"><span>Govt</span></div>
-  <div class="ctrl-chip active" data-filter="type" data-val="corporate"><span>Corporate</span></div>
-  <div class="ctrl-chip active" data-filter="type" data-val="individual"><span>Individual</span></div>
-  <div class="ctrl-chip active" data-filter="type" data-val="network"><span>Network</span></div>
+  <div class="ctrl-chip" data-filter="type" data-val="private_foundation">Private fdn</div>
+  <div class="ctrl-chip" data-filter="type" data-val="family_foundation">Family fdn</div>
+  <div class="ctrl-chip" data-filter="type" data-val="government">Govt</div>
+  <div class="ctrl-chip" data-filter="type" data-val="corporate">Corporate</div>
+  <div class="ctrl-chip" data-filter="type" data-val="individual">Individual</div>
+  <div class="ctrl-chip" data-filter="type" data-val="network">Network</div>
 
   <div class="ctrl-sep"></div>
   <span class="ctrl-label">Geography</span>
-  <div class="ctrl-chip active" data-filter="geo" data-val="US"><span>US</span></div>
-  <div class="ctrl-chip active" data-filter="geo" data-val="European"><span>European</span></div>
-  <div class="ctrl-chip active" data-filter="geo" data-val="global"><span>Global</span></div>
+  <div class="ctrl-chip" data-filter="geo" data-val="US">US</div>
+  <div class="ctrl-chip" data-filter="geo" data-val="European">European</div>
+  <div class="ctrl-chip" data-filter="geo" data-val="global">Global</div>
 </div>
 
 <div class="main-layout">
@@ -319,8 +227,9 @@
       <button id="panel-close">✕</button>
     </div>
     <div class="panel-body" id="panel-body">
-      <div style="color:var(--text-dim);font-family:var(--font-mono);font-size:12px;margin-top:12px;">
-        Click any bubble to see details.
+      <div style="color:var(--text-dim);font-family:var(--font-mono);font-size:11px;margin-top:16px;line-height:1.6;">
+        Click any bubble to see details.<br><br>
+        Use the filters above to isolate by AE focus, scale, type, or geography.
       </div>
     </div>
   </div>
@@ -341,20 +250,12 @@
 </footer>
 
 <script>
-// ── constants ──────────────────────────────────────────────────────────────
-const AE_COLORS = {
-  explicit:   '#7ecf7e',
-  adjacent:   '#d47a5a',
-  incidental: '#7a9e7a',
-  unknown:    '#4a6b4a'
-};
-const AE_LABELS = {
-  explicit:   'Explicit',
-  adjacent:   'Adjacent',
-  incidental: 'Incidental',
-  unknown:    'Unknown'
-};
-const SCALE_R = { large: 26, mid: 18, small: 12, unknown: 9 };
+// ── constants ────────────────────────────────────────────────────────────────
+const AE_COLORS = { explicit: '#7ecf7e', adjacent: '#d47a5a', other: '#5a7a6a' };
+const AE_LABELS = { explicit: 'Explicit', adjacent: 'Adjacent', other: 'Other' };
+const SCALE_R   = { large: 26, mid: 18, small: 12, unknown: 9 };
+const AE_ORDER  = ['explicit', 'adjacent', 'other'];
+
 const TYPE_LABELS = {
   private_foundation: 'Private foundation',
   family_foundation:  'Family foundation',
@@ -363,91 +264,102 @@ const TYPE_LABELS = {
   individual:         'Individual',
   network:            'Network / membership'
 };
-// group order for bubble layout
-const AE_ORDER = ['explicit', 'adjacent', 'incidental', 'unknown'];
 
-// ── state ──────────────────────────────────────────────────────────────────
-let allDonors = [];
-let activeFilters = { ae: new Set(), scale: new Set(), type: new Set(), geo: new Set() };
-let viewMode = 'bubble'; // 'bubble' | 'network'
-let simulation;
+// Collapse incidental/unknown → other for display
+function aeGroup(d) {
+  const ae = d.ae_explicitness || 'unknown';
+  if (ae === 'explicit' || ae === 'adjacent') return ae;
+  return 'other';
+}
+function donorColor(d) { return AE_COLORS[aeGroup(d)]; }
+function donorRadius(d) { return SCALE_R[d.scale || 'unknown']; }
+
+// ── filter state ─────────────────────────────────────────────────────────────
+// selected = Set of selected values per dimension. Empty set = show all.
+let selected = { ae: new Set(), scale: new Set(), type: new Set(), geo: new Set() };
+let viewMode = 'bubble';
 let selectedId = null;
+let simulation;
+let allDonors = [];
 
-// ── helpers ────────────────────────────────────────────────────────────────
-function donorColor(d) {
-  return AE_COLORS[d.ae_explicitness || 'unknown'] || '#4a6b4a';
-}
-function donorRadius(d) {
-  return SCALE_R[d.scale || 'unknown'] || 9;
-}
 function isVisible(d) {
-  const ae    = d.ae_explicitness || 'unknown';
-  const scale = d.scale           || 'unknown';
-  const type  = d.donor_type      || 'unknown';
-  const geo   = d.geography       || 'unknown';
-  if (activeFilters.ae.has(ae))       return false;
-  if (activeFilters.scale.has(scale)) return false;
-  if (activeFilters.type.has(type))   return false;
-  if (activeFilters.geo.has(geo))     return false;
+  // If nothing is selected in any dimension, show all
+  const noFilter = Object.values(selected).every(s => s.size === 0);
+  if (noFilter) return true;
+
+  // At least one dimension has a selection — donor must match ALL active dimensions
+  // (within a dimension it's OR; across dimensions it's AND)
+  for (const [dim, vals] of Object.entries(selected)) {
+    if (vals.size === 0) continue; // dimension not filtered
+    let dval;
+    if (dim === 'ae')    dval = aeGroup(d);
+    if (dim === 'scale') dval = d.scale    || 'unknown';
+    if (dim === 'type')  dval = d.donor_type || 'unknown';
+    if (dim === 'geo')   dval = d.geography  || 'unknown';
+    if (!vals.has(dval)) return false;
+  }
   return true;
 }
 
-// ── svg setup ──────────────────────────────────────────────────────────────
+// ── svg ───────────────────────────────────────────────────────────────────────
 const svgEl = d3.select('#viz');
-const vizContainer = document.getElementById('viz-container');
+const vizEl = document.getElementById('viz-container');
 const zoomG = svgEl.append('g').attr('class', 'zoom-root');
-const zoom = d3.zoom().scaleExtent([0.3, 5]).on('zoom', e => zoomG.attr('transform', e.transform));
+const zoom  = d3.zoom().scaleExtent([0.25, 6]).on('zoom', e => zoomG.attr('transform', e.transform));
 svgEl.call(zoom);
 
-function W() { return vizContainer.clientWidth; }
-function H() { return vizContainer.clientHeight; }
+function W() { return vizEl.clientWidth; }
+function H() { return vizEl.clientHeight; }
 
-// ── bubble chart ───────────────────────────────────────────────────────────
+// ── bubble chart ──────────────────────────────────────────────────────────────
 function renderBubble(donors) {
   zoomG.selectAll('*').remove();
   if (simulation) simulation.stop();
 
   const visible = donors.filter(isVisible);
-  updateBadge(visible.length);
+  updateBadge(visible.length, donors.length);
 
-  // group by ae_explicitness, then use force simulation with group gravity
+  const w = W(), h = H();
   const nodes = visible.map(d => ({ ...d }));
 
-  // group centers
-  const w = W(), h = H();
-  const groups = AE_ORDER.filter(ae => nodes.some(n => (n.ae_explicitness||'unknown') === ae));
-  const groupCount = groups.length;
+  // Only include AE groups that have visible nodes
+  const presentGroups = AE_ORDER.filter(ae => nodes.some(n => aeGroup(n) === ae));
+  const gCount = presentGroups.length;
+
+  // Spread groups evenly across width with generous margins
+  const marginX = w * 0.12;
+  const usableW = w - marginX * 2;
   const groupCenters = {};
-  groups.forEach((ae, i) => {
-    // arrange groups horizontally with some vertical breathing room
-    const col = i % 4;
-    const row = Math.floor(i / 4);
+  presentGroups.forEach((ae, i) => {
     groupCenters[ae] = {
-      x: (w / (groupCount + 1)) * (col + 1),
-      y: h * 0.45 + row * h * 0.35
+      x: gCount === 1 ? w / 2 : marginX + (usableW / (gCount - 1)) * i,
+      y: h * 0.48
     };
   });
 
-  // group labels
-  groups.forEach(ae => {
+  // Group labels + count
+  presentGroups.forEach(ae => {
     const gc = groupCenters[ae];
-    const count = nodes.filter(n => (n.ae_explicitness||'unknown') === ae).length;
+    const count = nodes.filter(n => aeGroup(n) === ae).length;
+    const labelY = gc.y - (ae === 'explicit' ? 80 : ae === 'adjacent' ? 110 : 50);
     zoomG.append('text')
       .attr('class', 'group-label')
-      .attr('x', gc.x)
-      .attr('y', gc.y - (ae === 'explicit' ? 70 : 55))
+      .attr('x', gc.x).attr('y', labelY)
       .attr('text-anchor', 'middle')
       .attr('fill', AE_COLORS[ae])
-      .text(`${AE_LABELS[ae]} (${count})`);
+      .text(`${AE_LABELS[ae].toUpperCase()}  (${count})`);
+    zoomG.append('line')
+      .attr('class', 'group-underline')
+      .attr('x1', gc.x - 40).attr('x2', gc.x + 40)
+      .attr('y1', labelY + 5).attr('y2', labelY + 5)
+      .attr('stroke', AE_COLORS[ae]).attr('stroke-opacity', 0.3).attr('stroke-width', 1);
   });
-
-  const link = zoomG.append('g'); // empty — no links in bubble mode
 
   const nodeG = zoomG.selectAll('.bubble')
     .data(nodes, d => d.id)
     .enter().append('g')
     .attr('class', 'bubble')
-    .on('click', (e, d) => { e.stopPropagation(); showPanel(d); selectedId = d.id; })
+    .on('click', (e, d) => { e.stopPropagation(); selectBubble(d); })
     .call(d3.drag()
       .on('start', (ev, d) => { if (!ev.active) simulation.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
       .on('drag',  (ev, d) => { d.fx = ev.x; d.fy = ev.y; })
@@ -456,72 +368,67 @@ function renderBubble(donors) {
   nodeG.append('circle')
     .attr('r', d => donorRadius(d))
     .attr('fill', d => donorColor(d) + '28')
-    .attr('stroke', d => donorColor(d))
-    .attr('stroke-width', 1.5);
+    .attr('stroke', d => donorColor(d));
 
   nodeG.append('text')
-    .attr('dy', d => donorRadius(d) + 13)
+    .attr('dy', d => donorRadius(d) + 12)
     .attr('text-anchor', 'middle')
-    .attr('font-size', '11')
+    .attr('font-size', '10.5')
     .text(d => d.short_name || d.name);
 
+  // Stronger group separation with higher strength and extra separation force
   simulation = d3.forceSimulation(nodes)
-    .force('charge',    d3.forceManyBody().strength(d => -donorRadius(d) * 6))
-    .force('collision', d3.forceCollide(d => donorRadius(d) + 14))
-    .force('group-x',   d3.forceX(d => (groupCenters[d.ae_explicitness||'unknown'] || {x: w/2}).x).strength(0.35))
-    .force('group-y',   d3.forceY(d => (groupCenters[d.ae_explicitness||'unknown'] || {y: h*0.45}).y).strength(0.35))
-    .on('tick', () => {
-      nodeG.attr('transform', d => `translate(${d.x},${d.y})`);
-    })
-    .on('end', () => {
-      // gentle auto-fit
-      const xs = nodes.map(d => d.x), ys = nodes.map(d => d.y);
-      const x0 = Math.min(...xs) - 40, x1 = Math.max(...xs) + 40;
-      const y0 = Math.min(...ys) - 40, y1 = Math.max(...ys) + 40;
-      const sc = Math.min(0.88, 0.88 / Math.max((x1-x0)/W(), (y1-y0)/H()));
-      const tx = (W() - sc*(x0+x1))/2, ty = (H() - sc*(y0+y1))/2;
-      svgEl.transition().duration(500).call(zoom.transform,
-        d3.zoomIdentity.translate(tx,ty).scale(sc));
-    });
+    .force('charge',    d3.forceManyBody().strength(d => -donorRadius(d) * 5))
+    .force('collision', d3.forceCollide(d => donorRadius(d) + 16))
+    .force('group-x',   d3.forceX(d => (groupCenters[aeGroup(d)] || {x: w/2}).x).strength(0.6))
+    .force('group-y',   d3.forceY(d => (groupCenters[aeGroup(d)] || {y: h*0.48}).y).strength(0.25))
+    .alphaDecay(0.02)
+    .on('tick', () => nodeG.attr('transform', d => `translate(${d.x},${d.y})`))
+    .on('end', autoFit);
 
-  // re-apply selection fade
-  if (selectedId) {
-    nodeG.classed('faded', d => d.id !== selectedId);
-  }
+  // restore highlight if panel is open
+  if (selectedId) applyFade(nodeG);
 }
 
-// ── network view ───────────────────────────────────────────────────────────
+function autoFit() {
+  const nodes = [];
+  zoomG.selectAll('.bubble').each(d => nodes.push(d));
+  if (!nodes.length) return;
+  const xs = nodes.map(d => d.x), ys = nodes.map(d => d.y);
+  const x0 = Math.min(...xs) - 50, x1 = Math.max(...xs) + 50;
+  const y0 = Math.min(...ys) - 60, y1 = Math.max(...ys) + 60;
+  const sc = Math.min(0.9, 0.9 / Math.max((x1-x0)/W(), (y1-y0)/H()));
+  const tx = (W() - sc*(x0+x1))/2, ty = (H() - sc*(y0+y1))/2;
+  svgEl.transition().duration(500).call(zoom.transform, d3.zoomIdentity.translate(tx,ty).scale(sc));
+}
+
+// ── network view ──────────────────────────────────────────────────────────────
 function renderNetwork(donors) {
   zoomG.selectAll('*').remove();
   if (simulation) simulation.stop();
 
   const visible = donors.filter(isVisible);
-  updateBadge(visible.length);
+  updateBadge(visible.length, donors.length);
 
   const w = W(), h = H();
   const nodes = visible.map(d => ({ ...d }));
-  const center = { id: 'aef', name: 'Agroecology Fund', short_name: 'AEF', _center: true };
+  const center = { id: '__aef__', _center: true };
   const allNodes = [center, ...nodes];
-  const links = nodes.map(d => ({ source: 'aef', target: d.id }));
+  const links = nodes.map(d => ({ source: '__aef__', target: d.id }));
 
-  // draw links
   const linkEls = zoomG.selectAll('.net-link')
-    .data(links).enter().append('line')
-    .attr('class', 'net-link');
+    .data(links).enter().append('line').attr('class', 'net-link');
 
-  // draw center node
   const centerG = zoomG.append('g').attr('class', 'net-node');
-  centerG.append('circle').attr('r', 28)
-    .attr('fill', '#f0f0e822').attr('stroke', '#f0f0e8').attr('stroke-width', 1.5);
-  centerG.append('text').attr('text-anchor', 'middle').attr('dy', 5)
-    .attr('font-family', "'Courier New', monospace").attr('font-size', '13')
+  centerG.append('circle').attr('r', 26).attr('fill', '#f0f0e818').attr('stroke', '#f0f0e8').attr('stroke-width', 1.5);
+  centerG.append('text').attr('text-anchor', 'middle').attr('dy', 4)
+    .attr('font-family', "'Courier New', monospace").attr('font-size', '12')
     .attr('fill', '#f0f0e8').attr('pointer-events', 'none').text('AEF');
 
   const nodeG = zoomG.selectAll('.net-donor')
-    .data(nodes, d => d.id)
-    .enter().append('g')
-    .attr('class', 'net-node')
-    .on('click', (e, d) => { e.stopPropagation(); showPanel(d); selectedId = d.id; })
+    .data(nodes, d => d.id).enter().append('g')
+    .attr('class', 'bubble net-node')
+    .on('click', (e, d) => { e.stopPropagation(); selectBubble(d); })
     .call(d3.drag()
       .on('start', (ev, d) => { if (!ev.active) simulation.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
       .on('drag',  (ev, d) => { d.fx = ev.x; d.fy = ev.y; })
@@ -530,48 +437,62 @@ function renderNetwork(donors) {
   nodeG.append('circle')
     .attr('r', d => donorRadius(d))
     .attr('fill', d => donorColor(d) + '28')
-    .attr('stroke', d => donorColor(d))
-    .attr('stroke-width', 1.5);
+    .attr('stroke', d => donorColor(d)).attr('stroke-width', 1.5);
 
   nodeG.append('text')
-    .attr('dy', d => donorRadius(d) + 13)
-    .attr('text-anchor', 'middle')
-    .attr('font-size', '11')
-    .attr('font-family', "'Courier New', monospace")
+    .attr('dy', d => donorRadius(d) + 12).attr('text-anchor', 'middle')
+    .attr('font-size', '10.5').attr('font-family', "'Courier New', monospace")
     .attr('fill', '#7a9e7a').attr('pointer-events', 'none')
     .text(d => d.short_name || d.name);
 
-  const donorR = Math.min(w, h) * 0.4;
-
+  const rr = Math.min(w, h) * 0.38;
   simulation = d3.forceSimulation(allNodes)
-    .force('link', d3.forceLink(links).id(d => d.id).distance(donorR).strength(0.06))
-    .force('charge', d3.forceManyBody().strength(d => d._center ? -1200 : -80))
-    .force('center', d3.forceCenter(w/2, h/2))
-    .force('collision', d3.forceCollide(d => d._center ? 32 : donorRadius(d) + 18))
-    .force('radial', d3.forceRadial(donorR, w/2, h/2).strength(d => d._center ? 0 : 0.4))
+    .force('link',      d3.forceLink(links).id(d => d.id).distance(rr).strength(0.05))
+    .force('charge',    d3.forceManyBody().strength(d => d._center ? -1200 : -80))
+    .force('center',    d3.forceCenter(w/2, h/2))
+    .force('collision', d3.forceCollide(d => d._center ? 30 : donorRadius(d) + 16))
+    .force('radial',    d3.forceRadial(rr, w/2, h/2).strength(d => d._center ? 0 : 0.45))
     .on('tick', () => {
-      linkEls
-        .attr('x1', d => d.source.x).attr('y1', d => d.source.y)
-        .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
-      centerG.attr('transform', () => {
-        const c = allNodes.find(n => n.id === 'aef');
-        return c ? `translate(${c.x},${c.y})` : '';
-      });
+      linkEls.attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+              .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+      const c = allNodes[0];
+      centerG.attr('transform', `translate(${c.x},${c.y})`);
       nodeG.attr('transform', d => `translate(${d.x},${d.y})`);
     });
+
+  if (selectedId) applyFade(nodeG);
 }
 
-// ── panel ──────────────────────────────────────────────────────────────────
-function showPanel(d) {
-  const panel = document.getElementById('info-panel');
-  panel.classList.add('open');
-  const color = donorColor(d);
-  const ae = d.ae_explicitness || 'unknown';
+// ── selection / highlight ────────────────────────────────────────────────────
+function selectBubble(d) {
+  selectedId = d.id;
+  applyFade(zoomG.selectAll('.bubble'));
+  showPanel(d);
+}
 
+function applyFade(sel) {
+  if (!selectedId) { sel.classed('faded', false); return; }
+  sel.classed('faded', n => n.id !== selectedId);
+}
+
+function clearSelection() {
+  selectedId = null;
+  zoomG.selectAll('.bubble').classed('faded', false);
+  document.getElementById('info-panel').classList.remove('open');
+  document.getElementById('panel-body').innerHTML =
+    '<div style="color:var(--text-dim);font-family:var(--font-mono);font-size:11px;margin-top:16px;line-height:1.6;">Click any bubble to see details.<br><br>Use the filters above to isolate by AE focus, scale, type, or geography.</div>';
+}
+
+svgEl.on('click', clearSelection);
+document.getElementById('panel-close').addEventListener('click', clearSelection);
+
+// ── panel ────────────────────────────────────────────────────────────────────
+function showPanel(d) {
+  document.getElementById('info-panel').classList.add('open');
+  const color = donorColor(d);
+  const ae = aeGroup(d);
   let html = `
-    <div class="panel-ae-tag" style="background:${color}22;color:${color};border:1px solid ${color}55;">
-      ${AE_LABELS[ae] || ae}
-    </div>
+    <div class="panel-ae-tag" style="background:${color}22;color:${color};border:1px solid ${color}44;">${AE_LABELS[ae]}</div>
     <div class="panel-name">${d.name}</div>
     <div class="panel-meta">
   `;
@@ -583,32 +504,24 @@ function showPanel(d) {
   if (d.description) html += `<div class="panel-desc">${d.description}</div>`;
   if (d.donor_note)  html += `<div class="panel-note">${d.donor_note}</div>`;
   if (d.url) html += `<div class="panel-link"><a href="${d.url}" target="_blank">↗ ${d.url.replace(/^https?:\/\//,'')}</a></div>`;
-
   document.getElementById('panel-body').innerHTML = html;
 }
 
-document.getElementById('panel-close').addEventListener('click', () => {
-  document.getElementById('info-panel').classList.remove('open');
-  selectedId = null;
-  zoomG.selectAll('.bubble').classed('faded', false);
-});
-svgEl.on('click', () => {
-  document.getElementById('info-panel').classList.remove('open');
-  selectedId = null;
-  zoomG.selectAll('.bubble').classed('faded', false);
-});
-
-// ── badge ──────────────────────────────────────────────────────────────────
-function updateBadge(n) {
-  document.getElementById('donor-count-badge').textContent = `${n} donor${n!==1?'s':''}`;
+// ── badge ────────────────────────────────────────────────────────────────────
+function updateBadge(n, total) {
+  const badge = document.getElementById('donor-count-badge');
+  badge.textContent = n === total ? `${total} donors` : `${n} of ${total} donors`;
 }
 
-// ── filter controls ────────────────────────────────────────────────────────
+// ── filter controls ───────────────────────────────────────────────────────────
+// Model: no chips selected = show all. Clicking a chip selects it (isolates that value).
+// Multiple chips in same dimension = OR within that dimension.
+// Chips in different dimensions = AND across dimensions.
+// Clicking a selected chip deselects it.
+
 document.getElementById('reset-all').addEventListener('click', () => {
-  activeFilters = { ae: new Set(), scale: new Set(), type: new Set(), geo: new Set() };
-  document.querySelectorAll('.ctrl-chip').forEach(el => {
-    el.classList.remove('dimmed'); el.classList.add('active');
-  });
+  selected = { ae: new Set(), scale: new Set(), type: new Set(), geo: new Set() };
+  document.querySelectorAll('.ctrl-chip').forEach(el => el.classList.remove('selected'));
   rerender();
 });
 
@@ -616,18 +529,18 @@ document.querySelectorAll('.ctrl-chip').forEach(chip => {
   chip.addEventListener('click', function() {
     const dim = this.dataset.filter;
     const val = this.dataset.val;
-    if (activeFilters[dim].has(val)) {
-      activeFilters[dim].delete(val);
-      this.classList.remove('dimmed'); this.classList.add('active');
+    if (selected[dim].has(val)) {
+      selected[dim].delete(val);
+      this.classList.remove('selected');
     } else {
-      activeFilters[dim].add(val);
-      this.classList.add('dimmed'); this.classList.remove('active');
+      selected[dim].add(val);
+      this.classList.add('selected');
     }
     rerender();
   });
 });
 
-// ── view toggle ────────────────────────────────────────────────────────────
+// ── view toggle ───────────────────────────────────────────────────────────────
 document.getElementById('view-toggle').addEventListener('click', function() {
   viewMode = viewMode === 'bubble' ? 'network' : 'bubble';
   this.textContent = viewMode === 'bubble' ? '⬡ Network view' : '⬡ Bubble view';
@@ -636,12 +549,12 @@ document.getElementById('view-toggle').addEventListener('click', function() {
 });
 
 function rerender() {
-  selectedId = null;
+  clearSelection();
   if (viewMode === 'bubble') renderBubble(allDonors);
   else renderNetwork(allDonors);
 }
 
-// ── load ───────────────────────────────────────────────────────────────────
+// ── load ──────────────────────────────────────────────────────────────────────
 fetch('ecosystem.json')
   .then(r => r.json())
   .then(data => {
