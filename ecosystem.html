@@ -50,13 +50,6 @@
       padding: 8px 28px; border-bottom: 1px solid var(--border);
       display: flex; gap: 6px; flex-wrap: wrap; align-items: center;
     }
-    .legend-row {
-      display: flex; align-items: center; gap: 6px; flex-wrap: wrap; width: 100%;
-    }
-    .legend-row + .legend-row {
-      padding-top: 6px;
-      border-top: 1px solid var(--border);
-    }
     .legend-label {
       font-family: var(--font-mono); font-size: 10px; color: var(--text-dim);
       letter-spacing: 0.06em; text-transform: uppercase; margin-right: 6px; white-space: nowrap;
@@ -280,24 +273,6 @@
     </div>
   </div>
 
-    <span class="legend-label">AE focus</span>
-      <div class="legend-dot" style="background:var(--c-explicit)"></div><span>Explicit</span>
-    </div>
-      <div class="legend-dot" style="background:var(--c-adjacent)"></div><span>Adjacent</span>
-    </div>
-      <div class="legend-dot" style="background:var(--c-incidental)"></div><span>Incidental</span>
-    </div>
-      <div class="legend-dot" style="background:var(--c-unknown-ae)"></div><span>Unknown</span>
-    </div>
-
-    <div class="legend-sep"></div>
-    <span class="legend-label">Scale</span>
-
-    <div class="legend-sep"></div>
-    <span class="legend-label">Type</span>
-
-    <div class="legend-sep"></div>
-    <span class="legend-label">Geography</span>
 
 </div>
 
@@ -670,7 +645,8 @@ function showPanel(event, d) {
     }
     if (d.ae_explicitness) {
       const aeColor = '#d47a5a';
-      metaHtml += `<span><span class="meta-label">AE focus</span><span class="ae-pill" style="background:${aeColor}22;color:${aeColor};border:1px solid ${aeColor}55;">${AE_LABELS[d.ae_explicitness] || d.ae_explicitness}</span></span>`;
+      const aeLabel = {explicit:'Explicit',adjacent:'Adjacent',incidental:'Incidental',unknown:'Unknown'}[d.ae_explicitness] || d.ae_explicitness;
+      metaHtml += `<span><span class="meta-label">AE focus</span><span class="ae-pill" style="background:${aeColor}22;color:${aeColor};border:1px solid ${aeColor}55;">${aeLabel}</span></span>`;
     }
   }
   meta.innerHTML = metaHtml;
