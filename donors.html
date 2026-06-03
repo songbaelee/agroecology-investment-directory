@@ -514,27 +514,34 @@ function updateBadge(n, total) {
 }
 
 // ── filter controls ───────────────────────────────────────────────────────────
-// Model: no chips selected = show all. Clicking a chip selects it (isolates that value).
-// Multiple chips in same dimension = OR within that dimension.
-// Chips in different dimensions = AND across dimensions.
-// Clicking a selected chip deselects it.
+// One active chip globally at a time.
+// Click any chip → clear everything, isolate that value.
+// Click the active chip again → reset to all.
 
-document.getElementById('reset-all').addEventListener('click', () => {
+let activeChip = null;
+
+function resetFilters() {
   selected = { ae: new Set(), scale: new Set(), type: new Set(), geo: new Set() };
   document.querySelectorAll('.ctrl-chip').forEach(el => el.classList.remove('selected'));
+  activeChip = null;
+}
+
+document.getElementById('reset-all').addEventListener('click', () => {
+  resetFilters();
   rerender();
 });
 
 document.querySelectorAll('.ctrl-chip').forEach(chip => {
   chip.addEventListener('click', function() {
-    const dim = this.dataset.filter;
-    const val = this.dataset.val;
-    if (selected[dim].has(val)) {
-      selected[dim].delete(val);
-      this.classList.remove('selected');
+    if (this === activeChip) {
+      resetFilters();
     } else {
+      resetFilters();
+      const dim = this.dataset.filter;
+      const val = this.dataset.val;
       selected[dim].add(val);
       this.classList.add('selected');
+      activeChip = this;
     }
     rerender();
   });
