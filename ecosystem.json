@@ -299,7 +299,11 @@
     "region": "United States",
     "description": "Schmidt Family Foundation program focused on a just and sustainable food and energy system.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "private_foundation",
+    "geography": "US",
+    "scale": "large",
+    "ae_explicitness": "explicit"
   },
   {
     "id": "donor-1pct",
@@ -310,7 +314,11 @@
     "region": "United States",
     "description": "Global network of businesses and individuals that donate 1% of sales to environmental causes.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "network",
+    "geography": "US",
+    "scale": "unknown",
+    "ae_explicitness": "adjacent"
   },
   {
     "id": "donor-ajws",
@@ -321,7 +329,11 @@
     "region": "United States",
     "description": "International human rights organization funding social change in the Global South.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "private_foundation",
+    "geography": "US",
+    "scale": "mid",
+    "ae_explicitness": "adjacent"
   },
   {
     "id": "donor-arcus",
@@ -332,7 +344,11 @@
     "region": "United States",
     "description": "Foundation focused on social justice and conservation, including great ape protection and related agroecology connections.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "private_foundation",
+    "geography": "US",
+    "scale": "mid",
+    "ae_explicitness": "adjacent"
   },
   {
     "id": "donor-ballmer",
@@ -343,7 +359,11 @@
     "region": "United States",
     "description": "Philanthropic organization focused on economic mobility for children and families in the US.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "individual",
+    "geography": "US",
+    "scale": "large",
+    "ae_explicitness": "incidental"
   },
   {
     "id": "donor-ceres",
@@ -354,7 +374,12 @@
     "region": "United States",
     "description": "Foundation supporting sustainable agriculture, food systems, and environmental health.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "private_foundation",
+    "geography": "US",
+    "scale": "small",
+    "ae_explicitness": "explicit",
+    "donor_note": "Now closed; spent down assets. Data reflects period as active AEF donor."
   },
   {
     "id": "donor-cs-fund",
@@ -365,7 +390,11 @@
     "region": "United States",
     "description": "Family foundation focused on social and environmental change.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "family_foundation",
+    "geography": "US",
+    "scale": "small",
+    "ae_explicitness": "adjacent"
   },
   {
     "id": "donor-rockefeller",
@@ -376,7 +405,11 @@
     "region": "United States",
     "description": "Foundation focused on environment, democratic values, and racial equity.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "family_foundation",
+    "geography": "US",
+    "scale": "small",
+    "ae_explicitness": "adjacent"
   },
   {
     "id": "donor-packard",
@@ -387,7 +420,11 @@
     "region": "United States",
     "description": "Major foundation supporting conservation, science, and local grantmaking including food and water.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "private_foundation",
+    "geography": "US",
+    "scale": "large",
+    "ae_explicitness": "adjacent"
   },
   {
     "id": "donor-dunn",
@@ -398,7 +435,11 @@
     "region": "United States",
     "description": "Family foundation supporting agroecology and food systems change.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "family_foundation",
+    "geography": "US",
+    "scale": "unknown",
+    "ae_explicitness": "adjacent"
   },
   {
     "id": "donor-doen",
@@ -409,7 +450,11 @@
     "region": "Netherlands",
     "description": "Dutch foundation funding culture, nature, and a social and green economy.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "private_foundation",
+    "geography": "European",
+    "scale": "mid",
+    "ae_explicitness": "adjacent"
   },
   {
     "id": "donor-mize",
@@ -420,7 +465,11 @@
     "region": "United States",
     "description": "Family foundation supporting agroecology and sustainable food systems.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "family_foundation",
+    "geography": "US",
+    "scale": "unknown",
+    "ae_explicitness": "adjacent"
   },
   {
     "id": "donor-grassroots-intl",
@@ -431,7 +480,11 @@
     "region": "United States",
     "description": "Also an AEF anchor partner. Funds global grassroots movements for food sovereignty and agroecology.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "private_foundation",
+    "geography": "US",
+    "scale": "small",
+    "ae_explicitness": "explicit"
   },
   {
     "id": "donor-idrc",
@@ -442,7 +495,11 @@
     "region": "Canada",
     "description": "Canadian government agency funding research in developing regions. Bilateral development donor.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "government",
+    "geography": "global",
+    "scale": "large",
+    "ae_explicitness": "adjacent"
   },
   {
     "id": "donor-ikea",
@@ -453,7 +510,11 @@
     "region": "Netherlands",
     "description": "Philanthropic foundation focused on climate, renewable energy, and sustainable livelihoods for farming families.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "corporate",
+    "geography": "European",
+    "scale": "large",
+    "ae_explicitness": "adjacent"
   },
   {
     "id": "donor-goldman",
@@ -464,7 +525,11 @@
     "region": "United States",
     "description": "Family foundation focused on food systems, environment, and social equity.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "family_foundation",
+    "geography": "US",
+    "scale": "small",
+    "ae_explicitness": "adjacent"
   },
   {
     "id": "donor-sall",
@@ -475,7 +540,11 @@
     "region": "United States",
     "description": "Family foundation supporting sustainable food and agriculture.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "family_foundation",
+    "geography": "US",
+    "scale": "unknown",
+    "ae_explicitness": "adjacent"
   },
   {
     "id": "donor-neb",
@@ -486,7 +555,11 @@
     "region": "United States",
     "description": "Foundation funding sustainable agriculture, environment, and science education.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "corporate",
+    "geography": "US",
+    "scale": "small",
+    "ae_explicitness": "adjacent"
   },
   {
     "id": "donor-oak",
@@ -497,7 +570,11 @@
     "region": "Switzerland / Global",
     "description": "International foundation addressing social and environmental issues. Funds food and agriculture among other areas.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "private_foundation",
+    "geography": "global",
+    "scale": "large",
+    "ae_explicitness": "adjacent"
   },
   {
     "id": "donor-one-earth",
@@ -508,7 +585,11 @@
     "region": "United States",
     "description": "Philanthropic organization focused on climate solutions including regenerative agriculture and biodiversity.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "private_foundation",
+    "geography": "US",
+    "scale": "small",
+    "ae_explicitness": "adjacent"
   },
   {
     "id": "donor-panta-rhea",
@@ -519,7 +600,11 @@
     "region": "United States",
     "description": "Foundation supporting sustainable food systems, land stewardship, and ecological health.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "family_foundation",
+    "geography": "US",
+    "scale": "small",
+    "ae_explicitness": "adjacent"
   },
   {
     "id": "donor-synchronicity",
@@ -530,7 +615,11 @@
     "region": "United Kingdom",
     "description": "UK foundation funding biodiversity conservation and overlooked environmental causes.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "private_foundation",
+    "geography": "European",
+    "scale": "small",
+    "ae_explicitness": "adjacent"
   },
   {
     "id": "donor-savitri",
@@ -541,7 +630,11 @@
     "region": "United Kingdom",
     "description": "Charitable trust supporting agroecology and sustainable food systems.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "family_foundation",
+    "geography": "European",
+    "scale": "unknown",
+    "ae_explicitness": "adjacent"
   },
   {
     "id": "donor-sdc",
@@ -552,7 +645,11 @@
     "region": "Switzerland",
     "description": "Swiss federal agency for development cooperation. Key bilateral donor representing government engagement with AEF.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "government",
+    "geography": "European",
+    "scale": "large",
+    "ae_explicitness": "adjacent"
   },
   {
     "id": "donor-shockwave",
@@ -563,7 +660,11 @@
     "region": "United States",
     "description": "Foundation funding multi-sectoral agroecology movements globally.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "family_foundation",
+    "geography": "US",
+    "scale": "small",
+    "ae_explicitness": "explicit"
   },
   {
     "id": "donor-vaerekraft",
@@ -574,7 +675,11 @@
     "region": "Norway",
     "description": "Norwegian foundation supporting agroecology and food sovereignty.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "family_foundation",
+    "geography": "European",
+    "scale": "unknown",
+    "ae_explicitness": "explicit"
   },
   {
     "id": "donor-mcknight",
@@ -585,7 +690,11 @@
     "region": "United States",
     "description": "Major US foundation. Food program supports resilient and sustainable food systems including agroecology in the US and internationally.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "family_foundation",
+    "geography": "US",
+    "scale": "large",
+    "ae_explicitness": "explicit"
   },
   {
     "id": "donor-tauck",
@@ -596,7 +705,11 @@
     "region": "United States",
     "description": "Family foundation supporting agroecology and environmental causes.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "family_foundation",
+    "geography": "US",
+    "scale": "unknown",
+    "ae_explicitness": "adjacent"
   },
   {
     "id": "donor-casey",
@@ -607,7 +720,11 @@
     "region": "United States",
     "description": "Family foundation supporting agroecology and food systems.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "family_foundation",
+    "geography": "US",
+    "scale": "unknown",
+    "ae_explicitness": "adjacent"
   },
   {
     "id": "donor-godley",
@@ -618,7 +735,11 @@
     "region": "United States",
     "description": "Family foundation supporting sustainable agriculture and agroecology.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "family_foundation",
+    "geography": "US",
+    "scale": "unknown",
+    "ae_explicitness": "adjacent"
   },
   {
     "id": "donor-kellogg",
@@ -629,7 +750,11 @@
     "region": "United States",
     "description": "Major US foundation. Funded FAPY's establishment and supports food systems transformation. Key institutional donor.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "private_foundation",
+    "geography": "US",
+    "scale": "large",
+    "ae_explicitness": "adjacent"
   },
   {
     "id": "donor-thread",
@@ -640,7 +765,11 @@
     "region": "United States",
     "description": "Fund supporting agroecology and sustainable food systems.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "family_foundation",
+    "geography": "US",
+    "scale": "unknown",
+    "ae_explicitness": "adjacent"
   },
   {
     "id": "donor-swf",
@@ -651,7 +780,11 @@
     "region": "United States",
     "description": "Foundation supporting agroecology and food systems.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "family_foundation",
+    "geography": "US",
+    "scale": "unknown",
+    "ae_explicitness": "adjacent"
   },
   {
     "id": "donor-wallace",
@@ -662,7 +795,11 @@
     "region": "United States",
     "description": "Foundation focused on advancing social equity and environmental sustainability including food systems.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "private_foundation",
+    "geography": "US",
+    "scale": "mid",
+    "ae_explicitness": "explicit"
   },
   {
     "id": "donor-waverleyst",
@@ -673,7 +810,11 @@
     "region": "United States",
     "description": "Foundation supporting agroecology and sustainable food systems.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "family_foundation",
+    "geography": "US",
+    "scale": "unknown",
+    "ae_explicitness": "unknown"
   },
   {
     "id": "donor-woka",
@@ -684,7 +825,11 @@
     "region": "Global",
     "description": "Foundation supporting agroecology movements globally.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "family_foundation",
+    "geography": "global",
+    "scale": "unknown",
+    "ae_explicitness": "unknown"
   },
   {
     "id": "donor-reynolds",
@@ -695,7 +840,11 @@
     "region": "United States",
     "description": "Foundation focused on sustainable agriculture and international development.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "family_foundation",
+    "geography": "US",
+    "scale": "small",
+    "ae_explicitness": "adjacent"
   },
   {
     "id": "donor-katsura",
@@ -706,7 +855,12 @@
     "region": "United States",
     "description": "Fund supporting agroecology and food sovereignty.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "family_foundation",
+    "geography": "US",
+    "scale": "unknown",
+    "ae_explicitness": "adjacent",
+    "donor_note": "Ecosystem description mentions food sovereignty; AE explicitness not independently confirmed."
   },
   {
     "id": "donor-porticus",
@@ -717,7 +871,11 @@
     "region": "Netherlands / Global",
     "description": "International philanthropy organization (Brenninkmeijer family) funding sustainable food systems and social initiatives globally.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "family_foundation",
+    "geography": "global",
+    "scale": "large",
+    "ae_explicitness": "adjacent"
   },
   {
     "id": "donor-nina",
@@ -728,6 +886,10 @@
     "region": "Norway",
     "description": "Individual philanthropist supporting agroecology.",
     "relationship": "donor",
-    "grant_status": null
+    "grant_status": null,
+    "donor_type": "individual",
+    "geography": "European",
+    "scale": "unknown",
+    "ae_explicitness": "unknown"
   }
 ]
