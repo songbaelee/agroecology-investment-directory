@@ -43,14 +43,31 @@
     /* FINDING BAR */
     .finding-bar {
       background: #1a2a1a; border-bottom: 1px solid var(--border);
-      padding: 9px 28px; display: flex; align-items: center; gap: 20px;
+      padding: 8px 28px; display: flex; align-items: center; gap: 16px;
       flex-wrap: wrap; flex-shrink: 0;
     }
     .finding-stat { display: flex; align-items: baseline; gap: 7px; }
     .finding-number { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; line-height: 1; }
     .finding-label { font-family: var(--font-mono); font-size: 9.5px; color: var(--text-dim); letter-spacing: 0.05em; text-transform: uppercase; max-width: 110px; line-height: 1.4; }
     .finding-divider { width: 1px; height: 32px; background: var(--border); flex-shrink: 0; }
-    .finding-note { font-family: var(--font-mono); font-size: 10.5px; color: var(--text-dim); max-width: 500px; line-height: 1.6; font-style: italic; }
+
+    /* ABOUT DRAWER */
+    .about-drawer {
+      background: #111f11; border-bottom: 1px solid var(--border);
+      overflow: hidden; max-height: 0;
+      transition: max-height 0.32s cubic-bezier(0.4,0,0.2,1), padding 0.32s;
+      flex-shrink: 0; padding: 0 28px;
+    }
+    .about-drawer.open { max-height: 340px; padding: 18px 28px; }
+    .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 900px; }
+    .about-section-title { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px; }
+    .about-text { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); line-height: 1.7; }
+    .about-text a { color: var(--text-muted); text-decoration: underline; }
+    .about-text a:hover { color: var(--text); }
+    .about-legend { display: flex; flex-direction: column; gap: 7px; }
+    .legend-row { display: flex; align-items: baseline; gap: 8px; font-family: var(--font-mono); font-size: 10.5px; }
+    .legend-key { color: var(--text-dim); min-width: 72px; font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.04em; }
+    .legend-val { color: var(--text-muted); line-height: 1.5; }
 
     /* CONTROLS BAR */
     .controls-bar {
@@ -145,6 +162,7 @@
       <div class="site-label"><a href="index.html">← Agroecology Investment Directory</a></div>
       <div class="header-controls">
         <span class="meta-pill">v0.2 · Jun 2026</span>
+        <button class="header-toggle" id="about-btn">ⓘ About</button>
         <button class="header-toggle" id="view-toggle">⬡ Network view</button>
       </div>
     </div>
@@ -178,8 +196,24 @@
     <span class="finding-number" style="color:var(--text-muted);">9+</span>
     <span class="finding-label">also members of Global Alliance for Future of Food</span>
   </div>
-  <div class="finding-divider"></div>
-  <span class="finding-note">Most AEF donors are small US family foundations with adjacent food/environment mandates — not dedicated agroecology funders. Only 7 explicitly name agroecology in their stated focus. At least 9 are also members of the <a href="https://futureoffood.org" target="_blank" style="color:var(--text-muted);text-decoration:underline;">Global Alliance for the Future of Food</a>, a coordinated philanthropic network of 29 foundations — suggesting a shared donor class shapes the broader food systems funding landscape.</span>
+</div>
+
+<div class="about-drawer" id="about-drawer">
+  <div class="about-inner">
+    <div>
+      <div class="about-section-title">About this map</div>
+      <div class="about-text">40 donors to the Agroecology Fund (AEF), mapped by agroecology explicitness, scale, type, and geography. Derived from AEF's public donor list and enriched with data from foundation websites and annual reports. Some donors choose to remain anonymous and are not represented here.<br><br>Most AEF donors are small US family foundations with adjacent food/environment mandates — not dedicated agroecology funders. Only 7 explicitly name agroecology in their stated focus. At least 9 are also members of the <a href="https://futureoffood.org" target="_blank">Global Alliance for the Future of Food</a>, a coordinated philanthropic network of 29 foundations — suggesting a shared donor class shapes the broader food systems funding landscape.</div>
+    </div>
+    <div>
+      <div class="about-section-title">Field legend</div>
+      <div class="about-legend">
+        <div class="legend-row"><span class="legend-key">Color</span><span class="legend-val">AE focus — Explicit (green): names agroecology; Adjacent (orange): food/env mandate; Other (muted): general philanthropy</span></div>
+        <div class="legend-row"><span class="legend-key">Size</span><span class="legend-val">Scale — Large (&gt;$500M assets); Mid ($50–500M); Small (&lt;$50M); Unknown</span></div>
+        <div class="legend-row"><span class="legend-key">Type</span><span class="legend-val">Private foundation, family foundation, government/bilateral, corporate, individual, or network</span></div>
+        <div class="legend-row"><span class="legend-key">Geography</span><span class="legend-val">Primary operating region of the funder, not the grantees</span></div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="controls-bar">
@@ -550,6 +584,13 @@ document.querySelectorAll('.ctrl-chip').forEach(chip => {
     }
     rerender();
   });
+});
+
+// ── about drawer ─────────────────────────────────────────────────────────────
+document.getElementById('about-btn').addEventListener('click', function() {
+  const drawer = document.getElementById('about-drawer');
+  const open = drawer.classList.toggle('open');
+  this.classList.toggle('active', open);
 });
 
 // ── view toggle ───────────────────────────────────────────────────────────────
