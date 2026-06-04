@@ -40,33 +40,25 @@
     .header-toggle:hover { background: rgba(255,255,255,0.1); }
     .header-toggle.active { border-color: #7A9E6F; color: #7A9E6F; background: rgba(122,158,111,0.1); }
 
-    /* FINDING BAR */
-    .finding-bar {
-      background: #1a2a1a; border-bottom: 1px solid var(--border);
-      padding: 8px 28px; display: flex; align-items: center; gap: 16px;
-      flex-wrap: wrap; flex-shrink: 0;
-    }
-    .finding-stat { display: flex; align-items: baseline; gap: 7px; }
-    .finding-number { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; line-height: 1; }
-    .finding-label { font-family: var(--font-mono); font-size: 9.5px; color: var(--text-dim); letter-spacing: 0.05em; text-transform: uppercase; max-width: 110px; line-height: 1.4; }
-    .finding-divider { width: 1px; height: 32px; background: var(--border); flex-shrink: 0; }
-
     /* ABOUT DRAWER */
     .about-drawer {
       background: #111f11; border-bottom: 1px solid var(--border);
       overflow: hidden; max-height: 0;
-      transition: max-height 0.32s cubic-bezier(0.4,0,0.2,1), padding 0.32s;
-      flex-shrink: 0; padding: 0 28px;
+      transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1);
+      flex-shrink: 0;
     }
-    .about-drawer.open { max-height: 340px; padding: 18px 28px; }
-    .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 900px; }
-    .about-section-title { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 8px; }
+    .about-inner { padding: 20px 28px; display: grid; grid-template-columns: auto 1fr 1fr; gap: 32px; align-items: start; max-width: 1100px; }
+    .about-stats { display: flex; flex-direction: column; gap: 14px; border-right: 1px solid var(--border); padding-right: 32px; }
+    .about-stat { display: flex; align-items: baseline; gap: 8px; }
+    .about-number { font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 600; line-height: 1; }
+    .about-stat-label { font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); letter-spacing: 0.05em; text-transform: uppercase; max-width: 100px; line-height: 1.4; }
+    .about-section-title { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 9px; }
     .about-text { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); line-height: 1.7; }
     .about-text a { color: var(--text-muted); text-decoration: underline; }
     .about-text a:hover { color: var(--text); }
-    .about-legend { display: flex; flex-direction: column; gap: 7px; }
-    .legend-row { display: flex; align-items: baseline; gap: 8px; font-family: var(--font-mono); font-size: 10.5px; }
-    .legend-key { color: var(--text-dim); min-width: 72px; font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.04em; }
+    .about-legend { display: flex; flex-direction: column; gap: 8px; }
+    .legend-row { display: flex; gap: 8px; font-family: var(--font-mono); font-size: 10.5px; }
+    .legend-key { color: var(--text-dim); min-width: 68px; font-size: 9px; text-transform: uppercase; letter-spacing: 0.04em; flex-shrink: 0; padding-top: 1px; }
     .legend-val { color: var(--text-muted); line-height: 1.5; }
 
     /* CONTROLS BAR */
@@ -171,35 +163,30 @@
   </div>
 </header>
 
-<div class="finding-bar">
-  <div class="finding-stat">
-    <span class="finding-number" style="color:var(--c-explicit);">7</span>
-    <span class="finding-label">of 40 explicitly name agroecology</span>
-  </div>
-  <div class="finding-divider"></div>
-  <div class="finding-stat">
-    <span class="finding-number" style="color:var(--c-adjacent);">29</span>
-    <span class="finding-label">fund adjacent food / env work</span>
-  </div>
-  <div class="finding-divider"></div>
-  <div class="finding-stat">
-    <span class="finding-number" style="color:var(--text-muted);">29</span>
-    <span class="finding-label">US-based out of 40</span>
-  </div>
-  <div class="finding-divider"></div>
-  <div class="finding-stat">
-    <span class="finding-number" style="color:var(--text-dim);">15</span>
-    <span class="finding-label">with unknown scale</span>
-  </div>
-  <div class="finding-divider"></div>
-  <div class="finding-stat">
-    <span class="finding-number" style="color:var(--text-muted);">9+</span>
-    <span class="finding-label">also members of Global Alliance for Future of Food</span>
-  </div>
-</div>
-
 <div class="about-drawer" id="about-drawer">
   <div class="about-inner">
+    <div class="about-stats">
+      <div class="about-stat">
+        <span class="about-number" style="color:var(--c-explicit);">7</span>
+        <span class="about-stat-label">of 40 explicitly name agroecology</span>
+      </div>
+      <div class="about-stat">
+        <span class="about-number" style="color:var(--c-adjacent);">29</span>
+        <span class="about-stat-label">fund adjacent food / env work</span>
+      </div>
+      <div class="about-stat">
+        <span class="about-number" style="color:var(--text-muted);">29</span>
+        <span class="about-stat-label">US-based out of 40</span>
+      </div>
+      <div class="about-stat">
+        <span class="about-number" style="color:var(--text-dim);">15</span>
+        <span class="about-stat-label">with unknown scale</span>
+      </div>
+      <div class="about-stat">
+        <span class="about-number" style="color:var(--text-muted);">9+</span>
+        <span class="about-stat-label">also members of Global Alliance for Future of Food</span>
+      </div>
+    </div>
     <div>
       <div class="about-section-title">About this map</div>
       <div class="about-text">40 donors to the Agroecology Fund (AEF), mapped by agroecology explicitness, scale, type, and geography. Derived from AEF's public donor list and enriched with data from foundation websites and annual reports. Some donors choose to remain anonymous and are not represented here.<br><br>Most AEF donors are small US family foundations with adjacent food/environment mandates — not dedicated agroecology funders. Only 7 explicitly name agroecology in their stated focus. At least 9 are also members of the <a href="https://futureoffood.org" target="_blank">Global Alliance for the Future of Food</a>, a coordinated philanthropic network of 29 foundations — suggesting a shared donor class shapes the broader food systems funding landscape.</div>
@@ -590,6 +577,7 @@ document.querySelectorAll('.ctrl-chip').forEach(chip => {
 document.getElementById('about-btn').addEventListener('click', function() {
   const drawer = document.getElementById('about-drawer');
   const open = drawer.classList.toggle('open');
+  drawer.style.maxHeight = open ? drawer.scrollHeight + 'px' : '0';
   this.classList.toggle('active', open);
 });
 
