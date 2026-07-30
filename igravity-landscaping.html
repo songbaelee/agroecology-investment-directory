@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIF Downstream Landscaping — iGravity Fund List</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root {
+    --ink: #1c2321;
+    --paper: #fbfaf7;
+    --panel: #ffffff;
+    --line: #e2ded4;
+    --muted: #6b6459;
+    --accent: #3d5a4a;
+    --accent-soft: #e8efe9;
+    --strong: #3d7a52;
+    --strong-bg: #e5f2e8;
+    --medium: #b9862f;
+    --medium-bg: #faf1de;
+    --pending: #8b8880;
+    --pending-bg: #f0efe9;
+    --fail: #b0483f;
+    --fail-bg: #f7e8e5;
+    --mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Iowan Old Style', 'Georgia', serif;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .topbar {
+    padding: 28px 32px 20px;
+    border-bottom: 1px solid var(--line);
+    background: var(--panel);
+  }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  h1 {
+    margin: 0 0 6px;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 14px;
+    max-width: 760px;
+  }
+  .stats {
+    display: flex;
+    gap: 24px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+  .stat {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .stat b {
+    color: var(--ink);
+    font-size: 16px;
+    display: block;
+    font-family: 'Iowan Old Style', Georgia, serif;
+  }
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    padding: 16px 32px;
+    background: var(--panel);
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  input[type="text"], select {
+    font-family: inherit;
+    font-size: 13px;
+    padding: 7px 10px;
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    background: var(--paper);
+    color: var(--ink);
+  }
+  input[type="text"] {
+    min-width: 220px;
+    flex: 1 1 220px;
+  }
+  select { cursor: pointer; }
+  .chip-group { display: flex; gap: 6px; flex-wrap: wrap; }
+  .chip {
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    cursor: pointer;
+    color: var(--muted);
+    user-select: none;
+    white-space: nowrap;
+  }
+  .chip.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .count-note {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    margin-left: auto;
+  }
+  .table-wrap { padding: 0 32px 60px; max-width: 1400px; margin: 0 auto; }
+  table { width: 100%; border-collapse: collapse; margin-top: 18px; }
+  thead th {
+    text-align: left;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--line);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  thead th:hover { color: var(--ink); }
+  thead th.sorted::after { content: " ▾"; font-size: 9px; }
+  tbody tr {
+    border-bottom: 1px solid var(--line);
+    cursor: pointer;
+  }
+  tbody tr:hover { background: var(--accent-soft); }
+  tbody td { padding: 10px 10px; vertical-align: top; }
+  .fund-name { font-weight: 600; }
+  .fund-manager { display: block; font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .badge {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .badge.strong { background: var(--strong-bg); color: var(--strong); }
+  .badge.medium { background: var(--medium-bg); color: var(--medium); }
+  .badge.pending { background: var(--pending-bg); color: var(--pending); }
+  .badge.fail { background: var(--fail-bg); color: var(--fail); }
+  .score-cell { font-family: var(--mono); font-size: 13px; }
+  .score-cell .dash { color: var(--muted); }
+  .v-breakdown {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .geo-tag {
+    display: inline-block;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .detail-row td {
+    background: #f5f3ec;
+    padding: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .detail-inner {
+    padding: 18px 24px 24px;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 24px;
+  }
+  .detail-inner h4 {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin: 14px 0 4px;
+  }
+  .detail-inner h4:first-child { margin-top: 0; }
+  .detail-inner p { margin: 0 0 8px; font-size: 13.5px; }
+  .rationale-text { font-size: 13px; color: #3a3730; }
+  .facts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 16px;
+    font-size: 13px;
+  }
+  .facts-grid .k { color: var(--muted); font-family: var(--mono); font-size: 11px; }
+  .facts-grid .v { margin-bottom: 4px; }
+  a.site-link { color: var(--accent); text-decoration: none; border-bottom: 1px dotted var(--accent); }
+  .empty-state { padding: 60px 20px; text-align: center; color: var(--muted); }
+  ::selection { background: var(--accent-soft); }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="eyebrow">AEF · AIF Feasibility Study · iGravity deliverable (Tier 1 desk research)</div>
+  <h1>Downstream Fund Landscaping</h1>
+  <div class="subtitle">How funds deploy capital to Agroecological Enterprises (AEEs). iGravity's screening pass: a Step&nbsp;0 exclusionary gate followed by four scored axes — intentionality, ecological integrity, equity/rights, and participation/governance.</div>
+  <div class="stats" id="stats"></div>
+</div>
+
+<div class="controls">
+  <input type="text" id="search" placeholder="Search fund, manager, geography…">
+  <select id="spectrumFilter">
+    <option value="">All spectrum positions</option>
+  </select>
+  <select id="funderFilter">
+    <option value="">All funder categories</option>
+  </select>
+  <select id="geoFilter">
+    <option value="">All geographies</option>
+  </select>
+  <div class="chip-group" id="gateChips"></div>
+  <div class="count-note" id="countNote"></div>
+</div>
+
+<div class="table-wrap">
+  <table id="fundTable">
+    <thead>
+      <tr>
+        <th data-sort="name">Fund</th>
+        <th data-sort="funder_category">Funder category</th>
+        <th data-sort="spectrum">Spectrum</th>
+        <th data-sort="total_score_n">Score</th>
+        <th data-sort="geography">Geography</th>
+        <th data-sort="ticket_min">Ticket size</th>
+        <th data-sort="source_tier">Source</th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+  <div class="empty-state" id="emptyState" style="display:none;">No funds match these filters.</div>
+</div>
+
+<script>
+let FUNDS = [];
+let filtered = [];
+let sortKey = "total_score_n";
+let sortDir = "desc";
+let expandedIdx = null;
+let gateFilter = "";
+
+const spectrumClass = (s) => {
+  if (s === "Strong alignment") return "strong";
+  if (s === "Medium alignment") return "medium";
+  if (s === "Not agroecological") return "fail";
+  return "pending";
+};
+
+function fmtMoney(v) {
+  if (!v) return "";
+  return v.replace(/US\$/g, "$");
+}
+
+function ticketRange(f) {
+  const min = fmtMoney(f.ticket_min), max = fmtMoney(f.ticket_max);
+  if (!min && !max) return "—";
+  if (min && max) return `${min}–${max}`;
+  return min || max;
+}
+
+function scoreCell(f) {
+  if (f.total_score_n === null || f.total_score_n === undefined) {
+    return `<span class="score-cell"><span class="dash">—</span></span>`;
+  }
+  return `<span class="score-cell">${f.total_score_n}/16</span>
+    <div class="v-breakdown">V1 ${f.v1_n ?? '–'} · V2 ${f.v2_n ?? '–'} · V3 ${f.v3_n ?? '–'} · V4 ${f.v4_n ?? '–'}</div>`;
+}
+
+function render() {
+  const tbody = document.getElementById("tbody");
+  tbody.innerHTML = "";
+  document.getElementById("emptyState").style.display = filtered.length ? "none" : "block";
+  document.getElementById("countNote").textContent = `${filtered.length} of ${FUNDS.length} funds`;
+
+  filtered.forEach((f, i) => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td><span class="fund-name">${f.name}</span><span class="fund-manager">${f.manager || ""}${f.vintage ? " · " + f.vintage : ""}</span></td>
+      <td>${f.funder_category || "—"}</td>
+      <td><span class="badge ${spectrumClass(f.spectrum)}">${f.spectrum || "Not classified"}</span></td>
+      <td>${scoreCell(f)}</td>
+      <td class="geo-tag">${f.geography || "—"}</td>
+      <td class="score-cell">${ticketRange(f)}</td>
+      <td class="score-cell">${f.source_tier || "—"}</td>
+    `;
+    tr.addEventListener("click", () => {
+      expandedIdx = expandedIdx === i ? null : i;
+      render();
+    });
+    tbody.appendChild(tr);
+
+    if (expandedIdx === i) {
+      const detailTr = document.createElement("tr");
+      detailTr.className = "detail-row";
+      const td = document.createElement("td");
+      td.colSpan = 7;
+      td.innerHTML = `
+        <div class="detail-inner">
+          <div>
+            <h4>Description</h4>
+            <p>${f.description || "—"}</p>
+            <h4>Sample portfolio</h4>
+            <p>${f.sample_portfolio || "—"}</p>
+            <h4>Scoring rationale</h4>
+            <p class="rationale-text">${f.rationale || "Not yet scored."}</p>
+            <h4>Notes</h4>
+            <p class="rationale-text">${f.notes || "—"}</p>
+          </div>
+          <div>
+            <h4>Fund facts</h4>
+            <div class="facts-grid">
+              <div class="k">Website</div><div class="v">${f.website ? `<a class="site-link" href="https://${f.website.replace(/^https?:\/\//,'')}" target="_blank" rel="noopener">${f.website}</a>` : "—"}</div>
+              <div class="k">Manager</div><div class="v">${f.manager || "—"}</div>
+              <div class="k">Vintage</div><div class="v">${f.vintage || "—"}</div>
+              <div class="k">Capital raised</div><div class="v">${fmtMoney(f.capital_raised) || "—"}</div>
+              <div class="k">Target AUM</div><div class="v">${fmtMoney(f.target_aum) || "—"}</div>
+              <div class="k">Instrument</div><div class="v">${f.funder_category || "—"}</div>
+              <div class="k">Capital stack</div><div class="v">${f.capital_stack || "—"}</div>
+              <div class="k">Tenor</div><div class="v">${f.tenor || "—"}</div>
+              <div class="k">TA co-provision</div><div class="v">${f.ta_provision || "—"}</div>
+              <div class="k">Governance</div><div class="v">${f.governance_involvement || "—"}</div>
+              <div class="k">Explicit commitment</div><div class="v">${f.explicit_commitment || "—"}</div>
+              <div class="k">Step 0 gate</div><div class="v">${f.gate || "—"}</div>
+              <div class="k">Data confidence</div><div class="v">${f.data_confidence || "—"}</div>
+              <div class="k">Regional detail</div><div class="v">${f.regional_breakdown || "—"}</div>
+            </div>
+          </div>
+        </div>
+      `;
+      detailTr.appendChild(td);
+      tbody.appendChild(detailTr);
+    }
+  });
+}
+
+function applyFilters() {
+  const q = document.getElementById("search").value.trim().toLowerCase();
+  const spectrum = document.getElementById("spectrumFilter").value;
+  const funder = document.getElementById("funderFilter").value;
+  const geo = document.getElementById("geoFilter").value;
+
+  filtered = FUNDS.filter(f => {
+    if (gateFilter && f.gate !== gateFilter) return false;
+    if (spectrum && f.spectrum !== spectrum) return false;
+    if (funder && f.funder_category !== funder) return false;
+    if (geo && f.geography !== geo) return false;
+    if (q) {
+      const hay = `${f.name} ${f.manager} ${f.geography} ${f.regional_breakdown} ${f.description}`.toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+
+  sortFiltered();
+  expandedIdx = null;
+  render();
+}
+
+function sortFiltered() {
+  filtered.sort((a, b) => {
+    let av = a[sortKey], bv = b[sortKey];
+    if (av === null || av === undefined) av = sortDir === "desc" ? -Infinity : Infinity;
+    if (bv === null || bv === undefined) bv = sortDir === "desc" ? -Infinity : Infinity;
+    if (typeof av === "string") av = av.toLowerCase();
+    if (typeof bv === "string") bv = bv.toLowerCase();
+    if (av < bv) return sortDir === "asc" ? -1 : 1;
+    if (av > bv) return sortDir === "asc" ? 1 : -1;
+    return 0;
+  });
+}
+
+function setupControls() {
+  const spectrums = [...new Set(FUNDS.map(f => f.spectrum).filter(Boolean))];
+  const spectrumOrder = ["Strong alignment", "Medium alignment", "Pending gate", "Not agroecological"];
+  spectrumOrder.filter(s => spectrums.includes(s)).forEach(s => {
+    const opt = document.createElement("option");
+    opt.value = s; opt.textContent = s;
+    document.getElementById("spectrumFilter").appendChild(opt);
+  });
+
+  const funders = [...new Set(FUNDS.map(f => f.funder_category).filter(Boolean))].sort();
+  funders.forEach(s => {
+    const opt = document.createElement("option");
+    opt.value = s; opt.textContent = s;
+    document.getElementById("funderFilter").appendChild(opt);
+  });
+
+  const geos = [...new Set(FUNDS.map(f => f.geography).filter(Boolean))].sort();
+  geos.forEach(s => {
+    const opt = document.createElement("option");
+    opt.value = s; opt.textContent = s;
+    document.getElementById("geoFilter").appendChild(opt);
+  });
+
+  const gates = [
+    { label: "All gates", value: "" },
+    { label: "Pass", value: "Pass" },
+    { label: "Review", value: "Review" },
+    { label: "Fail", value: "Fail" },
+  ];
+  const gateWrap = document.getElementById("gateChips");
+  gates.forEach(g => {
+    const chip = document.createElement("div");
+    chip.className = "chip" + (g.value === "" ? " active" : "");
+    chip.textContent = g.label;
+    chip.addEventListener("click", () => {
+      gateFilter = g.value;
+      [...gateWrap.children].forEach(c => c.classList.remove("active"));
+      chip.classList.add("active");
+      applyFilters();
+    });
+    gateWrap.appendChild(chip);
+  });
+
+  document.getElementById("search").addEventListener("input", applyFilters);
+  document.getElementById("spectrumFilter").addEventListener("change", applyFilters);
+  document.getElementById("funderFilter").addEventListener("change", applyFilters);
+  document.getElementById("geoFilter").addEventListener("change", applyFilters);
+
+  document.querySelectorAll("thead th").forEach(th => {
+    th.addEventListener("click", () => {
+      const key = th.dataset.sort;
+      if (sortKey === key) {
+        sortDir = sortDir === "asc" ? "desc" : "asc";
+      } else {
+        sortKey = key;
+        sortDir = key === "name" ? "asc" : "desc";
+      }
+      document.querySelectorAll("thead th").forEach(t => t.classList.remove("sorted"));
+      th.classList.add("sorted");
+      sortFiltered();
+      render();
+    });
+  });
+}
+
+function renderStats() {
+  const total = FUNDS.length;
+  const strong = FUNDS.filter(f => f.spectrum === "Strong alignment").length;
+  const medium = FUNDS.filter(f => f.spectrum === "Medium alignment").length;
+  const pending = FUNDS.filter(f => f.gate === "Review").length;
+  const failed = FUNDS.filter(f => f.gate === "Fail").length;
+  document.getElementById("stats").innerHTML = `
+    <div class="stat"><b>${total}</b>total funds landscaped</div>
+    <div class="stat"><b>${strong}</b>strong alignment</div>
+    <div class="stat"><b>${medium}</b>medium alignment</div>
+    <div class="stat"><b>${pending}</b>pending Tier 2 verification</div>
+    <div class="stat"><b>${failed}</b>failed Step 0 gate</div>
+  `;
+}
+
+fetch("igravity-funds.json")
+  .then(r => r.json())
+  .then(data => {
+    FUNDS = data;
+    filtered = [...FUNDS];
+    renderStats();
+    setupControls();
+    sortFiltered();
+    render();
+  })
+  .catch(err => {
+    document.getElementById("tbody").innerHTML = `<tr><td colspan="7">Could not load igravity-funds.json — make sure it's in the same folder. (${err})</td></tr>`;
+  });
+</script>
+
+</body>
+</html>
