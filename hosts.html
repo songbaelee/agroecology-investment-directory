@@ -99,6 +99,24 @@
     .glance-col a:hover { color: var(--moss); }
     .glance-col .empty { font-size: 0.85rem; color: var(--muted); font-style: italic; }
 
+    .paths-box { background: #FFFBF2; border: 1px solid #E8C87A; border-left: 4px solid var(--accent); border-radius: 10px; padding: 1.4rem 1.6rem 1.1rem; }
+    .paths-intro { font-size: 0.95rem; color: var(--bark); margin-bottom: 1rem; }
+    .path { display: grid; grid-template-columns: 5.2rem 1fr; gap: 0.9rem; align-items: start; padding: 0.8rem 0; border-top: 1px solid #EEDDB8; }
+    .path p { font-size: 0.92rem; color: #3A2A18; }
+    .path p + p { margin-top: 0.2rem; }
+    .path-tag { display: inline-block; text-align: center; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; background: var(--soil); color: var(--cream); border-radius: 4px; padding: 0.25rem 0.5rem; margin-top: 0.15rem; }
+    .path-meta { font-size: 0.86rem !important; }
+    .path-meta .k { color: var(--muted); font-weight: 600; }
+    .paths-box a { color: var(--moss); text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .paths-box a:hover { color: var(--bark); }
+    .paths-subhead { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; color: var(--soil); margin: 0.6rem 0 0.5rem; padding-top: 0.9rem; border-top: 1px solid #EEDDB8; }
+    .paths-view { padding-left: 1.2rem; }
+    .paths-view li { font-size: 0.92rem; color: #3A2A18; margin-bottom: 0.45rem; }
+    .paths-view strong { color: var(--soil); }
+    .paths-close { margin-top: 0.8rem; font-size: 0.8rem; color: var(--muted); font-style: italic; }
+    .paths-back { text-align: right; margin-top: 0.4rem; }
+    #paths + #summary { margin-top: 2.25rem; }
+
     .glance-examples { margin-top: 0.9rem; font-size: 0.84rem; color: var(--muted); line-height: 1.6; }
     .glance-examples:empty { display: none; }
     .glance-examples .lead { font-weight: 600; margin-right: 0.3rem; }
@@ -143,6 +161,9 @@
       main { padding: 0 1rem 3rem; }
       .facts { grid-template-columns: 1fr; }
       .card-back { padding-left: 1.1rem; padding-right: 1.1rem; }
+      .paths-box { padding: 1.1rem 1.1rem 0.9rem; }
+      .path { grid-template-columns: 1fr; gap: 0.4rem; }
+      .path-tag { justify-self: start; }
       .panel { padding: 1rem 1.1rem; }
       .card-header, .card-body, .card-footer { padding-left: 1.1rem; padding-right: 1.1rem; }
     }
@@ -165,6 +186,7 @@
 
 <nav class="toc">
   <div class="toc-inner">
+    <a href="#paths">Leading paths</a>
     <a href="#summary">Summary</a>
     <a href="#parameters">Pilot parameters</a>
     <a href="#criteria">Screening criteria</a>
@@ -177,6 +199,46 @@
 </nav>
 
 <main>
+
+  <section id="paths" class="paths-box">
+    <h2 class="section-title">Leading paths: a working view for discussion</h2>
+    <p class="paths-intro">Our research points to combinations of providers rather than a single one. Three structures stand out:</p>
+
+    <div class="path">
+      <span class="path-tag">Path A</span>
+      <div>
+        <p>An impact manager runs a note vehicle. It accepts loans and grants and lends to funds abroad.</p>
+        <p class="path-meta"><span class="k">Candidates:</span> <a href="#org-total-impact-capital">Total Impact Capital</a>, <a href="#org-calvert-impact">Calvert Impact</a> (via its RIA), <a href="#org-candide-group">Candide Group</a>, <a href="#org-social-finance-cpm">Social Finance</a>.</p>
+        <p class="path-meta"><span class="k">Precedents:</span> <a href="#ex-olamina">Olamina Fund</a>, <a href="#ex-total-impact-notes">Total Impact Notes</a>.</p>
+      </div>
+    </div>
+
+    <div class="path">
+      <span class="path-tag">Path B</span>
+      <div>
+        <p>AEF's own capital sits in a DAF that invests in a Path A vehicle. This gets around the fact that a DAF can't accept loans.</p>
+        <p class="path-meta"><span class="k">Candidates:</span> <a href="#org-impactassets">ImpactAssets</a>, <a href="#org-impact-charitable">Impact Charitable</a>, <a href="#org-realize-impact">Realize Impact</a>.</p>
+        <p class="path-meta"><span class="k">Precedent:</span> <a href="#org-impactassets">ImpactAssets</a>' investment in <a href="#ex-olamina">Olamina Fund</a>.</p>
+      </div>
+    </div>
+
+    <div class="path">
+      <span class="path-tag">Path C</span>
+      <div>
+        <p>A DAF-hosted program, with underwriting by AEF or an outside advisor. Simpler and lighter-touch, but suited only to grant capital.</p>
+        <p class="path-meta"><span class="k">Precedents:</span> <a href="#ex-abundance-circle">Abundance Circle</a>, <a href="#ex-terrafund">WRI TerraFund</a>.</p>
+      </div>
+    </div>
+
+    <h3 class="paths-subhead">Current working view</h3>
+    <ul class="paths-view">
+      <li><strong>Lead pairing (Path B):</strong> <a href="#org-total-impact-capital">Total Impact Capital</a> as manager, with <a href="#org-impactassets">ImpactAssets</a> holding AEF's own capital. <a href="#org-total-impact-capital">Total Impact Capital</a> is the only candidate already lending to intermediary funds abroad at this scale; <a href="#org-impactassets">ImpactAssets</a> has played this investor and administrator role before.</li>
+      <li><strong>Main alternatives:</strong> <a href="#org-social-finance-cpm">Social Finance</a>, if inflows mix grants, recoverable grants and loans (international scope still to confirm); and <a href="#org-calvert-impact">Calvert Impact</a>, which has the strongest credit capacity if the pilot is designed to grow beyond $5M.</li>
+    </ul>
+
+    <p class="paths-close">Statuses reflect what public sources confirm, not a ranking. Comments welcome.</p>
+    <div class="paths-back"><a class="back-link" href="#summary">↑ Back to summary</a></div>
+  </section>
 
   <section id="summary">
     <h2 class="section-title">Organizations at a glance</h2>
@@ -262,10 +324,11 @@
   function cap(s) { return s ? s.charAt(0).toUpperCase() + s.slice(1) : ''; }
 
   const STATUS = {
-    confirmed: { label: 'Confirmed fit', group: 'Confirmed fit' },
-    partial:   { label: 'Partial fit',   group: 'Partial fit (AEF capital only; no loans in)' },
-    verify:    { label: 'Needs verification', group: 'Needs verification' },
-    excluded:  { label: 'Excluded',      group: 'Considered but excluded' }
+    // Display labels only; the underlying status values in hosts.json stay the same
+    confirmed: { label: 'Meets criteria (publicly confirmed)' },
+    partial:   { label: 'Partial fit (AEF capital only)' },
+    verify:    { label: 'Promising, open questions' },
+    excluded:  { label: 'Excluded' }
   };
 
   function yn(v, note) {
@@ -389,7 +452,7 @@
       const items = orgs.filter(o => o.status === status);
       if (!items.length) return '';
       return `
-        <h3 class="group-title"><span class="status-badge st-${status}">${esc(STATUS[status].label)}</span>${esc(STATUS[status].group)} <span class="count">· ${items.length}</span></h3>
+        <h3 class="group-title"><span class="status-badge st-${status}">${esc(STATUS[status].label)}</span><span class="count">· ${items.length}</span></h3>
         <div class="grid">${items.map(buildCard).join('')}</div>`;
     }).join('');
     document.getElementById('org-groups').innerHTML = groupsHtml || '<div class="load-error">No organizations listed.</div>';
