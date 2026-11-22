@@ -15,7 +15,14 @@
     { "id": "S11", "label": "Social Finance, Custom Portfolio Management", "url": "https://socialfinance.org/product/custom-portfolio-management/" },
     { "id": "S12", "label": "Realize Impact, homepage", "url": "https://realizeimpact.org/" },
     { "id": "S13", "label": "Symbiotics, homepage", "url": "https://symbioticsgroup.com/" },
-    { "id": "S14", "label": "Social Finance, Impact First Fund", "url": "https://socialfinance.org/product/social-finance-impact-first-fund/" }
+    { "id": "S14", "label": "Social Finance, Impact First Fund", "url": "https://socialfinance.org/product/social-finance-impact-first-fund/" },
+    { "id": "S15", "label": "FINTRX, Calvert Impact Advisory Services, LLC profile (third-party)", "url": "https://fintrx.com/firms/firm/calvert-impact-advisory-services-llc-326022" },
+    { "id": "S16", "label": "ImpactAlpha, The LiiST (Oct 4, 2022), R.I.S.E. Fund entry", "url": "https://impactalpha.com/?p=96589" },
+    { "id": "S17", "label": "Kindora, Realize Impact profile (third-party)", "url": "https://www.kindora.co/en/funders/realize-impact" },
+    { "id": "S18", "label": "ImpactAssets, Q&A: CIM Emerging Markets Credit Strategy", "url": "https://impactassets.org/cim-em-qa/" },
+    { "id": "S19", "label": "ImpactAssets, \"Investing Close to Home to Build Intergenerational Wealth\"", "url": "https://impactassets.org/?p=7900" },
+    { "id": "S20", "label": "ImpactAssets, Client Recommended Investments", "url": "https://impactassets.org/?p=7355" },
+    { "id": "S21", "label": "Social Finance Impact First Fund page (hosted by NYU Law)", "url": "https://www.law.nyu.edu/documents/social-finance-impact-first-fund-2025-hall-impact" }
   ],
   "general_questions": [
     "What is your minimum size, and what fees would apply at $5M?",
@@ -56,18 +63,20 @@
       "status": "partial",
       "accepts_loans_in": "no",
       "accepts_loans_in_note": "DAF",
-      "lends_internationally": "unknown",
-      "lends_internationally_note": "Unknown for loans; international grants are supported",
-      "underwriting": "Unknown how deep it goes",
-      "summary": "The DAF lets donors recommend impact investments in funds and companies as well as grants. It supports international grants and expenditure responsibility grants. Several services appear to be open to non-DAF clients: a PRI account for foundations, Pooled Donor Funds, Supporting Organizations ($10M+ accounts), custom portfolios, due diligence and back-office administration.",
+      "lends_internationally": "yes",
+      "lends_internationally_note": "via DAF investments, e.g. an emerging-markets credit strategy",
+      "underwriting": "Client (AEF or its advisor) for client-recommended investments; ImpactAssets does a compliance-level review",
+      "summary": "The DAF lets donors recommend impact investments in funds and companies as well as grants. It supports international grants and expenditure responsibility grants. Several services appear to be open to non-DAF clients: a PRI account for foundations, Pooled Donor Funds, Supporting Organizations ($10M+ accounts), custom portfolios, due diligence and back-office administration. The DAF can make loans through the Client Recommended Investment service, with ImpactAssets handling execution, servicing, monitoring and reporting. For client-recommended investments, the client sources the deal and does the due diligence; ImpactAssets reviews impact commitments, runs basic AML, IRS-compliance and fraud checks, acts as legal investor and fiduciary, and can decline. An emerging-markets credit strategy is available through the DAF.",
       "open_questions": [
         "Are PRI accounts, Pooled Donor Funds, custom portfolios, due diligence and back-office administration available without an ImpactAssets DAF?",
-        "Can a DAF or Pooled Donor Fund make loans to international funds, rather than only grants?",
-        "Could a separate entity accept outside loans alongside an AEF DAF?",
-        "How deep is the diligence on recommended investments?"
+        "What is the minimum for a client-recommended loan, and what fees apply to a $5M account?",
+        "Could a separate entity accept outside loans alongside an AEF DAF?"
       ],
       "sources": [
-        { "id": "S2", "label": "ImpactAssets, Products & Services", "url": "https://impactassets.org/products-and-services/" }
+        { "id": "S2", "label": "ImpactAssets, Products & Services", "url": "https://impactassets.org/products-and-services/" },
+        { "id": "S18", "label": "ImpactAssets, Q&A: CIM Emerging Markets Credit Strategy", "url": "https://impactassets.org/cim-em-qa/" },
+        { "id": "S19", "label": "ImpactAssets, \"Investing Close to Home to Build Intergenerational Wealth\"", "url": "https://impactassets.org/?p=7900" },
+        { "id": "S20", "label": "ImpactAssets, Client Recommended Investments", "url": "https://impactassets.org/?p=7355" }
       ],
       "per_aef": []
     },
@@ -79,16 +88,17 @@
       "accepts_loans_in": "unknown",
       "lends_internationally": "unknown",
       "underwriting": "Unknown",
-      "summary": "A 501(c)(3) holding company, Calvert Impact, Inc., was formed in October 2022 as a more flexible base for lending, structuring services and new products. Calvert Impact Capital still issues the Community Investment Note.",
+      "summary": "A 501(c)(3) holding company, Calvert Impact, Inc., was formed in October 2022 as a more flexible base for lending, structuring services and new products. Calvert Impact Capital still issues the Community Investment Note. Its RIA, Calvert Impact Advisory Services, LLC, registered with the SEC in September 2023 and manages pooled investment vehicles (third-party profile).",
       "open_questions": [
         "Is $5M below the minimum for a standalone mandate?",
         "Would the RIA manage a standalone credit vehicle, and what does it cost?"
       ],
       "sources": [
-        { "id": "S8", "label": "Calvert Impact, press release on Calvert Impact, Inc. (Oct 17, 2022)", "url": "https://calvertimpact.org/about/press/calvert-impact-capital-announces-expansion-strategy-creation-of-calvert" }
+        { "id": "S8", "label": "Calvert Impact, press release on Calvert Impact, Inc. (Oct 17, 2022)", "url": "https://calvertimpact.org/about/press/calvert-impact-capital-announces-expansion-strategy-creation-of-calvert" },
+        { "id": "S15", "label": "FINTRX, Calvert Impact Advisory Services, LLC profile (third-party)", "url": "https://fintrx.com/firms/firm/calvert-impact-advisory-services-llc-326022" }
       ],
       "per_aef": [
-        "Wouldn't do this through the Notes program. Would likely use its registered investment advisor. (The press release doesn't mention an RIA.)",
+        "Wouldn't do this through the Notes program.",
         "Size threshold: $5M may be below Calvert's minimum. To confirm."
       ]
     },
@@ -136,16 +146,19 @@
       "type": "501(c)(3): PHIGs, fiscal sponsorship, investment partnerships",
       "status": "verify",
       "accepts_loans_in": "unknown",
-      "lends_internationally": "unknown",
+      "lends_internationally": "yes",
+      "lends_internationally_note": "via R.I.S.E. Fund and PHIGs; recent grants mostly US",
       "underwriting": "Realize says it handles diligence and administration; depth not stated",
-      "summary": "Offers Philanthropic Investment Grants (PHIGs), fiscal sponsorship (2.5% admin fee) and investment partnerships. With PHIGs, donors grant to Realize and recommend where the money is invested, and returns are recycled; its investment partnerships pool investments from partners. Loans in, international scope, underwriting depth, minimums and other fees aren't stated.",
+      "summary": "Offers Philanthropic Investment Grants (PHIGs), fiscal sponsorship (2.5% admin fee) and investment partnerships. With PHIGs, donors grant to Realize and recommend where the money is invested, and returns are recycled; its investment partnerships pool investments from partners. Loans in, underwriting depth, minimums and other fees aren't stated on the homepage. Co-runs the R.I.S.E. Fund with Sprout Enterprise, which makes debt, equity and revenue-based investments in artisan enterprises in India, Mexico, Guatemala, Cambodia, Indonesia and Pakistan. A third-party profile notes emerging-market activity through PHIGs and a Truss Fund covering Latin America and Southeast Asia; its recent grant sample is US-based.",
       "open_questions": [
-        "Can PHIG capital be lent internationally to funds?",
+        "What share of PHIG capital goes to international loans, and can AEF's pilot be dedicated to international fund lending?",
         "Can the investment partnerships take loans from outside investors alongside grant capital?",
         "Who does the credit underwriting?"
       ],
       "sources": [
-        { "id": "S12", "label": "Realize Impact, homepage", "url": "https://realizeimpact.org/" }
+        { "id": "S12", "label": "Realize Impact, homepage", "url": "https://realizeimpact.org/" },
+        { "id": "S16", "label": "ImpactAlpha, The LiiST (Oct 4, 2022), R.I.S.E. Fund entry", "url": "https://impactalpha.com/?p=96589" },
+        { "id": "S17", "label": "Kindora, Realize Impact profile (third-party)", "url": "https://www.kindora.co/en/funders/realize-impact" }
       ],
       "per_aef": []
     },
@@ -174,15 +187,16 @@
       "type": "Impact investing platform and advisor",
       "status": "verify",
       "accepts_loans_in": "unknown",
-      "lends_internationally": "unknown",
+      "lends_internationally": "yes",
+      "lends_internationally_note": "advises clients into international debt, e.g. Austin Community Foundation's purchase of Total Impact Notes",
       "underwriting": "Not described in source. Possible role: underwriting or monitoring advisor to a host",
-      "summary": "CapShift Advisors, an SEC-registered investment advisor, was formed in 2021. Serves DAF providers, family offices and wealth advisors, and monitors more than 1,400 opportunities, mainly in venture capital, private credit and real assets; $1B mobilized. Neither geography nor credit underwriting is described in the source.",
+      "summary": "CapShift Advisors, an SEC-registered investment advisor, was formed in 2021. Serves DAF providers, family offices and wealth advisors, and monitors more than 1,400 opportunities, mainly in venture capital, private credit and real assets; $1B mobilized. S3 doesn't describe geography or credit underwriting. Advised Austin Community Foundation, a buyer of the Total Impact Notes, which lend to fund managers in Latin America and Africa.",
       "open_questions": [
-        "Do you work with non-US borrowers and funds?",
         "Do you underwrite credit, or only do diligence on funds?"
       ],
       "sources": [
-        { "id": "S3", "label": "ImpactAlpha, CapShift mobilizes $1 billion", "url": "https://impactalpha.com/capshift-follows-the-money-and-the-clients-to-mobilize-1-billion-for-impact-investments-podcast/" }
+        { "id": "S3", "label": "ImpactAlpha, CapShift mobilizes $1 billion", "url": "https://impactalpha.com/capshift-follows-the-money-and-the-clients-to-mobilize-1-billion-for-impact-investments-podcast/" },
+        { "id": "S7", "label": "ImpactAlpha, Total Impact Notes first issuance (Nov 3, 2025)", "url": "https://impactalpha.com/first-issuance-of-total-impact-notes-raises-3-million-for-loans-to-fund-managers-in-latin-america-and-africa/" }
       ],
       "per_aef": []
     },
