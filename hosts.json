@@ -36,7 +36,6 @@
       "accepts_loans_in_note": "Noteholders",
       "lends_internationally": "yes",
       "underwriting": "Total Impact Capital",
-      "path": "unknown",
       "summary": "Its Total Impact Notes are five-year notes paying 5% a year that pool loans to fund managers. The first issuance raised $3M (ImpactAlpha, Nov 3, 2025). Borrowers are fund managers focused on Latin America and the Caribbean (LocFund, NESsT's Lirio Fund, Elu Women's Empowerment Fund), plus Nithio in Africa; NESsT Lirio Fund is already in the directory.",
       "open_questions": [
         "Could the pilot sit inside the existing Total Impact Notes, or would it be a separate series or vehicle?",
@@ -60,7 +59,6 @@
       "lends_internationally": "unknown",
       "lends_internationally_note": "Unknown for loans; international grants are supported",
       "underwriting": "Unknown how deep it goes",
-      "path": "unknown",
       "summary": "The DAF lets donors recommend impact investments in funds and companies as well as grants. It supports international grants and expenditure responsibility grants. Several services appear to be open to non-DAF clients: a PRI account for foundations, Pooled Donor Funds, Supporting Organizations ($10M+ accounts), custom portfolios, due diligence and back-office administration.",
       "open_questions": [
         "Are PRI accounts, Pooled Donor Funds, custom portfolios, due diligence and back-office administration available without an ImpactAssets DAF?",
@@ -81,7 +79,6 @@
       "accepts_loans_in": "unknown",
       "lends_internationally": "unknown",
       "underwriting": "Unknown",
-      "path": "unknown",
       "summary": "A 501(c)(3) holding company, Calvert Impact, Inc., was formed in October 2022 as a more flexible base for lending, structuring services and new products. Calvert Impact Capital still issues the Community Investment Note.",
       "open_questions": [
         "Is $5M below the minimum for a standalone mandate?",
@@ -103,7 +100,6 @@
       "accepts_loans_in": "unknown",
       "lends_internationally": "unknown",
       "underwriting": "Due diligence is listed as part of the management service",
-      "path": "unknown",
       "summary": "Offers custom portfolio management. Services cover fund design (investment thesis, policies and procedures, financial and legal structure) and management (sourcing, due diligence, negotiating and executing investments, monitoring, impact and financial reporting). Minimums, fees and international scope aren't stated; examples on the page are US-focused.",
       "open_questions": [
         "Does Custom Portfolio Management take international mandates?",
@@ -124,7 +120,6 @@
       "lends_internationally": "unknown",
       "lends_internationally_note": "Profile mentions no international activity",
       "underwriting": "Unknown",
-      "path": "unknown",
       "summary": "Denver-based DAF provider that makes PRIs and offers PRI facilitation. Its capital deployment includes loans, revenue-share investments and recoverable grants. The profile mentions no international activity and describes national reach.",
       "open_questions": [
         "Can PRIs and loans go to international borrowers?",
@@ -143,7 +138,6 @@
       "accepts_loans_in": "unknown",
       "lends_internationally": "unknown",
       "underwriting": "Realize says it handles diligence and administration; depth not stated",
-      "path": "unknown",
       "summary": "Offers Philanthropic Investment Grants (PHIGs), fiscal sponsorship (2.5% admin fee) and investment partnerships. With PHIGs, donors grant to Realize and recommend where the money is invested, and returns are recycled; its investment partnerships pool investments from partners. Loans in, international scope, underwriting depth, minimums and other fees aren't stated.",
       "open_questions": [
         "Can PHIG capital be lent internationally to funds?",
@@ -164,7 +158,6 @@
       "lends_internationally": "unknown",
       "lends_internationally_note": "Article doesn't say whether scope is US-only",
       "underwriting": "Unknown",
-      "path": "unknown",
       "summary": "Its Capital Partners unit offers emerging managers bridge financing, working capital advances, deal warehousing and co-investment capital. $4.4M raised (ImpactAlpha, Sept 2024). The article doesn't say whether its scope is US-only.",
       "open_questions": [
         "Do you lend, or would you lend, outside the US?",
@@ -183,7 +176,6 @@
       "accepts_loans_in": "unknown",
       "lends_internationally": "unknown",
       "underwriting": "Not described in source. Possible role: underwriting or monitoring advisor to a host",
-      "path": "unknown",
       "summary": "CapShift Advisors, an SEC-registered investment advisor, was formed in 2021. Serves DAF providers, family offices and wealth advisors, and monitors more than 1,400 opportunities, mainly in venture capital, private credit and real assets; $1B mobilized. Neither geography nor credit underwriting is described in the source.",
       "open_questions": [
         "Do you work with non-US borrowers and funds?",
@@ -202,7 +194,6 @@
       "accepts_loans_in": "unknown",
       "lends_internationally": "unknown",
       "underwriting": "Unknown",
-      "path": "unknown",
       "summary": "Its impact investing offering is built around DAF portfolios.",
       "exclusion_reason": "The page doesn't describe direct loans, international investing or recoverable grants, and its hosting is grant-based.",
       "open_questions": [],
@@ -219,7 +210,6 @@
       "accepts_loans_in": "unknown",
       "lends_internationally": "unknown",
       "underwriting": "Unknown",
-      "path": "unknown",
       "summary": "Its fiscal sponsorship page describes funder collaboratives and project management.",
       "exclusion_reason": "Doesn't mention loans or PRIs by sponsored projects. Grant-based.",
       "open_questions": [],
@@ -236,7 +226,6 @@
       "accepts_loans_in": "unknown",
       "lends_internationally": "unknown",
       "underwriting": "Unknown",
-      "path": "unknown",
       "summary": "Its fiscal sponsorship and donor collaboratives receive funds and re-grant them.",
       "exclusion_reason": "No investing or lending is described. Worth revisiting only for a spin-out.",
       "open_questions": [],
@@ -254,7 +243,6 @@
       "lends_internationally": "no",
       "lends_internationally_note": "North American lender; Collaboratives limited to US-based enterprises",
       "underwriting": "Unknown",
-      "path": "unknown",
       "summary": "Describes itself as a North American social enterprise lender.",
       "exclusion_reason": "Its Collaboratives were limited to US-based enterprises and are no longer fundraising; remaining balances are moving into its Social Investment Fund.",
       "open_questions": [],
@@ -271,7 +259,6 @@
       "accepts_loans_in": "unknown",
       "lends_internationally": "yes",
       "underwriting": "Unknown",
-      "path": "unknown",
       "summary": "Strong emerging-markets platform: more than 9,500 investments, about $12.1B originated, 99 countries, a $2.5B portfolio across 19 funds and mandates.",
       "exclusion_reason": "Judgment call: its fund setup is too big for a permanent ~$5M vehicle. Revisit if the pilot becomes a vehicle for institutional investors.",
       "open_questions": [],
