@@ -22,7 +22,8 @@
     { "id": "S18", "label": "ImpactAssets, Q&A: CIM Emerging Markets Credit Strategy", "url": "https://impactassets.org/cim-em-qa/" },
     { "id": "S19", "label": "ImpactAssets, \"Investing Close to Home to Build Intergenerational Wealth\"", "url": "https://impactassets.org/?p=7900" },
     { "id": "S20", "label": "ImpactAssets, Client Recommended Investments", "url": "https://impactassets.org/?p=7355" },
-    { "id": "S21", "label": "Social Finance Impact First Fund page (hosted by NYU Law)", "url": "https://www.law.nyu.edu/documents/social-finance-impact-first-fund-2025-hall-impact" }
+    { "id": "S21", "label": "Social Finance Impact First Fund page (hosted by NYU Law)", "url": "https://www.law.nyu.edu/documents/social-finance-impact-first-fund-2025-hall-impact" },
+    { "id": "S22", "label": "Calvert Impact, Community Investment Note portfolio (Q4 2025)", "url": "https://calvertimpact.org/sectors" }
   ],
   "general_questions": [
     "What is your minimum size, and what fees would apply at $5M?",
@@ -86,16 +87,18 @@
       "type": "Impact investment firm",
       "status": "verify",
       "accepts_loans_in": "unknown",
-      "lends_internationally": "unknown",
+      "lends_internationally": "yes",
+      "lends_internationally_note": "Community Investment Note portfolio reaches 111 countries (Q4 2025)",
       "underwriting": "Unknown",
-      "summary": "A 501(c)(3) holding company, Calvert Impact, Inc., was formed in October 2022 as a more flexible base for lending, structuring services and new products. Calvert Impact Capital still issues the Community Investment Note. Its RIA, Calvert Impact Advisory Services, LLC, registered with the SEC in September 2023 and manages pooled investment vehicles (third-party profile).",
+      "summary": "A 501(c)(3) holding company, Calvert Impact, Inc., was formed in October 2022 as a more flexible base for lending, structuring services and new products. Calvert Impact Capital still issues the Community Investment Note. Its RIA, Calvert Impact Advisory Services, LLC, registered with the SEC in September 2023 and manages pooled investment vehicles (third-party profile). Its Community Investment Note portfolio reaches 111 countries, including Sub-Saharan Africa, South Asia, and Latin America and the Caribbean, as of Q4 2025.",
       "open_questions": [
         "Is $5M below the minimum for a standalone mandate?",
         "Would the RIA manage a standalone credit vehicle, and what does it cost?"
       ],
       "sources": [
         { "id": "S8", "label": "Calvert Impact, press release on Calvert Impact, Inc. (Oct 17, 2022)", "url": "https://calvertimpact.org/about/press/calvert-impact-capital-announces-expansion-strategy-creation-of-calvert" },
-        { "id": "S15", "label": "FINTRX, Calvert Impact Advisory Services, LLC profile (third-party)", "url": "https://fintrx.com/firms/firm/calvert-impact-advisory-services-llc-326022" }
+        { "id": "S15", "label": "FINTRX, Calvert Impact Advisory Services, LLC profile (third-party)", "url": "https://fintrx.com/firms/firm/calvert-impact-advisory-services-llc-326022" },
+        { "id": "S22", "label": "Calvert Impact, Community Investment Note portfolio (Q4 2025)", "url": "https://calvertimpact.org/sectors" }
       ],
       "per_aef": [
         "Wouldn't do this through the Notes program.",
