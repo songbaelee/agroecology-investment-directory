@@ -25,8 +25,11 @@
     .data-btn { background: transparent; border: 1px solid rgba(255,255,255,0.3); border-radius: 6px; padding: 0.3rem 0.85rem; font-size: 0.78rem; color: var(--straw); cursor: pointer; font-family: inherit; text-decoration: none; display: inline-block; transition: all 0.15s; }
     .data-btn:hover { background: rgba(255,255,255,0.1); color: white; }
 
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     nav.toc { background: var(--moss); color: var(--cream); padding: 0.9rem 2rem; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 8px rgba(44,26,14,0.12); }
-    section, .card, .q-cols .panel, .sources-full li { scroll-margin-top: 4.5rem; }
+    /* --nav-h is set from the nav's real height in JS (it wraps to several lines on phones) */
+    section, .card, .q-cols .panel, .sources-full li { scroll-margin-top: calc(var(--nav-h, 3.5rem) + 1rem); }
     .toc-inner { max-width: 1100px; margin: 0 auto; display: flex; gap: 0.4rem 1.25rem; flex-wrap: wrap; font-size: 0.85rem; }
     .toc-inner a { color: rgba(255,255,255,0.85); text-decoration: none; border-bottom: 1px solid transparent; }
     .toc-inner a:hover { color: white; border-bottom-color: var(--straw); }
@@ -86,14 +89,19 @@
     .q-block h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--soil); margin-bottom: 0.4rem; }
     .q-cols { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 480px), 1fr)); gap: 1rem; }
 
-    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; background: white; border: 1px solid var(--border); border-radius: 10px; }
-    .summary-table { width: 100%; min-width: 760px; border-collapse: collapse; }
-    .summary-table th { background: var(--cream); border-bottom: 2px solid var(--border); padding: 0.55rem 0.85rem; text-align: left; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); font-weight: 600; white-space: nowrap; }
-    .summary-table td { padding: 0.6rem 0.85rem; border-bottom: 1px solid var(--border); font-size: 0.86rem; vertical-align: top; }
-    .summary-table tr:last-child td { border-bottom: none; }
-    .summary-table tbody tr:hover td { background: #F8F4EE; }
-    .summary-table .t-name a { font-weight: 600; color: var(--soil); text-decoration: none; border-bottom: 1px solid var(--sage); }
-    .summary-table .t-name a:hover { color: var(--moss); }
+    .glance-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+    .glance-col { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 0.9rem 1.1rem 1rem; }
+    .glance-col .status-badge { display: inline-block; margin-bottom: 0.7rem; }
+    .glance-col ul { list-style: none; }
+    .glance-col li { font-size: 0.9rem; line-height: 1.4; margin-bottom: 0.5rem; }
+    .glance-col li:last-child { margin-bottom: 0; }
+    .glance-col a { color: var(--soil); text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .glance-col a:hover { color: var(--moss); }
+    .glance-col .empty { font-size: 0.85rem; color: var(--muted); font-style: italic; }
+
+    .card-back { padding: 0.45rem 1.5rem 0.6rem; background: var(--cream); text-align: right; }
+    .back-link { font-size: 0.75rem; color: var(--moss); text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .back-link:hover { color: var(--bark); }
 
     .to-top { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 60; background: var(--soil); color: var(--cream); border: 1px solid var(--accent); border-radius: 20px; padding: 0.45rem 0.95rem; font-family: 'Source Sans 3', sans-serif; font-size: 0.82rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 16px rgba(44,26,14,0.25); opacity: 0; visibility: hidden; transform: translateY(8px); transition: opacity 0.2s, transform 0.2s, visibility 0.2s, background 0.15s; }
     .to-top.show { opacity: 1; visibility: visible; transform: none; }
@@ -110,11 +118,16 @@
     footer { background: var(--soil); color: var(--straw); text-align: center; padding: 1.5rem; font-size: 0.82rem; }
     footer a { color: var(--sage); text-decoration: none; }
 
+    @media (max-width: 860px) {
+      .glance-grid { grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 640px) {
       header { padding: 2rem 1rem; }
       nav.toc { padding: 0.8rem 1rem; }
       main { padding: 0 1rem 3rem; }
       .facts { grid-template-columns: 1fr; }
+      .card-back { padding-left: 1.1rem; padding-right: 1.1rem; }
       .panel { padding: 1rem 1.1rem; }
       .card-header, .card-body, .card-footer { padding-left: 1.1rem; padding-right: 1.1rem; }
     }
@@ -137,9 +150,9 @@
 
 <nav class="toc">
   <div class="toc-inner">
+    <a href="#summary">Summary</a>
     <a href="#parameters">Pilot parameters</a>
     <a href="#criteria">Screening criteria</a>
-    <a href="#summary">Summary table</a>
     <a href="#organizations">Organizations</a>
     <a href="#excluded">Considered but excluded</a>
     <a href="#questions">Questions to ask</a>
@@ -149,6 +162,11 @@
 </nav>
 
 <main>
+
+  <section id="summary">
+    <h2 class="section-title">Organizations at a glance</h2>
+    <div class="glance-grid" id="glance-grid"><div class="load-error">Loading…</div></div>
+  </section>
 
   <section id="parameters">
     <h2 class="section-title">Pilot parameters <span class="per-aef">per AEF / to confirm</span></h2>
@@ -175,24 +193,6 @@
         <li>Workable at ~$5M</li>
       </ol>
       <div class="callout"><strong>Structural point:</strong> a DAF can only accept gifts. It can't take loans, and it can't repay a donor's recoverable grant. So a DAF host works for AEF's own capital, but outside lenders would need a second entity.</div>
-    </div>
-  </section>
-
-  <section id="summary">
-    <h2 class="section-title">Summary table</h2>
-    <div class="table-scroll">
-      <table class="summary-table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Status</th>
-            <th>Accepts loans in</th>
-            <th>Lends internationally</th>
-            <th>Underwriting</th>
-          </tr>
-        </thead>
-        <tbody id="summary-body"><tr><td colspan="5" class="load-error">Loading…</td></tr></tbody>
-      </table>
     </div>
   </section>
 
@@ -247,7 +247,7 @@
 
 </main>
 
-<button class="to-top" id="to-top" type="button" aria-label="Back to top">↑ Top</button>
+<button class="to-top" id="to-top" type="button" aria-label="Back to summary">↑ Summary</button>
 
 <footer>
   <p>Agroecology Investment Directory &nbsp;&middot;&nbsp; AIF pilot working list, not linked from the directory &nbsp;&middot;&nbsp; <a href="hosts.json" download="aif-hosts.json">Download data (JSON)</a></p>
@@ -312,6 +312,7 @@
         </div>
         ${(org.open_questions || []).length ? `<a class="q-link" href="#q-${esc(org.id)}">${org.open_questions.length} questions ↓</a>` : ''}
       </div>
+      <div class="card-back"><a class="back-link" href="#summary">↑ Back to summary</a></div>
     </div>`;
   }
 
@@ -323,18 +324,16 @@
       document.getElementById('sources-note').textContent = 'All fetched ' + data.sources_fetched + '.';
     }
 
-    // Summary table: all organizations, in card group order
-    const order = ['confirmed', 'partial', 'verify', 'excluded'];
-    const sorted = order.flatMap(st => orgs.filter(o => o.status === st));
-    document.getElementById('summary-body').innerHTML = sorted.map(o => {
-      const st = STATUS[o.status] || STATUS.verify;
-      return `<tr>
-        <td class="t-name"><a href="#org-${esc(o.id)}">${esc(o.name)}</a></td>
-        <td><span class="status-badge st-${esc(o.status)}">${esc(st.label)}</span></td>
-        <td>${yn(o.accepts_loans_in, o.accepts_loans_in_note)}</td>
-        <td>${yn(o.lends_internationally, o.lends_internationally_note)}</td>
-        <td>${esc(o.underwriting) || 'Unknown'}</td>
-      </tr>`;
+    // At-a-glance summary: one column per status, names only, in card group order
+    document.getElementById('glance-grid').innerHTML = ['confirmed', 'partial', 'verify', 'excluded'].map(status => {
+      const items = orgs.filter(o => o.status === status);
+      return `
+        <div class="glance-col">
+          <span class="status-badge st-${status}">${esc(STATUS[status].label)}</span>
+          ${items.length
+            ? `<ul>${items.map(o => `<li><a href="#org-${esc(o.id)}">${esc(o.name)}</a></li>`).join('')}</ul>`
+            : '<div class="empty">None</div>'}
+        </div>`;
     }).join('');
 
     // Groups 1–3 (status: confirmed, partial, verify)
@@ -374,14 +373,21 @@
     }
   }
 
-  // Floating back-to-top button
+  // Keep anchor offsets in step with the sticky nav's actual height
+  const nav = document.querySelector('nav.toc');
+  const setNavH = () => document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');
+  window.addEventListener('resize', setNavH);
+  setNavH();
+
+  // Floating back-to-summary button
   const toTop = document.getElementById('to-top');
   const onScroll = () => toTop.classList.toggle('show', window.scrollY > 500);
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
   toTop.addEventListener('click', () => {
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+    document.getElementById('summary').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+    history.replaceState(null, '', '#summary');
   });
 
   fetch('hosts.json')
