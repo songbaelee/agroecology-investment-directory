@@ -23,7 +23,13 @@
     { "id": "S19", "label": "ImpactAssets, \"Investing Close to Home to Build Intergenerational Wealth\"", "url": "https://impactassets.org/?p=7900" },
     { "id": "S20", "label": "ImpactAssets, Client Recommended Investments", "url": "https://impactassets.org/?p=7355" },
     { "id": "S21", "label": "Social Finance Impact First Fund page (hosted by NYU Law)", "url": "https://www.law.nyu.edu/documents/social-finance-impact-first-fund-2025-hall-impact" },
-    { "id": "S22", "label": "Calvert Impact, Community Investment Note portfolio (Q4 2025)", "url": "https://calvertimpact.org/sectors" }
+    { "id": "S22", "label": "Calvert Impact, Community Investment Note portfolio (Q4 2025)", "url": "https://calvertimpact.org/sectors" },
+    { "id": "S23", "label": "WRI Africa, \"WRI Africa Invests $4 Million in Barka Fund to Propel African Land Restoration\" (Jan 13, 2025)", "url": "https://africa.wri.org/fr/node/717" },
+    { "id": "S24", "label": "ImpactAlpha, \"Anchored by NoVo Foundation, Abundance Circle builds a catalytic fund of funds\" (Mar 17, 2026)", "url": "https://impactalpha.com/anchored-by-peter-buffetts-novo-foundation-abundance-circle-builds-a-catalytic-fund-of-funds/" },
+    { "id": "S25", "label": "ImpactAlpha, \"Candide Group raises $40 million fund for community lenders advancing racial justice\" (Nov 5, 2019)", "url": "https://impactalpha.com/candide-group-raises-40-million-fund-for-community-lenders-advancing-racial-justice/" },
+    { "id": "S26", "label": "Candide Group, Olamina Fund FAQs", "url": "https://morgan-simon-j6am.squarespace.com/olamina-faqs" },
+    { "id": "S27", "label": "Barron's, \"Future Returns: Investing to Further Social Justice\" (Jun 3, 2020), hosted PDF", "url": "https://morgan-simon-j6am.squarespace.com/s/Future-Returns_Investing-to-Further-Social-Justice_Barrons.pdf" },
+    { "id": "S28", "label": "Nonprofit Quarterly, \"Beyond Grant Capital: What the Buen Vivir Fund Experience Teaches Us\" (May 28, 2025)", "url": "https://nonprofitquarterly.org/beyond-grant-capital-what-the-buen-vivir-fund-experience-teaches-us/" }
   ],
   "general_questions": [
     "What is your minimum size, and what fees would apply at $5M?",
@@ -204,6 +210,30 @@
       "per_aef": []
     },
     {
+      "id": "candide-group",
+      "name": "Candide Group",
+      "type": "Impact investment manager (manages Olamina Fund)",
+      "status": "verify",
+      "accepts_loans_in": "yes",
+      "accepts_loans_in_note": "via Olamina notes; an ImpactAssets DAF made the initial investments",
+      "lends_internationally": "unknown",
+      "lends_internationally_note": "Olamina lends only in the US",
+      "underwriting": "Candide (Olamina credit committee), with a community advisory board veto",
+      "summary": "Manages Olamina Fund, LLC, which sells notes to accredited investors and lends to CDFIs and other loan funds. Its credit committee is the fund's Managing Director and Candide's two founding partners; a Community Advisory Board can veto any loan.",
+      "open_questions": [
+        "Would you manage an international mandate?",
+        "Would you manage a separate ~$5M vehicle, and at what minimum and fee?",
+        "Is Olamina open to new investors? (It was closed to new investors as of June 2020.)",
+        "Are you accepting new advisory clients?"
+      ],
+      "sources": [
+        { "id": "S25", "label": "ImpactAlpha, Candide Group raises $40M fund (Nov 5, 2019)", "url": "https://impactalpha.com/candide-group-raises-40-million-fund-for-community-lenders-advancing-racial-justice/" },
+        { "id": "S26", "label": "Candide Group, Olamina Fund FAQs", "url": "https://morgan-simon-j6am.squarespace.com/olamina-faqs" },
+        { "id": "S27", "label": "Barron's, Future Returns (Jun 3, 2020)", "url": "https://morgan-simon-j6am.squarespace.com/s/Future-Returns_Investing-to-Further-Social-Justice_Barrons.pdf" }
+      ],
+      "per_aef": []
+    },
+    {
       "id": "tides",
       "name": "Tides Foundation",
       "type": "DAF sponsor / fiscal sponsor",
@@ -283,6 +313,95 @@
         { "id": "S13", "label": "Symbiotics, homepage", "url": "https://symbioticsgroup.com/" }
       ],
       "per_aef": []
+    }
+  ],
+  "examples": [
+    {
+      "id": "olamina",
+      "name": "Olamina Fund",
+      "label": "Closest structure",
+      "related_org": "candide-group",
+      "run_by": "Candide Group, launched 2019.",
+      "structure": "Olamina Fund, LLC, offered to accredited investors under Rule 506(c). Investors choose a 5-year note at a fixed 1% a year or a 7-year note at a fixed 1.5%. The initial $40M came from two of Candide's donor-advised fund clients; ImpactAssets made the initial investments, advised by members of the Pritzker family. It makes senior unsecured loans of up to $4M to CDFIs and other loan funds, plus smaller direct loans, with at least 80% of loans going to organizations led by people of color and women. The credit committee is the Managing Director and Candide's two founding partners, and a Community Advisory Board has a veto over every loan.",
+      "why_relevant": "A note-issuing vehicle run by an investment manager, with a DAF as one of its investors. This gets around the fact that a DAF can't accept loans: an AEF DAF could invest in such a vehicle alongside other lenders. The community veto mirrors AEF's participatory governance.",
+      "key_differences": "US only (rural areas, Native lands and the deep South). Its initial $40M is eight times the pilot.",
+      "sources": [
+        { "id": "S25", "label": "ImpactAlpha, Candide Group raises $40M fund (Nov 5, 2019)", "url": "https://impactalpha.com/candide-group-raises-40-million-fund-for-community-lenders-advancing-racial-justice/" },
+        { "id": "S26", "label": "Candide Group, Olamina Fund FAQs", "url": "https://morgan-simon-j6am.squarespace.com/olamina-faqs" },
+        { "id": "S27", "label": "Barron's, Future Returns (Jun 3, 2020)", "url": "https://morgan-simon-j6am.squarespace.com/s/Future-Returns_Investing-to-Further-Social-Justice_Barrons.pdf" }
+      ]
+    },
+    {
+      "id": "total-impact-notes",
+      "name": "Total Impact Notes",
+      "label": "Closest international operations",
+      "related_org": "total-impact-capital",
+      "run_by": "Total Impact Capital.",
+      "structure": "Five-year notes paying 5% a year that pool loans to fund managers, mainly in Latin America and the Caribbean (LocFund, NESsT's Lirio Fund, Elu Women's Empowerment Fund) plus Nithio in Africa. The first issuance raised $3M (November 2025).",
+      "why_relevant": "Does what the AIF plans to do, lending to intermediary funds outside the US, at a similar small scale.",
+      "key_differences": "A higher fixed investor return, and no participatory governance described.",
+      "sources": [
+        { "id": "S7", "label": "ImpactAlpha, Total Impact Notes first issuance (Nov 3, 2025)", "url": "https://impactalpha.com/first-issuance-of-total-impact-notes-raises-3-million-for-loans-to-fund-managers-in-latin-america-and-africa/" }
+      ]
+    },
+    {
+      "id": "terrafund",
+      "name": "WRI TerraFund with Realize Impact",
+      "label": "Mission organization working through a third-party host",
+      "related_org": "realize-impact",
+      "run_by": "WRI Africa, with Realize Impact as partner (the release doesn't describe Realize's specific role).",
+      "structure": "TerraFund is WRI Africa's financing program for restoration enterprises. It has made 39 debt and equity investments worth $5M. Barka Fund, which is in the directory, has advised TerraFund since 2021, and WRI Africa invested $4M in Barka Fund in January 2025.",
+      "why_relevant": "A mission organization running a ~$5M international lending program with a third-party charitable partner, close to the pilot in both scale and setup.",
+      "key_differences": "Invests directly in enterprises rather than in funds, and uses both debt and equity.",
+      "sources": [
+        { "id": "S23", "label": "WRI Africa, $4M in Barka Fund (Jan 13, 2025)", "url": "https://africa.wri.org/fr/node/717" }
+      ]
+    },
+    {
+      "id": "abundance-circle",
+      "name": "Abundance Circle",
+      "label": "Fund of funds run as a DAF",
+      "related_org": "impactassets",
+      "run_by": "Founders Luis Javier Castro and Brian Gallagher; administered by ImpactAssets.",
+      "structure": "An evergreen, global fund of funds structured as a donor-advised fund and administered by ImpactAssets, anchored by a gift from the NoVo Foundation. Its philanthropic capital takes first-loss positions to draw in other investors, and returns are recycled.",
+      "why_relevant": "Shows the DAF-hosted fund-of-funds option already in operation.",
+      "key_differences": "Much larger (it aims to raise $100M in its first year). The source doesn't say whether it uses debt or equity. Its themes are deep tech, energy transition and circular economy, and community-based economic development.",
+      "sources": [
+        { "id": "S24", "label": "ImpactAlpha, Abundance Circle (Mar 17, 2026)", "url": "https://impactalpha.com/anchored-by-peter-buffetts-novo-foundation-abundance-circle-builds-a-catalytic-fund-of-funds/" }
+      ]
+    },
+    {
+      "id": "impact-first-fund",
+      "name": "Social Finance Impact First Fund",
+      "label": "Mixing charitable and investment capital",
+      "related_org": "social-finance-cpm",
+      "run_by": "Social Finance.",
+      "structure": [
+        { "text": "Described as a professionally managed, diversified fund of funds that provides flexible, risk-tolerant capital." },
+        { "text": "Accepts LP investments and recoverable grants from DAFs, foundations and taxable accounts. Its mechanics and terms aren't explained on the Social Finance page." },
+        { "text": "Uses a feeder fund structure to accept DAF capital through recoverable grants, so charitable and profit-seeking capital are deployed into the same investments.", "cite": "S21" },
+        { "text": "Holdings include Mad Capital and Fractal Agriculture." }
+      ],
+      "why_relevant": "It shows one way to combine charitable and investment money in a fund of funds. It isn't a host candidate. For a host-style arrangement, see Social Finance Custom Portfolio Management above.",
+      "key_differences": "US-focused. Offered only to accredited investors under Regulation D.",
+      "sources": [
+        { "id": "S14", "label": "Social Finance, Impact First Fund", "url": "https://socialfinance.org/product/social-finance-impact-first-fund/" },
+        { "id": "S21", "label": "Social Finance Impact First Fund page (hosted by NYU Law)", "url": "https://www.law.nyu.edu/documents/social-finance-impact-first-fund-2025-hall-impact" }
+      ]
+    },
+    {
+      "id": "buen-vivir",
+      "name": "Buen Vivir Fund",
+      "label": "Lessons learned",
+      "related_org": null,
+      "run_by": "Thousand Currents, which hosted the fund and was both its funder and facilitator. Closed in 2023.",
+      "structure": "A participatory fund whose members included grassroots groups from Mexico, Guatemala, India, Nepal and South Africa, along with US philanthropies. It made six loans across three countries between 2018 and 2020, each paired with grant support. Instead of interest, borrowers made \"aportes\", solidarity contributions above the return of principal. A Members Assembly, not an investment committee, governed the fund.",
+      "why_relevant": "The closest precedent in mission, geography and governance.",
+      "what_happened": "Pandemic-era unrestricted grants strained its financial model, and by late 2022 only one member could make an aporte. In 2023 Thousand Currents ended all programmatic investment, and all outstanding loans were converted into grants.",
+      "lessons": "Regulatory compliance is difficult and expensive for small funds; participation doesn't remove power dynamics, especially when the host is also the funder; not all work suits loans; and responsibility should match readiness.",
+      "sources": [
+        { "id": "S28", "label": "Nonprofit Quarterly, Buen Vivir Fund (May 28, 2025)", "url": "https://nonprofitquarterly.org/beyond-grant-capital-what-the-buen-vivir-fund-experience-teaches-us/" }
+      ]
     }
   ]
 }

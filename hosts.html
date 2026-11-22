@@ -99,6 +99,21 @@
     .glance-col a:hover { color: var(--moss); }
     .glance-col .empty { font-size: 0.85rem; color: var(--muted); font-style: italic; }
 
+    .glance-examples { margin-top: 0.9rem; font-size: 0.84rem; color: var(--muted); line-height: 1.6; }
+    .glance-examples:empty { display: none; }
+    .glance-examples .lead { font-weight: 600; margin-right: 0.3rem; }
+    .glance-examples a { color: var(--muted); text-decoration: none; border-bottom: 1px dotted var(--sage); }
+    .glance-examples a:hover { color: var(--moss); }
+    .glance-examples .sep { margin: 0 0.35rem; color: var(--border); }
+
+    .ex-label { display: inline-block; margin-top: 0.4rem; font-size: 0.74rem; background: white; border: 1px solid var(--border); border-radius: 12px; padding: 0.15rem 0.6rem; color: var(--bark); }
+    .ex-field .key { display: block; color: var(--muted); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.1rem; }
+    .ex-field p, .ex-field li { font-size: 0.88rem; color: #3A2A18; line-height: 1.6; }
+    .ex-field ul { padding-left: 1.1rem; }
+    .ex-field li { margin-bottom: 0.25rem; }
+    .ex-field + .ex-field { border-top: 1px solid var(--border); padding-top: 0.75rem; }
+    .related-link { font-size: 0.75rem; color: var(--moss); text-decoration: none; border-bottom: 1px solid var(--sage); white-space: nowrap; }
+
     .card-back { padding: 0.45rem 1.5rem 0.6rem; background: var(--cream); text-align: right; }
     .back-link { font-size: 0.75rem; color: var(--moss); text-decoration: none; border-bottom: 1px solid var(--sage); }
     .back-link:hover { color: var(--bark); }
@@ -155,8 +170,8 @@
     <a href="#criteria">Screening criteria</a>
     <a href="#organizations">Organizations</a>
     <a href="#excluded">Considered but excluded</a>
+    <a href="#examples">Examples</a>
     <a href="#questions">Questions to ask</a>
-    <a href="#model">A model worth studying</a>
     <a href="#sources">Sources</a>
   </div>
 </nav>
@@ -166,6 +181,7 @@
   <section id="summary">
     <h2 class="section-title">Organizations at a glance</h2>
     <div class="glance-grid" id="glance-grid"><div class="load-error">Loading…</div></div>
+    <p class="glance-examples" id="glance-examples"></p>
   </section>
 
   <section id="parameters">
@@ -208,6 +224,12 @@
     <div class="grid" id="excluded-grid"></div>
   </section>
 
+  <section id="examples">
+    <h2 class="section-title">Examples</h2>
+    <p class="section-note">Vehicles that do something similar to what the AIF pilot aims to do. None is a perfect match; each shows one piece.</p>
+    <div class="grid" id="examples-grid"></div>
+  </section>
+
   <section id="questions">
     <h2 class="section-title">Questions to ask</h2>
     <div class="q-block">
@@ -217,27 +239,6 @@
       </div>
     </div>
     <div class="q-cols" id="org-questions"></div>
-  </section>
-
-  <section id="model">
-    <h2 class="section-title">A model worth studying: Social Finance Impact First Fund</h2>
-    <div class="panel">
-      <ul>
-        <li>Described as a professionally managed, diversified fund of funds that provides flexible, risk-tolerant capital.</li>
-        <li>Accepts LP investments and recoverable grants from DAFs, foundations and taxable accounts. Its mechanics and terms aren't explained on the Social Finance page.</li>
-        <li>Uses a feeder fund structure to accept DAF capital through recoverable grants, so charitable and profit-seeking capital are deployed into the same investments. <a class="source-link" href="#src-S21">S21</a></li>
-        <li>US-focused. Holdings include Mad Capital and Fractal Agriculture.</li>
-        <li>Offered only to accredited investors under Regulation D.</li>
-        <li>Relevance: it shows one way to combine charitable and investment money in a fund of funds. It isn't a host candidate. For a host-style arrangement, see <a class="source-link" href="#org-social-finance-cpm">Social Finance Custom Portfolio Management</a> above.</li>
-      </ul>
-      <div class="sources-list" style="margin-top:0.85rem;">
-        <span class="sources-label">Source</span>
-        <a class="source-link" href="#src-S14">S14</a>
-        <a class="source-link" href="https://socialfinance.org/product/social-finance-impact-first-fund/" target="_blank" rel="noopener">Social Finance, Impact First Fund</a>
-        <a class="source-link" href="#src-S21">S21</a>
-        <a class="source-link" href="https://www.law.nyu.edu/documents/social-finance-impact-first-fund-2025-hall-impact" target="_blank" rel="noopener">Social Finance Impact First Fund page (hosted by NYU Law)</a>
-      </div>
-    </div>
   </section>
 
   <section id="sources">
@@ -319,6 +320,42 @@
     </div>`;
   }
 
+  // An example field is either a string or a list of { text, cite? } items
+  function exField(key, val) {
+    if (!val || (Array.isArray(val) && !val.length)) return '';
+    const body = Array.isArray(val)
+      ? `<ul>${val.map(it => `<li>${esc(it.text)}${it.cite ? ` <a class="source-link" href="#src-${esc(it.cite)}">${esc(it.cite)}</a>` : ''}</li>`).join('')}</ul>`
+      : `<p>${esc(val)}</p>`;
+    return `<div class="ex-field"><span class="key">${esc(key)}</span>${body}</div>`;
+  }
+
+  function buildExample(ex, orgsById) {
+    const rel = ex.related_org && orgsById[ex.related_org];
+    return `
+    <div class="card" id="ex-${esc(ex.id)}">
+      <div class="card-header">
+        <h4>${esc(ex.name)}</h4>
+        ${ex.label ? `<span class="ex-label">${esc(ex.label)}</span>` : ''}
+      </div>
+      <div class="card-body">
+        ${exField('Run by', ex.run_by)}
+        ${exField('Structure', ex.structure)}
+        ${exField("Why it's relevant", ex.why_relevant)}
+        ${exField('Key differences', ex.key_differences)}
+        ${exField('What happened', ex.what_happened)}
+        ${exField('Lessons, per its former directors', ex.lessons)}
+      </div>
+      <div class="card-footer">
+        <div class="sources-list">
+          <span class="sources-label">Source</span>
+          ${sourceLinks(ex)}
+        </div>
+        ${rel ? `<a class="related-link" href="#org-${esc(rel.id)}">See ${esc(rel.name)} card ↑</a>` : ''}
+      </div>
+      <div class="card-back"><a class="back-link" href="#summary">↑ Back to summary</a></div>
+    </div>`;
+  }
+
   function render(data) {
     const orgs = data.organizations || [];
     document.getElementById('org-count-pill').textContent = orgs.length + ' organizations reviewed';
@@ -338,6 +375,14 @@
             : '<div class="empty">None</div>'}
         </div>`;
     }).join('');
+
+    // Examples: quiet line under the summary columns, plus the cards
+    const examples = data.examples || [];
+    const orgsById = Object.fromEntries(orgs.map(o => [o.id, o]));
+    document.getElementById('glance-examples').innerHTML = examples.length
+      ? `<span class="lead">Examples:</span>` + examples.map(ex => `<a href="#ex-${esc(ex.id)}">${esc(ex.name)}</a>`).join('<span class="sep">·</span>')
+      : '';
+    document.getElementById('examples-grid').innerHTML = examples.map(ex => buildExample(ex, orgsById)).join('');
 
     // Groups 1–3 (status: confirmed, partial, verify)
     const groupsHtml = ['confirmed', 'partial', 'verify'].map(status => {
