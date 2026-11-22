@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AIF Pilot: Host &amp; Administrator Options</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --soil: #2C1A0E; --bark: #5C3D1E; --moss: #4A6741; --sage: #7A9E6F;
+      --straw: #E8D9B0; --cream: #F5F0E8; --light: #FDFAF5; --accent: #C17F2A;
+      --text: #1E1208; --muted: #7A6A55; --border: #D4C4A0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Source Sans 3', sans-serif; background: var(--light); color: var(--text); font-size: 16px; line-height: 1.6; }
+
+    header { background: var(--soil); color: var(--cream); padding: 3rem 2rem 2.5rem; border-bottom: 4px solid var(--accent); }
+    .header-inner { max-width: 1100px; margin: 0 auto; }
+    .site-label { font-weight: 600; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.75rem; }
+    header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 600; line-height: 1.15; color: var(--cream); margin-bottom: 1rem; }
+    header p { font-size: 1.05rem; color: var(--straw); max-width: 680px; font-weight: 300; }
+    .header-meta { margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+    .meta-pill { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 0.3rem 0.9rem; font-size: 0.82rem; color: var(--straw); }
+    .data-btn { background: transparent; border: 1px solid rgba(255,255,255,0.3); border-radius: 6px; padding: 0.3rem 0.85rem; font-size: 0.78rem; color: var(--straw); cursor: pointer; font-family: inherit; text-decoration: none; display: inline-block; transition: all 0.15s; }
+    .data-btn:hover { background: rgba(255,255,255,0.1); color: white; }
+
+    nav.toc { background: var(--moss); color: var(--cream); padding: 0.9rem 2rem; }
+    .toc-inner { max-width: 1100px; margin: 0 auto; display: flex; gap: 0.4rem 1.25rem; flex-wrap: wrap; font-size: 0.85rem; }
+    .toc-inner a { color: rgba(255,255,255,0.85); text-decoration: none; border-bottom: 1px solid transparent; }
+    .toc-inner a:hover { color: white; border-bottom-color: var(--straw); }
+
+    main { max-width: 1100px; margin: 0 auto; padding: 0 2rem 4rem; }
+    section { margin-top: 2.75rem; }
+    h2.section-title { font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 600; color: var(--soil); margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+    .section-note { font-size: 0.88rem; color: var(--muted); margin-bottom: 1.1rem; max-width: 760px; }
+    h3.group-title { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); font-weight: 600; margin: 1.75rem 0 0.75rem; padding-bottom: 0.35rem; border-bottom: 1px solid var(--border); display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; }
+    h3.group-title .count { font-weight: 400; letter-spacing: 0.04em; }
+
+    .panel { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem 1.5rem; }
+    .panel ul, .panel ol { padding-left: 1.2rem; }
+    .panel li { font-size: 0.92rem; margin-bottom: 0.35rem; color: #3A2A18; }
+    .panel li:last-child { margin-bottom: 0; }
+    .callout { margin-top: 1rem; border-left: 3px solid var(--accent); padding: 0.75rem 1rem; background: #FFFBF2; border-radius: 0 6px 6px 0; font-size: 0.9rem; color: var(--bark); }
+    .callout strong { color: var(--soil); }
+
+    .per-aef { display: inline-block; font-family: 'Source Sans 3', sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.15rem 0.5rem; border-radius: 4px; background: #FFF4E0; color: #8A5A00; border: 1px dashed #D9A94A; white-space: nowrap; vertical-align: middle; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 480px), 1fr)); gap: 1.5rem; }
+    .card { background: white; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow 0.2s ease; }
+    .card:hover { box-shadow: 0 6px 24px rgba(44,26,14,0.1); }
+    .card-header { padding: 1.2rem 1.5rem 0.9rem; border-bottom: 1px solid var(--border); background: var(--cream); }
+    .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem; }
+    .card h4 { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 600; color: var(--soil); line-height: 1.3; }
+    .card-type { font-size: 0.8rem; color: var(--muted); margin-top: 0.25rem; }
+    .status-badge { flex-shrink: 0; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.25rem 0.6rem; border-radius: 4px; white-space: nowrap; }
+    .st-confirmed { background: #E8F5E1; color: #2D6A1F; border: 1px solid #A8D99A; }
+    .st-partial { background: #FFF4E0; color: #8A5A00; border: 1px solid #E8C87A; }
+    .st-verify { background: #F0F0F0; color: #555; border: 1px solid #CCC; }
+    .st-excluded { background: #F7E8E5; color: #8E3A32; border: 1px solid #E0B4AD; }
+    .card-body { padding: 1.1rem 1.5rem; flex: 1; display: flex; flex-direction: column; gap: 0.9rem; }
+    .summary { font-size: 0.9rem; color: #3A2A18; line-height: 1.65; }
+    .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1rem; border-top: 1px solid var(--border); padding-top: 0.85rem; }
+    .fact .key { display: block; color: var(--muted); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; }
+    .fact .val { font-size: 0.85rem; }
+    .fact .note { display: block; font-size: 0.76rem; color: var(--muted); }
+    .fact.wide { grid-column: 1 / -1; }
+    .yn { display: inline-block; font-size: 0.74rem; font-weight: 600; padding: 0.05rem 0.45rem; border-radius: 10px; border: 1px solid; }
+    .yn-yes { background: #EEF5EC; color: var(--moss); border-color: #C0D8BB; }
+    .yn-no { background: #F7E8E5; color: #8E3A32; border-color: #E0B4AD; }
+    .yn-unknown { background: #F8F6F0; color: var(--muted); border-color: var(--border); }
+    .aef-box { background: #FFFBF2; border: 1px dashed #D9A94A; border-radius: 6px; padding: 0.6rem 0.85rem; }
+    .aef-box ul { padding-left: 1.1rem; margin-top: 0.35rem; }
+    .aef-box li { font-size: 0.84rem; color: var(--bark); margin-bottom: 0.2rem; }
+    .reason { font-size: 0.86rem; background: #F8F6F0; border-radius: 6px; padding: 0.55rem 0.8rem; color: #3A2A18; }
+    .reason .key { display: block; color: var(--muted); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.15rem; }
+    .card-footer { padding: 0.7rem 1.5rem; border-top: 1px solid var(--border); background: var(--cream); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .sources-list { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+    .sources-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+    .source-link { font-size: 0.78rem; color: var(--moss); text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .source-link:hover { color: var(--bark); }
+    .q-link { font-size: 0.75rem; color: var(--moss); text-decoration: none; border-bottom: 1px solid var(--sage); white-space: nowrap; }
+
+    .q-block { margin-bottom: 1rem; }
+    .q-block h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--soil); margin-bottom: 0.4rem; }
+    .q-cols { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 480px), 1fr)); gap: 1rem; }
+    .q-cols .panel { scroll-margin-top: 1rem; }
+
+    .sources-full li { font-size: 0.88rem; margin-bottom: 0.45rem; word-break: break-word; }
+    .sources-full .sid { font-weight: 600; color: var(--bark); margin-right: 0.35rem; }
+    .sources-full a { color: var(--moss); text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .sources-full { list-style: none; padding-left: 0 !important; }
+    .sources-full li:target { background: #FFFBF2; }
+
+    .load-error { padding: 2rem; text-align: center; color: var(--muted); }
+
+    footer { background: var(--soil); color: var(--straw); text-align: center; padding: 1.5rem; font-size: 0.82rem; }
+    footer a { color: var(--sage); text-decoration: none; }
+
+    @media (max-width: 640px) {
+      header { padding: 2rem 1rem; }
+      nav.toc { padding: 0.8rem 1rem; }
+      main { padding: 0 1rem 3rem; }
+      .facts { grid-template-columns: 1fr; }
+      .panel { padding: 1rem 1.1rem; }
+      .card-header, .card-body, .card-footer { padding-left: 1.1rem; padding-right: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="site-label">AEF · AIF Feasibility Study</div>
+    <h1>AIF Pilot: Host &amp; Administrator Options</h1>
+    <p>Working list. Not linked from the directory. Last updated November 2026.</p>
+    <div class="header-meta">
+      <span class="meta-pill" id="org-count-pill">— organizations reviewed</span>
+      <span class="meta-pill" id="fetched-pill">Sources fetched 2026-11-22</span>
+      <a class="data-btn" href="hosts.json" target="_blank">View raw data (JSON)</a>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="toc-inner">
+    <a href="#parameters">Pilot parameters</a>
+    <a href="#criteria">Screening criteria</a>
+    <a href="#organizations">Organizations</a>
+    <a href="#excluded">Considered but excluded</a>
+    <a href="#questions">Questions to ask</a>
+    <a href="#model">A model worth studying</a>
+    <a href="#sources">Sources</a>
+  </div>
+</nav>
+
+<main>
+
+  <section id="parameters">
+    <h2 class="section-title">Pilot parameters <span class="per-aef">per AEF / to confirm</span></h2>
+    <div class="panel">
+      <ul>
+        <li>Size: around $5M.</li>
+        <li>Inflows: may combine grants, recoverable grants and loans.</li>
+        <li>Outflows: almost all international, all debt (possibly subordinated). Some borrowers may have US entities.</li>
+        <li>AEF participates in decisions, but underwriting is done by a third party: either the host or a separate advisor.</li>
+        <li>End state: a permanent home of roughly the same size, or a vehicle that grows and/or spins out.</li>
+        <li>Only options that return capital are considered. A DAF counts as a partial fit: AEF doesn't get the money back, but it stays in an AEF-advised DAF to recycle or grant later.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="criteria">
+    <h2 class="section-title">Screening criteria</h2>
+    <div class="panel">
+      <ol>
+        <li>Returns or recycles capital (no pure grant pass-through)</li>
+        <li>Can lend internationally</li>
+        <li>Can accept mixed inflows: grants, recoverable grants, loans</li>
+        <li>Underwrites, or partners with an underwriter</li>
+        <li>Workable at ~$5M</li>
+      </ol>
+      <div class="callout"><strong>Structural point:</strong> a DAF can only accept gifts. It can't take loans, and it can't repay a donor's recoverable grant. So a DAF host works for AEF's own capital, but outside lenders would need a second entity.</div>
+    </div>
+  </section>
+
+  <section id="organizations">
+    <h2 class="section-title">Organizations</h2>
+    <p class="section-note">Grouped by status. "Unknown" means the cited source doesn't say. Claims tagged <span class="per-aef">per AEF / to confirm</span> come from AEF, not a source.</p>
+    <div id="org-groups"><div class="load-error">Loading…</div></div>
+  </section>
+
+  <section id="excluded">
+    <h2 class="section-title">Considered but excluded</h2>
+    <p class="section-note">Reviewed against the screening criteria and set aside, with reasons.</p>
+    <div class="grid" id="excluded-grid"></div>
+  </section>
+
+  <section id="questions">
+    <h2 class="section-title">Questions to ask</h2>
+    <div class="q-block">
+      <div class="panel">
+        <h4 style="font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--soil);margin-bottom:0.4rem;">General (every organization)</h4>
+        <ul id="general-questions"></ul>
+      </div>
+    </div>
+    <div class="q-cols" id="org-questions"></div>
+  </section>
+
+  <section id="model">
+    <h2 class="section-title">A model worth studying: Social Finance Impact First Fund</h2>
+    <div class="panel">
+      <ul>
+        <li>Described as a professionally managed, diversified fund of funds that provides flexible, risk-tolerant capital.</li>
+        <li>Accepts LP investments and recoverable grants from DAFs, foundations and taxable accounts. Its mechanics and terms aren't explained on the page.</li>
+        <li>US-focused. Holdings include Mad Capital and Fractal Agriculture.</li>
+        <li>Offered only to accredited investors under Regulation D.</li>
+        <li>Relevance: it shows one way to combine charitable and investment money in a fund of funds. It isn't a host candidate. For a host-style arrangement, see <a class="source-link" href="#org-social-finance-cpm">Social Finance Custom Portfolio Management</a> above.</li>
+      </ul>
+      <div class="sources-list" style="margin-top:0.85rem;">
+        <span class="sources-label">Source</span>
+        <a class="source-link" href="#src-S14">S14</a>
+        <a class="source-link" href="https://socialfinance.org/product/social-finance-impact-first-fund/" target="_blank" rel="noopener">Social Finance, Impact First Fund</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="sources">
+    <h2 class="section-title">Sources</h2>
+    <p class="section-note" id="sources-note">All fetched 2026-11-22.</p>
+    <div class="panel">
+      <ul class="sources-full" id="sources-list"></ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Agroecology Investment Directory &nbsp;&middot;&nbsp; AIF pilot working list, not linked from the directory &nbsp;&middot;&nbsp; <a href="hosts.json" download="aif-hosts.json">Download data (JSON)</a></p>
+</footer>
+
+<script>
+  function esc(s) { return s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;') : ''; }
+  function cap(s) { return s ? s.charAt(0).toUpperCase() + s.slice(1) : ''; }
+
+  const STATUS = {
+    confirmed: { label: 'Confirmed fit', group: 'Confirmed fit' },
+    partial:   { label: 'Partial fit',   group: 'Partial fit (AEF capital only; no loans in)' },
+    verify:    { label: 'Needs verification', group: 'Needs verification' },
+    excluded:  { label: 'Excluded',      group: 'Considered but excluded' }
+  };
+
+  function yn(v, note) {
+    const k = ['yes','no'].includes(v) ? v : 'unknown';
+    return `<span class="yn yn-${k}">${cap(esc(v || 'unknown'))}</span>${note ? `<span class="note">${esc(note)}</span>` : ''}`;
+  }
+
+  function sourceLinks(org) {
+    return (org.sources || []).map(s =>
+      `<a class="source-link" href="#src-${esc(s.id)}" title="See source list">${esc(s.id)}</a>
+       <a class="source-link" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a>`
+    ).join('');
+  }
+
+  function buildCard(org) {
+    const st = STATUS[org.status] || STATUS.verify;
+    const aef = org.per_aef || [];
+    const excluded = org.status === 'excluded';
+    return `
+    <div class="card" id="org-${esc(org.id)}">
+      <div class="card-header">
+        <div class="card-top">
+          <div>
+            <h4>${esc(org.name)}</h4>
+            <div class="card-type">${esc(org.type)}</div>
+          </div>
+          <span class="status-badge st-${esc(org.status)}">${esc(st.label)}</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="summary">${esc(org.summary) || '—'}</p>
+        ${excluded && org.exclusion_reason ? `<div class="reason"><span class="key">Why excluded</span>${esc(org.exclusion_reason)}</div>` : ''}
+        <div class="facts">
+          <div class="fact"><span class="key">Accepts loans in</span><span class="val">${yn(org.accepts_loans_in, org.accepts_loans_in_note)}</span></div>
+          <div class="fact"><span class="key">Lends internationally</span><span class="val">${yn(org.lends_internationally, org.lends_internationally_note)}</span></div>
+          <div class="fact"><span class="key">Underwriting</span><span class="val">${esc(org.underwriting) || 'Unknown'}</span></div>
+          <div class="fact"><span class="key">Path</span><span class="val">${cap(esc(org.path || 'unknown'))}</span></div>
+        </div>
+        ${aef.length ? `
+        <div class="aef-box">
+          <span class="per-aef">per AEF / to confirm</span>
+          <ul>${aef.map(c => `<li>${esc(c)}</li>`).join('')}</ul>
+        </div>` : ''}
+      </div>
+      <div class="card-footer">
+        <div class="sources-list">
+          <span class="sources-label">Source</span>
+          ${sourceLinks(org)}
+        </div>
+        ${(org.open_questions || []).length ? `<a class="q-link" href="#q-${esc(org.id)}">${org.open_questions.length} questions ↓</a>` : ''}
+      </div>
+    </div>`;
+  }
+
+  function render(data) {
+    const orgs = data.organizations || [];
+    document.getElementById('org-count-pill').textContent = orgs.length + ' organizations reviewed';
+    if (data.sources_fetched) {
+      document.getElementById('fetched-pill').textContent = 'Sources fetched ' + data.sources_fetched;
+      document.getElementById('sources-note').textContent = 'All fetched ' + data.sources_fetched + '.';
+    }
+
+    // Groups 1–3 (status: confirmed, partial, verify)
+    const groupsHtml = ['confirmed', 'partial', 'verify'].map(status => {
+      const items = orgs.filter(o => o.status === status);
+      if (!items.length) return '';
+      return `
+        <h3 class="group-title"><span class="status-badge st-${status}">${esc(STATUS[status].label)}</span>${esc(STATUS[status].group)} <span class="count">· ${items.length}</span></h3>
+        <div class="grid">${items.map(buildCard).join('')}</div>`;
+    }).join('');
+    document.getElementById('org-groups').innerHTML = groupsHtml || '<div class="load-error">No organizations listed.</div>';
+
+    // Group 4 (excluded)
+    document.getElementById('excluded-grid').innerHTML =
+      orgs.filter(o => o.status === 'excluded').map(buildCard).join('');
+
+    // Questions
+    document.getElementById('general-questions').innerHTML =
+      (data.general_questions || []).map(q => `<li>${esc(q)}</li>`).join('');
+    document.getElementById('org-questions').innerHTML = orgs
+      .filter(o => (o.open_questions || []).length)
+      .map(o => `
+        <div class="panel" id="q-${esc(o.id)}">
+          <h4 style="font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--soil);margin-bottom:0.4rem;"><a href="#org-${esc(o.id)}" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--sage);">${esc(o.name)}</a></h4>
+          <ul>${o.open_questions.map(q => `<li>${esc(q)}</li>`).join('')}</ul>
+        </div>`).join('');
+
+    // Sources
+    document.getElementById('sources-list').innerHTML = (data.sources || []).map(s => `
+      <li id="src-${esc(s.id)}"><span class="sid">${esc(s.id)}</span>${esc(s.label)}.
+        <a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.url)}</a></li>`).join('');
+
+    // Re-apply hash scroll once dynamic content exists
+    if (location.hash) {
+      const el = document.getElementById(location.hash.slice(1));
+      if (el) el.scrollIntoView();
+    }
+  }
+
+  fetch('hosts.json')
+    .then(r => r.json())
+    .then(render)
+    .catch(err => {
+      document.getElementById('org-groups').innerHTML = `<div class="load-error">Could not load hosts.json. Make sure it's in the same folder.<br><small>${esc(String(err))}</small></div>`;
+    });
+</script>
+</body>
+</html>
