@@ -1,6 +1,6 @@
 {
   "last_updated": "November 2026",
-  "sources_fetched": "2026-11-22 (S1–S28); 2026-11-23 (S29–S34)",
+  "sources_fetched": "2026-11-22 (S1–S28); 2026-11-23 (S29–S35)",
   "sources": [
     { "id": "S1", "label": "RSF Social Finance, Collaborative Funds", "url": "https://rsfsocialfinance.org/collaborative-funds" },
     { "id": "S2", "label": "ImpactAssets, Products & Services", "url": "https://impactassets.org/products-and-services/" },
@@ -35,7 +35,8 @@
     { "id": "S31", "label": "Innpact, IDH Farmfit Fund project page", "url": "https://innpact.com/?p=4011" },
     { "id": "S32", "label": "IDH, IDH Farmfit Fund page", "url": "https://idh.org/focus-areas/idh-farmfit-fund" },
     { "id": "S33", "label": "Innpact Fund Management S.A., Statement on principal adverse impacts of investment decisions on sustainability factors (30 June 2026)", "url": "https://innpact.com/wp-content/uploads/2026/06/Innpact-AIFM-Statement-on-principal-adverse-impacts-of-investment-decisions-on-sustainability-factors-2025.pdf" },
-    { "id": "S34", "label": "IFAD, Agri-Business Capital (ABC) Fund page", "url": "https://www.ifad.org/abcfund" }
+    { "id": "S34", "label": "IFAD, Agri-Business Capital (ABC) Fund page", "url": "https://www.ifad.org/abcfund" },
+    { "id": "S35", "label": "Africa Global Funds, \"IFAD invests $9m in Bamboo Capital's ABC Fund\" (Apr 29, 2020)", "url": "https://www.africaglobalfunds.com/news/investors/ifad-invests-9m-in-bamboo-capitals-abc-fund" }
   ],
   "general_questions": [
     "What is your minimum size, and what fees would apply at $5M?",
@@ -330,7 +331,7 @@
       "lends_internationally": "yes",
       "lends_internationally_note": "e.g. the ABC Fund, a private debt fund with a global mandate focused on Sub-Saharan Africa (S30)",
       "underwriting": "Not done by Innpact as AIFM in the ABC example; ABC's investment advisor is Investisseurs & Partenaires (I&P) (S30).",
-      "summary": "Luxembourg impact finance firm that sets up and manages impact funds (S29). Services include fund strategy and structuring; a third-party AIFM dedicated to impact funds, supporting RAIF and SIF vehicles and blended finance structures (S29); a Mauritius fund-management route for African funds through MIFGA, a joint initiative with AXIS (S29); and a white-label impact bond issuance platform, Imagine Impact Bonds (S29). Its agriculture work shows two distinct roles. Design only: Innpact supported IDH in the design, structuring and incorporation of the EUR 100 million IDH Farmfit Fund (Farmfit Fund B.V., Netherlands, January 2020) (S31); the fund is managed by IDH Investment Management (S32). AIFM: Innpact Fund Management S.A. was selected as AIFM of the Agri-Business Capital (ABC) Fund in 2022 and appointed toward the end of Q1 2023 (S30); ABC is a Luxembourg SA, SICAV-RAIF investing in private debt, with I&P as investment advisor (S30), and was still listed among Innpact's funds under management on 30 June 2026 (S33). IFAD's ABC page still names Bamboo Capital as manager and Injaro as investment advisor (S34), so the current advisory arrangement is to confirm. Innpact's site gives no fund sizes or minimums (S29).",
+      "summary": "Luxembourg impact finance firm that sets up and manages impact funds (S29). Services include fund strategy and structuring; a third-party AIFM dedicated to impact funds, supporting RAIF and SIF vehicles and blended finance structures (S29); a Mauritius fund-management route for African funds through MIFGA, a joint initiative with AXIS (S29); and a white-label impact bond issuance platform, Imagine Impact Bonds (S29). Its agriculture work shows two distinct roles. Design only: Innpact supported IDH in the design, structuring and incorporation of the EUR 100 million IDH Farmfit Fund (Farmfit Fund B.V., Netherlands, January 2020) (S31); the fund is managed by IDH Investment Management (S32). AIFM: Innpact Fund Management S.A. has been AIFM of the Agri-Business Capital (ABC) Fund, a Luxembourg private debt fund, since 2023 (S30), and still listed it among its funds under management on 30 June 2026 (S33). See the ABC Fund example. Innpact's site gives no fund sizes or minimums (S29).",
       "exclusion_reason": "Judgment call. Luxembourg regulated fund structures and AIFM costs are likely too heavy for a permanent ~$5M vehicle, and the structure is not built for US grant and recoverable-grant inflows (per AEF / to confirm). Revisit if the pilot grows or spins out, particularly with European or DFI investors: the ABC split between a regulated AIFM and a separate investment advisor is close to the AIF model of AEF participating in decisions while a third party underwrites.",
       "open_questions": [
         "Could Imagine Impact Bonds carry a ~$5M lending program, and can it accept US investors and US charitable capital?",
@@ -343,8 +344,7 @@
         { "id": "S30", "label": "Innpact, ABC – Agri-Business Capital Fund", "url": "https://innpact.com/?p=4498" },
         { "id": "S31", "label": "Innpact, IDH Farmfit Fund", "url": "https://innpact.com/?p=4011" },
         { "id": "S32", "label": "IDH, IDH Farmfit Fund page", "url": "https://idh.org/focus-areas/idh-farmfit-fund" },
-        { "id": "S33", "label": "Innpact Fund Management S.A., PAI statement (30 June 2026)", "url": "https://innpact.com/wp-content/uploads/2026/06/Innpact-AIFM-Statement-on-principal-adverse-impacts-of-investment-decisions-on-sustainability-factors-2025.pdf" },
-        { "id": "S34", "label": "IFAD, ABC Fund page", "url": "https://www.ifad.org/abcfund" }
+        { "id": "S33", "label": "Innpact Fund Management S.A., PAI statement (30 June 2026)", "url": "https://innpact.com/wp-content/uploads/2026/06/Innpact-AIFM-Statement-on-principal-adverse-impacts-of-investment-decisions-on-sustainability-factors-2025.pdf" }
       ],
       "per_aef": [
         "Not a pilot host; a candidate partner for a later, larger or spun-out vehicle."
@@ -437,6 +437,20 @@
       "lessons": "Regulatory compliance is difficult and expensive for small funds; participation doesn't remove power dynamics, especially when the host is also the funder; not all work suits loans; and responsibility should match readiness.",
       "sources": [
         { "id": "S28", "label": "Nonprofit Quarterly, Buen Vivir Fund (May 28, 2025)", "url": "https://nonprofitquarterly.org/beyond-grant-capital-what-the-buen-vivir-fund-experience-teaches-us/" }
+      ]
+    },
+    {
+      "id": "abc-fund",
+      "name": "ABC Fund (Agri-Business Capital Fund)",
+      "label": "Regulated manager with a separate investment advisor",
+      "related_org": "innpact",
+      "structure": "Luxembourg SA, SICAV-RAIF launched in February 2019 (S30), originally sponsored by IFAD (S34). Invests in private debt with a global mandate focused on Sub-Saharan Africa; end-beneficiaries are smallholder farmers and local communities (S30). Innpact Fund Management S.A. was selected as AIFM in 2022 and appointed toward the end of Q1 2023 (S30). ABC was originally managed by Bamboo Capital Partners (S34, S35), with Injaro Investments as investment advisor (S34). Innpact's website currently lists Investisseurs & Partenaires (I&P) as investment advisor (S30). In 2020 the fund had a target size of €200 million and had investors including IFAD (with funds from the Swiss Agency for Development and Cooperation), the European Commission, the Organisation of African, Caribbean and Pacific States, Luxembourg and AGRA (S35).",
+      "why_relevant": "Separates the regulated fund manager from the party advising on investments — close to the AIF model, where AEF takes part in decisions and a third party underwrites. Lends to agriculture in Sub-Saharan Africa and is structured to blend public with private capital (S35).",
+      "key_differences": "Much larger (€200 million 2020 target vs. a ~$5M pilot). A Luxembourg regulated fund with public and institutional investors; accepting US grants or recoverable grants is not described. No participatory governance described.",
+      "sources": [
+        { "id": "S30", "label": "Innpact, ABC – Agri-Business Capital Fund", "url": "https://innpact.com/?p=4498" },
+        { "id": "S34", "label": "IFAD, ABC Fund page", "url": "https://www.ifad.org/abcfund" },
+        { "id": "S35", "label": "Africa Global Funds, IFAD invests $9m in ABC Fund (Apr 29, 2020)", "url": "https://www.africaglobalfunds.com/news/investors/ifad-invests-9m-in-bamboo-capitals-abc-fund" }
       ]
     }
   ]
