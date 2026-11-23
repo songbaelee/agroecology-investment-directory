@@ -179,7 +179,7 @@
     <p class="made-note">Researched and drafted with Claude (Anthropic), and reviewed by Songbae Lee. Sources were checked in November 2026; verify details before relying on them.</p>
     <div class="header-meta">
       <span class="meta-pill" id="org-count-pill">— organizations reviewed</span>
-      <span class="meta-pill" id="fetched-pill">Sources fetched 2026-11-22</span>
+      <span class="meta-pill" id="fetched-pill">Sources fetched 2026-11-22 (S1–S28); 2026-11-23 (S29–S34)</span>
       <a class="data-btn" href="hosts.json" target="_blank">View raw data (JSON)</a>
     </div>
   </div>
@@ -306,7 +306,7 @@
 
   <section id="sources">
     <h2 class="section-title">Sources</h2>
-    <p class="section-note" id="sources-note">All fetched 2026-11-22.</p>
+    <p class="section-note" id="sources-note">S1–S28 fetched 2026-11-22; S29–S34 fetched 2026-11-23.</p>
     <div class="panel">
       <ul class="sources-full" id="sources-list"></ul>
     </div>
@@ -425,7 +425,7 @@
     document.getElementById('org-count-pill').textContent = orgs.length + ' organizations reviewed';
     if (data.sources_fetched) {
       document.getElementById('fetched-pill').textContent = 'Sources fetched ' + data.sources_fetched;
-      document.getElementById('sources-note').textContent = 'All fetched ' + data.sources_fetched + '.';
+      document.getElementById('sources-note').textContent = 'Fetched ' + data.sources_fetched + '.';
     }
 
     // At-a-glance summary: one column per status, names only, in card group order
