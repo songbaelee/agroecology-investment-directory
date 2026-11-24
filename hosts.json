@@ -37,7 +37,7 @@
     { "id": "S33", "label": "Innpact Fund Management S.A., Statement on principal adverse impacts of investment decisions on sustainability factors (30 June 2026)", "url": "https://innpact.com/wp-content/uploads/2026/06/Innpact-AIFM-Statement-on-principal-adverse-impacts-of-investment-decisions-on-sustainability-factors-2025.pdf" },
     { "id": "S34", "label": "IFAD, Agri-Business Capital (ABC) Fund page", "url": "https://www.ifad.org/abcfund" },
     { "id": "S35", "label": "Africa Global Funds, \"IFAD invests $9m in Bamboo Capital's ABC Fund\" (Apr 29, 2020)", "url": "https://www.africaglobalfunds.com/news/investors/ifad-invests-9m-in-bamboo-capitals-abc-fund" },
-    { "id": "S36", "label": "Kiva, Kiva Capital page", "url": "https://www-1.kiva.org/kiva-capital" },
+    { "id": "S36", "label": "Kiva, Kiva Capital page", "url": "https://www.kiva.org/kiva-capital" },
     { "id": "S37", "label": "ImpactAlpha, Kiva Capital closes refugee fund at $32.5 million (Apr 7, 2021)", "url": "https://impactalpha.com/?p=89895" },
     { "id": "S38", "label": "MCE Social Capital, About Us", "url": "https://www.mcesocap.org/about-us" },
     { "id": "S39", "label": "ImpactAlpha, Prime Coalition's Trellis Climate raises capital for first-of-a-kind projects (Jun 1, 2025)", "url": "https://impactalpha.com/?p=118510" },
@@ -272,7 +272,7 @@
         "What is the new SME fund with Miller Center, and how is the partnership structured?"
       ],
       "sources": [
-        { "id": "S36", "label": "Kiva, Kiva Capital page", "url": "https://www-1.kiva.org/kiva-capital" },
+        { "id": "S36", "label": "Kiva, Kiva Capital page", "url": "https://www.kiva.org/kiva-capital" },
         { "id": "S37", "label": "ImpactAlpha, Kiva Capital closes refugee fund at $32.5 million (Apr 7, 2021)", "url": "https://impactalpha.com/?p=89895" }
       ],
       "per_aef": [
