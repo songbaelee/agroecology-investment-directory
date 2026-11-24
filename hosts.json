@@ -1,6 +1,6 @@
 {
   "last_updated": "November 2026",
-  "sources_fetched": "2026-11-22 (S1–S28); 2026-11-23 (S29–S35); 2026-11-24 (S36–S39)",
+  "sources_fetched": "2026-11-22 (S1–S28); 2026-11-23 (S29–S35); 2026-11-24 (S36–S42)",
   "sources": [
     { "id": "S1", "label": "RSF Social Finance, Collaborative Funds", "url": "https://rsfsocialfinance.org/collaborative-funds" },
     { "id": "S2", "label": "ImpactAssets, Products & Services", "url": "https://impactassets.org/products-and-services/" },
@@ -40,7 +40,10 @@
     { "id": "S36", "label": "Kiva, Kiva Capital page", "url": "https://www-1.kiva.org/kiva-capital" },
     { "id": "S37", "label": "ImpactAlpha, Kiva Capital closes refugee fund at $32.5 million (Apr 7, 2021)", "url": "https://impactalpha.com/?p=89895" },
     { "id": "S38", "label": "MCE Social Capital, About Us", "url": "https://www.mcesocap.org/about-us" },
-    { "id": "S39", "label": "ImpactAlpha, Prime Coalition's Trellis Climate raises capital for first-of-a-kind projects (Jun 1, 2025)", "url": "https://impactalpha.com/?p=118510" }
+    { "id": "S39", "label": "ImpactAlpha, Prime Coalition's Trellis Climate raises capital for first-of-a-kind projects (Jun 1, 2025)", "url": "https://impactalpha.com/?p=118510" },
+    { "id": "S40", "label": "ImpactAlpha, The Brief: Investments in jobs, energy and healthcare for refugees (Mar 12, 2026)", "url": "https://impactalpha.com/the-brief-investments-in-jobs-energy-and-healthcare-for-refugees-displaced-by-conflict/" },
+    { "id": "S41", "label": "ImpactAlpha, Refugee Investment Facility offers impact-linked loan in Jordan (Mar 20, 2025)", "url": "https://impactalpha.com/?p=116909" },
+    { "id": "S42", "label": "AVCA, Swiss impact advisory firm invests in TLG Capital (undated)", "url": "https://www.avca.africa/news-insights/member-news/swiss-impact-advisory-firm-invests-in-tlg-capital/" }
   ],
   "general_questions": [
     "What is your minimum size, and what would it cost at $5M: setup and legal costs, annual management fee, any per-loan charges? Who pays them?",
@@ -274,6 +277,34 @@
       ],
       "per_aef": [
         "New Kiva SME fund is in partnership with Miller Center, a sign Kiva is willing to partner. To confirm."
+      ]
+    },
+    {
+      "id": "igravity",
+      "name": "iGravity",
+      "type": "Impact advisory and investment management firm (Zurich)",
+      "status": "verify",
+      "accepts_loans_in": "unknown",
+      "accepts_loans_in_note": "The Refugee Investment Facility's next iteration targets $25 million, with risk-mitigation features to bring in family offices and DFIs (S40); grant, recoverable-grant or loan inflows not described",
+      "lends_internationally": "yes",
+      "lends_internationally_note": "Refugee Investment Facility lends to businesses in Uganda and Jordan (S41)",
+      "underwriting": "iGravity, co-managing the Refugee Investment Facility with the Danish Refugee Council (S41); process not described",
+      "summary": "Zurich-based impact advisory firm (S40) that also describes itself as an investment manager (S42). Its Refugee Investment Facility (RIF), launched in 2022 with the Danish Refugee Council, makes below-market loans at 6–8% to businesses that serve, train or hire refugees, with discounts when they meet refugee-inclusion targets; the pilot is $8 million (S40). iGravity and the Danish Refugee Council manage it (S41). Its first three deals were with companies serving refugee farmers; the fourth, in Jordan, used an interest-free structure whose markup falls by up to 50% if impact targets are met (S41). A next iteration targets $25 million (S40). Through its Investment Solutions, iGravity has also committed to a fund, TLG Capital's Africa Growth Impact Fund II (S42).",
+      "open_questions": [
+        "Would you manage or advise a US-domiciled vehicle, or act as underwriting advisor to a US host, so that US donor capital can be used?",
+        "Can RIF or a similar vehicle accept grants, recoverable grants and loans? What are the risk-mitigation features planned for the next iteration?",
+        "Do you lend to funds, or only directly to businesses? How does the TLG commitment fit with that?",
+        "What is your minimum mandate size, and what would it cost at ~$5M?"
+      ],
+      "sources": [
+        { "id": "S40", "label": "ImpactAlpha, The Brief: Investments in jobs, energy and healthcare for refugees (Mar 12, 2026)", "url": "https://impactalpha.com/the-brief-investments-in-jobs-energy-and-healthcare-for-refugees-displaced-by-conflict/" },
+        { "id": "S41", "label": "ImpactAlpha, Refugee Investment Facility offers impact-linked loan in Jordan (Mar 20, 2025)", "url": "https://impactalpha.com/?p=116909" },
+        { "id": "S42", "label": "AVCA, Swiss impact advisory firm invests in TLG Capital (undated)", "url": "https://www.avca.africa/news-insights/member-news/swiss-impact-advisory-firm-invests-in-tlg-capital/" }
+      ],
+      "per_aef": [
+        "AEF sees iGravity as promising. To confirm.",
+        "iGravity is currently doing AEF's AIF pre-feasibility study, a potential conflict of interest if it is considered as host, manager or advisor.",
+        "Swiss, so more likely a manager or underwriting advisor alongside a US vehicle than the host; see the note on European structures."
       ]
     },
     {
