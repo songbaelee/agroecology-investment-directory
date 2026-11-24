@@ -27,8 +27,8 @@
     { "id": "S23", "label": "WRI Africa, \"WRI Africa Invests $4 Million in Barka Fund to Propel African Land Restoration\" (Jan 13, 2025)", "url": "https://africa.wri.org/fr/node/717" },
     { "id": "S24", "label": "ImpactAlpha, \"Anchored by NoVo Foundation, Abundance Circle builds a catalytic fund of funds\" (Mar 17, 2026)", "url": "https://impactalpha.com/anchored-by-peter-buffetts-novo-foundation-abundance-circle-builds-a-catalytic-fund-of-funds/" },
     { "id": "S25", "label": "ImpactAlpha, \"Candide Group raises $40 million fund for community lenders advancing racial justice\" (Nov 5, 2019)", "url": "https://impactalpha.com/candide-group-raises-40-million-fund-for-community-lenders-advancing-racial-justice/" },
-    { "id": "S26", "label": "Candide Group, Olamina Fund FAQs", "url": "https://morgan-simon-j6am.squarespace.com/olamina-faqs" },
-    { "id": "S27", "label": "Barron's, \"Future Returns: Investing to Further Social Justice\" (Jun 3, 2020), hosted PDF", "url": "https://morgan-simon-j6am.squarespace.com/s/Future-Returns_Investing-to-Further-Social-Justice_Barrons.pdf" },
+    { "id": "S26", "label": "Candide Group, Olamina Fund FAQs (on Candide's Squarespace site)", "url": "https://morgan-simon-j6am.squarespace.com/olamina-faqs" },
+    { "id": "S27", "label": "Barron's, \"Future Returns: Investing to Further Social Justice\" (Jun 3, 2020), PDF copy hosted by Candide Group", "url": "https://morgan-simon-j6am.squarespace.com/s/Future-Returns_Investing-to-Further-Social-Justice_Barrons.pdf" },
     { "id": "S28", "label": "Nonprofit Quarterly, \"Beyond Grant Capital: What the Buen Vivir Fund Experience Teaches Us\" (May 28, 2025)", "url": "https://nonprofitquarterly.org/beyond-grant-capital-what-the-buen-vivir-fund-experience-teaches-us/" },
     { "id": "S29", "label": "Innpact, homepage", "url": "https://innpact.com/" },
     { "id": "S30", "label": "Innpact, ABC – Agri-Business Capital Fund project page", "url": "https://innpact.com/?p=4498" },
@@ -105,7 +105,7 @@
       "accepts_loans_in": "unknown",
       "lends_internationally": "yes",
       "lends_internationally_note": "Community Investment Note portfolio reaches 111 countries (Q4 2025)",
-      "underwriting": "Unknown",
+      "underwriting": "In-house credit underwriting team (per AEF / to confirm)",
       "summary": "A 501(c)(3) holding company, Calvert Impact, Inc., was formed in October 2022 as a more flexible base for lending, structuring services and new products. Calvert Impact Capital still issues the Community Investment Note. Its RIA, Calvert Impact Advisory Services, LLC, registered with the SEC in September 2023 and manages pooled investment vehicles (third-party profile). Its Community Investment Note portfolio reaches 111 countries, including Sub-Saharan Africa, South Asia, and Latin America and the Caribbean, as of Q4 2025.",
       "open_questions": [
         "Is $5M below the minimum for a standalone mandate?",
@@ -118,7 +118,8 @@
       ],
       "per_aef": [
         "Wouldn't do this through the Notes program.",
-        "Size threshold: $5M may be below Calvert's minimum. To confirm."
+        "Size threshold: $5M may be below Calvert's minimum. To confirm.",
+        "The route under consideration is a standalone vehicle managed by the RIA, not the Notes. Most relevant if the pilot is designed to grow beyond $5M."
       ]
     },
     {
@@ -238,8 +239,8 @@
       ],
       "sources": [
         { "id": "S25", "label": "ImpactAlpha, Candide Group raises $40M fund (Nov 5, 2019)", "url": "https://impactalpha.com/candide-group-raises-40-million-fund-for-community-lenders-advancing-racial-justice/" },
-        { "id": "S26", "label": "Candide Group, Olamina Fund FAQs", "url": "https://morgan-simon-j6am.squarespace.com/olamina-faqs" },
-        { "id": "S27", "label": "Barron's, Future Returns (Jun 3, 2020)", "url": "https://morgan-simon-j6am.squarespace.com/s/Future-Returns_Investing-to-Further-Social-Justice_Barrons.pdf" }
+        { "id": "S26", "label": "Candide Group, Olamina Fund FAQs (on Candide's Squarespace site)", "url": "https://morgan-simon-j6am.squarespace.com/olamina-faqs" },
+        { "id": "S27", "label": "Barron's, Future Returns (Jun 3, 2020), PDF copy hosted by Candide Group", "url": "https://morgan-simon-j6am.squarespace.com/s/Future-Returns_Investing-to-Further-Social-Justice_Barrons.pdf" }
       ],
       "per_aef": []
     },
@@ -366,8 +367,8 @@
       "key_differences": "US only (rural areas, Native lands and the deep South). Its initial $40M is eight times the pilot.",
       "sources": [
         { "id": "S25", "label": "ImpactAlpha, Candide Group raises $40M fund (Nov 5, 2019)", "url": "https://impactalpha.com/candide-group-raises-40-million-fund-for-community-lenders-advancing-racial-justice/" },
-        { "id": "S26", "label": "Candide Group, Olamina Fund FAQs", "url": "https://morgan-simon-j6am.squarespace.com/olamina-faqs" },
-        { "id": "S27", "label": "Barron's, Future Returns (Jun 3, 2020)", "url": "https://morgan-simon-j6am.squarespace.com/s/Future-Returns_Investing-to-Further-Social-Justice_Barrons.pdf" }
+        { "id": "S26", "label": "Candide Group, Olamina Fund FAQs (on Candide's Squarespace site)", "url": "https://morgan-simon-j6am.squarespace.com/olamina-faqs" },
+        { "id": "S27", "label": "Barron's, Future Returns (Jun 3, 2020), PDF copy hosted by Candide Group", "url": "https://morgan-simon-j6am.squarespace.com/s/Future-Returns_Investing-to-Further-Social-Justice_Barrons.pdf" }
       ]
     },
     {
