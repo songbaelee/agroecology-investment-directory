@@ -1,6 +1,6 @@
 {
   "last_updated": "November 2026",
-  "sources_fetched": "2026-11-22 (S1–S28); 2026-11-23 (S29–S35)",
+  "sources_fetched": "2026-11-22 (S1–S28); 2026-11-23 (S29–S35); 2026-11-24 (S36–S39)",
   "sources": [
     { "id": "S1", "label": "RSF Social Finance, Collaborative Funds", "url": "https://rsfsocialfinance.org/collaborative-funds" },
     { "id": "S2", "label": "ImpactAssets, Products & Services", "url": "https://impactassets.org/products-and-services/" },
@@ -36,7 +36,11 @@
     { "id": "S32", "label": "IDH, IDH Farmfit Fund page", "url": "https://idh.org/focus-areas/idh-farmfit-fund" },
     { "id": "S33", "label": "Innpact Fund Management S.A., Statement on principal adverse impacts of investment decisions on sustainability factors (30 June 2026)", "url": "https://innpact.com/wp-content/uploads/2026/06/Innpact-AIFM-Statement-on-principal-adverse-impacts-of-investment-decisions-on-sustainability-factors-2025.pdf" },
     { "id": "S34", "label": "IFAD, Agri-Business Capital (ABC) Fund page", "url": "https://www.ifad.org/abcfund" },
-    { "id": "S35", "label": "Africa Global Funds, \"IFAD invests $9m in Bamboo Capital's ABC Fund\" (Apr 29, 2020)", "url": "https://www.africaglobalfunds.com/news/investors/ifad-invests-9m-in-bamboo-capitals-abc-fund" }
+    { "id": "S35", "label": "Africa Global Funds, \"IFAD invests $9m in Bamboo Capital's ABC Fund\" (Apr 29, 2020)", "url": "https://www.africaglobalfunds.com/news/investors/ifad-invests-9m-in-bamboo-capitals-abc-fund" },
+    { "id": "S36", "label": "Kiva, Kiva Capital page", "url": "https://www-1.kiva.org/kiva-capital" },
+    { "id": "S37", "label": "ImpactAlpha, Kiva Capital closes refugee fund at $32.5 million (Apr 7, 2021)", "url": "https://impactalpha.com/?p=89895" },
+    { "id": "S38", "label": "MCE Social Capital, About Us", "url": "https://www.mcesocap.org/about-us" },
+    { "id": "S39", "label": "ImpactAlpha, Prime Coalition's Trellis Climate raises capital for first-of-a-kind projects (Jun 1, 2025)", "url": "https://impactalpha.com/?p=118510" }
   ],
   "general_questions": [
     "What is your minimum size, and what would it cost at $5M: setup and legal costs, annual management fee, any per-loan charges? Who pays them?",
@@ -45,7 +49,7 @@
     "Do you have experience with subordinated debt?",
     "Who sits on the credit committee, and what formal role can AEF have?",
     "How deep is your underwriting, and can a separate advisor do it instead?",
-    "Can the vehicle grow later or be spun out?",
+    "Can the vehicle grow later or be spun out? Could its loans be moved into a larger fund later (warehousing), and what would that need: lender consent, a valuation method, and how DAF capital is treated?",
     "What else are you doing that is similar (other vehicles, funds or programs)? Would any of them compete with this vehicle for deals or attention?",
     "What experience do you have with agriculture, agroecology, and lending to funds rather than directly to companies?",
     "How would this advance your mission, and why would you take on a ~$5M mandate? What would you gain beyond fees?"
@@ -212,13 +216,16 @@
       "underwriting": "Not described in source. Possible role: underwriting or monitoring advisor to a host",
       "summary": "CapShift Advisors, an SEC-registered investment advisor, was formed in 2021. Serves DAF providers, family offices and wealth advisors, and monitors more than 1,400 opportunities, mainly in venture capital, private credit and real assets; $1B mobilized. S3 doesn't describe geography or credit underwriting. Advised Austin Community Foundation, a buyer of the Total Impact Notes, which lend to fund managers in Latin America and Africa.",
       "open_questions": [
-        "Do you underwrite credit, or only do diligence on funds?"
+        "Do you underwrite credit, or only do diligence on funds?",
+        "What was your role in MCE Social Capital's recent fundraising?"
       ],
       "sources": [
         { "id": "S3", "label": "ImpactAlpha, CapShift mobilizes $1 billion", "url": "https://impactalpha.com/capshift-follows-the-money-and-the-clients-to-mobilize-1-billion-for-impact-investments-podcast/" },
         { "id": "S7", "label": "ImpactAlpha, Total Impact Notes first issuance (Nov 3, 2025)", "url": "https://impactalpha.com/first-issuance-of-total-impact-notes-raises-3-million-for-loans-to-fund-managers-in-latin-america-and-africa/" }
       ],
-      "per_aef": []
+      "per_aef": [
+        "Has recently helped MCE Social Capital raise a significant amount. To confirm."
+      ]
     },
     {
       "id": "candide-group",
@@ -243,6 +250,31 @@
         { "id": "S27", "label": "Barron's, Future Returns (Jun 3, 2020), PDF copy hosted by Candide Group", "url": "https://morgan-simon-j6am.squarespace.com/s/Future-Returns_Investing-to-Further-Social-Justice_Barrons.pdf" }
       ],
       "per_aef": []
+    },
+    {
+      "id": "kiva-capital",
+      "name": "Kiva Capital",
+      "type": "Impact asset manager (wholly owned subsidiary of Kiva, a US nonprofit)",
+      "status": "verify",
+      "accepts_loans_in": "yes",
+      "accepts_loans_in_note": "KRIF took debt financing from the U.S. Development Finance Corporation and Mercy Investment Services (S37)",
+      "lends_internationally": "yes",
+      "lends_internationally_note": "KRIF lends to microfinance and other intermediaries serving refugees in the Middle East, Africa and Latin America (S37)",
+      "underwriting": "Kiva Capital, as fund manager (S37); credit process not described",
+      "summary": "Impact asset manager set up in 2019 as a wholly owned subsidiary of the nonprofit Kiva. It makes debt investments in financial service providers and social enterprises through thematic funds (S36). Its Kiva Refugee Investment Fund (KRIF) closed at $32.5 million in April 2021 (S37). KRIF's impact-first investors included ImpactAssets, Sobrato Philanthropies and Ceniarth, with debt from the U.S. Development Finance Corporation and Mercy Investment Services (S37). Kiva Capital also administers the California Rebuilding Fund (S36), launched with Calvert Impact Capital and state officials to buy loans from CDFIs (S37). Fund information is limited to accredited investors (S36). Grant or recoverable-grant inflows are not described.",
+      "open_questions": [
+        "Would you manage a separate ~$5M vehicle for a third party, and at what minimum and fee?",
+        "Can your vehicles accept grants and recoverable grants alongside loans?",
+        "Do you lend to funds, or only directly to financial service providers and enterprises?",
+        "What is the new SME fund with Miller Center, and how is the partnership structured?"
+      ],
+      "sources": [
+        { "id": "S36", "label": "Kiva, Kiva Capital page", "url": "https://www-1.kiva.org/kiva-capital" },
+        { "id": "S37", "label": "ImpactAlpha, Kiva Capital closes refugee fund at $32.5 million (Apr 7, 2021)", "url": "https://impactalpha.com/?p=89895" }
+      ],
+      "per_aef": [
+        "New Kiva SME fund is in partnership with Miller Center, a sign Kiva is willing to partner. To confirm."
+      ]
     },
     {
       "id": "tides",
@@ -353,6 +385,24 @@
       "per_aef": [
         "Not a pilot host; a candidate partner for a later, larger or spun-out vehicle."
       ]
+    },
+    {
+      "id": "prime-coalition",
+      "name": "Prime Coalition",
+      "type": "Nonprofit catalytic capital investor for climate technology",
+      "status": "excluded",
+      "accepts_loans_in": "unknown",
+      "accepts_loans_in_note": "Donors contribute recoverable grants or PRIs (S39); loans not described",
+      "lends_internationally": "unknown",
+      "lends_internationally_note": "Both 2025 Trellis Climate deals described are in California (S39)",
+      "underwriting": "Prime, for its own programs; process not described",
+      "summary": "Boston-based nonprofit climate investor. Its Trellis Climate program, launched in 2024, backs high-impact climate technologies, especially first-of-a-kind projects that venture capital and commercial lenders consider too risky (S39). Trellis has raised philanthropic capital from nearly two dozen private foundations, DAFs, family offices and other donors, who can contribute as recoverable grants or PRIs so returns are recycled into new investments (S39).",
+      "exclusion_reason": "Judgment call. Prime invests in climate technology companies and projects, not in debt funds abroad, and the deals described are in the US (S39). Its intake model, where donors put recoverable grants or PRIs into a nonprofit program that recycles returns, is a useful reference for Path C.",
+      "open_questions": [],
+      "sources": [
+        { "id": "S39", "label": "ImpactAlpha, Prime Coalition's Trellis Climate raises capital for first-of-a-kind projects (Jun 1, 2025)", "url": "https://impactalpha.com/?p=118510" }
+      ],
+      "per_aef": []
     }
   ],
   "examples": [
@@ -455,6 +505,19 @@
         { "id": "S30", "label": "Innpact, ABC – Agri-Business Capital Fund", "url": "https://innpact.com/?p=4498" },
         { "id": "S34", "label": "IFAD, ABC Fund page", "url": "https://www.ifad.org/abcfund" },
         { "id": "S35", "label": "Africa Global Funds, IFAD invests $9m in ABC Fund (Apr 29, 2020)", "url": "https://www.africaglobalfunds.com/news/investors/ifad-invests-9m-in-bamboo-capitals-abc-fund" }
+      ]
+    },
+    {
+      "id": "mce-social-capital",
+      "name": "MCE Social Capital",
+      "label": "Philanthropic guarantees backing international loans",
+      "related_org": null,
+      "run_by": "MCE Social Capital",
+      "structure": "High-net-worth individuals and foundations (Guarantors) sign philanthropic guarantee agreements. MCE uses their credit to borrow from US and European financial institutions and accredited investors, and lends to financial service providers and small and growing businesses in emerging markets (S38). Guarantors don't move assets upfront; if a loan defaults, the relevant Guarantors share the loss pro rata through tax-deductible contributions. Capital recycles as loans are repaid (S38). As of June 30, 2026, more than 100 Guarantors had provided $85.5 million in guarantees (S38). MCE also runs the MESA Fund for smallholder resilience and women in agriculture (S38).",
+      "why_relevant": "A different inflow from anything else on this page: donors back loans with guarantees instead of giving or lending cash, and the vehicle borrows against them. It lends internationally, including to agriculture, and recycles capital.",
+      "key_differences": "Lends directly to financial service providers and businesses, not to funds. Much larger than the pilot. A guarantee layer needs a lender willing to borrow against it, which adds a party to the structure.",
+      "sources": [
+        { "id": "S38", "label": "MCE Social Capital, About Us", "url": "https://www.mcesocap.org/about-us" }
       ]
     }
   ]
