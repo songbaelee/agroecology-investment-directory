@@ -117,7 +117,36 @@
     .paths-view strong { color: var(--soil); }
     .paths-close { margin-top: 0.8rem; font-size: 0.8rem; color: var(--muted); font-style: italic; }
     .paths-back { text-align: right; margin-top: 0.4rem; }
-    #paths + #summary { margin-top: 2.25rem; }
+    #summary + #paths { margin-top: 2.25rem; }
+
+    /* Mockup: type × geography grid */
+    .matrix { display: grid; grid-template-columns: 9.5rem 1fr 1fr; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: white; }
+    .matrix > div { padding: 0.75rem 0.9rem; border-top: 1px solid var(--border); }
+    .matrix .mh { background: var(--soil); color: var(--cream); font-family: 'Playfair Display', serif; font-size: 1.05rem; border-top: none; }
+    .matrix .mh.corner { background: var(--soil); }
+    .matrix .mh small { display: block; font-family: 'Source Sans 3', sans-serif; font-size: 0.82rem; font-weight: 300; color: var(--straw); line-height: 1.45; margin-top: 0.3rem; }
+    .matrix .rl { background: var(--cream); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--bark); }
+    .matrix .rl small { display: block; text-transform: none; letter-spacing: 0; font-weight: 400; color: var(--muted); margin-top: 0.2rem; }
+    .matrix .cell + .cell, .matrix .mh + .mh { border-left: 1px solid var(--border); }
+    .matrix ul { list-style: none; }
+    .matrix li { font-size: 0.92rem; margin-bottom: 0.4rem; line-height: 1.35; }
+    .matrix li a { color: var(--soil); text-decoration: none; border-bottom: 1px solid var(--sage); }
+    .matrix .empty { font-size: 0.85rem; color: var(--muted); font-style: italic; }
+    .flag { display: inline-block; font-size: 0.68rem; font-weight: 600; padding: 0.05rem 0.4rem; border-radius: 8px; margin-left: 0.3rem; vertical-align: middle; }
+    .flag-size { background: #FFF4E0; color: #8A5A00; border: 1px solid #E8C87A; }
+    .row-abroad { background: #E8F5E1; color: #2D6A1F; border: 1px solid #A8D99A; }
+    .row-unconfirmed { background: #F0F0F0; color: #555; border: 1px solid #CCC; }
+    .row-us_only { background: #F7E8E5; color: #8E3A32; border: 1px solid #E0B4AD; }
+    .notfit-strip { margin-top: 1rem; background: #F8F6F0; border: 1px dashed var(--border); border-radius: 10px; padding: 0.7rem 1rem; font-size: 0.88rem; color: var(--muted); }
+    .notfit-strip a { color: var(--muted); border-bottom: 1px dotted var(--sage); text-decoration: none; }
+    .size-note { font-size: 0.86rem; background: #FFFBF2; border: 1px solid #EEDDB8; border-radius: 6px; padding: 0.55rem 0.8rem; color: #3A2A18; }
+    .size-note .key { display: block; color: var(--muted); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.15rem; }
+    h3.col-title { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--soil); margin: 2rem 0 0.2rem; }
+    @media (max-width: 860px) {
+      .matrix { grid-template-columns: 1fr; }
+      .matrix .mh.corner { display: none; }
+      .matrix .cell + .cell, .matrix .mh + .mh { border-left: none; }
+    }
 
     .glance-examples { margin-top: 0.9rem; font-size: 0.84rem; color: var(--muted); line-height: 1.6; }
     .glance-examples:empty { display: none; }
@@ -177,8 +206,8 @@
   <div class="header-inner">
     <div class="site-label">AEF · AIF Feasibility Study</div>
     <h1>AIF Pilot: Host &amp; Administrator Options</h1>
-    <p>Working list. Not linked from the directory. Last updated November 2026.</p>
-    <p class="made-note">Researched and drafted with Claude (Anthropic), and reviewed by Songbae Lee. Sources were checked in November 2026; verify details before relying on them.</p>
+    <p>November 2026</p>
+    <p class="made-note">Researched and drafted with Claude (Anthropic). Verify details before relying on them.</p>
     <div class="header-meta">
       <span class="meta-pill" id="org-count-pill">— organizations reviewed</span>
       <span class="meta-pill" id="fetched-pill">Sources fetched 2026-11-22 (S1–S28); 2026-11-23 (S29–S35)</span>
@@ -189,12 +218,12 @@
 
 <nav class="toc">
   <div class="toc-inner">
+    <a href="#summary">At a glance</a>
     <a href="#paths">Leading paths</a>
-    <a href="#summary">Summary</a>
     <a href="#parameters">Pilot parameters</a>
     <a href="#criteria">Screening criteria</a>
     <a href="#organizations">Organizations</a>
-    <a href="#excluded">Considered but excluded</a>
+    <a href="#excluded">Not a fit for this model</a>
     <a href="#examples">Examples</a>
     <a href="#questions">Questions to ask</a>
     <a href="#sources">Sources</a>
@@ -202,6 +231,15 @@
 </nav>
 
 <main>
+
+  <section id="summary">
+    <h2 class="section-title">Organizations at a glance</h2>
+    <p class="section-note">Organizations sort themselves by two questions: what money they take in, and whether they deploy it abroad. Size isn't used to sort; it's flagged on each organization instead. The two types are a simplifying assumption: some organizations are exceptions, noted on their cards.</p>
+    <div class="matrix" id="glance-grid"><div class="load-error">Loading…</div></div>
+    <div class="notfit-strip" id="notfit-strip"></div>
+    <p class="glance-examples" id="glance-examples"></p>
+  </section>
+
 
   <section id="paths" class="paths-box">
     <h2 class="section-title">Leading paths: a working view for discussion</h2>
@@ -239,15 +277,10 @@
       <li><strong>Main alternatives:</strong> <a href="#org-social-finance-cpm">Social Finance</a>, if inflows mix grants, recoverable grants and loans (international scope still to confirm); and <a href="#org-calvert-impact">Calvert Impact</a>, which has the strongest credit capacity if the pilot is designed to grow beyond $5M.</li>
     </ul>
 
-    <p class="paths-close">Statuses reflect what public sources confirm, not a ranking. Comments welcome.</p>
+    <p class="paths-close">Placement in the grid reflects what public sources confirm, not a ranking. Comments welcome.</p>
     <div class="paths-back"><a class="back-link" href="#summary">↑ Back to summary</a></div>
   </section>
 
-  <section id="summary">
-    <h2 class="section-title">Organizations at a glance</h2>
-    <div class="glance-grid" id="glance-grid"><div class="load-error">Loading…</div></div>
-    <p class="glance-examples" id="glance-examples"></p>
-  </section>
 
   <section id="parameters">
     <h2 class="section-title">Pilot parameters <span class="per-aef">per AEF / to confirm</span></h2>
@@ -280,13 +313,13 @@
 
   <section id="organizations">
     <h2 class="section-title">Organizations</h2>
-    <p class="section-note">Grouped by status. "Unknown" means the cited source doesn't say. Claims tagged <span class="per-aef">per AEF / to confirm</span> come from AEF, not a source.</p>
+    <p class="section-note">Grouped by type, then by whether they deploy abroad. "Unknown" means the cited source doesn't say. Claims tagged <span class="per-aef">per AEF / to confirm</span> come from AEF, not a source. If anything here is wrong, please tell us.</p>
     <div id="org-groups"><div class="load-error">Loading…</div></div>
   </section>
 
   <section id="excluded">
-    <h2 class="section-title">Considered but excluded</h2>
-    <p class="section-note">Reviewed against the screening criteria and set aside, with reasons.</p>
+    <h2 class="section-title">Not a fit for this model</h2>
+    <p class="section-note">Grant pass-throughs: capital goes out as grants and doesn't come back, so they fail the first screening criterion regardless of type or geography.</p>
     <div class="grid" id="excluded-grid"></div>
   </section>
 
@@ -321,20 +354,26 @@
 <button class="to-top" id="to-top" type="button" aria-label="Back to summary">↑ Summary</button>
 
 <footer>
-  <p>Agroecology Investment Directory &nbsp;&middot;&nbsp; AIF pilot working list, not linked from the directory &nbsp;&middot;&nbsp; <a href="hosts.json" download="aif-hosts.json">Download data (JSON)</a></p>
+  <p>Agroecology Investment Directory &nbsp;&middot;&nbsp; <a href="hosts.json" download="aif-hosts.json">Download data (JSON)</a></p>
 </footer>
 
 <script>
   function esc(s) { return s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;') : ''; }
   function cap(s) { return s ? s.charAt(0).toUpperCase() + s.slice(1) : ''; }
 
-  const STATUS = {
-    // Display labels only; the underlying status values in hosts.json stay the same
-    confirmed: { label: 'Meets criteria (publicly confirmed)' },
-    partial:   { label: 'Partial fit (AEF capital only)' },
-    verify:    { label: 'Promising, open questions' },
-    excluded:  { label: 'Excluded' }
+  // Placement comes from hosts.json: column, row, size_note
+  const COL_KEY = { philanthropic: 'phil', investment_manager: 'inv', not_a_fit: 'notfit' };
+  const COLS = { phil: 'Philanthropic', inv: 'Investment managers' };
+  const COLDEFS = {
+    phil: 'Grants in. Returned capital stays philanthropic (recycled in a DAF or foundation), so it can\u2019t take loans or repay a lender.',
+    inv: 'Investment capital (loans, notes) in. Returns go back to the investors.'
   };
+  const ROWS = {
+    abroad:      { label: 'Deploys abroad', note: 'per public sources' },
+    unconfirmed: { label: 'Not confirmed', note: 'sources don’t say' },
+    us_only:     { label: 'US only', note: 'per public sources' }
+  };
+  const place = o => ({ col: COL_KEY[o.column] || 'inv', row: o.row || 'unconfirmed', size: o.size_note });
 
   function yn(v, note) {
     const k = ['yes','no'].includes(v) ? v : 'unknown';
@@ -349,23 +388,28 @@
   }
 
   function buildCard(org) {
-    const st = STATUS[org.status] || STATUS.verify;
+    const p = place(org);
     const aef = org.per_aef || [];
-    const excluded = org.status === 'excluded';
+    const excluded = p.col === 'notfit';
+    const badge = excluded
+      ? '<span class="status-badge st-excluded">Not a fit</span>'
+      : `<span class="status-badge row-${p.row}">${esc(ROWS[p.row].label)}</span>`;
+    const colLine = excluded ? '' : `${esc(COLS[p.col])} · `;
     return `
     <div class="card" id="org-${esc(org.id)}">
       <div class="card-header">
         <div class="card-top">
           <div>
             <h4>${esc(org.name)}</h4>
-            <div class="card-type">${esc(org.type)}</div>
+            <div class="card-type">${colLine}${esc(org.type)}</div>
           </div>
-          <span class="status-badge st-${esc(org.status)}">${esc(st.label)}</span>
+          ${badge}
         </div>
       </div>
       <div class="card-body">
         <p class="summary">${esc(org.summary) || '—'}</p>
-        ${excluded && org.exclusion_reason ? `<div class="reason"><span class="key">Why excluded</span>${esc(org.exclusion_reason)}</div>` : ''}
+        ${p.size ? `<div class="size-note"><span class="key">Size</span>${esc(p.size)}</div>` : ''}
+        ${org.exclusion_reason ? `<div class="reason"><span class="key">${excluded ? 'Why not a fit' : 'Note'}</span>${esc(org.exclusion_reason)}</div>` : ''}
         <div class="facts">
           <div class="fact"><span class="key">Accepts loans in</span><span class="val">${yn(org.accepts_loans_in, org.accepts_loans_in_note)}</span></div>
           <div class="fact"><span class="key">Lends internationally</span><span class="val">${yn(org.lends_internationally, org.lends_internationally_note)}</span></div>
@@ -432,17 +476,24 @@
       document.getElementById('sources-note').textContent = 'Fetched ' + data.sources_fetched + '.';
     }
 
-    // At-a-glance summary: one column per status, names only, in card group order
-    document.getElementById('glance-grid').innerHTML = ['confirmed', 'partial', 'verify', 'excluded'].map(status => {
-      const items = orgs.filter(o => o.status === status);
-      return `
-        <div class="glance-col">
-          <span class="status-badge st-${status}">${esc(STATUS[status].label)}</span>
-          ${items.length
-            ? `<ul>${items.map(o => `<li><a href="#org-${esc(o.id)}">${esc(o.name)}</a></li>`).join('')}</ul>`
-            : '<div class="empty">None</div>'}
-        </div>`;
-    }).join('');
+    // At-a-glance grid: columns = type, rows = geography
+    const nameLi = o => {
+      const p = place(o);
+      return `<li><a href="#org-${esc(o.id)}">${esc(o.name)}</a>${p.size ? '<span class="flag flag-size">size</span>' : ''}</li>`;
+    };
+    let gridHtml = `<div class="mh corner"></div><div class="mh">${COLS.phil}<small>${COLDEFS.phil}</small></div><div class="mh">${COLS.inv}<small>${COLDEFS.inv}</small></div>`;
+    Object.keys(ROWS).forEach(row => {
+      gridHtml += `<div class="rl">${ROWS[row].label}<small>${ROWS[row].note}</small></div>`;
+      ['phil', 'inv'].forEach(col => {
+        const items = orgs.filter(o => place(o).col === col && place(o).row === row);
+        gridHtml += `<div class="cell">${items.length ? `<ul>${items.map(nameLi).join('')}</ul>` : '<div class="empty">None</div>'}</div>`;
+      });
+    });
+    document.getElementById('glance-grid').innerHTML = gridHtml;
+    const notfit = orgs.filter(o => place(o).col === 'notfit');
+    document.getElementById('notfit-strip').innerHTML = notfit.length
+      ? `<strong>Not a fit for this model (grant pass-throughs):</strong> ` + notfit.map(o => `<a href="#org-${esc(o.id)}">${esc(o.name)}</a>`).join(', ')
+      : '';
 
     // Examples: quiet line under the summary columns, plus the cards
     const examples = data.examples || [];
@@ -452,19 +503,21 @@
       : '';
     document.getElementById('examples-grid').innerHTML = examples.map(ex => buildExample(ex, orgsById)).join('');
 
-    // Groups 1–3 (status: confirmed, partial, verify)
-    const groupsHtml = ['confirmed', 'partial', 'verify'].map(status => {
-      const items = orgs.filter(o => o.status === status);
-      if (!items.length) return '';
-      return `
-        <h3 class="group-title"><span class="status-badge st-${status}">${esc(STATUS[status].label)}</span><span class="count">· ${items.length}</span></h3>
-        <div class="grid">${items.map(buildCard).join('')}</div>`;
+    // Organizations: by column, then by row
+    const groupsHtml = ['phil', 'inv'].map(col => {
+      const rowsHtml = Object.keys(ROWS).map(row => {
+        const items = orgs.filter(o => place(o).col === col && place(o).row === row);
+        if (!items.length) return '';
+        return `
+          <h3 class="group-title"><span class="status-badge row-${row}">${esc(ROWS[row].label)}</span><span class="count">· ${items.length}</span></h3>
+          <div class="grid">${items.map(buildCard).join('')}</div>`;
+      }).join('');
+      return `<h3 class="col-title">${COLS[col]}</h3>${rowsHtml}`;
     }).join('');
-    document.getElementById('org-groups').innerHTML = groupsHtml || '<div class="load-error">No organizations listed.</div>';
+    document.getElementById('org-groups').innerHTML = groupsHtml;
 
-    // Group 4 (excluded)
-    document.getElementById('excluded-grid').innerHTML =
-      orgs.filter(o => o.status === 'excluded').map(buildCard).join('');
+    // Not a fit
+    document.getElementById('excluded-grid').innerHTML = notfit.map(buildCard).join('');
 
     // Questions
     document.getElementById('general-questions').innerHTML =
