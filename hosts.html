@@ -224,7 +224,7 @@
     <a href="#criteria">Screening criteria</a>
     <a href="#organizations">Organizations</a>
     <a href="#excluded">Not a fit for this model</a>
-    <a href="#examples">Examples</a>
+    <a href="#examples">Precedents</a>
     <a href="#questions">Questions to ask</a>
     <a href="#sources">Sources</a>
   </div>
@@ -283,14 +283,14 @@
 
 
   <section id="parameters">
-    <h2 class="section-title">Pilot parameters <span class="per-aef">per AEF / to confirm</span></h2>
+    <h2 class="section-title">Pilot parameters <span class="per-aef">to confirm</span></h2>
     <div class="panel">
       <ul>
         <li>Size: around $5M.</li>
         <li>Inflows: may combine grants, recoverable grants and loans.</li>
         <li>Outflows: almost all international, all debt (possibly subordinated). Some borrowers may have US entities.</li>
         <li>AEF participates in decisions, but underwriting is done by a third party: either the host or a separate advisor.</li>
-        <li>End state: a permanent home of roughly the same size, or a vehicle that grows and/or spins out. One option is to warehouse loans for a later, larger fund of about $20M <span class="per-aef">per AEF / to confirm</span>.</li>
+        <li>End state: a permanent home of roughly the same size, or a vehicle that grows and/or spins out. One option is to warehouse loans for a later, larger fund of about $20M <span class="per-aef">to confirm</span>.</li>
         <li>Only options that return capital are considered. A DAF counts as a partial fit: AEF doesn't get the money back, but it stays in an AEF-advised DAF to recycle or grant later.</li>
       </ul>
     </div>
@@ -307,13 +307,13 @@
         <li>Workable at ~$5M</li>
       </ol>
       <div class="callout"><strong>Structural point:</strong> a DAF can only accept gifts. It can't take loans, and it can't repay a donor's recoverable grant. So a DAF host works for AEF's own capital, but outside lenders would need a second entity.</div>
-      <div class="callout"><strong>Why European structures mostly don't fit</strong> <span class="per-aef">per AEF / to confirm</span><strong>:</strong> Most of AEF's donors are US-based, so the constraint is on the inflow side. US donors generally cannot deduct gifts to foreign charities, and US foundations and DAF sponsors granting abroad must add expenditure responsibility or an equivalency determination. US lenders and investors in a European fund raise securities-law and tax issues (for example, punitive tax treatment for US taxable investors in a foreign fund company), plus a currency mismatch. Outflows are international either way, so lending abroad is not the problem. A European structure, such as a Luxembourg fund with <a href="#org-innpact">Innpact</a> as AIFM, becomes realistic if AIF later brings in European donors or DFIs, usually with a US feeder alongside it, which adds a second structure a $5M pilot cannot justify.</div>
+      <div class="callout"><strong>Why European structures mostly don't fit</strong> <span class="per-aef">to confirm</span><strong>:</strong> Most of AEF's donors are US-based, so the constraint is on the inflow side. US donors generally cannot deduct gifts to foreign charities, and US foundations and DAF sponsors granting abroad must add expenditure responsibility or an equivalency determination. US lenders and investors in a European fund raise securities-law and tax issues (for example, punitive tax treatment for US taxable investors in a foreign fund company), plus a currency mismatch. Outflows are international either way, so lending abroad is not the problem. A European structure, such as a Luxembourg fund with <a href="#org-innpact">Innpact</a> as AIFM, becomes realistic if AIF later brings in European donors or DFIs, usually with a US feeder alongside it, which adds a second structure a $5M pilot cannot justify.</div>
     </div>
   </section>
 
   <section id="organizations">
     <h2 class="section-title">Organizations</h2>
-    <p class="section-note">Grouped by type, then by whether they deploy abroad. "Unknown" means the cited source doesn't say. Claims tagged <span class="per-aef">per AEF / to confirm</span> come from AEF, not a source. If anything here is wrong, please tell us.</p>
+    <p class="section-note">Grouped by type, then by whether they deploy abroad. "Unknown" means the cited source doesn't say. Claims tagged <span class="per-aef">to confirm</span> don't yet have a cited source. If anything here is wrong, please tell us.</p>
     <div id="org-groups"><div class="load-error">Loading…</div></div>
   </section>
 
@@ -324,7 +324,7 @@
   </section>
 
   <section id="examples">
-    <h2 class="section-title">Examples</h2>
+    <h2 class="section-title">Precedents: vehicles similar to the AIF pilot</h2>
     <p class="section-note">Vehicles that do something similar to what the AIF pilot aims to do. None is a perfect match; each shows one piece.</p>
     <div class="grid" id="examples-grid"></div>
   </section>
@@ -417,7 +417,7 @@
         </div>
         ${aef.length ? `
         <div class="aef-box">
-          <span class="per-aef">per AEF / to confirm</span>
+          <span class="per-aef">to confirm</span>
           <ul>${aef.map(c => `<li>${esc(c)}</li>`).join('')}</ul>
         </div>` : ''}
       </div>
@@ -499,7 +499,7 @@
     const examples = data.examples || [];
     const orgsById = Object.fromEntries(orgs.map(o => [o.id, o]));
     document.getElementById('glance-examples').innerHTML = examples.length
-      ? `<span class="lead">Examples:</span>` + examples.map(ex => `<a href="#ex-${esc(ex.id)}">${esc(ex.name)}</a>`).join('<span class="sep">·</span>')
+      ? `<span class="lead">Precedents:</span>` + examples.map(ex => `<a href="#ex-${esc(ex.id)}">${esc(ex.name)}</a>`).join('<span class="sep">·</span>')
       : '';
     document.getElementById('examples-grid').innerHTML = examples.map(ex => buildExample(ex, orgsById)).join('');
 
@@ -559,7 +559,7 @@
     history.replaceState(null, '', '#summary');
   });
 
-  fetch('hosts.json')
+  fetch('hosts.json', { cache: 'no-cache' })
     .then(r => r.json())
     .then(render)
     .catch(err => {

@@ -1,6 +1,6 @@
 {
   "last_updated": "November 2026",
-  "sources_fetched": "2026-11-22 (S1–S28); 2026-11-23 (S29–S35); 2026-11-24 (S36–S42)",
+  "sources_fetched": "2026-11-22 (S1–S28); 2026-11-23 (S29–S35); 2026-11-24 (S36–S42); 2026-11-25 (S43)",
   "sources": [
     { "id": "S1", "label": "RSF Social Finance, Collaborative Funds", "url": "https://rsfsocialfinance.org/collaborative-funds" },
     { "id": "S2", "label": "ImpactAssets, Products & Services", "url": "https://impactassets.org/products-and-services/" },
@@ -43,7 +43,8 @@
     { "id": "S39", "label": "ImpactAlpha, Prime Coalition's Trellis Climate raises capital for first-of-a-kind projects (Jun 1, 2025)", "url": "https://impactalpha.com/?p=118510" },
     { "id": "S40", "label": "ImpactAlpha, The Brief: Investments in jobs, energy and healthcare for refugees (Mar 12, 2026)", "url": "https://impactalpha.com/the-brief-investments-in-jobs-energy-and-healthcare-for-refugees-displaced-by-conflict/" },
     { "id": "S41", "label": "ImpactAlpha, Refugee Investment Facility offers impact-linked loan in Jordan (Mar 20, 2025)", "url": "https://impactalpha.com/?p=116909" },
-    { "id": "S42", "label": "AVCA, Swiss impact advisory firm invests in TLG Capital (undated)", "url": "https://www.avca.africa/news-insights/member-news/swiss-impact-advisory-firm-invests-in-tlg-capital/" }
+    { "id": "S42", "label": "AVCA, Swiss impact advisory firm invests in TLG Capital (undated)", "url": "https://www.avca.africa/news-insights/member-news/swiss-impact-advisory-firm-invests-in-tlg-capital/" },
+    { "id": "S43", "label": "Mission Driven Finance, homepage", "url": "https://missiondrivenfinance.com/" }
   ],
   "general_questions": [
     "What is your minimum size, and what would it cost at $5M: setup and legal costs, annual management fee, any per-loan charges? Who pays them?",
@@ -78,9 +79,7 @@
       "sources": [
         { "id": "S7", "label": "ImpactAlpha, Total Impact Notes first issuance (Nov 3, 2025)", "url": "https://impactalpha.com/first-issuance-of-total-impact-notes-raises-3-million-for-loans-to-fund-managers-in-latin-america-and-africa/" }
       ],
-      "per_aef": [
-        "Small enough that it might run the pilot through the existing Notes program rather than a separate vehicle."
-      ]
+      "per_aef": []
     },
     {
       "id": "impactassets",
@@ -115,11 +114,11 @@
       "status": "verify",
       "column": "investment_manager",
       "row": "abroad",
-      "size_note": "$5M may be below its minimum (per AEF / to confirm).",
+      "size_note": "$5M may be below its minimum (to confirm).",
       "accepts_loans_in": "unknown",
       "lends_internationally": "yes",
       "lends_internationally_note": "Community Investment Note portfolio reaches 111 countries (Q4 2025)",
-      "underwriting": "In-house credit underwriting team (per AEF / to confirm)",
+      "underwriting": "In-house credit underwriting team (to confirm)",
       "summary": "A 501(c)(3) holding company, Calvert Impact, Inc., was formed in October 2022 as a more flexible base for lending, structuring services and new products. Calvert Impact Capital still issues the Community Investment Note. Its RIA, Calvert Impact Advisory Services, LLC, registered with the SEC in September 2023 and manages pooled investment vehicles (third-party profile). Its Community Investment Note portfolio reaches 111 countries, including Sub-Saharan Africa, South Asia, and Latin America and the Caribbean, as of Q4 2025.",
       "open_questions": [
         "Is $5M below the minimum for a standalone mandate?",
@@ -130,11 +129,7 @@
         { "id": "S15", "label": "FINTRX, Calvert Impact Advisory Services, LLC profile (third-party)", "url": "https://fintrx.com/firms/firm/calvert-impact-advisory-services-llc-326022" },
         { "id": "S22", "label": "Calvert Impact, Community Investment Note portfolio (Q4 2025)", "url": "https://calvertimpact.org/sectors" }
       ],
-      "per_aef": [
-        "Wouldn't do this through the Notes program.",
-        "Size threshold: $5M may be below Calvert's minimum. To confirm.",
-        "The route under consideration is a standalone vehicle managed by the RIA, not the Notes. Most relevant if the pilot is designed to grow beyond $5M."
-      ]
+      "per_aef": []
     },
     {
       "id": "social-finance-cpm",
@@ -208,18 +203,19 @@
       "type": "Impact asset manager and SEC-registered adviser",
       "status": "verify",
       "column": "investment_manager",
-      "row": "unconfirmed",
+      "row": "us_only",
       "accepts_loans_in": "unknown",
-      "lends_internationally": "unknown",
-      "lends_internationally_note": "Article doesn't say whether scope is US-only",
+      "lends_internationally": "no",
+      "lends_internationally_note": "Homepage describes opportunities across the United States (S43)",
       "underwriting": "Unknown",
-      "summary": "Its Capital Partners unit offers emerging managers bridge financing, working capital advances, deal warehousing and co-investment capital. $4.4M raised (ImpactAlpha, Sept 2024). The article doesn't say whether its scope is US-only.",
+      "summary": "Its Capital Partners unit offers emerging managers bridge financing, working capital advances, deal warehousing and co-investment capital. $4.4M raised (ImpactAlpha, Sept 2024). Its homepage describes a US focus, serving partners and communities nationwide, with loan programs in California and New Mexico (S43).",
       "open_questions": [
         "Do you lend, or would you lend, outside the US?",
         "Do you offer fund services to third-party vehicles?"
       ],
       "sources": [
-        { "id": "S9", "label": "ImpactAlpha, Mission Driven Finance (Sept 24, 2024)", "url": "https://impactalpha.com/?p=111360" }
+        { "id": "S9", "label": "ImpactAlpha, Mission Driven Finance (Sept 24, 2024)", "url": "https://impactalpha.com/?p=111360" },
+        { "id": "S43", "label": "Mission Driven Finance, homepage", "url": "https://missiondrivenfinance.com/" }
       ],
       "per_aef": []
     },
@@ -243,9 +239,7 @@
         { "id": "S3", "label": "ImpactAlpha, CapShift mobilizes $1 billion", "url": "https://impactalpha.com/capshift-follows-the-money-and-the-clients-to-mobilize-1-billion-for-impact-investments-podcast/" },
         { "id": "S7", "label": "ImpactAlpha, Total Impact Notes first issuance (Nov 3, 2025)", "url": "https://impactalpha.com/first-issuance-of-total-impact-notes-raises-3-million-for-loans-to-fund-managers-in-latin-america-and-africa/" }
       ],
-      "per_aef": [
-        "Has recently helped MCE Social Capital raise a significant amount. To confirm."
-      ]
+      "per_aef": []
     },
     {
       "id": "candide-group",
@@ -296,9 +290,7 @@
         { "id": "S36", "label": "Kiva, Kiva Capital page", "url": "https://www.kiva.org/kiva-capital" },
         { "id": "S37", "label": "ImpactAlpha, Kiva Capital closes refugee fund at $32.5 million (Apr 7, 2021)", "url": "https://impactalpha.com/?p=89895" }
       ],
-      "per_aef": [
-        "New Kiva SME fund is in partnership with Miller Center, a sign Kiva is willing to partner. To confirm."
-      ]
+      "per_aef": []
     },
     {
       "id": "igravity",
@@ -325,8 +317,6 @@
         { "id": "S42", "label": "AVCA, Swiss impact advisory firm invests in TLG Capital (undated)", "url": "https://www.avca.africa/news-insights/member-news/swiss-impact-advisory-firm-invests-in-tlg-capital/" }
       ],
       "per_aef": [
-        "AEF sees iGravity as promising. To confirm.",
-        "iGravity is currently doing AEF's AIF pre-feasibility study, a potential conflict of interest if it is considered as host, manager or advisor.",
         "Swiss, so more likely a manager or underwriting advisor alongside a US vehicle than the host; see the note on European structures."
       ]
     },
@@ -426,14 +416,14 @@
       "status": "excluded",
       "column": "investment_manager",
       "row": "abroad",
-      "size_note": "Luxembourg regulated structure likely too heavy for ~$5M (per AEF / to confirm).",
+      "size_note": "Luxembourg regulated structure likely too heavy for ~$5M (to confirm).",
       "accepts_loans_in": "unknown",
       "accepts_loans_in_note": "Not described. Its funds are Luxembourg regulated vehicles (RAIF/SIF) built for investor commitments; grant or recoverable-grant inflows are not described",
       "lends_internationally": "yes",
       "lends_internationally_note": "e.g. the ABC Fund, a private debt fund with a global mandate focused on Sub-Saharan Africa (S30)",
       "underwriting": "Not done by Innpact as AIFM in the ABC example; ABC's investment advisor is Investisseurs & Partenaires (I&P) (S30).",
       "summary": "Luxembourg impact finance firm that sets up and manages impact funds (S29). Services include fund strategy and structuring; a third-party AIFM dedicated to impact funds, supporting RAIF and SIF vehicles and blended finance structures (S29); a Mauritius fund-management route for African funds through MIFGA, a joint initiative with AXIS (S29); and a white-label impact bond issuance platform, Imagine Impact Bonds (S29). Its agriculture work shows two distinct roles. Design only: Innpact supported IDH in the design, structuring and incorporation of the EUR 100 million IDH Farmfit Fund (Farmfit Fund B.V., Netherlands, January 2020) (S31); the fund is managed by IDH Investment Management (S32). AIFM: Innpact Fund Management S.A. has been AIFM of the Agri-Business Capital (ABC) Fund, a Luxembourg private debt fund, since 2023 (S30), and still listed it among its funds under management on 30 June 2026 (S33). See the ABC Fund example. Innpact's site gives no fund sizes or minimums (S29).",
-      "exclusion_reason": "Judgment call. Luxembourg regulated fund structures and AIFM costs are likely too heavy for a permanent ~$5M vehicle, and the structure is not built for US grant and recoverable-grant inflows (per AEF / to confirm). Revisit if the pilot grows or spins out, particularly with European or DFI investors: the ABC split between a regulated AIFM and a separate investment advisor is close to the AIF model of AEF participating in decisions while a third party underwrites.",
+      "exclusion_reason": "Judgment call. Luxembourg regulated fund structures and AIFM costs are likely too heavy for a permanent ~$5M vehicle, and the structure is not built for US grant and recoverable-grant inflows (to confirm). Revisit if the pilot grows or spins out, particularly with European or DFI investors: the ABC split between a regulated AIFM and a separate investment advisor is close to the AIF model of AEF participating in decisions while a third party underwrites.",
       "open_questions": [
         "Could Imagine Impact Bonds carry a ~$5M lending program, and can it accept US investors and US charitable capital?",
         "What are the minimum fund size and annual costs for Innpact's AIFM services?",
