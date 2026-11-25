@@ -486,7 +486,7 @@
       gridHtml += `<div class="rl">${ROWS[row].label}<small>${ROWS[row].note}</small></div>`;
       ['phil', 'inv'].forEach(col => {
         const items = orgs.filter(o => place(o).col === col && place(o).row === row);
-        gridHtml += `<div class="cell">${items.length ? `<ul>${items.map(nameLi).join('')}</ul>` : '<div class="empty">None</div>'}</div>`;
+        gridHtml += `<div class="cell">${items.length ? `<ul>${items.map(nameLi).join('')}</ul>` : ''}</div>`;
       });
     });
     document.getElementById('glance-grid').innerHTML = gridHtml;
@@ -541,6 +541,10 @@
       if (el) el.scrollIntoView();
     }
   }
+
+  // Open at the top (header + table) on load; don't restore a saved scroll position
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  if (!location.hash) window.scrollTo(0, 0);
 
   // Keep anchor offsets in step with the sticky nav's actual height
   const nav = document.querySelector('nav.toc');
